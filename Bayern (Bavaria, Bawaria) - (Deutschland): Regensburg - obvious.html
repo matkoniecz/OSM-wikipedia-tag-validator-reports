@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-01-03. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,1885 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li></ul>			</br>
+			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
+				</br>
+				wikipedia page in unexpected language - de was expected:
+				</br>
+				<a href="https://openstreetmap.org/relation/6410283" target="_new">European route E 56 - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Europastra&#223;e 56" target="_new">de:Europastra&#223;e 56</a>
+				</br>
+				Europastra&#223;e 56
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(6410283)['wikipedia'='en:European route E56'];
+); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q1233978 vs (missing) article redirects from de:document niederm&#252;nster to de:Document niederm&#252;nster
+				</br>
+				<a href="https://openstreetmap.org/node/4853899723" target="_new">document Niedermünster - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Document niederm&#252;nster" target="_new">de:Document niederm&#252;nster</a>
+				</br>
+				Document niederm&#252;nster
+				</br>
+				<hr>
+				</br>
+				Q283170 vs (missing) article redirects from de:Bahnstrecke N&#252;rnberg&#8211;Regensburg to de:Bahnstrecke Regensburg&#8211;N&#252;rnberg
+				</br>
+				<a href="https://openstreetmap.org/relation/216295" target="_new">KBS 880 Nürnberg - Regensburg - Passau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnstrecke Regensburg&#8211;N&#252;rnberg" target="_new">de:Bahnstrecke Regensburg&#8211;N&#252;rnberg</a>
+				</br>
+				Bahnstrecke Regensburg&#8211;N&#252;rnberg
+				</br>
+				<hr>
+				</br>
+				Q641459 vs (missing) article redirects from de:Continental Arena to de:Jahnstadion Regensburg (2015)
+				</br>
+				<a href="https://openstreetmap.org/relation/5990703" target="_new">Jahnstadion Regensburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Jahnstadion Regensburg (2015)" target="_new">de:Jahnstadion Regensburg (2015)</a>
+				</br>
+				Jahnstadion Regensburg (2015)
+				</br>
+				<hr>
+				</br>
+				Q1709513 vs (missing) article redirects from de:Museum der Bayerischen Geschichte to de:Haus der Bayerischen Geschichte: Museum
+				</br>
+				<a href="https://openstreetmap.org/way/558371648" target="_new">Museum der Bayerischen Geschichte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Haus der Bayerischen Geschichte: Museum" target="_new">de:Haus der Bayerischen Geschichte: Museum</a>
+				</br>
+				Haus der Bayerischen Geschichte: Museum
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(4853899723)['wikidata'='Q1233978']['wikipedia'='de:document niederm&#252;nster'];
+relation(216295)['wikidata'='Q283170']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Regensburg'];
+relation(5990703)['wikidata'='Q641459']['wikipedia'='de:Continental Arena'];
+way(558371648)['wikidata'='Q1709513']['wikipedia'='de:Museum der Bayerischen Geschichte'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/321980960" target="_new">Stadtbücherei - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Stadtb&#252;cherei Regensburg" target="_new">de:Stadtb&#252;cherei Regensburg</a>
+				</br>
+				Stadtb&#252;cherei Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/367734530" target="_new">Maria Schnee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Maria-Schnee-Kapelle (Regensburg)" target="_new">de:Maria-Schnee-Kapelle (Regensburg)</a>
+				</br>
+				Maria-Schnee-Kapelle (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/8933999184" target="_new">Stadtarchiv Regensburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Stadtarchiv Regensburg" target="_new">de:Stadtarchiv Regensburg</a>
+				</br>
+				Stadtarchiv Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/6576273" target="_new">Universität Regensburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Universit&#228;t Regensburg" target="_new">de:Universit&#228;t Regensburg</a>
+				</br>
+				Universit&#228;t Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/100317444" target="_new">Prebrunnturm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Herzogspark" target="_new">de:Herzogspark</a>
+				</br>
+				Herzogspark
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/100403858" target="_new">Villa Lauser - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa Lauser" target="_new">de:Villa Lauser</a>
+				</br>
+				Villa Lauser
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/103420356" target="_new">Kneitinger - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kneitinger" target="_new">de:Kneitinger</a>
+				</br>
+				Kneitinger
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/105587163" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kunst- und Gewerbeverein Regensburg" target="_new">de:Kunst- und Gewerbeverein Regensburg</a>
+				</br>
+				Kunst- und Gewerbeverein Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/109139625" target="_new">Runtingerhaus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Runtingerhaus" target="_new">de:Runtingerhaus</a>
+				</br>
+				Runtingerhaus
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/110678357" target="_new">Staatliches Berufliches Schulzentrum Regensburger Land - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/BSZ Regensburg" target="_new">de:BSZ Regensburg</a>
+				</br>
+				BSZ Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/112327017" target="_new">St. Martin - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Martin (Oberisling)" target="_new">de:St. Martin (Oberisling)</a>
+				</br>
+				St. Martin (Oberisling)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/113494427" target="_new">Kreuzhofkapelle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kreuzhofkapelle (Regensburg)" target="_new">de:Kreuzhofkapelle (Regensburg)</a>
+				</br>
+				Kreuzhofkapelle (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/113743718" target="_new">St.-Nikolaus-Kapelle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Nikolaus (Reinhausen)" target="_new">de:St. Nikolaus (Reinhausen)</a>
+				</br>
+				St. Nikolaus (Reinhausen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/113813642" target="_new">Mariä Himmelfahrt - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Mari&#228; Himmelfahrt (Sallern)" target="_new">de:Mari&#228; Himmelfahrt (Sallern)</a>
+				</br>
+				Mari&#228; Himmelfahrt (Sallern)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/116909031" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Salvatorkapelle (Regensburg)" target="_new">de:Salvatorkapelle (Regensburg)</a>
+				</br>
+				Salvatorkapelle (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/123619854" target="_new">Sankt Georg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Georg (Schwabelweis)" target="_new">de:St. Georg (Schwabelweis)</a>
+				</br>
+				St. Georg (Schwabelweis)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/125332938" target="_new">St. Coloman - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Coloman (Harting)" target="_new">de:St. Coloman (Harting)</a>
+				</br>
+				St. Coloman (Harting)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/166574299" target="_new">Europakanal - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schleuse Regensburg" target="_new">de:Schleuse Regensburg</a>
+				</br>
+				Schleuse Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/20616836" target="_new">Friedrich-Zeche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Tagebau Friedrich-Zeche" target="_new">de:Tagebau Friedrich-Zeche</a>
+				</br>
+				Tagebau Friedrich-Zeche
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/227100985" target="_new">Österreicher Stadel - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/&#214;sterreicher Stadel (Regensburg)" target="_new">de:&#214;sterreicher Stadel (Regensburg)</a>
+				</br>
+				&#214;sterreicher Stadel (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/228062040" target="_new">Universitätsklinikum Regensburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Universit&#228;tsklinikum Regensburg" target="_new">de:Universit&#228;tsklinikum Regensburg</a>
+				</br>
+				Universit&#228;tsklinikum Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/231496379" target="_new">Fürstliche Schatzkammer Thurn und Taxis - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/F&#252;rstliche Schatzkammer Thurn und Taxis" target="_new">de:F&#252;rstliche Schatzkammer Thurn und Taxis</a>
+				</br>
+				F&#252;rstliche Schatzkammer Thurn und Taxis
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/231496435" target="_new">Sankt Rupert - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Rupert (Regensburg)" target="_new">de:St. Rupert (Regensburg)</a>
+				</br>
+				St. Rupert (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/23628595" target="_new">Gewerbepark Regensburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gewerbepark Regensburg" target="_new">de:Gewerbepark Regensburg</a>
+				</br>
+				Gewerbepark Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/272256058" target="_new">Musikgymnasium der Regensburger Domspatzen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gymnasium der Regensburger Domspatzen" target="_new">de:Gymnasium der Regensburger Domspatzen</a>
+				</br>
+				Gymnasium der Regensburger Domspatzen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/289881513" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gartenpalais L&#246;schenkohl" target="_new">de:Gartenpalais L&#246;schenkohl</a>
+				</br>
+				Gartenpalais L&#246;schenkohl
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/30001416" target="_new">Sankt Michael - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Michael (Keilberg)" target="_new">de:St. Michael (Keilberg)</a>
+				</br>
+				St. Michael (Keilberg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/30601525" target="_new">Posthof - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Posthof (Regensburg)" target="_new">de:Posthof (Regensburg)</a>
+				</br>
+				Posthof (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/31132660" target="_new">St. Michael - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Michael (Burgweinting)" target="_new">de:St. Michael (Burgweinting)</a>
+				</br>
+				St. Michael (Burgweinting)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/31257899" target="_new">Armin-Wolf-Arena - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Armin-Wolf-Arena" target="_new">de:Armin-Wolf-Arena</a>
+				</br>
+				Armin-Wolf-Arena
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/31469423" target="_new">Krankenhaus der Barmherzigen Brüder - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Krankenhaus Barmherzige Br&#252;der (Regensburg)" target="_new">de:Krankenhaus Barmherzige Br&#252;der (Regensburg)</a>
+				</br>
+				Krankenhaus Barmherzige Br&#252;der (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/31469427" target="_new">Caritas-Krankenhaus Sankt Josef - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Caritas-Krankenhaus St. Josef Regensburg" target="_new">de:Caritas-Krankenhaus St. Josef Regensburg</a>
+				</br>
+				Caritas-Krankenhaus St. Josef Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/31663145" target="_new">Peterskirchlein - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Peterskirchlein (Regensburg)" target="_new">de:Peterskirchlein (Regensburg)</a>
+				</br>
+				Peterskirchlein (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/31788919" target="_new">Donau-Arena - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Donau-Arena" target="_new">de:Donau-Arena</a>
+				</br>
+				Donau-Arena
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/34282507" target="_new">Ägidienplatz - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/&#196;gidienplatz (Regensburg)" target="_new">de:&#196;gidienplatz (Regensburg)</a>
+				</br>
+				&#196;gidienplatz (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/372775052" target="_new">St. Ignaz - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Ignatius (Regensburg)" target="_new">de:St. Ignatius (Regensburg)</a>
+				</br>
+				St. Ignatius (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/390160788" target="_new">Helenentor - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Helenentor" target="_new">de:Helenentor</a>
+				</br>
+				Helenentor
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/414255076" target="_new">Goethe-Gymnasium Regensburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Goethe-Gymnasium Regensburg" target="_new">de:Goethe-Gymnasium Regensburg</a>
+				</br>
+				Goethe-Gymnasium Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/715173201" target="_new">Neue Synagoge - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Neue Synagoge (Regensburg)" target="_new">de:Neue Synagoge (Regensburg)</a>
+				</br>
+				Neue Synagoge (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/86560175" target="_new">Amtsgericht Regensburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Amtsgericht Regensburg" target="_new">de:Amtsgericht Regensburg</a>
+				</br>
+				Amtsgericht Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/87611801" target="_new">Maria-Magdalena-Kirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Maria-Magdalena-Kirche (Regensburg)" target="_new">de:Maria-Magdalena-Kirche (Regensburg)</a>
+				</br>
+				Maria-Magdalena-Kirche (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/89226905" target="_new">Polizeipräsidium Oberpfalz - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Polizeipr&#228;sidium Oberpfalz" target="_new">de:Polizeipr&#228;sidium Oberpfalz</a>
+				</br>
+				Polizeipr&#228;sidium Oberpfalz
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/93484009" target="_new">Königliche Villa - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/K&#246;nigliche Villa (Regensburg)" target="_new">de:K&#246;nigliche Villa (Regensburg)</a>
+				</br>
+				K&#246;nigliche Villa (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/93584232" target="_new">Donau-Einkaufszentrum - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Donau-Einkaufszentrum" target="_new">de:Donau-Einkaufszentrum</a>
+				</br>
+				Donau-Einkaufszentrum
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/94522109" target="_new">Velodrom - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Velodrom (Regensburg)" target="_new">de:Velodrom (Regensburg)</a>
+				</br>
+				Velodrom (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/94884016" target="_new">Bischöfliche Administration - Haus Westmünster - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Studienseminar St. Wolfgang (Regensburg)" target="_new">de:Studienseminar St. Wolfgang (Regensburg)</a>
+				</br>
+				Studienseminar St. Wolfgang (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/94917914" target="_new">Albertus-Magnus-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Albertus-Magnus-Gymnasium Regensburg" target="_new">de:Albertus-Magnus-Gymnasium Regensburg</a>
+				</br>
+				Albertus-Magnus-Gymnasium Regensburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/95793934" target="_new">Sankt Andreas, Pfarrei Sankt Magn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Mang (Regensburg)" target="_new">de:St. Mang (Regensburg)</a>
+				</br>
+				St. Mang (Regensburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/99950840" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Weinschenk-Villa" target="_new">de:Weinschenk-Villa</a>
+				</br>
+				Weinschenk-Villa
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(321980960)['wikidata'='Q28498747']['wikipedia'!~'.*'];
+node(367734530)['wikidata'='Q41278104']['wikipedia'!~'.*'];
+node(8933999184)['wikidata'='Q16294782']['wikipedia'!~'.*'];
+relation(6576273)['wikidata'='Q574571']['wikipedia'!~'.*'];
+way(100317444)['wikidata'='Q873982']['wikipedia'!~'.*'];
+way(100403858)['wikidata'='Q15133886']['wikipedia'!~'.*'];
+way(103420356)['wikidata'='Q1777013']['wikipedia'!~'.*'];
+way(105587163)['wikidata'='Q41277252']['wikipedia'!~'.*'];
+way(109139625)['wikidata'='Q1168117']['wikipedia'!~'.*'];
+way(110678357)['wikidata'='Q797030']['wikipedia'!~'.*'];
+way(112327017)['wikidata'='Q15129590']['wikipedia'!~'.*'];
+way(113494427)['wikidata'='Q1472583']['wikipedia'!~'.*'];
+way(113743718)['wikidata'='Q14859021']['wikipedia'!~'.*'];
+way(113813642)['wikidata'='Q14444427']['wikipedia'!~'.*'];
+way(116909031)['wikidata'='Q41277364']['wikipedia'!~'.*'];
+way(123619854)['wikidata'='Q15129308']['wikipedia'!~'.*'];
+way(125332938)['wikidata'='Q14538295']['wikipedia'!~'.*'];
+way(166574299)['wikidata'='Q15127526']['wikipedia'!~'.*'];
+way(20616836)['wikidata'='Q58462641']['wikipedia'!~'.*'];
+way(227100985)['wikidata'='Q41277989']['wikipedia'!~'.*'];
+way(228062040)['wikidata'='Q2496399']['wikipedia'!~'.*'];
+way(231496379)['wikidata'='Q1447855']['wikipedia'!~'.*'];
+way(231496435)['wikidata'='Q18881595']['wikipedia'!~'.*'];
+way(23628595)['wikidata'='Q1520458']['wikipedia'!~'.*'];
+way(272256058)['wikidata'='Q1515375']['wikipedia'!~'.*'];
+way(289881513)['wikidata'='Q41278026']['wikipedia'!~'.*'];
+way(30001416)['wikidata'='Q14469302']['wikipedia'!~'.*'];
+way(30601525)['wikidata'='Q2106123']['wikipedia'!~'.*'];
+way(31132660)['wikidata'='Q15129626']['wikipedia'!~'.*'];
+way(31257899)['wikidata'='Q687307']['wikipedia'!~'.*'];
+way(31469423)['wikidata'='Q1786526']['wikipedia'!~'.*'];
+way(31469427)['wikidata'='Q1036322']['wikipedia'!~'.*'];
+way(31663145)['wikidata'='Q15124600']['wikipedia'!~'.*'];
+way(31788919)['wikidata'='Q1240777']['wikipedia'!~'.*'];
+way(34282507)['wikidata'='Q99519735']['wikipedia'!~'.*'];
+way(372775052)['wikidata'='Q14411376']['wikipedia'!~'.*'];
+way(390160788)['wikidata'='Q15056611']['wikipedia'!~'.*'];
+way(414255076)['wikidata'='Q74425396']['wikipedia'!~'.*'];
+way(715173201)['wikidata'='Q42291239']['wikipedia'!~'.*'];
+way(86560175)['wikidata'='Q480979']['wikipedia'!~'.*'];
+way(87611801)['wikidata'='Q20675754']['wikipedia'!~'.*'];
+way(89226905)['wikidata'='Q2101799']['wikipedia'!~'.*'];
+way(93484009)['wikidata'='Q1796150']['wikipedia'!~'.*'];
+way(93584232)['wikidata'='Q1240780']['wikipedia'!~'.*'];
+way(94522109)['wikidata'='Q50934006']['wikipedia'!~'.*'];
+way(94884016)['wikidata'='Q15849504']['wikipedia'!~'.*'];
+way(94917914)['wikidata'='Q1433060']['wikipedia'!~'.*'];
+way(95793934)['wikidata'='Q2320484']['wikipedia'!~'.*'];
+way(99950840)['wikidata'='Q2556273']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikidata from wikipedia tag"><h2 id="wikidata from wikipedia tag">wikidata from wikipedia tag</h2></a>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1939754925" target="_new">Edith Sigall - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1939754940" target="_new">Esther Sigall - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1940035075" target="_new">Hedwig Hahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1942763729" target="_new">Katharine Höllenreiner - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1942763731" target="_new">Rosa Höllenreiner - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1942763732" target="_new">Philippine Höllenreiner - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1942763734" target="_new">Josef Haas - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943939122" target="_new">Max Uhlfelder - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958099" target="_new">Max Massinger - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958100" target="_new">Maria Kahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958101" target="_new">Frieda Koller - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958102" target="_new">Max Kahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958103" target="_new">Emma Eckstein - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958105" target="_new">Lina Beermann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958112" target="_new">Robert Koller - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958113" target="_new">Cecilie Rosenwald - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958114" target="_new">Dr. Adolf Bloch - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958117" target="_new">Leopold Rosenwald - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958118" target="_new">Hannchen Rosenwald - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943958119" target="_new">Sigmund Beermann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943988636" target="_new">Edith Schild - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943988642" target="_new">Berta Schild - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944032890" target="_new">Johann Kellner - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944052305" target="_new">Johann Schindler - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944057136" target="_new">Wolfgang Waller - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944090951" target="_new">Simon Oberdorfer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944090955" target="_new">Hedwig Oberdorfer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944090958" target="_new">Julius Springer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944141420" target="_new">Ursula Heymann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944141425" target="_new">Norbert Heymann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944141427" target="_new">Wilhelm Heymann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944141429" target="_new">Hildegard Heymann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944451747" target="_new">Julius Jakob - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944451748" target="_new">Ludwig Bär - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944451749" target="_new">Mathilde Bär - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944485879" target="_new">Max Nussbaum - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944485881" target="_new">Julie Ehrlich - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944485883" target="_new">Ruth Nussbaum - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944485885" target="_new">Paula Nussbaum - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944485886" target="_new">Bella Ehrlich - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944497922" target="_new">Senta Gutmann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944521110" target="_new">Erich Herrscher - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944521112" target="_new">Alma Herrscher - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944521116" target="_new">Joseph Lilienfeld - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944521119" target="_new">Paul Lilienfeld - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944521120" target="_new">Ida Lilienfeld - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944541567" target="_new">Moses Frank - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944541577" target="_new">Gisela Loewy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944541589" target="_new">Hermann Frank - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944541598" target="_new">Ida Frank - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944628323" target="_new">Hedwig Hönigsberger - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944657528" target="_new">Laura Grünhut - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944657531" target="_new">Siegfried Grünhut - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944657535" target="_new">Adolf Niedermaier - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944696195" target="_new">Oskar Kohn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944696208" target="_new">Eugenie Kohn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944696214" target="_new">Emma Lehmann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944696218" target="_new">Karl Kahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1944696223" target="_new">Gretchen Kahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/4672417869" target="_new">Mina Lichtenstein - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/4672417870" target="_new">Siegfried Lichtenstein - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6378566135" target="_new">Abraham Firnbacher - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6383963892" target="_new">Ernst Leopold Bayer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6383963893" target="_new">Eugen Bayer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6383963894" target="_new">Martha Bayer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6400966546" target="_new">Maria Glaser - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6400966547" target="_new">Julius Glaser - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6400966548" target="_new">Hannchen Haag - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6400966549" target="_new">Aron Haag - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6407640915" target="_new">Karoline Heller - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6407640916" target="_new">Karl Heller - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6407640917" target="_new">Isidor Heller - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6407640918" target="_new">Alfred Grünhut - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6419665803" target="_new">Sofie Firnbacher - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6419665804" target="_new">Berta Benjamin - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6431097703" target="_new">Martha Stodel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6431097704" target="_new">Katharina Katz - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6448586910" target="_new">Leo Hofmann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6448586911" target="_new">Emma Jakob - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6448586912" target="_new">Lotte Spiegel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6448586913" target="_new">Rosa Thekla Farntrog - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6448586914" target="_new">Jakob Farntrog - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6448586915" target="_new">Amalie Schwarzberg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6448586916" target="_new">Seligman Jakob - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6448586917" target="_new">Max Meier Jacob - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6470798566" target="_new">Gerda Kleefeld - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6470798567" target="_new">Walter Kleefeld - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6470798568" target="_new">Frieda Selma Kleefeld - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6470798569" target="_new">Max Kleefeld - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6481397388" target="_new">Johann Baptist Fuchs - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6488770554" target="_new">Edith Michel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6488770555" target="_new">Dr. Carl Jacob Michel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6491557293" target="_new">Sabine Hirsch - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6491557294" target="_new">Stella Alexander - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6491557295" target="_new">Berta Hammer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6497891092" target="_new">Josef Hochwald - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6499853943" target="_new">Lina Freund - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6499853944" target="_new">Sara Kapp - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6502027123" target="_new">Johann Igl - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6511304626" target="_new">Henriette Benario - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6511304627" target="_new">Jeanette Bomeisl - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6513672409" target="_new">Henriette Uhlfelder - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6513672410" target="_new">Emil Levy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6513672411" target="_new">Clothilde Levy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6513672412" target="_new">Hedwig Bernheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6513672413" target="_new">Ludwig Bernheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6513672414" target="_new">Karl Cosman Bernheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6532178210" target="_new">Georg Muggenthaler - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6535841694" target="_new">Rupert Huber - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6549454709" target="_new">Heinz Sämann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6549454710" target="_new">Frieda Sämann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6549454711" target="_new">Ilse Sämann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6555535101" target="_new">Alois Heider - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6565887251" target="_new">Emilie Freising - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6576847919" target="_new">Lorenz Gewald - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6581858702" target="_new">Karolina Marx - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6594856083" target="_new">Daniela Holzinger - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6594856084" target="_new">Ottmar Holzinger - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304663" target="_new">Klara Gutmann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304664" target="_new">Johanna Frank - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304665" target="_new">Heinrich Frank - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304666" target="_new">Rosalie Frank - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304667" target="_new">Jeanette Karpeles - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304668" target="_new">Jette Mai - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304669" target="_new">Max Sondhelm - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304670" target="_new">Hannchen Walz - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304671" target="_new">Karoline Einstein - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304672" target="_new">Emma Einstein - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304673" target="_new">Josef Bauer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304674" target="_new">Elisabeth Kohner - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6633304675" target="_new">Jüdisches Altenheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6697124908" target="_new">Heinrich Fuchs - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6723801168" target="_new">Jüdisches Gemeindehaus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6749827719" target="_new">Alice Heiss - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6756093317" target="_new">Alois Krug - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6759390664" target="_new">Josef Bollwein - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6764062211" target="_new">Anna Prugg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6777278289" target="_new">Max Schottig - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6777278290" target="_new">Frieda Schottig - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6808170122" target="_new">Josef Moser - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6815758117" target="_new">Klara Einsiedler - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6815758118" target="_new">Rosa Einsiedler - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6817852678" target="_new">Isidor Heller - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6817852679" target="_new">Karoline Heller - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6852070828" target="_new">Mathilde Rosenkranz - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6852070829" target="_new">Fischel Rosenkranz - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6853617260" target="_new">Klara Hellmann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6853703898" target="_new">Richard Hupfer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6855625307" target="_new">Karl Meyer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6895679726" target="_new">Ilka Natzler - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6895679727" target="_new">Flora Grünhut - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6898512596" target="_new">Hermine Wolff - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6898512597" target="_new">Meier Max Wolff - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6900321896" target="_new">Familie Jacob - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6925013870" target="_new">Else Grünhut - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6925013871" target="_new">Josef Grünhut - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6925013872" target="_new">Adolf Heumann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6930975718" target="_new">Ricka Oberdorfer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6930975719" target="_new">Arthur Bodenheimer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6930975720" target="_new">Margot Bodenheimer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/6930975721" target="_new">Irma Bodenheimer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q314003 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/7021849442" target="_new">Hermann Rehbach - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q120834 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/7687697" target="_new">5500 München - Regensburg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2047089 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/116909052" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1643774 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/131188704" target="_new">Villa Rustica - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15134801 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/20637512" target="_new">Westbad - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q873982 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/23544299" target="_new">Herzogspark - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1674270 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/30994845" target="_new">Islinger Feld - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q439447 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/31663730" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q18589579 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/320124470" target="_new">Haus der Musik - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15116499 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/399109171" target="_new">Keplerdenkmal - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q627926 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/93480446" target="_new">Arbeitsgericht Regensburg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1698539 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/93576143" target="_new">Salzstadel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q996622 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/93576145" target="_new">Brückturm - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1410927 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/99454287" target="_new">Sankt Kassian - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1939754925)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1939754940)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1940035075)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1942763729)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1942763731)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1942763732)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1942763734)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943939122)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958099)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958100)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958101)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958102)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958103)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958105)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958112)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958113)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958114)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958117)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958118)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943958119)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943988636)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1943988642)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944032890)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944052305)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944057136)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944090951)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944090955)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944090958)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944141420)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944141425)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944141427)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944141429)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944451747)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944451748)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944451749)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944485879)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944485881)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944485883)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944485885)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944485886)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944497922)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944521110)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944521112)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944521116)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944521119)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944521120)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944541567)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944541577)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944541589)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944541598)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944628323)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944657528)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944657531)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944657535)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944696195)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944696208)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944696214)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944696218)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(1944696223)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(4672417869)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(4672417870)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6378566135)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6383963892)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6383963893)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6383963894)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6400966546)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6400966547)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6400966548)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6400966549)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6407640915)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6407640916)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6407640917)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6407640918)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6419665803)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6419665804)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6431097703)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6431097704)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6448586910)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6448586911)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6448586912)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6448586913)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6448586914)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6448586915)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6448586916)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6448586917)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6470798566)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6470798567)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6470798568)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6470798569)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6481397388)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6488770554)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6488770555)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6491557293)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6491557294)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6491557295)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6497891092)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6499853943)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6499853944)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6502027123)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6511304626)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6511304627)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6513672409)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6513672410)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6513672411)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6513672412)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6513672413)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6513672414)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6532178210)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6535841694)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6549454709)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6549454710)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6549454711)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6555535101)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6565887251)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6576847919)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6581858702)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6594856083)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6594856084)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304663)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304664)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304665)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304666)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304667)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304668)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304669)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304670)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304671)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304672)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304673)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304674)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6633304675)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6697124908)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6723801168)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6749827719)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6756093317)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6759390664)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6764062211)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6777278289)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6777278290)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6808170122)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6815758117)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6815758118)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6817852678)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6817852679)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6852070828)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6852070829)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6853617260)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6853703898)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6855625307)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6895679726)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6895679727)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6898512596)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6898512597)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6900321896)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6925013870)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6925013871)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6925013872)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6930975718)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6930975719)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6930975720)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(6930975721)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+node(7021849442)['wikidata'!~'.*']['wikipedia'='en:Stolperstein'];
+relation(7687697)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke M&#252;nchen&#8211;Regensburg'];
+way(116909052)['wikidata'!~'.*']['wikipedia'='de:Palais L&#246;schenkohl'];
+way(131188704)['wikidata'!~'.*']['wikipedia'='de:Villa Rustica (Burgweinting)'];
+way(20637512)['wikidata'!~'.*']['wikipedia'='de:Westbad (Regensburg)'];
+way(23544299)['wikidata'!~'.*']['wikipedia'='de:Herzogspark'];
+way(30994845)['wikidata'!~'.*']['wikipedia'='de:Islinger Feld'];
+way(31663730)['wikidata'!~'.*']['wikipedia'='de:Altes Rathaus (Regensburg)'];
+way(320124470)['wikidata'!~'.*']['wikipedia'='de:Pr&#228;sidialpalais'];
+way(399109171)['wikidata'!~'.*']['wikipedia'='de:Kepler-Monument (Regensburg)'];
+way(93480446)['wikidata'!~'.*']['wikipedia'='de:Arbeitsgericht Regensburg'];
+way(93576143)['wikidata'!~'.*']['wikipedia'='de:Salzstadel (Regensburg)'];
+way(93576145)['wikidata'!~'.*']['wikipedia'='de:Br&#252;ckturm'];
+way(99454287)['wikidata'!~'.*']['wikipedia'='de:Stiftspfarrkirche St. Kassian (Regensburg)'];
+); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia tag in an outdated form for removal"><h2 id="wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</h2></a>
+				</br>
+				wikipedia tag in outdated form ([&#x27;wikipedia:en&#x27;]), with wikipedia and wikidata tag present and may be safely removed
+				</br>
+				<a href="https://openstreetmap.org/way/28938080" target="_new">Ostbayerische Technische Hochschule Regensburg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(28938080)['wikidata'='Q982435']['wikipedia'='de:Ostbayerische Technische Hochschule Regensburg']['wikipedia:en'='Regensburg_University_of_Applied_Sciences'];
+); (._;>;); out meta qt;//['wikipedia tag in an outdated form for removal']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>
