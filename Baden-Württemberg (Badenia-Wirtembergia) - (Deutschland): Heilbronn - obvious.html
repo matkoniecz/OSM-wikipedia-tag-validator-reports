@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-01-04. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,1641 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li></ul>			</br>
+			<a href="#wikipedia tag from wikipedia tag in an outdated form"><h2 id="wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</h2></a>
+				</br>
+				wikipedia tag in outdated form ([&#x27;wikipedia:de&#x27;]), wikipedia tag may be added
+				</br>
+				<a href="https://openstreetmap.org/way/25149988" target="_new">Wasserturm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wasserturm (B&#246;ckingen)" target="_new">de:Wasserturm (B&#246;ckingen)</a>
+				</br>
+				Wasserturm (B&#246;ckingen)
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(25149988)['wikidata'='Q2551651']['wikipedia'!~'.*']['wikipedia:de'='Wasserturm_(B&#246;ckingen)'];
+); (._;>;); out meta qt;//['wikipedia tag from wikipedia tag in an outdated form']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q572498 vs (missing) article redirects from de:Hohenlohebahn to de:Bahnstrecke Crailsheim&#8211;Heilbronn
+				</br>
+				<a href="https://openstreetmap.org/relation/146366" target="_new">KBS 783 Heilbronn - Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnstrecke Crailsheim&#8211;Heilbronn" target="_new">de:Bahnstrecke Crailsheim&#8211;Heilbronn</a>
+				</br>
+				Bahnstrecke Crailsheim&#8211;Heilbronn
+				</br>
+				<hr>
+				</br>
+				Q572498 vs (missing) article redirects from de:Hohenlohebahn to de:Bahnstrecke Crailsheim&#8211;Heilbronn
+				</br>
+				<a href="https://openstreetmap.org/relation/190105" target="_new">4950 Crailsheim - Eppingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnstrecke Crailsheim&#8211;Heilbronn" target="_new">de:Bahnstrecke Crailsheim&#8211;Heilbronn</a>
+				</br>
+				Bahnstrecke Crailsheim&#8211;Heilbronn
+				</br>
+				<hr>
+				</br>
+				Q1630817 vs (missing) article redirects from de:Hotel Altes Theater to de:Altes Theater Heilbronn
+				</br>
+				<a href="https://openstreetmap.org/way/40954039" target="_new">Altes Theater - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Altes Theater Heilbronn" target="_new">de:Altes Theater Heilbronn</a>
+				</br>
+				Altes Theater Heilbronn
+				</br>
+				<hr>
+				</br>
+				Q1145737 vs (missing) article redirects from de:Widmann&#x27;sche Papiermaschinenfabrik to de:Widmann&#8217;sche Papiermaschinenfabrik
+				</br>
+				<a href="https://openstreetmap.org/way/81630499" target="_new">Widmann’sche Papiermaschinenfabrik - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Widmann&#8217;sche Papiermaschinenfabrik" target="_new">de:Widmann&#8217;sche Papiermaschinenfabrik</a>
+				</br>
+				Widmann&#8217;sche Papiermaschinenfabrik
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(146366)['wikidata'='Q572498']['wikipedia'='de:Hohenlohebahn'];
+relation(190105)['wikidata'='Q572498']['wikipedia'='de:Hohenlohebahn'];
+way(40954039)['wikidata'='Q1630817']['wikipedia'='de:Hotel Altes Theater'];
+way(81630499)['wikidata'='Q1145737']['wikipedia'='de:Widmann\'sche Papiermaschinenfabrik'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1244853930" target="_new">Sicherer'sche Apotheke - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Sicherer&#8217;sche Apotheke" target="_new">de:Sicherer&#8217;sche Apotheke</a>
+				</br>
+				Sicherer&#8217;sche Apotheke
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/241679474" target="_new">Schweinsberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schweinsberg (Berg)" target="_new">de:Schweinsberg (Berg)</a>
+				</br>
+				Schweinsberg (Berg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2626882436" target="_new">Kreuzgrund - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kreuzgrund (B&#246;ckingen)" target="_new">de:Kreuzgrund (B&#246;ckingen)</a>
+				</br>
+				Kreuzgrund (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/4269441393" target="_new">Robert-Mayer-Sternwarte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Robert-Mayer-Volks- und Schulsternwarte Heilbronn" target="_new">de:Robert-Mayer-Volks- und Schulsternwarte Heilbronn</a>
+				</br>
+				Robert-Mayer-Volks- und Schulsternwarte Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/5438196218" target="_new">12/88 - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/12/88" target="_new">de:12/88</a>
+				</br>
+				12/88
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/600002734" target="_new">Elly-Heuss-Knapp Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Elly-Heuss-Knapp-Gymnasium Heilbronn" target="_new">de:Elly-Heuss-Knapp-Gymnasium Heilbronn</a>
+				</br>
+				Elly-Heuss-Knapp-Gymnasium Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/8610569204" target="_new">Galgenberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Galgenberg (Heilbronn)" target="_new">de:Galgenberg (Heilbronn)</a>
+				</br>
+				Galgenberg (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/955850932" target="_new">Wilderers Kreuz - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wilderers Kreuz" target="_new">de:Wilderers Kreuz</a>
+				</br>
+				Wilderers Kreuz
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1203264" target="_new">Kraichgau-Hohenlohe-Radweg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kraichgau-Hohenlohe-Weg" target="_new">de:Kraichgau-Hohenlohe-Weg</a>
+				</br>
+				Kraichgau-Hohenlohe-Weg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1308188" target="_new">Neckarkanal Kochendorf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Neckarkanal Kochendorf" target="_new">de:Neckarkanal Kochendorf</a>
+				</br>
+				Neckarkanal Kochendorf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/3318344" target="_new">Biberach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Biberach (Heilbronn)" target="_new">de:Biberach (Heilbronn)</a>
+				</br>
+				Biberach (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/3318345" target="_new">Böckingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/B&#246;ckingen" target="_new">de:B&#246;ckingen</a>
+				</br>
+				B&#246;ckingen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/3318346" target="_new">Frankenbach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Frankenbach (Heilbronn)" target="_new">de:Frankenbach (Heilbronn)</a>
+				</br>
+				Frankenbach (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/3318347" target="_new">Horkheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Horkheim" target="_new">de:Horkheim</a>
+				</br>
+				Horkheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/3318348" target="_new">Kirchhausen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kirchhausen" target="_new">de:Kirchhausen</a>
+				</br>
+				Kirchhausen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/3318349" target="_new">Klingenberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Klingenberg (Heilbronn)" target="_new">de:Klingenberg (Heilbronn)</a>
+				</br>
+				Klingenberg (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/3318351" target="_new">Sontheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Sontheim (Heilbronn)" target="_new">de:Sontheim (Heilbronn)</a>
+				</br>
+				Sontheim (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/4248413" target="_new">Kolbenschmidt-Arena - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Eisstadion Heilbronn" target="_new">de:Eisstadion Heilbronn</a>
+				</br>
+				Eisstadion Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/4733293" target="_new">Prallhang des Neckars bei Lauffen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Prallhang des Neckars bei Lauffen" target="_new">de:Prallhang des Neckars bei Lauffen</a>
+				</br>
+				Prallhang des Neckars bei Lauffen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/550377" target="_new">A 6 Mannheim - Heilbronn [positive] - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bundesautobahn 6" target="_new">de:Bundesautobahn 6</a>
+				</br>
+				Bundesautobahn 6
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/550379" target="_new">A 6 Mannheim - Heilbronn [negative] - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bundesautobahn 6" target="_new">de:Bundesautobahn 6</a>
+				</br>
+				Bundesautobahn 6
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/722112" target="_new">Trappensee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Trappensee" target="_new">de:Trappensee</a>
+				</br>
+				Trappensee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/8300" target="_new">Alb-Neckar-Radweg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Alb-Neckar-Radweg" target="_new">de:Alb-Neckar-Radweg</a>
+				</br>
+				Alb-Neckar-Radweg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/100544048" target="_new">Auferstehungskirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Auferstehungskirche (B&#246;ckingen)" target="_new">de:Auferstehungskirche (B&#246;ckingen)</a>
+				</br>
+				Auferstehungskirche (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/103766485" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Pf&#252;hlstra&#223;e 51 (Heilbronn)" target="_new">de:Pf&#252;hlstra&#223;e 51 (Heilbronn)</a>
+				</br>
+				Pf&#252;hlstra&#223;e 51 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/104481861" target="_new">Wichernkirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wichernkirche (Heilbronn)" target="_new">de:Wichernkirche (Heilbronn)</a>
+				</br>
+				Wichernkirche (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/105484315" target="_new">Robert-Mayer-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Robert-Mayer-Gymnasium Heilbronn" target="_new">de:Robert-Mayer-Gymnasium Heilbronn</a>
+				</br>
+				Robert-Mayer-Gymnasium Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/105518245" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kernerstra&#223;e 60 (Heilbronn)" target="_new">de:Kernerstra&#223;e 60 (Heilbronn)</a>
+				</br>
+				Kernerstra&#223;e 60 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/105518266" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Karlstra&#223;e 82 (Heilbronn)" target="_new">de:Karlstra&#223;e 82 (Heilbronn)</a>
+				</br>
+				Karlstra&#223;e 82 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/106519396" target="_new">Theodor-Heuss-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Theodor-Heuss-Gymnasium Heilbronn" target="_new">de:Theodor-Heuss-Gymnasium Heilbronn</a>
+				</br>
+				Theodor-Heuss-Gymnasium Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/106523469" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Haus C. F. Hauth" target="_new">de:Haus C. F. Hauth</a>
+				</br>
+				Haus C. F. Hauth
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/106663784" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Pauluskirche (Heilbronn)" target="_new">de:Pauluskirche (Heilbronn)</a>
+				</br>
+				Pauluskirche (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/106670759" target="_new">Hoernerbank - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hoerner Bank" target="_new">de:Hoerner Bank</a>
+				</br>
+				Hoerner Bank
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/107229526" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Herbststra&#223;e 8 (Heilbronn)" target="_new">de:Herbststra&#223;e 8 (Heilbronn)</a>
+				</br>
+				Herbststra&#223;e 8 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/107454996" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rappengasse 6 (Biberach)" target="_new">de:Rappengasse 6 (Biberach)</a>
+				</br>
+				Rappengasse 6 (Biberach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/107473845" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa Treu" target="_new">de:Villa Treu</a>
+				</br>
+				Villa Treu
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/108020060" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Happelstra&#223;e 29 (Heilbronn)" target="_new">de:Happelstra&#223;e 29 (Heilbronn)</a>
+				</br>
+				Happelstra&#223;e 29 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/108132230" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schmollerstra&#223;e 64 (Heilbronn)" target="_new">de:Schmollerstra&#223;e 64 (Heilbronn)</a>
+				</br>
+				Schmollerstra&#223;e 64 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/108382112" target="_new">Deutschhof - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Deutschhof (Heilbronn)" target="_new">de:Deutschhof (Heilbronn)</a>
+				</br>
+				Deutschhof (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/108382115" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Deutschhof (Heilbronn)" target="_new">de:Deutschhof (Heilbronn)</a>
+				</br>
+				Deutschhof (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/109740664" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa Stotz" target="_new">de:Villa Stotz</a>
+				</br>
+				Villa Stotz
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/110244902" target="_new">Feuerwehr - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Feuerwehr Heilbronn" target="_new">de:Feuerwehr Heilbronn</a>
+				</br>
+				Feuerwehr Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/111250242" target="_new">Martin-Luther-Kirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Martin-Luther-Kirche (Heilbronn)" target="_new">de:Martin-Luther-Kirche (Heilbronn)</a>
+				</br>
+				Martin-Luther-Kirche (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/119836054" target="_new">Versöhnungskirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Vers&#246;hnungskirche (B&#246;ckingen)" target="_new">de:Vers&#246;hnungskirche (B&#246;ckingen)</a>
+				</br>
+				Vers&#246;hnungskirche (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/121564839" target="_new">Justinus-Kerner-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Justinus-Kerner-Gymnasium Heilbronn" target="_new">de:Justinus-Kerner-Gymnasium Heilbronn</a>
+				</br>
+				Justinus-Kerner-Gymnasium Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/12359355" target="_new">Wertwiesenpark - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wertwiesenpark" target="_new">de:Wertwiesenpark</a>
+				</br>
+				Wertwiesenpark
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/130333403" target="_new">Frankenstadion Heilbronn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Frankenstadion Heilbronn" target="_new">de:Frankenstadion Heilbronn</a>
+				</br>
+				Frankenstadion Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/135967893" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kolpingstra&#223;e 14 (Sontheim)" target="_new">de:Kolpingstra&#223;e 14 (Sontheim)</a>
+				</br>
+				Kolpingstra&#223;e 14 (Sontheim)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/135967919" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kolpingstra&#223;e 16 (Sontheim)" target="_new">de:Kolpingstra&#223;e 16 (Sontheim)</a>
+				</br>
+				Kolpingstra&#223;e 16 (Sontheim)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/150536089" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Erbhof und Armenhaus" target="_new">de:Erbhof und Armenhaus</a>
+				</br>
+				Erbhof und Armenhaus
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/150805558" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hauptstra&#223;e 20 (Sontheim)" target="_new">de:Hauptstra&#223;e 20 (Sontheim)</a>
+				</br>
+				Hauptstra&#223;e 20 (Sontheim)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/157019851" target="_new">Gustav-von-Schmoller-Schule - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gustav-von-Schmoller-Schule Heilbronn" target="_new">de:Gustav-von-Schmoller-Schule Heilbronn</a>
+				</br>
+				Gustav-von-Schmoller-Schule Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/167407995" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Klingenberger Stra&#223;e 139 (B&#246;ckingen)" target="_new">de:Klingenberger Stra&#223;e 139 (B&#246;ckingen)</a>
+				</br>
+				Klingenberger Stra&#223;e 139 (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/172990068" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Geh&#246;ft Seestra&#223;e (B&#246;ckingen)" target="_new">de:Geh&#246;ft Seestra&#223;e (B&#246;ckingen)</a>
+				</br>
+				Geh&#246;ft Seestra&#223;e (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/203418070" target="_new">Heilig-Kreuz-Kirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Heilig-Kreuz-Kirche (B&#246;ckingen)" target="_new">de:Heilig-Kreuz-Kirche (B&#246;ckingen)</a>
+				</br>
+				Heilig-Kreuz-Kirche (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/207341178" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wilhelmstra&#223;e 7 (Heilbronn)" target="_new">de:Wilhelmstra&#223;e 7 (Heilbronn)</a>
+				</br>
+				Wilhelmstra&#223;e 7 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/218038995" target="_new">Mönchsee-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/M&#246;nchsee-Gymnasium Heilbronn" target="_new">de:M&#246;nchsee-Gymnasium Heilbronn</a>
+				</br>
+				M&#246;nchsee-Gymnasium Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/24034288" target="_new">Grundschule Alt-Böckingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Grundschule Alt-B&#246;ckingen" target="_new">de:Grundschule Alt-B&#246;ckingen</a>
+				</br>
+				Grundschule Alt-B&#246;ckingen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/24235347" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schleusenstra&#223;e 21 (Horkheim)" target="_new">de:Schleusenstra&#223;e 21 (Horkheim)</a>
+				</br>
+				Schleusenstra&#223;e 21 (Horkheim)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/253391104" target="_new">Kunsthalle Vogelmann - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kunsthalle Vogelmann" target="_new">de:Kunsthalle Vogelmann</a>
+				</br>
+				Kunsthalle Vogelmann
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/28943850" target="_new">Wollhauszentrum - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wollhauszentrum" target="_new">de:Wollhauszentrum</a>
+				</br>
+				Wollhauszentrum
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/29070714" target="_new">Polizeipräsidium Heilbronn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Polizeipr&#228;sidium Heilbronn" target="_new">de:Polizeipr&#228;sidium Heilbronn</a>
+				</br>
+				Polizeipr&#228;sidium Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/30655656" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rathausstra&#223;e 8 (B&#246;ckingen)" target="_new">de:Rathausstra&#223;e 8 (B&#246;ckingen)</a>
+				</br>
+				Rathausstra&#223;e 8 (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/31514759" target="_new">Stadtgalerie - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Stadtgalerie Heilbronn" target="_new">de:Stadtgalerie Heilbronn</a>
+				</br>
+				Stadtgalerie Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/32342513" target="_new">Generationengarten am Wartberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Seniorengarten (Heilbronn)" target="_new">de:Seniorengarten (Heilbronn)</a>
+				</br>
+				Seniorengarten (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/334685922" target="_new">Frankenbacher Schotter - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Frankenbacher Schotter" target="_new">de:Frankenbacher Schotter</a>
+				</br>
+				Frankenbacher Schotter
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/334985704" target="_new">Altneckar Horkheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Altneckar Horkheim" target="_new">de:Altneckar Horkheim</a>
+				</br>
+				Altneckar Horkheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/34605696" target="_new">JVA Heilbronn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Justizvollzugsanstalt Heilbronn" target="_new">de:Justizvollzugsanstalt Heilbronn</a>
+				</br>
+				Justizvollzugsanstalt Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/35447343" target="_new">Volkshochschule Heilbronn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Deutschhof (Heilbronn)" target="_new">de:Deutschhof (Heilbronn)</a>
+				</br>
+				Deutschhof (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/35559104" target="_new">Hafenmarktturm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Franziskanerkloster Heilbronn" target="_new">de:Franziskanerkloster Heilbronn</a>
+				</br>
+				Franziskanerkloster Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/37125857" target="_new">Jüdischer Friedhof - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/J&#252;discher Friedhof (Heilbronn)" target="_new">de:J&#252;discher Friedhof (Heilbronn)</a>
+				</br>
+				J&#252;discher Friedhof (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/372749515" target="_new">Paul-Metz-Brücke - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Paul-Metz-Br&#252;cke" target="_new">de:Paul-Metz-Br&#252;cke</a>
+				</br>
+				Paul-Metz-Br&#252;cke
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/37299060" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa M&#252;nzing" target="_new">de:Villa M&#252;nzing</a>
+				</br>
+				Villa M&#252;nzing
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/37299062" target="_new">Kolping Bildungskolleg - Schule für Gestaltung - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa Adelmann" target="_new">de:Villa Adelmann</a>
+				</br>
+				Villa Adelmann
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/37300301" target="_new">Kolping-Bildungszentrum - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Alter Bahnhof (Heilbronn)" target="_new">de:Alter Bahnhof (Heilbronn)</a>
+				</br>
+				Alter Bahnhof (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/37390031" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Dresdner Bank (Heilbronn)" target="_new">de:Dresdner Bank (Heilbronn)</a>
+				</br>
+				Dresdner Bank (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/42034767" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bismarckstra&#223;e 61 (Heilbronn)" target="_new">de:Bismarckstra&#223;e 61 (Heilbronn)</a>
+				</br>
+				Bismarckstra&#223;e 61 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/42034874" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bismarckstra&#223;e 67 (Heilbronn)" target="_new">de:Bismarckstra&#223;e 67 (Heilbronn)</a>
+				</br>
+				Bismarckstra&#223;e 67 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/42815707" target="_new">Nikolaikirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Nikolaikirche (Heilbronn)" target="_new">de:Nikolaikirche (Heilbronn)</a>
+				</br>
+				Nikolaikirche (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/43523661" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Eppinger Stra&#223;e 72 (B&#246;ckingen)" target="_new">de:Eppinger Stra&#223;e 72 (B&#246;ckingen)</a>
+				</br>
+				Eppinger Stra&#223;e 72 (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/43567184" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Eppinger Stra&#223;e 64 (B&#246;ckingen)" target="_new">de:Eppinger Stra&#223;e 64 (B&#246;ckingen)</a>
+				</br>
+				Eppinger Stra&#223;e 64 (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/49806994" target="_new">Fernmeldeturm Heilbronn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Fernmeldeturm Heilbronn" target="_new">de:Fernmeldeturm Heilbronn</a>
+				</br>
+				Fernmeldeturm Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/498688157" target="_new">experimenta - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Experimenta Heilbronn" target="_new">de:Experimenta Heilbronn</a>
+				</br>
+				Experimenta Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/51416933" target="_new">Waldgaststätte Jägerhaus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/J&#228;gerhaus (Heilbronn)" target="_new">de:J&#228;gerhaus (Heilbronn)</a>
+				</br>
+				J&#228;gerhaus (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/51733626" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/C&#228;cilienstra&#223;e 47 (Heilbronn)" target="_new">de:C&#228;cilienstra&#223;e 47 (Heilbronn)</a>
+				</br>
+				C&#228;cilienstra&#223;e 47 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/51733630" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/C&#228;cilienstra&#223;e 60 (Heilbronn)" target="_new">de:C&#228;cilienstra&#223;e 60 (Heilbronn)</a>
+				</br>
+				C&#228;cilienstra&#223;e 60 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/51733633" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wilhelmstra&#223;e 11 (Heilbronn)" target="_new">de:Wilhelmstra&#223;e 11 (Heilbronn)</a>
+				</br>
+				Wilhelmstra&#223;e 11 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/51733654" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wilhelmstra&#223;e 16 (Heilbronn)" target="_new">de:Wilhelmstra&#223;e 16 (Heilbronn)</a>
+				</br>
+				Wilhelmstra&#223;e 16 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/51733655" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa Neumayer" target="_new">de:Villa Neumayer</a>
+				</br>
+				Villa Neumayer
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/51733662" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa Louis Link" target="_new">de:Villa Louis Link</a>
+				</br>
+				Villa Louis Link
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/51733669" target="_new">Wein Villa - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa Fai&#223;t" target="_new">de:Villa Fai&#223;t</a>
+				</br>
+				Villa Fai&#223;t
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/51817892" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gro&#223;gartacher Stra&#223;e 82 (B&#246;ckingen)" target="_new">de:Gro&#223;gartacher Stra&#223;e 82 (B&#246;ckingen)</a>
+				</br>
+				Gro&#223;gartacher Stra&#223;e 82 (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/52290783" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Heuchelbergstra&#223;e 4 (B&#246;ckingen)" target="_new">de:Heuchelbergstra&#223;e 4 (B&#246;ckingen)</a>
+				</br>
+				Heuchelbergstra&#223;e 4 (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/5407837" target="_new">Friedhof Böckingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Friedhof (B&#246;ckingen)" target="_new">de:Friedhof (B&#246;ckingen)</a>
+				</br>
+				Friedhof (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/54277552" target="_new">Dammschule - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Dammschule (Heilbronn)" target="_new">de:Dammschule (Heilbronn)</a>
+				</br>
+				Dammschule (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/55275582" target="_new">Lindenparkschule - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Lindenparkschule" target="_new">de:Lindenparkschule</a>
+				</br>
+				Lindenparkschule
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/56696434" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gro&#223;gartacher Stra&#223;e 21 (B&#246;ckingen)" target="_new">de:Gro&#223;gartacher Stra&#223;e 21 (B&#246;ckingen)</a>
+				</br>
+				Gro&#223;gartacher Stra&#223;e 21 (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/56696436" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gro&#223;gartacher Stra&#223;e 23 (B&#246;ckingen)" target="_new">de:Gro&#223;gartacher Stra&#223;e 23 (B&#246;ckingen)</a>
+				</br>
+				Gro&#223;gartacher Stra&#223;e 23 (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/60499785" target="_new">Alter Milchhof - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Alter Milchhof (Heilbronn)" target="_new">de:Alter Milchhof (Heilbronn)</a>
+				</br>
+				Alter Milchhof (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/60761796" target="_new">Fritz-Ulrich-Schule - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gerhart-Hauptmann-Schule Grundschule Heilbronn" target="_new">de:Gerhart-Hauptmann-Schule Grundschule Heilbronn</a>
+				</br>
+				Gerhart-Hauptmann-Schule Grundschule Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/64841505" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/S&#252;dstra&#223;e 43 (Heilbronn)" target="_new">de:S&#252;dstra&#223;e 43 (Heilbronn)</a>
+				</br>
+				S&#252;dstra&#223;e 43 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/64967986" target="_new">Kreuzkirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kreuzkirche (Heilbronn)" target="_new">de:Kreuzkirche (Heilbronn)</a>
+				</br>
+				Kreuzkirche (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/65017188" target="_new">Villa Mertz - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa Mertz" target="_new">de:Villa Mertz</a>
+				</br>
+				Villa Mertz
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/67120233" target="_new">St. Maria Immaculata - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Maria Immaculata (Heilbronn)" target="_new">de:St. Maria Immaculata (Heilbronn)</a>
+				</br>
+				St. Maria Immaculata (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/69479423" target="_new">Wartbergkirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wartbergkirche (Heilbronn)" target="_new">de:Wartbergkirche (Heilbronn)</a>
+				</br>
+				Wartbergkirche (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/69883605" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gasthaus zum Lamm (Frankenbach)" target="_new">de:Gasthaus zum Lamm (Frankenbach)</a>
+				</br>
+				Gasthaus zum Lamm (Frankenbach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/69883678" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wohnstallhaus Kirchstra&#223;e 17 (Frankenbach)" target="_new">de:Wohnstallhaus Kirchstra&#223;e 17 (Frankenbach)</a>
+				</br>
+				Wohnstallhaus Kirchstra&#223;e 17 (Frankenbach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/69899819" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hintertorstra&#223;e 1 (Heilbronn-Frankenbach)" target="_new">de:Hintertorstra&#223;e 1 (Heilbronn-Frankenbach)</a>
+				</br>
+				Hintertorstra&#223;e 1 (Heilbronn-Frankenbach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/69941995" target="_new">Gästehaus Olgahof - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Laubenganghaus (Heilbronn)" target="_new">de:Laubenganghaus (Heilbronn)</a>
+				</br>
+				Laubenganghaus (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/69946237" target="_new">Gildetreff Fachberatungsstelle für Wohnungslose - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wilhelmstra&#223;e 26 (Heilbronn)" target="_new">de:Wilhelmstra&#223;e 26 (Heilbronn)</a>
+				</br>
+				Wilhelmstra&#223;e 26 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/720559355" target="_new">Otto-Konz-Brücke - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Otto-Konz-Br&#252;cke (Heilbronn)" target="_new">de:Otto-Konz-Br&#252;cke (Heilbronn)</a>
+				</br>
+				Otto-Konz-Br&#252;cke (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/725730239" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gastwirtschaft Volksgarten (Heilbronn)" target="_new">de:Gastwirtschaft Volksgarten (Heilbronn)</a>
+				</br>
+				Gastwirtschaft Volksgarten (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/74764304" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Keller (Horkheim)" target="_new">de:Keller (Horkheim)</a>
+				</br>
+				Keller (Horkheim)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/74796019" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schleusenstra&#223;e 7 (Horkheim)" target="_new">de:Schleusenstra&#223;e 7 (Horkheim)</a>
+				</br>
+				Schleusenstra&#223;e 7 (Horkheim)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/75592511" target="_new">Adler-Apotheke - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Adler-Apotheke (B&#246;ckingen)" target="_new">de:Adler-Apotheke (B&#246;ckingen)</a>
+				</br>
+				Adler-Apotheke (B&#246;ckingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/76676275" target="_new">Augustinuskirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Augustinus (Heilbronn)" target="_new">de:St. Augustinus (Heilbronn)</a>
+				</br>
+				St. Augustinus (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/78390463" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/B&#246;ckinger Stra&#223;e 7 (Neckargartach)" target="_new">de:B&#246;ckinger Stra&#223;e 7 (Neckargartach)</a>
+				</br>
+				B&#246;ckinger Stra&#223;e 7 (Neckargartach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/78412741" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Stallscheune Mittelstra&#223;e 20 (Neckargartach)" target="_new">de:Stallscheune Mittelstra&#223;e 20 (Neckargartach)</a>
+				</br>
+				Stallscheune Mittelstra&#223;e 20 (Neckargartach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/83047277" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Landmaschinenfabrik (Horkheim)" target="_new">de:Landmaschinenfabrik (Horkheim)</a>
+				</br>
+				Landmaschinenfabrik (Horkheim)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/83149904" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Theodor-Heuss-Stra&#223;e 143 (Klingenberg)" target="_new">de:Theodor-Heuss-Stra&#223;e 143 (Klingenberg)</a>
+				</br>
+				Theodor-Heuss-Stra&#223;e 143 (Klingenberg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/83188613" target="_new">Trappenseeschlösschen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Trappenseeschl&#246;sschen" target="_new">de:Trappenseeschl&#246;sschen</a>
+				</br>
+				Trappenseeschl&#246;sschen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/83869865" target="_new">Technisches Schulzentrum - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Technisches Schulzentrum Heilbronn" target="_new">de:Technisches Schulzentrum Heilbronn</a>
+				</br>
+				Technisches Schulzentrum Heilbronn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/90955239" target="_new">Sankt Johannes - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Johannes (Frankenbach)" target="_new">de:St. Johannes (Frankenbach)</a>
+				</br>
+				St. Johannes (Frankenbach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/91306087" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa Emil Teuffel" target="_new">de:Villa Emil Teuffel</a>
+				</br>
+				Villa Emil Teuffel
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/91306721" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa Bismarckstra&#223;e 54 (Heilbronn)" target="_new">de:Villa Bismarckstra&#223;e 54 (Heilbronn)</a>
+				</br>
+				Villa Bismarckstra&#223;e 54 (Heilbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/91306737" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Villa Frau Alfred Knorr" target="_new">de:Villa Frau Alfred Knorr</a>
+				</br>
+				Villa Frau Alfred Knorr
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/92112155" target="_new">Aukirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Aukirche (Heilbronn)" target="_new">de:Aukirche (Heilbronn)</a>
+				</br>
+				Aukirche (Heilbronn)
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1244853930)['wikidata'='Q2281139']['wikipedia'!~'.*'];
+node(241679474)['wikidata'='Q2255762']['wikipedia'!~'.*'];
+node(2626882436)['wikidata'='Q1268682']['wikipedia'!~'.*'];
+node(4269441393)['wikidata'='Q2156251']['wikipedia'!~'.*'];
+node(5438196218)['wikidata'='Q2631292']['wikipedia'!~'.*'];
+node(600002734)['wikidata'='Q1332606']['wikipedia'!~'.*'];
+node(8610569204)['wikidata'='Q1492012']['wikipedia'!~'.*'];
+node(955850932)['wikidata'='Q14912264']['wikipedia'!~'.*'];
+relation(1203264)['wikidata'='Q1786296']['wikipedia'!~'.*'];
+relation(1308188)['wikidata'='Q1726088']['wikipedia'!~'.*'];
+relation(3318344)['wikidata'='Q372165']['wikipedia'!~'.*'];
+relation(3318345)['wikidata'='Q1019591']['wikipedia'!~'.*'];
+relation(3318346)['wikidata'='Q875966']['wikipedia'!~'.*'];
+relation(3318347)['wikidata'='Q1241069']['wikipedia'!~'.*'];
+relation(3318348)['wikidata'='Q1411227']['wikipedia'!~'.*'];
+relation(3318349)['wikidata'='Q1166851']['wikipedia'!~'.*'];
+relation(3318351)['wikidata'='Q2302420']['wikipedia'!~'.*'];
+relation(4248413)['wikidata'='Q1296686']['wikipedia'!~'.*'];
+relation(4733293)['wikidata'='Q52545301']['wikipedia'!~'.*'];
+relation(550377)['wikidata'='Q9016']['wikipedia'!~'.*'];
+relation(550379)['wikidata'='Q9016']['wikipedia'!~'.*'];
+relation(722112)['wikidata'='Q2450001']['wikipedia'!~'.*'];
+relation(8300)['wikidata'='Q23787149']['wikipedia'!~'.*'];
+way(100544048)['wikidata'='Q759613']['wikipedia'!~'.*'];
+way(103766485)['wikidata'='Q2587968']['wikipedia'!~'.*'];
+way(104481861)['wikidata'='Q2567442']['wikipedia'!~'.*'];
+way(105484315)['wikidata'='Q2156248']['wikipedia'!~'.*'];
+way(105518245)['wikidata'='Q1590262']['wikipedia'!~'.*'];
+way(105518266)['wikidata'='Q16500109']['wikipedia'!~'.*'];
+way(106519396)['wikidata'='Q2417230']['wikipedia'!~'.*'];
+way(106523469)['wikidata'='Q1590011']['wikipedia'!~'.*'];
+way(106663784)['wikidata'='Q2064322']['wikipedia'!~'.*'];
+way(106670759)['wikidata'='Q1622835']['wikipedia'!~'.*'];
+way(107229526)['wikidata'='Q1590202']['wikipedia'!~'.*'];
+way(107454996)['wikidata'='Q1590442']['wikipedia'!~'.*'];
+way(107473845)['wikidata'='Q20670536']['wikipedia'!~'.*'];
+way(108020060)['wikidata'='Q1590156']['wikipedia'!~'.*'];
+way(108132230)['wikidata'='Q20602574']['wikipedia'!~'.*'];
+way(108382112)['wikidata'='Q1206182']['wikipedia'!~'.*'];
+way(108382115)['wikidata'='Q1206182']['wikipedia'!~'.*'];
+way(109740664)['wikidata'='Q1590015']['wikipedia'!~'.*'];
+way(110244902)['wikidata'='Q14553312']['wikipedia'!~'.*'];
+way(111250242)['wikidata'='Q1903225']['wikipedia'!~'.*'];
+way(119836054)['wikidata'='Q1551895']['wikipedia'!~'.*'];
+way(121564839)['wikidata'='Q60724761']['wikipedia'!~'.*'];
+way(12359355)['wikidata'='Q15134775']['wikipedia'!~'.*'];
+way(130333403)['wikidata'='Q405683']['wikipedia'!~'.*'];
+way(135967893)['wikidata'='Q1590280']['wikipedia'!~'.*'];
+way(135967919)['wikidata'='Q1590282']['wikipedia'!~'.*'];
+way(150536089)['wikidata'='Q1348360']['wikipedia'!~'.*'];
+way(150805558)['wikidata'='Q1309223']['wikipedia'!~'.*'];
+way(157019851)['wikidata'='Q1555507']['wikipedia'!~'.*'];
+way(167407995)['wikidata'='Q1590274']['wikipedia'!~'.*'];
+way(172990068)['wikidata'='Q1498602']['wikipedia'!~'.*'];
+way(203418070)['wikidata'='Q1594939']['wikipedia'!~'.*'];
+way(207341178)['wikidata'='Q1590694']['wikipedia'!~'.*'];
+way(218038995)['wikidata'='Q1958007']['wikipedia'!~'.*'];
+way(24034288)['wikidata'='Q2141789']['wikipedia'!~'.*'];
+way(24235347)['wikidata'='Q1590506']['wikipedia'!~'.*'];
+way(253391104)['wikidata'='Q20101465']['wikipedia'!~'.*'];
+way(28943850)['wikidata'='Q2592603']['wikipedia'!~'.*'];
+way(29070714)['wikidata'='Q28963809']['wikipedia'!~'.*'];
+way(30655656)['wikidata'='Q1590449']['wikipedia'!~'.*'];
+way(31514759)['wikidata'='Q23785607']['wikipedia'!~'.*'];
+way(32342513)['wikidata'='Q20754419']['wikipedia'!~'.*'];
+way(334685922)['wikidata'='Q52545304']['wikipedia'!~'.*'];
+way(334985704)['wikidata'='Q52554785']['wikipedia'!~'.*'];
+way(34605696)['wikidata'='Q1714391']['wikipedia'!~'.*'];
+way(35447343)['wikidata'='Q1206182']['wikipedia'!~'.*'];
+way(35559104)['wikidata'='Q1450284']['wikipedia'!~'.*'];
+way(37125857)['wikidata'='Q1614137']['wikipedia'!~'.*'];
+way(372749515)['wikidata'='Q98816260']['wikipedia'!~'.*'];
+way(37299060)['wikidata'='Q1516928']['wikipedia'!~'.*'];
+way(37299062)['wikidata'='Q2524780']['wikipedia'!~'.*'];
+way(37300301)['wikidata'='Q437738']['wikipedia'!~'.*'];
+way(37390031)['wikidata'='Q1258488']['wikipedia'!~'.*'];
+way(42034767)['wikidata'='Q16466314']['wikipedia'!~'.*'];
+way(42034874)['wikidata'='Q16466316']['wikipedia'!~'.*'];
+way(42815707)['wikidata'='Q1340126']['wikipedia'!~'.*'];
+way(43523661)['wikidata'='Q1590080']['wikipedia'!~'.*'];
+way(43567184)['wikidata'='Q1590077']['wikipedia'!~'.*'];
+way(49806994)['wikidata'='Q1407060']['wikipedia'!~'.*'];
+way(498688157)['wikidata'='Q14515904']['wikipedia'!~'.*'];
+way(51416933)['wikidata'='Q1714853']['wikipedia'!~'.*'];
+way(51733626)['wikidata'='Q1309777']['wikipedia'!~'.*'];
+way(51733630)['wikidata'='Q1590033']['wikipedia'!~'.*'];
+way(51733633)['wikidata'='Q1590683']['wikipedia'!~'.*'];
+way(51733654)['wikidata'='Q1590684']['wikipedia'!~'.*'];
+way(51733655)['wikidata'='Q1381292']['wikipedia'!~'.*'];
+way(51733662)['wikidata'='Q1450906']['wikipedia'!~'.*'];
+way(51733669)['wikidata'='Q2525063']['wikipedia'!~'.*'];
+way(51817892)['wikidata'='Q1590141']['wikipedia'!~'.*'];
+way(52290783)['wikidata'='Q1575244']['wikipedia'!~'.*'];
+way(5407837)['wikidata'='Q1457287']['wikipedia'!~'.*'];
+way(54277552)['wikidata'='Q1158663']['wikipedia'!~'.*'];
+way(55275582)['wikidata'='Q94151656']['wikipedia'!~'.*'];
+way(56696434)['wikidata'='Q1590137']['wikipedia'!~'.*'];
+way(56696436)['wikidata'='Q1571837']['wikipedia'!~'.*'];
+way(60499785)['wikidata'='Q438111']['wikipedia'!~'.*'];
+way(60761796)['wikidata'='Q1512920']['wikipedia'!~'.*'];
+way(64841505)['wikidata'='Q1337356']['wikipedia'!~'.*'];
+way(64967986)['wikidata'='Q1788337']['wikipedia'!~'.*'];
+way(65017188)['wikidata'='Q2525437']['wikipedia'!~'.*'];
+way(67120233)['wikidata'='Q2320646']['wikipedia'!~'.*'];
+way(69479423)['wikidata'='Q1279725']['wikipedia'!~'.*'];
+way(69883605)['wikidata'='Q1495459']['wikipedia'!~'.*'];
+way(69883678)['wikidata'='Q2588106']['wikipedia'!~'.*'];
+way(69899819)['wikidata'='Q1590415']['wikipedia'!~'.*'];
+way(69941995)['wikidata'='Q1468285']['wikipedia'!~'.*'];
+way(69946237)['wikidata'='Q1411492']['wikipedia'!~'.*'];
+way(720559355)['wikidata'='Q1694069']['wikipedia'!~'.*'];
+way(725730239)['wikidata'='Q1495691']['wikipedia'!~'.*'];
+way(74764304)['wikidata'='Q1724811']['wikipedia'!~'.*'];
+way(74796019)['wikidata'='Q1575247']['wikipedia'!~'.*'];
+way(75592511)['wikidata'='Q358022']['wikipedia'!~'.*'];
+way(76676275)['wikidata'='Q768936']['wikipedia'!~'.*'];
+way(78390463)['wikidata'='Q1523460']['wikipedia'!~'.*'];
+way(78412741)['wikidata'='Q2329402']['wikipedia'!~'.*'];
+way(83047277)['wikidata'='Q1803635']['wikipedia'!~'.*'];
+way(83149904)['wikidata'='Q1590583']['wikipedia'!~'.*'];
+way(83188613)['wikidata'='Q2449998']['wikipedia'!~'.*'];
+way(83869865)['wikidata'='Q1525353']['wikipedia'!~'.*'];
+way(90955239)['wikidata'='Q2319189']['wikipedia'!~'.*'];
+way(91306087)['wikidata'='Q2525029']['wikipedia'!~'.*'];
+way(91306721)['wikidata'='Q1688851']['wikipedia'!~'.*'];
+way(91306737)['wikidata'='Q1663898']['wikipedia'!~'.*'];
+way(92112155)['wikidata'='Q771200']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikidata from wikipedia tag"><h2 id="wikidata from wikipedia tag">wikidata from wikipedia tag</h2></a>
+				</br>
+				Q1300145 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1943409712" target="_new">Rathaus Ehrenhalle - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q17434401 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/6366600" target="_new">Neckarweg Abschnitt 6: Lauffen - Bad Wimpfen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1492007 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/104513626" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2525423 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/104515075" target="_new">Hotel Park Villa - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1783653 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/106669347" target="_new">Harmonie - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q800908 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/108039804" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1552206 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/142453536" target="_new">Grünewaldschule - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1980227 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/232415970" target="_new">Komödiantenbrunnen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1408022 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/30316472" target="_new">Wilhelm-Waiblinger-Haus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q14515904 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/34118435" target="_new">Hagenbucher - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1590706 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/35559110" target="_new">Zehender am Markt - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1973752 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/414499748" target="_new">Neckartalbrücke - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q972733 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/48058269" target="_new">Bürgeramt Sontheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2300535 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/48058270" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1012492 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/684027357" target="_new">Horkheimer Burg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1299522 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/78337599" target="_new">Altes Rathaus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2082455 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/78412755" target="_new">Pfarramt Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2329402 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/78412768" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1879269 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/85362984" target="_new">Läpple - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2525132 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/88385089" target="_new">Villa Fuchs - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1943409712)['wikidata'!~'.*']['wikipedia'='de:Ehrenhalle (Heilbronn)'];
+relation(6366600)['wikidata'!~'.*']['wikipedia'='de:Neckarweg'];
+way(104513626)['wikidata'!~'.*']['wikipedia'='de:Villa Moosbrugger'];
+way(104515075)['wikidata'!~'.*']['wikipedia'='de:Villa Mayer'];
+way(106669347)['wikidata'!~'.*']['wikipedia'='de:Konzert- und Kongresszentrum Harmonie (Heilbronn)'];
+way(108039804)['wikidata'!~'.*']['wikipedia'='de:Bahnhof Heilbronn S&#252;d'];
+way(142453536)['wikidata'!~'.*']['wikipedia'='de:Gr&#252;newaldschule Grundschule B&#246;ckingen'];
+way(232415970)['wikidata'!~'.*']['wikipedia'='de:Neuer Stadtbrunnen (Heilbronn)'];
+way(30316472)['wikidata'!~'.*']['wikipedia'='de:Wilhelm-Waiblinger-Haus (Heilbronn)'];
+way(34118435)['wikidata'!~'.*']['wikipedia'='de:Experimenta Heilbronn'];
+way(35559110)['wikidata'!~'.*']['wikipedia'='de:Haus Zehender'];
+way(414499748)['wikidata'!~'.*']['wikipedia'='de:Neckartalbr&#252;cke Heilbronn'];
+way(48058269)['wikidata'!~'.*']['wikipedia'='de:Ehemaliges Rathaus (Sontheim)'];
+way(48058270)['wikidata'!~'.*']['wikipedia'='de:Sommerhaus des Deutschordens Heilbronn'];
+way(684027357)['wikidata'!~'.*']['wikipedia'='de:Burg Horkheim'];
+way(78337599)['wikidata'!~'.*']['wikipedia'='de:Ehemaliges Rathaus (Neckargartach)'];
+way(78412755)['wikidata'!~'.*']['wikipedia'='de:Pfarrhaus (Neckargartach)'];
+way(78412768)['wikidata'!~'.*']['wikipedia'='de:Stallscheune Mittelstra&#223;e 20 (Neckargartach)'];
+way(85362984)['wikidata'!~'.*']['wikipedia'='de:L&#228;pple AG'];
+way(88385089)['wikidata'!~'.*']['wikipedia'='de:Villa_Fuchs_(Heilbronn)'];
+); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>

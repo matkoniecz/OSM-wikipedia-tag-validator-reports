@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-01-04. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,549 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li></ul>			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q1954536 vs (missing) article redirects from de:Museum der Brotkultur to de:Museum Brot und Kunst
+				</br>
+				<a href="https://openstreetmap.org/node/949755841" target="_new">Museum der Brotkultur - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Museum Brot und Kunst" target="_new">de:Museum Brot und Kunst</a>
+				</br>
+				Museum Brot und Kunst
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(949755841)['wikidata'='Q1954536']['wikipedia'='de:Museum der Brotkultur'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1379401801" target="_new">Donauschwäbisches Zentralmuseum - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Donauschw&#228;bisches Zentralmuseum" target="_new">de:Donauschw&#228;bisches Zentralmuseum</a>
+				</br>
+				Donauschw&#228;bisches Zentralmuseum
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1385687918" target="_new">Ulm-Söflingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnhof Ulm-S&#246;flingen" target="_new">de:Bahnhof Ulm-S&#246;flingen</a>
+				</br>
+				Bahnhof Ulm-S&#246;flingen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1641514598" target="_new">Albert-Einstein-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Albert-Einstein-Gymnasium Ulm" target="_new">de:Albert-Einstein-Gymnasium Ulm</a>
+				</br>
+				Albert-Einstein-Gymnasium Ulm
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1921570956" target="_new">Berblinger-Turm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Berblinger-Turm" target="_new">de:Berblinger-Turm</a>
+				</br>
+				Berblinger-Turm
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/4406683143" target="_new">Ulm Ost - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Haltepunkt Ulm Ost" target="_new">de:Haltepunkt Ulm Ost</a>
+				</br>
+				Haltepunkt Ulm Ost
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/443722493" target="_new">König-Wilhelm-Turm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/K&#246;nig-Wilhelm-Turm" target="_new">de:K&#246;nig-Wilhelm-Turm</a>
+				</br>
+				K&#246;nig-Wilhelm-Turm
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/5842280787" target="_new">Theater Ulüm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Theater Ul&#252;m" target="_new">de:Theater Ul&#252;m</a>
+				</br>
+				Theater Ul&#252;m
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/7398040431" target="_new">Ulm-Donautal - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Haltepunkt Ulm-Donautal" target="_new">de:Haltepunkt Ulm-Donautal</a>
+				</br>
+				Haltepunkt Ulm-Donautal
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/872811096" target="_new">Sender Ulm-Kuhberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Sender Ulm-Kuhberg" target="_new">de:Sender Ulm-Kuhberg</a>
+				</br>
+				Sender Ulm-Kuhberg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/14995209" target="_new">IRE 200: Wendlingen => Ulm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/IRE 200" target="_new">de:IRE 200</a>
+				</br>
+				IRE 200
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/15079241" target="_new">IRE 200: Ulm => Wendlingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/IRE 200" target="_new">de:IRE 200</a>
+				</br>
+				IRE 200
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/3172316" target="_new">Reichenauerhof - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Reichenauer Hof (Ulm)" target="_new">de:Reichenauer Hof (Ulm)</a>
+				</br>
+				Reichenauer Hof (Ulm)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/32114" target="_new">Hohenlohe-Ostalb-Weg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hohenlohe-Ostalb-Weg" target="_new">de:Hohenlohe-Ostalb-Weg</a>
+				</br>
+				Hohenlohe-Ostalb-Weg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/4618821" target="_new">Universität Ulm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Universit&#228;t Ulm" target="_new">de:Universit&#228;t Ulm</a>
+				</br>
+				Universit&#228;t Ulm
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/8300" target="_new">Alb-Neckar-Radweg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Alb-Neckar-Radweg" target="_new">de:Alb-Neckar-Radweg</a>
+				</br>
+				Alb-Neckar-Radweg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/105349871" target="_new">Zentrum für Gestaltung - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hochschule f&#252;r Gestaltung Ulm" target="_new">de:Hochschule f&#252;r Gestaltung Ulm</a>
+				</br>
+				Hochschule f&#252;r Gestaltung Ulm
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/110584207" target="_new">Neutorbrücke - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Neutorbr&#252;cke (Ulm)" target="_new">de:Neutorbr&#252;cke (Ulm)</a>
+				</br>
+				Neutorbr&#252;cke (Ulm)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/114077976" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bundeswehrkrankenhaus Ulm" target="_new">de:Bundeswehrkrankenhaus Ulm</a>
+				</br>
+				Bundeswehrkrankenhaus Ulm
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/115626017" target="_new">Institut für Lasertechnologien in der Medizin und Meßtechnik - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Institut f&#252;r Lasertechnologien in der Medizin und Me&#223;technik" target="_new">de:Institut f&#252;r Lasertechnologien in der Medizin und Me&#223;technik</a>
+				</br>
+				Institut f&#252;r Lasertechnologien in der Medizin und Me&#223;technik
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/134686147" target="_new">Ulmer Münz - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ulmer M&#252;nz" target="_new">de:Ulmer M&#252;nz</a>
+				</br>
+				Ulmer M&#252;nz
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/157823629" target="_new">Versöhnungskirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Vers&#246;hnungskirche (Ulm)" target="_new">de:Vers&#246;hnungskirche (Ulm)</a>
+				</br>
+				Vers&#246;hnungskirche (Ulm)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/196484235" target="_new">Radio 7 - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Radio 7 (Ulm)" target="_new">de:Radio 7 (Ulm)</a>
+				</br>
+				Radio 7 (Ulm)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/200173435" target="_new">Allerheiligenkirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Allerheiligenkirche (Lehr)" target="_new">de:Allerheiligenkirche (Lehr)</a>
+				</br>
+				Allerheiligenkirche (Lehr)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/25906919" target="_new">Anna-Essinger-Gymnasium & Anna-Essinger-Realschule - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Anna-Essinger-Gymnasium Ulm" target="_new">de:Anna-Essinger-Gymnasium Ulm</a>
+				</br>
+				Anna-Essinger-Gymnasium Ulm
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/35422128" target="_new">Schubart-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schubart-Gymnasium Ulm" target="_new">de:Schubart-Gymnasium Ulm</a>
+				</br>
+				Schubart-Gymnasium Ulm
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/361240594" target="_new">Universitätsklinikum Ulm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Universit&#228;tsklinikum Ulm" target="_new">de:Universit&#228;tsklinikum Ulm</a>
+				</br>
+				Universit&#228;tsklinikum Ulm
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/405677079" target="_new">Flugplatz Erbach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Flugplatz Erbach" target="_new">de:Flugplatz Erbach</a>
+				</br>
+				Flugplatz Erbach
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/423437033" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/B&#252;chsengasse 12" target="_new">de:B&#252;chsengasse 12</a>
+				</br>
+				B&#252;chsengasse 12
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/614515727" target="_new">Donaustadion - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Donaustadion" target="_new">de:Donaustadion</a>
+				</br>
+				Donaustadion
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/86846523" target="_new">Donauhalle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Donauhalle" target="_new">de:Donauhalle</a>
+				</br>
+				Donauhalle
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/88119555" target="_new">Blautal-Center - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Blautal-Center" target="_new">de:Blautal-Center</a>
+				</br>
+				Blautal-Center
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/89219260" target="_new">Kornhaus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kornhaus (Ulm)" target="_new">de:Kornhaus (Ulm)</a>
+				</br>
+				Kornhaus (Ulm)
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1379401801)['wikidata'='Q1241000']['wikipedia'!~'.*'];
+node(1385687918)['wikidata'='Q64492889']['wikipedia'!~'.*'];
+node(1641514598)['wikidata'='Q2637437']['wikipedia'!~'.*'];
+node(1921570956)['wikidata'='Q95101599']['wikipedia'!~'.*'];
+node(4406683143)['wikidata'='Q55636481']['wikipedia'!~'.*'];
+node(443722493)['wikidata'='Q105028900']['wikipedia'!~'.*'];
+node(5842280787)['wikidata'='Q285608']['wikipedia'!~'.*'];
+node(7398040431)['wikidata'='Q55636480']['wikipedia'!~'.*'];
+node(872811096)['wikidata'='Q2270632']['wikipedia'!~'.*'];
+relation(14995209)['wikidata'='Q114680512']['wikipedia'!~'.*'];
+relation(15079241)['wikidata'='Q114680512']['wikipedia'!~'.*'];
+relation(3172316)['wikidata'='Q2139130']['wikipedia'!~'.*'];
+relation(32114)['wikidata'='Q23787485']['wikipedia'!~'.*'];
+relation(4618821)['wikidata'='Q835662']['wikipedia'!~'.*'];
+relation(8300)['wikidata'='Q23787149']['wikipedia'!~'.*'];
+way(105349871)['wikidata'='Q591905']['wikipedia'!~'.*'];
+way(110584207)['wikidata'='Q18026354']['wikipedia'!~'.*'];
+way(114077976)['wikidata'='Q1009277']['wikipedia'!~'.*'];
+way(115626017)['wikidata'='Q1664908']['wikipedia'!~'.*'];
+way(134686147)['wikidata'='Q23044274']['wikipedia'!~'.*'];
+way(157823629)['wikidata'='Q15852728']['wikipedia'!~'.*'];
+way(196484235)['wikidata'='Q1682823']['wikipedia'!~'.*'];
+way(200173435)['wikidata'='Q2648551']['wikipedia'!~'.*'];
+way(25906919)['wikidata'='Q558932']['wikipedia'!~'.*'];
+way(35422128)['wikidata'='Q15128001']['wikipedia'!~'.*'];
+way(361240594)['wikidata'='Q2496404']['wikipedia'!~'.*'];
+way(405677079)['wikidata'='Q1433580']['wikipedia'!~'.*'];
+way(423437033)['wikidata'='Q59557386']['wikipedia'!~'.*'];
+way(614515727)['wikidata'='Q322858']['wikipedia'!~'.*'];
+way(86846523)['wikidata'='Q5295457']['wikipedia'!~'.*'];
+way(88119555)['wikidata'='Q883079']['wikipedia'!~'.*'];
+way(89219260)['wikidata'='Q1784550']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag, unexpected language"><h2 id="wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/969115038" target="_new">Fischerviertel - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://pl.wikipedia.org/wiki/Dzielnica Rybacka (Ulm)" target="_new">pl:Dzielnica Rybacka (Ulm)</a>
+				</br>
+				Dzielnica Rybacka (Ulm)
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(969115038)['wikidata'='Q9248436']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag, unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikidata from wikipedia tag"><h2 id="wikidata from wikipedia tag">wikidata from wikipedia tag</h2></a>
+				</br>
+				Q2475383 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1884620424" target="_new">Ulmer Schachtel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1147996 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/710419643" target="_new">Sendemast Ulm-Jungingen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q41150 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/11261990" target="_new">Jakobsweg Neresheim - Ulm - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q278033 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/7692476" target="_new">5302 Augsburg - Ulm - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q50709 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/9584658" target="_new">Bundesfestung Ulm - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q23787155 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/107627069" target="_new">Steinhaus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1802905 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/119796462" target="_new">Justizgebäude - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2165191 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/128551562" target="_new">Rommel-Kaserne - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q322858 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/159845612" target="_new">Donaustadion - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q50709 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/169043963" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2137616 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/203211471" target="_new">DB-Instandhaltungswerk - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q181304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/247657226" target="_new">Kloster Wiblingen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15117599 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/262041440" target="_new">Böfinger Halde - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1354730 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/375446116" target="_new">Hauptzollamt - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1755249 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/46731574" target="_new">Bibliotheks-Zentrale Universität-West - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q24034736 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/628269337" target="_new">Feuerwache Ulm - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1622371 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/863415789" target="_new">Hochsträß - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1341535 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/93586316" target="_new">Energon - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1884620424)['wikidata'!~'.*']['wikipedia'='de:Ulmer Schachtel'];
+node(710419643)['wikidata'!~'.*']['wikipedia'='de:Sender Ulm-Jungingen'];
+relation(11261990)['wikidata'!~'.*']['wikipedia'='de:Jakobsweg'];
+relation(7692476)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Augsburg&#8211;Ulm'];
+relation(9584658)['wikidata'!~'.*']['wikipedia'='de:Bundesfestung Ulm'];
+way(107627069)['wikidata'!~'.*']['wikipedia'='de:Nikolauskapelle und Steinhaus'];
+way(119796462)['wikidata'!~'.*']['wikipedia'='de:Landgericht Ulm'];
+way(128551562)['wikidata'!~'.*']['wikipedia'='de:Rommel-Kaserne (Dornstadt)'];
+way(159845612)['wikidata'!~'.*']['wikipedia'='de:Donaustadion'];
+way(169043963)['wikidata'!~'.*']['wikipedia'='de:Bundesfestung Ulm'];
+way(203211471)['wikidata'!~'.*']['wikipedia'='de:Ulm Rangierbahnhof'];
+way(247657226)['wikidata'!~'.*']['wikipedia'='de:Kloster Wiblingen'];
+way(262041440)['wikidata'!~'.*']['wikipedia'='de:Kraftwerk B&#246;finger Halde'];
+way(375446116)['wikidata'!~'.*']['wikipedia'='de:Hauptzollamt'];
+way(46731574)['wikidata'!~'.*']['wikipedia'='de:Kommunikations- und Informationszentrum'];
+way(628269337)['wikidata'!~'.*']['wikipedia'='de:Feuerwehr Ulm'];
+way(863415789)['wikidata'!~'.*']['wikipedia'='de:Hochstr&#228;&#223;'];
+way(93586316)['wikidata'!~'.*']['wikipedia'='de:Energon'];
+); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>

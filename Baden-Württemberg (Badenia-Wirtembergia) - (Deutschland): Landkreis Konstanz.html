@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-01-04. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,146 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Remember to check whatever edit makes sense! All reports are at this page because this tasks require human judgment to verify whatever proposed edit makes sense.
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#malformed wikipedia tag">malformed wikipedia tag</a></li><li><a href="#should use a secondary wikipedia tag - linking to a human">should use a secondary wikipedia tag - linking to a human</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#malformed secondary wikidata tag">malformed secondary wikidata tag</a></li></ul>			</br>
+			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q57996268 vs Q27861321 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/103559146" target="_new">Steinbruch Hutzeln - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q57996266 vs Q27861321 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/199920687" target="_new">Feuchtgebiet Schlatter Seele - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q21968094 vs Q303967 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/815725924" target="_new">NSG Halbinsel Mettnau - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(103559146)['wikidata'='Q57996268']['wikipedia'='de:Liste der Naturdenkmale in Tengen'];
+way(199920687)['wikidata'='Q57996266']['wikipedia'='de:Liste der Naturdenkmale in Tengen'];
+way(815725924)['wikidata'='Q21968094']['wikipedia'='de:Mettnau'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#malformed wikipedia tag"><h2 id="malformed wikipedia tag">malformed wikipedia tag</h2></a>
+				</br>
+				malformed value in wikipedia tag (de:de:Schweizerische Schifffahrtsgesellschaft Untersee und Rhein)
+				</br>
+				<a href="https://openstreetmap.org/node/984751708" target="_new">Gaienhofen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed value in wikipedia tag (de:de:Schweizerische Schifffahrtsgesellschaft Untersee und Rhein)
+				</br>
+				<a href="https://openstreetmap.org/node/984751974" target="_new">Hemmenhofen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed value in wikipedia tag (Schloss Langenrain)
+				</br>
+				<a href="https://openstreetmap.org/way/242599680" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(984751708)['wikipedia'='de:de:Schweizerische Schifffahrtsgesellschaft Untersee und Rhein'];
+node(984751974)['wikipedia'='de:de:Schweizerische Schifffahrtsgesellschaft Untersee und Rhein'];
+way(242599680)['wikipedia'='Schloss Langenrain'];
+); (._;>;); out meta qt;//['malformed wikipedia tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#should use a secondary wikipedia tag - linking to a human"><h2 id="should use a secondary wikipedia tag - linking to a human">should use a secondary wikipedia tag - linking to a human</h2></a>
+				</br>
+				linked wikidata entry (Q77269) is about a human, so it is very unlikely to be correct <br />        subject:wikipedia=* or name:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				</br>
+				<a href="https://openstreetmap.org/node/3095252605" target="_new">Georg Elser - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(3095252605)['wikidata'='Q77269'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking to a human']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikidata tag points to a redirect that should be followed
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/way/99766006" target="_new">Schloss Seeheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(99766006)['wikidata'='Q2243488']['wikipedia'='de:Schloss Seeheim'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
+				</br>
+				network:wikidata=Q1484666 is present despite that not:network:wikidata=Q1484666 is also present - at least one of them is wrong
+				</br>
+				<a href="https://openstreetmap.org/node/4137198763" target="_new">Stockach Busbahnhof - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(4137198763)['network:wikidata'='Q1484666']['not:network:wikidata'='Q1484666'];
+); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#malformed secondary wikidata tag"><h2 id="malformed secondary wikidata tag">malformed secondary wikidata tag</h2></a>
+				</br>
+				malformed value in taxon:wikidata tag (yyy)
+				</br>
+				<a href="https://openstreetmap.org/node/8770132772" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed value in taxon:wikidata tag (yyy)
+				</br>
+				<a href="https://openstreetmap.org/node/8770132776" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(8770132772)['taxon:wikidata'='yyy'];
+node(8770132776)['taxon:wikidata'='yyy'];
+); (._;>;); out meta qt;//['malformed secondary wikidata tag']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>

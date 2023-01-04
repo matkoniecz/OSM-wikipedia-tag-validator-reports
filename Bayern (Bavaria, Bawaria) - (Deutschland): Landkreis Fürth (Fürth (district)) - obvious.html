@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-01-04. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,1055 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li></ul>			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q2130875 vs (missing) article redirects from de:Rangaubahn to de:Bahnstrecke F&#252;rth&#8211;Cadolzburg
+				</br>
+				<a href="https://openstreetmap.org/relation/100331" target="_new">KBS 808: Fürth - Cadolzburg (Rangaubahn) - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnstrecke F&#252;rth&#8211;Cadolzburg" target="_new">de:Bahnstrecke F&#252;rth&#8211;Cadolzburg</a>
+				</br>
+				Bahnstrecke F&#252;rth&#8211;Cadolzburg
+				</br>
+				<hr>
+				</br>
+				Q105973793 vs (missing) article redirects from de:KulturWanderweg Hohenzollern to de:Kulturwanderweg Hohenzollern
+				</br>
+				<a href="https://openstreetmap.org/relation/12451691" target="_new">KulturWanderweg Hohenzollern - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kulturwanderweg Hohenzollern" target="_new">de:Kulturwanderweg Hohenzollern</a>
+				</br>
+				Kulturwanderweg Hohenzollern
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(100331)['wikidata'='Q2130875']['wikipedia'='de:Rangaubahn'];
+relation(12451691)['wikidata'='Q105973793']['wikipedia'='de:KulturWanderweg Hohenzollern'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1141064893" target="_new">Weinzierlein - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Weinzierlein" target="_new">de:Weinzierlein</a>
+				</br>
+				Weinzierlein
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/310003722" target="_new">Schwadermühle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schwaderm&#252;hle (Cadolzburg)" target="_new">de:Schwaderm&#252;hle (Cadolzburg)</a>
+				</br>
+				Schwaderm&#252;hle (Cadolzburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/3431993809" target="_new">Neumühle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Neum&#252;hle (Langenzenn)" target="_new">de:Neum&#252;hle (Langenzenn)</a>
+				</br>
+				Neum&#252;hle (Langenzenn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/362210597" target="_new">Wasenmühle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wasenm&#252;hle (Langenzenn)" target="_new">de:Wasenm&#252;hle (Langenzenn)</a>
+				</br>
+				Wasenm&#252;hle (Langenzenn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/3685707325" target="_new">Heinersdorfer Mühle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Heinersdorfer M&#252;hle" target="_new">de:Heinersdorfer M&#252;hle</a>
+				</br>
+				Heinersdorfer M&#252;hle
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/716958158" target="_new">CVW - Privatbank AG - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/CVW-Privatbank" target="_new">de:CVW-Privatbank</a>
+				</br>
+				CVW-Privatbank
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/873637575" target="_new">Roßtal - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ro&#223;tal" target="_new">de:Ro&#223;tal</a>
+				</br>
+				Ro&#223;tal
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/956179459" target="_new">Ziegelhütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ziegelh&#252;tte (Gro&#223;habersdorf)" target="_new">de:Ziegelh&#252;tte (Gro&#223;habersdorf)</a>
+				</br>
+				Ziegelh&#252;tte (Gro&#223;habersdorf)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11032993" target="_new">Mittel-Europäische Gasleitung (MEGAL) - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Mittel-Europ&#228;ische Gasleitung" target="_new">de:Mittel-Europ&#228;ische Gasleitung</a>
+				</br>
+				Mittel-Europ&#228;ische Gasleitung
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1385401" target="_new">Rangau-Ostweg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rangau-Ostweg" target="_new">de:Rangau-Ostweg</a>
+				</br>
+				Rangau-Ostweg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1385429" target="_new">Aurach-Weg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Aurach-Weg" target="_new">de:Aurach-Weg</a>
+				</br>
+				Aurach-Weg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/2070994" target="_new">TMC 50206 (B 14) - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bundesstra&#223;e 14" target="_new">de:Bundesstra&#223;e 14</a>
+				</br>
+				Bundesstra&#223;e 14
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/145772606" target="_new">St. Veit - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Veit (Kirchfembach)" target="_new">de:St. Veit (Kirchfembach)</a>
+				</br>
+				St. Veit (Kirchfembach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/218246682" target="_new">St. Ägidius - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. &#196;gidius (Weitersdorf)" target="_new">de:St. &#196;gidius (Weitersdorf)</a>
+				</br>
+				St. &#196;gidius (Weitersdorf)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/218800616" target="_new">Markgrafenkirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. C&#228;cilia (Cadolzburg)" target="_new">de:St. C&#228;cilia (Cadolzburg)</a>
+				</br>
+				St. C&#228;cilia (Cadolzburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/243102592" target="_new">St. Johannes der Täufer - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Johannes der T&#228;ufer (Zautendorf)" target="_new">de:St. Johannes der T&#228;ufer (Zautendorf)</a>
+				</br>
+				St. Johannes der T&#228;ufer (Zautendorf)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/245130227" target="_new">St. Maria Magdalena - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Maria Magdalena (Buchschwabach)" target="_new">de:St. Maria Magdalena (Buchschwabach)</a>
+				</br>
+				St. Maria Magdalena (Buchschwabach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/271990630" target="_new">St. Jakobus und St. Ägidius - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. &#196;gidius (Buttendorf)" target="_new">de:St. &#196;gidius (Buttendorf)</a>
+				</br>
+				St. &#196;gidius (Buttendorf)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/28132061" target="_new">Gymnasium Stein - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gymnasium Stein" target="_new">de:Gymnasium Stein</a>
+				</br>
+				Gymnasium Stein
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/310918886" target="_new">Spitalkirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Spitalkirche (Wilhermsdorf)" target="_new">de:Spitalkirche (Wilhermsdorf)</a>
+				</br>
+				Spitalkirche (Wilhermsdorf)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/315348426" target="_new">St. Laurentius - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Laurentius (Vincenzenbronn)" target="_new">de:St. Laurentius (Vincenzenbronn)</a>
+				</br>
+				St. Laurentius (Vincenzenbronn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/328025101" target="_new">St. Georg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Georg (Laubendorf)" target="_new">de:St. Georg (Laubendorf)</a>
+				</br>
+				St. Georg (Laubendorf)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/353441457" target="_new">Friedhofskapelle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Friedhofskirche (Langenzenn)" target="_new">de:Friedhofskirche (Langenzenn)</a>
+				</br>
+				Friedhofskirche (Langenzenn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/364320111" target="_new">Rathaus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Altes Rathaus Langenzenn" target="_new">de:Altes Rathaus Langenzenn</a>
+				</br>
+				Altes Rathaus Langenzenn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/370141735" target="_new">St. Walburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Walburg (Gro&#223;habersdorf)" target="_new">de:St. Walburg (Gro&#223;habersdorf)</a>
+				</br>
+				St. Walburg (Gro&#223;habersdorf)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/378316397" target="_new">St. Martin - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Martin (Ro&#223;endorf)" target="_new">de:St. Martin (Ro&#223;endorf)</a>
+				</br>
+				St. Martin (Ro&#223;endorf)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/39498103" target="_new">St. Laurentius - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Laurentius (Ro&#223;tal)" target="_new">de:St. Laurentius (Ro&#223;tal)</a>
+				</br>
+				St. Laurentius (Ro&#223;tal)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/57785918" target="_new">St. Martin und Maria - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Martin und Maria (Wilhermsdorf)" target="_new">de:St. Martin und Maria (Wilhermsdorf)</a>
+				</br>
+				St. Martin und Maria (Wilhermsdorf)
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1141064893)['wikidata'='Q2556325']['wikipedia'!~'.*'];
+node(310003722)['wikidata'='Q57415462']['wikipedia'!~'.*'];
+node(3431993809)['wikidata'='Q57263333']['wikipedia'!~'.*'];
+node(362210597)['wikidata'='Q57244698']['wikipedia'!~'.*'];
+node(3685707325)['wikidata'='Q57238902']['wikipedia'!~'.*'];
+node(716958158)['wikidata'='Q2665025']['wikipedia'!~'.*'];
+node(873637575)['wikidata'='Q521661']['wikipedia'!~'.*'];
+node(956179459)['wikidata'='Q198657']['wikipedia'!~'.*'];
+relation(11032993)['wikidata'='Q832198']['wikipedia'!~'.*'];
+relation(1385401)['wikidata'='Q105957516']['wikipedia'!~'.*'];
+relation(1385429)['wikidata'='Q105994454']['wikipedia'!~'.*'];
+relation(2070994)['wikidata'='Q34476']['wikipedia'!~'.*'];
+way(145772606)['wikidata'='Q41233732']['wikipedia'!~'.*'];
+way(218246682)['wikidata'='Q41366128']['wikipedia'!~'.*'];
+way(218800616)['wikidata'='Q41369689']['wikipedia'!~'.*'];
+way(243102592)['wikidata'='Q41369800']['wikipedia'!~'.*'];
+way(245130227)['wikidata'='Q41366000']['wikipedia'!~'.*'];
+way(271990630)['wikidata'='Q41366009']['wikipedia'!~'.*'];
+way(28132061)['wikidata'='Q1558241']['wikipedia'!~'.*'];
+way(310918886)['wikidata'='Q41370221']['wikipedia'!~'.*'];
+way(315348426)['wikidata'='Q41365924']['wikipedia'!~'.*'];
+way(328025101)['wikidata'='Q41233745']['wikipedia'!~'.*'];
+way(353441457)['wikidata'='Q41233708']['wikipedia'!~'.*'];
+way(364320111)['wikidata'='Q41233645']['wikipedia'!~'.*'];
+way(370141735)['wikidata'='Q41365870']['wikipedia'!~'.*'];
+way(378316397)['wikidata'='Q41369790']['wikipedia'!~'.*'];
+way(39498103)['wikidata'='Q41366109']['wikipedia'!~'.*'];
+way(57785918)['wikidata'='Q41370143']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag, unexpected language"><h2 id="wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/4746813156" target="_new">Wilhermsdorf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Wilhermsdorf station" target="_new">en:Wilhermsdorf station</a>
+				</br>
+				Wilhermsdorf station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/6066525487" target="_new">Burg Cadolzburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://nl.wikipedia.org/wiki/Cadolzburg (burcht)" target="_new">nl:Cadolzburg (burcht)</a>
+				</br>
+				Cadolzburg (burcht)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/6544644333" target="_new">Cadolzburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Cadolzburg station" target="_new">en:Cadolzburg station</a>
+				</br>
+				Cadolzburg station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/relation/10511961" target="_new">S-Bahn S4: Ansbach => Nürnberg Hauptbahnhof - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/S4 (Nuremberg)" target="_new">en:S4 (Nuremberg)</a>
+				</br>
+				S4 (Nuremberg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/relation/10511962" target="_new">S-Bahn S4: Nürnberg Hauptbahnhof => Ansbach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/S4 (Nuremberg)" target="_new">en:S4 (Nuremberg)</a>
+				</br>
+				S4 (Nuremberg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/relation/10511963" target="_new">S-Bahn S4: Nürnberg Hauptbahnhof => Anwanden => Ansbach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/S4 (Nuremberg)" target="_new">en:S4 (Nuremberg)</a>
+				</br>
+				S4 (Nuremberg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/relation/2199151" target="_new">S-Bahn S4: Nürnberg Hauptbahnhof => Dombühl - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/S4 (Nuremberg)" target="_new">en:S4 (Nuremberg)</a>
+				</br>
+				S4 (Nuremberg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/relation/2199208" target="_new">S-Bahn S4: Dombühl => Nürnberg Hauptbahnhof - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/S4 (Nuremberg)" target="_new">en:S4 (Nuremberg)</a>
+				</br>
+				S4 (Nuremberg)
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(4746813156)['wikidata'='Q55637671']['wikipedia'!~'.*'];
+node(6066525487)['wikidata'='Q41369686']['wikipedia'!~'.*'];
+node(6544644333)['wikidata'='Q63406405']['wikipedia'!~'.*'];
+relation(10511961)['wikidata'='Q7388307']['wikipedia'!~'.*'];
+relation(10511962)['wikidata'='Q7388307']['wikipedia'!~'.*'];
+relation(10511963)['wikidata'='Q7388307']['wikipedia'!~'.*'];
+relation(2199151)['wikidata'='Q7388307']['wikipedia'!~'.*'];
+relation(2199208)['wikidata'='Q7388307']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag, unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikidata from wikipedia tag"><h2 id="wikidata from wikipedia tag">wikidata from wikipedia tag</h2></a>
+				</br>
+				Q57455480 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/736804065" target="_new">Buttendorf - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q34459 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/3438992" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/4237198" target="_new">5902 Nürnberg Hbf - Schnelldorf Streckenwechsel 4951/5902 - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q466248 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/7692478" target="_new">5910 Fürth - Würzburg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100214" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100217" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100219" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100232" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100238" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100244" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100245" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100250" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100257" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100258" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100264" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/109100268" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/12248493" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/142886520" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/146168358" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/146238574" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q517038 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/169147372" target="_new">Wolfgangshof - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/192354546" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/192354547" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/23416162" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/24645110" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/24645111" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/24913903" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/250952167" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/250952168" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/250952169" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/250952170" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/250952171" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/250952172" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q5635435 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/251640979" target="_new">HOB GmbH & Co. KG - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26175220" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26175221" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26175222" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26183713" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27517480" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27517481" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27518698" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27518699" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27518773" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27518774" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/30043795" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/30083910" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/30083911" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/371482102" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/371482103" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/371482104" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/371482105" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/37891877" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/384652605" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/384652608" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/43859054" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44372383" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44372385" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44372386" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44372387" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44372388" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44373387" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44373388" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44373390" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44373391" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44373394" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44373395" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44373748" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44373749" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44374065" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44374066" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44374067" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44374069" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44376268" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44376269" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44376270" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44376271" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44376272" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44376273" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44376274" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44377565" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44377566" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44377569" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/44377571" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/5405232" target="_new">Nürnberg–Crailsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(736804065)['wikidata'!~'.*']['wikipedia'='de:Buttendorf_(Ro&#223;tal)'];
+relation(3438992)['wikidata'!~'.*']['wikipedia'='de:Bundesstra&#223;e 8'];
+relation(4237198)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+relation(7692478)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke F&#252;rth&#8211;W&#252;rzburg'];
+way(109100214)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(109100217)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(109100219)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(109100232)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(109100238)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(109100244)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(109100245)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(109100250)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(109100257)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(109100258)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(109100264)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(109100268)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(12248493)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(142886520)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(146168358)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(146238574)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(169147372)['wikidata'!~'.*']['wikipedia'='de:Wolfgangshof'];
+way(192354546)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(192354547)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(23416162)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(24645110)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(24645111)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(24913903)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(250952167)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(250952168)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(250952169)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(250952170)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(250952171)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(250952172)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(251640979)['wikidata'!~'.*']['wikipedia'='en:HOB GmbH & Co KG'];
+way(26175220)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(26175221)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(26175222)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(26183713)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(27517480)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(27517481)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(27518698)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(27518699)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(27518773)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(27518774)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(30043795)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(30083910)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(30083911)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(371482102)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(371482103)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(371482104)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(371482105)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(37891877)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(384652605)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(384652608)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(43859054)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44372383)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44372385)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44372386)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44372387)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44372388)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44373387)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44373388)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44373390)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44373391)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44373394)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44373395)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44373748)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44373749)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44374065)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44374066)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44374067)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44374069)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44376268)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44376269)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44376270)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44376271)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44376272)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44376273)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44376274)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44377565)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44377566)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44377569)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(44377571)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+way(5405232)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
+); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>

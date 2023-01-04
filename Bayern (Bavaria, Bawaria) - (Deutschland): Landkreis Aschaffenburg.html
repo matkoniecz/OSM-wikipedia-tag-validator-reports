@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-01-04. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,117 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Remember to check whatever edit makes sense! All reports are at this page because this tasks require human judgment to verify whatever proposed edit makes sense.
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#link to an unlinkable article">link to an unlinkable article</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#should use a secondary wikipedia tag - linking to a vehicle model or class">should use a secondary wikipedia tag - linking to a vehicle model or class</a></li></ul>			</br>
+			<a href="#link to an unlinkable article"><h2 id="link to an unlinkable article">link to an unlinkable article</h2></a>
+				</br>
+				link leads to a disambig page - not a proper wikipedia link (according to Wikidata - if target is not a disambig check Wikidata entry whether it is correct)<br /><br />Bahnstrecke Kahl&#8211;Sch&#246;llkrippen is 5617 km away<br />Kahlgrund-Eisenbahn AG &lt;no location data on wikidata&gt;<br />Kahlgrund Verkehrs-GmbH is 5617 km away<br />
+				</br>
+				<a href="https://openstreetmap.org/relation/3446244" target="_new">Kahlgrundbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(3446244)['wikipedia'='de:Kahlgrundbahn'];
+); (._;>;); out meta qt;//['link to an unlinkable article']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q41290464 vs Q450697 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/186382711" target="_new">Rathaus Alzenau - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q41290622 vs Q1830929 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/201208614" target="_new">St. Katharina - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q41291799 vs Q996260 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/305946504" target="_new">Kapelle St. Wendelin - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q59394090 vs Q828321 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/366849750" target="_new">Amphibienfreistätte Sommergrund - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q59394086 vs Q18624887 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/528743316" target="_new">Vogelschutzgebiet Gustavsee - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q59420246 vs Q1271290 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/907539175" target="_new">Dörngraben bei Haibach - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(186382711)['wikidata'='Q41290464']['wikipedia'='de:Alzenau'];
+way(201208614)['wikidata'='Q41290622']['wikipedia'='de:Liste der Baudenkm&#228;ler in Alzenau#Wasserlos'];
+way(305946504)['wikidata'='Q41291799']['wikipedia'='de:Br&#252;cken (M&#246;mbris)#Wendelinus-Kapelle'];
+way(366849750)['wikidata'='Q59394090']['wikipedia'='de:Kleine Kahl#Amphibienfreist&#228;tte Sommergrund'];
+way(528743316)['wikidata'='Q59394086']['wikipedia'='de:Gustavsee#Vogelschutzgebiet Gustavsee'];
+way(907539175)['wikidata'='Q59420246']['wikipedia'='de:D&#246;rnbach (Hensbach)#Naturschutzgebiet D&#246;rngraben bei Haibach'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#information board with wikipedia tag, not subject:wikipedia"><h2 id="information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</h2></a>
+				</br>
+				information board topic must be tagged with subject:wikipedia tag - not with wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1022395733" target="_new">Ehemaliges Versuchsatomkraftwerk Kahl in Großwelzheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				information board topic must be tagged with subject:wikipedia tag - not with wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1741132754" target="_new">Peter-und-Paul-Kirche - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1022395733)['information'='board']['wikipedia'='en:Kahl Nuclear Power Plant'];
+node(1741132754)['information'='board']['wikipedia'='de:St. Peter und Paul (Gro&#223;ostheim)'];
+); (._;>;); out meta qt;//['information board with wikipedia tag, not subject:wikipedia']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#should use a secondary wikipedia tag - linking to a vehicle model or class"><h2 id="should use a secondary wikipedia tag - linking to a vehicle model or class">should use a secondary wikipedia tag - linking to a vehicle model or class</h2></a>
+				</br>
+				linked wikidata entry (Q155661) is about a vehicle model or class, so it is very unlikely to be correct <br />        subject:wikipedia=* or model:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				</br>
+				<a href="https://openstreetmap.org/node/6242676182" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(6242676182)['wikipedia'='de:Junkers Ju 88'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking to a vehicle model or class']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>

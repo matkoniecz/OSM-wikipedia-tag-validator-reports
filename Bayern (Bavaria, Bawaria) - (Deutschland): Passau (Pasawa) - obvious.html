@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-01-04. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,622 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li></ul>			</br>
+			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
+				</br>
+				wikipedia page in unexpected language - de was expected:
+				</br>
+				<a href="https://openstreetmap.org/relation/6410283" target="_new">European route E 56 - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Europastra&#223;e 56" target="_new">de:Europastra&#223;e 56</a>
+				</br>
+				Europastra&#223;e 56
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(6410283)['wikipedia'='en:European route E56'];
+); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q283170 vs (missing) article redirects from de:Bahnstrecke N&#252;rnberg&#8211;Regensburg to de:Bahnstrecke Regensburg&#8211;N&#252;rnberg
+				</br>
+				<a href="https://openstreetmap.org/relation/216295" target="_new">KBS 880 Nürnberg - Regensburg - Passau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnstrecke Regensburg&#8211;N&#252;rnberg" target="_new">de:Bahnstrecke Regensburg&#8211;N&#252;rnberg</a>
+				</br>
+				Bahnstrecke Regensburg&#8211;N&#252;rnberg
+				</br>
+				<hr>
+				</br>
+				Q1527258 vs (missing) article redirects from de:Gisela-Gymnasium (Passau) to de:Gisela-Gymnasium Passau Niedernburg
+				</br>
+				<a href="https://openstreetmap.org/way/115857218" target="_new">Gisela-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gisela-Gymnasium Passau Niedernburg" target="_new">de:Gisela-Gymnasium Passau Niedernburg</a>
+				</br>
+				Gisela-Gymnasium Passau Niedernburg
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(216295)['wikidata'='Q283170']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Regensburg'];
+way(115857218)['wikidata'='Q1527258']['wikipedia'='de:Gisela-Gymnasium (Passau)'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/303811868" target="_new">Mariahilf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wallfahrtskirche Mariahilf (Passau)" target="_new">de:Wallfahrtskirche Mariahilf (Passau)</a>
+				</br>
+				Wallfahrtskirche Mariahilf (Passau)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/6309606615" target="_new">Ries - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ries (Passau)" target="_new">de:Ries (Passau)</a>
+				</br>
+				Ries (Passau)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/63649205" target="_new">Patriching - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Patriching" target="_new">de:Patriching</a>
+				</br>
+				Patriching
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/10323414" target="_new">5843 Passau Hbf Voglau - Hauzenberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnstrecke Passau-Voglau&#8211;Hauzenberg" target="_new">de:Bahnstrecke Passau-Voglau&#8211;Hauzenberg</a>
+				</br>
+				Bahnstrecke Passau-Voglau&#8211;Hauzenberg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/2425846" target="_new">Ilz - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ilz (Donau)" target="_new">de:Ilz (Donau)</a>
+				</br>
+				Ilz (Donau)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/4621343" target="_new">Inn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Inn" target="_new">de:Inn</a>
+				</br>
+				Inn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/9674036" target="_new">Donauleiten von Passau bis Jochenstein - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Naturschutzgebiet Donauleiten" target="_new">de:Naturschutzgebiet Donauleiten</a>
+				</br>
+				Naturschutzgebiet Donauleiten
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/102408381" target="_new">Kirche St. Korona - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Korona (Passau)" target="_new">de:St. Korona (Passau)</a>
+				</br>
+				St. Korona (Passau)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/1086264877" target="_new">Inn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Inn" target="_new">de:Inn</a>
+				</br>
+				Inn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/1086264878" target="_new">Inn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Inn" target="_new">de:Inn</a>
+				</br>
+				Inn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/144535329" target="_new">St. Matthäus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Stadtpfarrkirche St. Matth&#228;us (Passau)" target="_new">de:Stadtpfarrkirche St. Matth&#228;us (Passau)</a>
+				</br>
+				Stadtpfarrkirche St. Matth&#228;us (Passau)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/152747900" target="_new">Universität Passau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Universit&#228;t Passau" target="_new">de:Universit&#228;t Passau</a>
+				</br>
+				Universit&#228;t Passau
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/202218888" target="_new">Mollnhof - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Mollnhof" target="_new">de:Mollnhof</a>
+				</br>
+				Mollnhof
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/202652907" target="_new">Sankt Severin - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Severin (Passau-Heining)" target="_new">de:St. Severin (Passau-Heining)</a>
+				</br>
+				St. Severin (Passau-Heining)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/223051521" target="_new">Starhemberghof - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Lamberg-Palais (Passau)" target="_new">de:Lamberg-Palais (Passau)</a>
+				</br>
+				Lamberg-Palais (Passau)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/27661875" target="_new">Kraftwerk Passau-Ingling - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kraftwerk Passau-Ingling" target="_new">de:Kraftwerk Passau-Ingling</a>
+				</br>
+				Kraftwerk Passau-Ingling
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/29413491" target="_new">Inn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Inn" target="_new">de:Inn</a>
+				</br>
+				Inn
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(303811868)['wikidata'='Q1574738']['wikipedia'!~'.*'];
+node(6309606615)['wikidata'='Q1678146']['wikipedia'!~'.*'];
+node(63649205)['wikidata'='Q2057152']['wikipedia'!~'.*'];
+relation(10323414)['wikidata'='Q802982']['wikipedia'!~'.*'];
+relation(2425846)['wikidata'='Q267911']['wikipedia'!~'.*'];
+relation(4621343)['wikidata'='Q14369']['wikipedia'!~'.*'];
+relation(9674036)['wikidata'='Q59420074']['wikipedia'!~'.*'];
+way(102408381)['wikidata'='Q41425905']['wikipedia'!~'.*'];
+way(1086264877)['wikidata'='Q14369']['wikipedia'!~'.*'];
+way(1086264878)['wikidata'='Q14369']['wikipedia'!~'.*'];
+way(144535329)['wikidata'='Q41255503']['wikipedia'!~'.*'];
+way(152747900)['wikidata'='Q704468']['wikipedia'!~'.*'];
+way(202218888)['wikidata'='Q1943604']['wikipedia'!~'.*'];
+way(202652907)['wikidata'='Q1505489']['wikipedia'!~'.*'];
+way(223051521)['wikidata'='Q1801343']['wikipedia'!~'.*'];
+way(27661875)['wikidata'='Q17124139']['wikipedia'!~'.*'];
+way(29413491)['wikidata'='Q14369']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikidata from wikipedia tag"><h2 id="wikidata from wikipedia tag">wikidata from wikipedia tag</h2></a>
+				</br>
+				Q1306062 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/100542162" target="_new">Pfarrkirche Sankt Paul - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/101189599" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/101189650" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/101216178" target="_new">Passauer Tunnel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/101218644" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/101218646" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/101972133" target="_new">Tiefenbacher Tunnel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/102407087" target="_new">Ilztalbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/102407104" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1105470116" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1105470117" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1590195 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/121880280" target="_new">Schanzlbrücke - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/131994367" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/131994368" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/131994369" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/131994370" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1590195 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/24152667" target="_new">Schanzlbrücke - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/24153461" target="_new">Passauer Tunnel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/24153462" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/24153464" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/24159127" target="_new">Ilztalbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/244870206" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/244870207" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2153402 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/25560992" target="_new">Rindermarkt - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27662154" target="_new">Steinbachbrücke - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27662157" target="_new">Ilztalbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/28445208" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/28445209" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1701115 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/30412589" target="_new">Veste Niederhaus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1617409 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/32206410" target="_new">Hiendl - XXXLutz - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/38138328" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/38138477" target="_new">Ilztalbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q136115 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/38319149" target="_new">Zahnradfabrik Passau - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/39085589" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/462281177" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/69286873" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/69286876" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/73096847" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/73228012" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/73228018" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/73228023" target="_new">Ilztalbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q802977 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/73228026" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2153402 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/749380889" target="_new">Rindermarkt - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2153402 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/749412331" target="_new">Rindermarkt - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1876774 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/7864510" target="_new">Prinzregent-Luitpold-Brücke - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2153402 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/8027470" target="_new">Rindermarkt - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803457 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/949542075" target="_new">Passauer Bahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1667432 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/96354690" target="_new">Sankt Severin - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(100542162)['wikidata'!~'.*']['wikipedia'='de:St. Paul (Passau)'];
+way(101189599)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(101189650)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(101216178)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(101218644)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(101218646)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(101972133)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(102407087)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(102407104)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(1105470116)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(1105470117)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(121880280)['wikidata'!~'.*']['wikipedia'='de:Schanzlbr&#252;cke'];
+way(131994367)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(131994368)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(131994369)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(131994370)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(24152667)['wikidata'!~'.*']['wikipedia'='de:Schanzlbr&#252;cke'];
+way(24153461)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(24153462)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(24153464)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(24159127)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(244870206)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(244870207)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(25560992)['wikidata'!~'.*']['wikipedia'='de:Rindermarkt (Passau)'];
+way(27662154)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(27662157)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(28445208)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(28445209)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(30412589)['wikidata'!~'.*']['wikipedia'='de:Veste Niederhaus'];
+way(32206410)['wikidata'!~'.*']['wikipedia'='de:Hiendl (M&#246;belhaus)'];
+way(38138328)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(38138477)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(38319149)['wikidata'!~'.*']['wikipedia'='de:ZF Passau'];
+way(39085589)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(462281177)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(69286873)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(69286876)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(73096847)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(73228012)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(73228018)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(73228023)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(73228026)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Passau&#8211;Freyung'];
+way(749380889)['wikidata'!~'.*']['wikipedia'='de:Rindermarkt (Passau)'];
+way(749412331)['wikidata'!~'.*']['wikipedia'='de:Rindermarkt (Passau)'];
+way(7864510)['wikidata'!~'.*']['wikipedia'='de:Luitpoldbr&#252;cke (Passau)'];
+way(8027470)['wikidata'!~'.*']['wikipedia'='de:Rindermarkt (Passau)'];
+way(949542075)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wels&#8211;Passau'];
+way(96354690)['wikidata'!~'.*']['wikipedia'='de:St. Severin (Passau-Innstadt)'];
+); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia tag in an outdated form for removal"><h2 id="wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</h2></a>
+				</br>
+				wikipedia tag in outdated form ([&#x27;wikipedia:en&#x27;]), with wikipedia and wikidata tag present and may be safely removed
+				</br>
+				<a href="https://openstreetmap.org/relation/2434722" target="_new">Jakobsweg Böhmen-Bayern-Tirol - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(2434722)['wikidata'='Q41150']['wikipedia'='de:Jakobsweg']['wikipedia:en'='Way of St. James'];
+); (._;>;); out meta qt;//['wikipedia tag in an outdated form for removal']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>

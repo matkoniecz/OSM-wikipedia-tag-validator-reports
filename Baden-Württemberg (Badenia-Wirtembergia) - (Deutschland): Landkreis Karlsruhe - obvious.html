@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-01-04. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,2764 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li></ul>			</br>
+			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
+				</br>
+				wikipedia page in unexpected language - de was expected:
+				</br>
+				<a href="https://openstreetmap.org/way/94701596" target="_new">Kernkraftwerk Philippsburg Block 2 - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kernkraftwerk Philippsburg" target="_new">de:Kernkraftwerk Philippsburg</a>
+				</br>
+				Kernkraftwerk Philippsburg
+				</br>
+				<hr>
+				</br>
+				wikipedia page in unexpected language - de was expected:
+				</br>
+				<a href="https://openstreetmap.org/way/94872292" target="_new">Kernkraftwerk Philippsburg Block 1 - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kernkraftwerk Philippsburg" target="_new">de:Kernkraftwerk Philippsburg</a>
+				</br>
+				Kernkraftwerk Philippsburg
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(94701596)['wikipedia'='en:Philippsburg Nuclear Power Plant'];
+way(94872292)['wikipedia'='en:Philippsburg Nuclear Power Plant'];
+); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q1110620 vs (missing) article redirects from de:R&#246;mermuseum Stettfeld to de:Vicus Stettfeld
+				</br>
+				<a href="https://openstreetmap.org/way/137816592" target="_new">Römermuseum Stettfeld - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Vicus Stettfeld" target="_new">de:Vicus Stettfeld</a>
+				</br>
+				Vicus Stettfeld
+				</br>
+				<hr>
+				</br>
+				Q1613987 vs (missing) article redirects from de:Herren von Mentzingen to de:Mentzingen (Adelsgeschlecht)
+				</br>
+				<a href="https://openstreetmap.org/way/188878166" target="_new">Schwanenburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Mentzingen (Adelsgeschlecht)" target="_new">de:Mentzingen (Adelsgeschlecht)</a>
+				</br>
+				Mentzingen (Adelsgeschlecht)
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(137816592)['wikidata'='Q1110620']['wikipedia'='de:R&#246;mermuseum Stettfeld'];
+way(188878166)['wikidata'='Q1613987']['wikipedia'='de:Herren von Mentzingen'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1184177036" target="_new">Deutsches Musikautomatenmuseum - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Deutsches Musikautomaten-Museum" target="_new">de:Deutsches Musikautomaten-Museum</a>
+				</br>
+				Deutsches Musikautomaten-Museum
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1246865866" target="_new">Enzbrunnen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Enzbrunnen" target="_new">de:Enzbrunnen</a>
+				</br>
+				Enzbrunnen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1411389220" target="_new">Wöschbach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/W&#246;schbach" target="_new">de:W&#246;schbach</a>
+				</br>
+				W&#246;schbach
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1462883626" target="_new">Östringen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/&#214;stringen" target="_new">de:&#214;stringen</a>
+				</br>
+				&#214;stringen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1502888660" target="_new">Staffort - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Staffort" target="_new">de:Staffort</a>
+				</br>
+				Staffort
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1590483711" target="_new">Tiefenbach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Tiefenbach (&#214;stringen)" target="_new">de:Tiefenbach (&#214;stringen)</a>
+				</br>
+				Tiefenbach (&#214;stringen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/240080860" target="_new">Philippsburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Philippsburg" target="_new">de:Philippsburg</a>
+				</br>
+				Philippsburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/240114360" target="_new">Malsch - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Malsch (Landkreis Karlsruhe)" target="_new">de:Malsch (Landkreis Karlsruhe)</a>
+				</br>
+				Malsch (Landkreis Karlsruhe)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/251488575" target="_new">Obergrombach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Obergrombach" target="_new">de:Obergrombach</a>
+				</br>
+				Obergrombach
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/252304832" target="_new">Thomas-Mann-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Thomas-Mann-Gymnasium Stutensee" target="_new">de:Thomas-Mann-Gymnasium Stutensee</a>
+				</br>
+				Thomas-Mann-Gymnasium Stutensee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/25480308" target="_new">Graben-Neudorf Nord - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Haltepunkt Graben-Neudorf Nord" target="_new">de:Haltepunkt Graben-Neudorf Nord</a>
+				</br>
+				Haltepunkt Graben-Neudorf Nord
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/27306995" target="_new">Neuburgweier - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Neuburgweier" target="_new">de:Neuburgweier</a>
+				</br>
+				Neuburgweier
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/281754049" target="_new">Flehingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Flehingen (Oberderdingen)" target="_new">de:Flehingen (Oberderdingen)</a>
+				</br>
+				Flehingen (Oberderdingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2827625953" target="_new">Waghäusel - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnhof Wagh&#228;usel" target="_new">de:Bahnhof Wagh&#228;usel</a>
+				</br>
+				Bahnhof Wagh&#228;usel
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/293574954" target="_new">Michaelsberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Michaelsberg (Untergrombach)" target="_new">de:Michaelsberg (Untergrombach)</a>
+				</br>
+				Michaelsberg (Untergrombach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/3175311262" target="_new">Odenheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnhof Odenheim" target="_new">de:Bahnhof Odenheim</a>
+				</br>
+				Bahnhof Odenheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/3398531543" target="_new">Mahlberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Mahlberg (Berg)" target="_new">de:Mahlberg (Berg)</a>
+				</br>
+				Mahlberg (Berg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/389472192" target="_new">Jöhlingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/J&#246;hlingen" target="_new">de:J&#246;hlingen</a>
+				</br>
+				J&#246;hlingen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/441209819" target="_new">Albertus - Magnus - Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Albertus-Magnus-Gymnasium Ettlingen" target="_new">de:Albertus-Magnus-Gymnasium Ettlingen</a>
+				</br>
+				Albertus-Magnus-Gymnasium Ettlingen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/72783176" target="_new">Eggenstein - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Eggenstein" target="_new">de:Eggenstein</a>
+				</br>
+				Eggenstein
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/75655504" target="_new">Forchheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnhof Forchheim (b Karlsruhe)" target="_new">de:Bahnhof Forchheim (b Karlsruhe)</a>
+				</br>
+				Bahnhof Forchheim (b Karlsruhe)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/10253406" target="_new">Mörsch - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/M&#246;rsch" target="_new">de:M&#246;rsch</a>
+				</br>
+				M&#246;rsch
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/10253407" target="_new">Forchheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Forchheim (Rheinstetten)" target="_new">de:Forchheim (Rheinstetten)</a>
+				</br>
+				Forchheim (Rheinstetten)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11292494" target="_new">Malscher Aue - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Malscher Aue" target="_new">de:Malscher Aue</a>
+				</br>
+				Malscher Aue
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11296183" target="_new">Gewann Frankreich-Wiesental - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gewann Frankreich-Wiesental" target="_new">de:Gewann Frankreich-Wiesental</a>
+				</br>
+				Gewann Frankreich-Wiesental
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11299908" target="_new">Erlich - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Erlich (Naturschutzgebiet)" target="_new">de:Erlich (Naturschutzgebiet)</a>
+				</br>
+				Erlich (Naturschutzgebiet)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11300060" target="_new">Östringer Erlenwald - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/&#214;stringer Erlenwald" target="_new">de:&#214;stringer Erlenwald</a>
+				</br>
+				&#214;stringer Erlenwald
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11300111" target="_new">Beim Roten Kreuz (8 Teilgebiete) - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Beim Roten Kreuz" target="_new">de:Beim Roten Kreuz</a>
+				</br>
+				Beim Roten Kreuz
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11304215" target="_new">Kleiner Kraichbach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kleiner Kraichbach (Naturschutzgebiet)" target="_new">de:Kleiner Kraichbach (Naturschutzgebiet)</a>
+				</br>
+				Kleiner Kraichbach (Naturschutzgebiet)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11304318" target="_new">Kraichbach- und Weiherbachaue - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kraichbach- und Weiherbachaue" target="_new">de:Kraichbach- und Weiherbachaue</a>
+				</br>
+				Kraichbach- und Weiherbachaue
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11304407" target="_new">NSG Kohlbachtal und angrenzende Gebiete - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kohlbachtal und angrenzende Gebiete" target="_new">de:Kohlbachtal und angrenzende Gebiete</a>
+				</br>
+				Kohlbachtal und angrenzende Gebiete
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11312404" target="_new">Altrhein Neuburgweier - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Altrhein Neuburgweier" target="_new">de:Altrhein Neuburgweier</a>
+				</br>
+				Altrhein Neuburgweier
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11312454" target="_new">Rheinniederung zwischen Au am Rhein, Durmersheim und Rheinstetten - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rheinniederung zwischen Au am Rhein, Durmersheim und Rheinstetten" target="_new">de:Rheinniederung zwischen Au am Rhein, Durmersheim und Rheinstetten</a>
+				</br>
+				Rheinniederung zwischen Au am Rhein, Durmersheim und Rheinstetten
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11316227" target="_new">Pfinzquellen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Pfinzquellen" target="_new">de:Pfinzquellen</a>
+				</br>
+				Pfinzquellen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/11316266" target="_new">Fritschlach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Fritschlach" target="_new">de:Fritschlach</a>
+				</br>
+				Fritschlach
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1203264" target="_new">Kraichgau-Hohenlohe-Radweg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kraichgau-Hohenlohe-Weg" target="_new">de:Kraichgau-Hohenlohe-Weg</a>
+				</br>
+				Kraichgau-Hohenlohe-Weg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1557428" target="_new">Helmsheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Helmsheim" target="_new">de:Helmsheim</a>
+				</br>
+				Helmsheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1566680" target="_new">Spessart - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Spessart (Ettlingen)" target="_new">de:Spessart (Ettlingen)</a>
+				</br>
+				Spessart (Ettlingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1566682" target="_new">Schluttenbach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schluttenbach" target="_new">de:Schluttenbach</a>
+				</br>
+				Schluttenbach
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1566684" target="_new">Oberweier - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Oberweier (Ettlingen)" target="_new">de:Oberweier (Ettlingen)</a>
+				</br>
+				Oberweier (Ettlingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1566685" target="_new">Ettlingenweier - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ettlingenweier" target="_new">de:Ettlingenweier</a>
+				</br>
+				Ettlingenweier
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1566686" target="_new">Bruchhausen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bruchhausen (Ettlingen)" target="_new">de:Bruchhausen (Ettlingen)</a>
+				</br>
+				Bruchhausen (Ettlingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/2400115" target="_new">Kleinbahn Ittersbach-Pforzheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnstrecke Ittersbach&#8211;Pforzheim" target="_new">de:Bahnstrecke Ittersbach&#8211;Pforzheim</a>
+				</br>
+				Bahnstrecke Ittersbach&#8211;Pforzheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/2401350" target="_new">Weingartener Moor-Bruchwald Grötzingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Weingartener Moor" target="_new">de:Weingartener Moor</a>
+				</br>
+				Weingartener Moor
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/2690837" target="_new">Leibniz Gymnasium Östringen (LGÖ) - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Leibniz-Gymnasium &#214;stringen" target="_new">de:Leibniz-Gymnasium &#214;stringen</a>
+				</br>
+				Leibniz-Gymnasium &#214;stringen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/2999354" target="_new">Landshausen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Landshausen (Kraichtal)" target="_new">de:Landshausen (Kraichtal)</a>
+				</br>
+				Landshausen (Kraichtal)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/33947" target="_new">Hardtwald - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hardtwald (Karlsruhe)" target="_new">de:Hardtwald (Karlsruhe)</a>
+				</br>
+				Hardtwald (Karlsruhe)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/357021" target="_new">Kleinsteinbach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kleinsteinbach (Pfinztal)" target="_new">de:Kleinsteinbach (Pfinztal)</a>
+				</br>
+				Kleinsteinbach (Pfinztal)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/357326" target="_new">Dürrenbüchig - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/D&#252;rrenb&#252;chig" target="_new">de:D&#252;rrenb&#252;chig</a>
+				</br>
+				D&#252;rrenb&#252;chig
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/357387" target="_new">Söllingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/S&#246;llingen (Pfinztal)" target="_new">de:S&#246;llingen (Pfinztal)</a>
+				</br>
+				S&#246;llingen (Pfinztal)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/357388" target="_new">Rinklingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rinklingen" target="_new">de:Rinklingen</a>
+				</br>
+				Rinklingen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/357391" target="_new">Diedelsheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Diedelsheim" target="_new">de:Diedelsheim</a>
+				</br>
+				Diedelsheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/357392" target="_new">Ruit - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ruit (Bretten)" target="_new">de:Ruit (Bretten)</a>
+				</br>
+				Ruit (Bretten)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/357429" target="_new">Gölshausen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/G&#246;lshausen" target="_new">de:G&#246;lshausen</a>
+				</br>
+				G&#246;lshausen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/357432" target="_new">Büchig - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/B&#252;chig (Bretten)" target="_new">de:B&#252;chig (Bretten)</a>
+				</br>
+				B&#252;chig (Bretten)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/357433" target="_new">Neibsheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Neibsheim" target="_new">de:Neibsheim</a>
+				</br>
+				Neibsheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/358055" target="_new">Wössingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/W&#246;ssingen (Walzbachtal)" target="_new">de:W&#246;ssingen (Walzbachtal)</a>
+				</br>
+				W&#246;ssingen (Walzbachtal)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/4676433" target="_new">Stettfeld - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Stettfeld (Ubstadt-Weiher)" target="_new">de:Stettfeld (Ubstadt-Weiher)</a>
+				</br>
+				Stettfeld (Ubstadt-Weiher)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/4676434" target="_new">Ubstadt - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ubstadt" target="_new">de:Ubstadt</a>
+				</br>
+				Ubstadt
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/4676435" target="_new">Weiher - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Weiher (Ubstadt-Weiher)" target="_new">de:Weiher (Ubstadt-Weiher)</a>
+				</br>
+				Weiher (Ubstadt-Weiher)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/4676436" target="_new">Zeutern - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Zeutern" target="_new">de:Zeutern</a>
+				</br>
+				Zeutern
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5416202" target="_new">Bahnbrücken - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnbr&#252;cken" target="_new">de:Bahnbr&#252;cken</a>
+				</br>
+				Bahnbr&#252;cken
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5416203" target="_new">Gochsheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gochsheim (Kraichtal)" target="_new">de:Gochsheim (Kraichtal)</a>
+				</br>
+				Gochsheim (Kraichtal)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5416204" target="_new">Menzingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Menzingen (Kraichtal)" target="_new">de:Menzingen (Kraichtal)</a>
+				</br>
+				Menzingen (Kraichtal)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5416206" target="_new">Neuenbürg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Neuenb&#252;rg (Kraichtal)" target="_new">de:Neuenb&#252;rg (Kraichtal)</a>
+				</br>
+				Neuenb&#252;rg (Kraichtal)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5416207" target="_new">Oberacker - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Oberacker" target="_new">de:Oberacker</a>
+				</br>
+				Oberacker
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5416208" target="_new">Unteröwisheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Unter&#246;wisheim" target="_new">de:Unter&#246;wisheim</a>
+				</br>
+				Unter&#246;wisheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5416209" target="_new">Öberöwisheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ober&#246;wisheim" target="_new">de:Ober&#246;wisheim</a>
+				</br>
+				Ober&#246;wisheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5419024" target="_new">Eichelberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Eichelberg (&#214;stringen)" target="_new">de:Eichelberg (&#214;stringen)</a>
+				</br>
+				Eichelberg (&#214;stringen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5419025" target="_new">Kirrlach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kirrlach" target="_new">de:Kirrlach</a>
+				</br>
+				Kirrlach
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5419026" target="_new">Odenheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Odenheim" target="_new">de:Odenheim</a>
+				</br>
+				Odenheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5419029" target="_new">Wiesental - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wiesental (Wagh&#228;usel)" target="_new">de:Wiesental (Wagh&#228;usel)</a>
+				</br>
+				Wiesental (Wagh&#228;usel)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5424577" target="_new">Blankenloch - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Blankenloch" target="_new">de:Blankenloch</a>
+				</br>
+				Blankenloch
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5424579" target="_new">Spöck - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Sp&#246;ck (Stutensee)" target="_new">de:Sp&#246;ck (Stutensee)</a>
+				</br>
+				Sp&#246;ck (Stutensee)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5443795" target="_new">Huttenheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Huttenheim (Philippsburg)" target="_new">de:Huttenheim (Philippsburg)</a>
+				</br>
+				Huttenheim (Philippsburg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5443799" target="_new">Rheinsheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rheinsheim" target="_new">de:Rheinsheim</a>
+				</br>
+				Rheinsheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/5555674" target="_new">General-Dr.-Speidel-Kaserne - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/General-Dr.-Speidel-Kaserne" target="_new">de:General-Dr.-Speidel-Kaserne</a>
+				</br>
+				General-Dr.-Speidel-Kaserne
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/67059" target="_new">Fermasee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Fermasee" target="_new">de:Fermasee</a>
+				</br>
+				Fermasee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/945817" target="_new">A 5 Basel - Karlsruhe [positive] - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bundesautobahn 5" target="_new">de:Bundesautobahn 5</a>
+				</br>
+				Bundesautobahn 5
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/945819" target="_new">A 5 Basel - Karlsruhe [negative] - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bundesautobahn 5" target="_new">de:Bundesautobahn 5</a>
+				</br>
+				Bundesautobahn 5
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/9472237" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wei&#223;ach (Saalbach)" target="_new">de:Wei&#223;ach (Saalbach)</a>
+				</br>
+				Wei&#223;ach (Saalbach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/951524" target="_new">Bundesstraße 3: Baden-Baden - Ettlingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bundesstra&#223;e 3" target="_new">de:Bundesstra&#223;e 3</a>
+				</br>
+				Bundesstra&#223;e 3
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/951538" target="_new">Bundesstraße 3: Ettlingen - Karlsruhe - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bundesstra&#223;e 3" target="_new">de:Bundesstra&#223;e 3</a>
+				</br>
+				Bundesstra&#223;e 3
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/954876" target="_new">A 5 Karlsruhe - Heidelberg [positive] - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bundesautobahn 5" target="_new">de:Bundesautobahn 5</a>
+				</br>
+				Bundesautobahn 5
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/954926" target="_new">A 5 Karlsruhe - Heidelberg [negative] - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bundesautobahn 5" target="_new">de:Bundesautobahn 5</a>
+				</br>
+				Bundesautobahn 5
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/955749" target="_new">Bundesstraße 3: Karlsruhe - Heidelberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bundesstra&#223;e 3" target="_new">de:Bundesstra&#223;e 3</a>
+				</br>
+				Bundesstra&#223;e 3
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/106896084" target="_new">Friedhof Wössingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Evangelische Kirche (W&#246;ssingen)" target="_new">de:Evangelische Kirche (W&#246;ssingen)</a>
+				</br>
+				Evangelische Kirche (W&#246;ssingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/121136925" target="_new">Ungeheuerklamm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ungeheuerklamm" target="_new">de:Ungeheuerklamm</a>
+				</br>
+				Ungeheuerklamm
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/133619083" target="_new">Jüdischer Friedhof Obergrombach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/J&#252;discher Friedhof Obergrombach" target="_new">de:J&#252;discher Friedhof Obergrombach</a>
+				</br>
+				J&#252;discher Friedhof Obergrombach
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/135398797" target="_new">Rudolf-von-Habsburg-Brücke - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rudolf-von-Habsburg-Br&#252;cke" target="_new">de:Rudolf-von-Habsburg-Br&#252;cke</a>
+				</br>
+				Rudolf-von-Habsburg-Br&#252;cke
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/144927960" target="_new">Copernicus-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Copernicus-Gymnasium Philippsburg" target="_new">de:Copernicus-Gymnasium Philippsburg</a>
+				</br>
+				Copernicus-Gymnasium Philippsburg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/151665567" target="_new">Mistwiesen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Mistwiesen" target="_new">de:Mistwiesen</a>
+				</br>
+				Mistwiesen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/17095544" target="_new">Golf-Club St. Leon-Rot - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Golf Club St. Leon-Rot" target="_new">de:Golf Club St. Leon-Rot</a>
+				</br>
+				Golf Club St. Leon-Rot
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/174779842" target="_new">Kohlplattenschlag - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kohlplattenschlag" target="_new">de:Kohlplattenschlag</a>
+				</br>
+				Kohlplattenschlag
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/24366393" target="_new">Sallenbusch - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Sallenbusch" target="_new">de:Sallenbusch</a>
+				</br>
+				Sallenbusch
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/29146694" target="_new">Jüdischer Friedhof Flehingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/J&#252;discher Friedhof (Flehingen)" target="_new">de:J&#252;discher Friedhof (Flehingen)</a>
+				</br>
+				J&#252;discher Friedhof (Flehingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/310778673" target="_new">Allmendäcker - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Allmend&#228;cker" target="_new">de:Allmend&#228;cker</a>
+				</br>
+				Allmend&#228;cker
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/319638926" target="_new">Evangelische Kirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Evangelische Kirche (W&#246;ssingen)" target="_new">de:Evangelische Kirche (W&#246;ssingen)</a>
+				</br>
+				Evangelische Kirche (W&#246;ssingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/34304068" target="_new">Bruch bei Stettfeld - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bruch bei Stettfeld" target="_new">de:Bruch bei Stettfeld</a>
+				</br>
+				Bruch bei Stettfeld
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/35015781" target="_new">Federbachbruch zwischen Muggensturm und Malsch - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Federbachbruch" target="_new">de:Federbachbruch</a>
+				</br>
+				Federbachbruch
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/35463212" target="_new">Flugplatz Bruchsal - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Flugplatz Bruchsal" target="_new">de:Flugplatz Bruchsal</a>
+				</br>
+				Flugplatz Bruchsal
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/35463872" target="_new">Schönborn-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Sch&#246;nborn-Gymnasium Bruchsal" target="_new">de:Sch&#246;nborn-Gymnasium Bruchsal</a>
+				</br>
+				Sch&#246;nborn-Gymnasium Bruchsal
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/374614252" target="_new">St. Martin - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Martin (Gochsheim)" target="_new">de:St. Martin (Gochsheim)</a>
+				</br>
+				St. Martin (Gochsheim)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/402005895" target="_new">Edith-Stein-Gymnasium Bretten - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Edith-Stein-Gymnasium Bretten" target="_new">de:Edith-Stein-Gymnasium Bretten</a>
+				</br>
+				Edith-Stein-Gymnasium Bretten
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/419052448" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Obere Gasse 15 (Oberderdingen)" target="_new">de:Obere Gasse 15 (Oberderdingen)</a>
+				</br>
+				Obere Gasse 15 (Oberderdingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/419072625" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hegelweg 1 (Oberderdingen)" target="_new">de:Hegelweg 1 (Oberderdingen)</a>
+				</br>
+				Hegelweg 1 (Oberderdingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/419177029" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hintere Gasse 28 (Oberderdingen)" target="_new">de:Hintere Gasse 28 (Oberderdingen)</a>
+				</br>
+				Hintere Gasse 28 (Oberderdingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/419186340" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Brettener Stra&#223;e 25 (Oberderdingen)" target="_new">de:Brettener Stra&#223;e 25 (Oberderdingen)</a>
+				</br>
+				Brettener Stra&#223;e 25 (Oberderdingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/44446660" target="_new">Jüdischer Friedhof Oberöwisheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/J&#252;discher Friedhof Ober&#246;wisheim" target="_new">de:J&#252;discher Friedhof Ober&#246;wisheim</a>
+				</br>
+				J&#252;discher Friedhof Ober&#246;wisheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/477210902" target="_new">Kaiserberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kaiserberg (Naturschutzgebiet)" target="_new">de:Kaiserberg (Naturschutzgebiet)</a>
+				</br>
+				Kaiserberg (Naturschutzgebiet)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/4809523" target="_new">Eichendorff-Gymnasium - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Eichendorff-Gymnasium Ettlingen" target="_new">de:Eichendorff-Gymnasium Ettlingen</a>
+				</br>
+				Eichendorff-Gymnasium Ettlingen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/490459358" target="_new">St. Martin - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Martin (Flehingen)" target="_new">de:St. Martin (Flehingen)</a>
+				</br>
+				St. Martin (Flehingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/531473780" target="_new">St. Vitus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Vitus (Rheinsheim)" target="_new">de:St. Vitus (Rheinsheim)</a>
+				</br>
+				St. Vitus (Rheinsheim)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/53560933" target="_new">Rußheimer Altrhein-Elisabethenwört - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ru&#223;heimer Altrhein-Elisabethenw&#246;rt" target="_new">de:Ru&#223;heimer Altrhein-Elisabethenw&#246;rt</a>
+				</br>
+				Ru&#223;heimer Altrhein-Elisabethenw&#246;rt
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/53569608" target="_new">Altrhein-Königsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Altrhein-K&#246;nigsee" target="_new">de:Altrhein-K&#246;nigsee</a>
+				</br>
+				Altrhein-K&#246;nigsee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/53570987" target="_new">Oberbruchwiesen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Oberbruchwiesen" target="_new">de:Oberbruchwiesen</a>
+				</br>
+				Oberbruchwiesen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/53572044" target="_new">Altrhein Kleiner Bodensee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Altrhein Kleiner Bodensee" target="_new">de:Altrhein Kleiner Bodensee</a>
+				</br>
+				Altrhein Kleiner Bodensee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/538106528" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Obergrombacher Stra&#223;e 32 (Untergrombach)" target="_new">de:Obergrombacher Stra&#223;e 32 (Untergrombach)</a>
+				</br>
+				Obergrombacher Stra&#223;e 32 (Untergrombach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/538772167" target="_new">Jüdischer Friedhof Bad Mingolsheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/J&#252;discher Friedhof (Bad Mingolsheim)" target="_new">de:J&#252;discher Friedhof (Bad Mingolsheim)</a>
+				</br>
+				J&#252;discher Friedhof (Bad Mingolsheim)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/565109838" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Brettener Stra&#223;e 39 (Oberderdingen)" target="_new">de:Brettener Stra&#223;e 39 (Oberderdingen)</a>
+				</br>
+				Brettener Stra&#223;e 39 (Oberderdingen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/59991535" target="_new">SRH Klinikum Karlsbad-Langensteinbach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/SRH Klinikum Karlsbad-Langensteinbach" target="_new">de:SRH Klinikum Karlsbad-Langensteinbach</a>
+				</br>
+				SRH Klinikum Karlsbad-Langensteinbach
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/73065502" target="_new">Kraichsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kraichsee" target="_new">de:Kraichsee</a>
+				</br>
+				Kraichsee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/756484489" target="_new">Sonderlandeplatz Linkenheim - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Flugplatz Linkenheim" target="_new">de:Flugplatz Linkenheim</a>
+				</br>
+				Flugplatz Linkenheim
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/824826506" target="_new">Jüdischer Friedhof Jöhlingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/J&#252;discher Friedhof J&#246;hlingen" target="_new">de:J&#252;discher Friedhof J&#246;hlingen</a>
+				</br>
+				J&#252;discher Friedhof J&#246;hlingen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/826266461" target="_new">Kraichbachniederung - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kraichbachniederung" target="_new">de:Kraichbachniederung</a>
+				</br>
+				Kraichbachniederung
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/827104063" target="_new">Zwölf Morgen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Zw&#246;lf Morgen" target="_new">de:Zw&#246;lf Morgen</a>
+				</br>
+				Zw&#246;lf Morgen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/827105612" target="_new">Lehmgrube am Heulenberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Lehmgrube am Heulenberg" target="_new">de:Lehmgrube am Heulenberg</a>
+				</br>
+				Lehmgrube am Heulenberg
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/829408124" target="_new">Mahlbergturm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Mahlbergturm" target="_new">de:Mahlbergturm</a>
+				</br>
+				Mahlbergturm
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1184177036)['wikidata'='Q1205844']['wikipedia'!~'.*'];
+node(1246865866)['wikidata'='Q66057844']['wikipedia'!~'.*'];
+node(1411389220)['wikidata'='Q883515']['wikipedia'!~'.*'];
+node(1462883626)['wikidata'='Q307399']['wikipedia'!~'.*'];
+node(1502888660)['wikidata'='Q875726']['wikipedia'!~'.*'];
+node(1590483711)['wikidata'='Q2431864']['wikipedia'!~'.*'];
+node(240080860)['wikidata'='Q541161']['wikipedia'!~'.*'];
+node(240114360)['wikidata'='Q545164']['wikipedia'!~'.*'];
+node(251488575)['wikidata'='Q81423462']['wikipedia'!~'.*'];
+node(252304832)['wikidata'='Q2421817']['wikipedia'!~'.*'];
+node(25480308)['wikidata'='Q65090163']['wikipedia'!~'.*'];
+node(27306995)['wikidata'='Q1979342']['wikipedia'!~'.*'];
+node(281754049)['wikidata'='Q1427758']['wikipedia'!~'.*'];
+node(2827625953)['wikidata'='Q30219194']['wikipedia'!~'.*'];
+node(293574954)['wikidata'='Q1930174']['wikipedia'!~'.*'];
+node(3175311262)['wikidata'='Q15665933']['wikipedia'!~'.*'];
+node(3398531543)['wikidata'='Q1527688']['wikipedia'!~'.*'];
+node(389472192)['wikidata'='Q18018048']['wikipedia'!~'.*'];
+node(441209819)['wikidata'='Q26849164']['wikipedia'!~'.*'];
+node(72783176)['wikidata'='Q48616300']['wikipedia'!~'.*'];
+node(75655504)['wikidata'='Q20170857']['wikipedia'!~'.*'];
+relation(10253406)['wikidata'='Q1958122']['wikipedia'!~'.*'];
+relation(10253407)['wikidata'='Q1436676']['wikipedia'!~'.*'];
+relation(11292494)['wikidata'='Q19968287']['wikipedia'!~'.*'];
+relation(11296183)['wikidata'='Q21955228']['wikipedia'!~'.*'];
+relation(11299908)['wikidata'='Q23702446']['wikipedia'!~'.*'];
+relation(11300060)['wikidata'='Q62026889']['wikipedia'!~'.*'];
+relation(11300111)['wikidata'='Q23921710']['wikipedia'!~'.*'];
+relation(11304215)['wikidata'='Q62026840']['wikipedia'!~'.*'];
+relation(11304318)['wikidata'='Q62026852']['wikipedia'!~'.*'];
+relation(11304407)['wikidata'='Q62026847']['wikipedia'!~'.*'];
+relation(11312404)['wikidata'='Q22691075']['wikipedia'!~'.*'];
+relation(11312454)['wikidata'='Q57843979']['wikipedia'!~'.*'];
+relation(11316227)['wikidata'='Q57814657']['wikipedia'!~'.*'];
+relation(11316266)['wikidata'='Q18624328']['wikipedia'!~'.*'];
+relation(1203264)['wikidata'='Q1786296']['wikipedia'!~'.*'];
+relation(1557428)['wikidata'='Q78464888']['wikipedia'!~'.*'];
+relation(1566680)['wikidata'='Q2309334']['wikipedia'!~'.*'];
+relation(1566682)['wikidata'='Q1118817']['wikipedia'!~'.*'];
+relation(1566684)['wikidata'='Q1248613']['wikipedia'!~'.*'];
+relation(1566685)['wikidata'='Q1371836']['wikipedia'!~'.*'];
+relation(1566686)['wikidata'='Q991974']['wikipedia'!~'.*'];
+relation(2400115)['wikidata'='Q2084376']['wikipedia'!~'.*'];
+relation(2401350)['wikidata'='Q2555919']['wikipedia'!~'.*'];
+relation(2690837)['wikidata'='Q15118263']['wikipedia'!~'.*'];
+relation(2999354)['wikidata'='Q1803859']['wikipedia'!~'.*'];
+relation(33947)['wikidata'='Q125435']['wikipedia'!~'.*'];
+relation(357021)['wikidata'='Q1259455']['wikipedia'!~'.*'];
+relation(357326)['wikidata'='Q33434166']['wikipedia'!~'.*'];
+relation(357387)['wikidata'='Q2379835']['wikipedia'!~'.*'];
+relation(357388)['wikidata'='Q67788720']['wikipedia'!~'.*'];
+relation(357391)['wikidata'='Q1220159']['wikipedia'!~'.*'];
+relation(357392)['wikidata'='Q77569178']['wikipedia'!~'.*'];
+relation(357429)['wikidata'='Q27861638']['wikipedia'!~'.*'];
+relation(357432)['wikidata'='Q1020382']['wikipedia'!~'.*'];
+relation(357433)['wikidata'='Q78090051']['wikipedia'!~'.*'];
+relation(358055)['wikidata'='Q33522007']['wikipedia'!~'.*'];
+relation(4676433)['wikidata'='Q66904988']['wikipedia'!~'.*'];
+relation(4676434)['wikidata'='Q49292000']['wikipedia'!~'.*'];
+relation(4676435)['wikidata'='Q87001429']['wikipedia'!~'.*'];
+relation(4676436)['wikidata'='Q197021']['wikipedia'!~'.*'];
+relation(5416202)['wikidata'='Q800334']['wikipedia'!~'.*'];
+relation(5416203)['wikidata'='Q1533573']['wikipedia'!~'.*'];
+relation(5416204)['wikidata'='Q1522381']['wikipedia'!~'.*'];
+relation(5416206)['wikidata'='Q1979962']['wikipedia'!~'.*'];
+relation(5416207)['wikidata'='Q1267456']['wikipedia'!~'.*'];
+relation(5416208)['wikidata'='Q2499358']['wikipedia'!~'.*'];
+relation(5416209)['wikidata'='Q2011612']['wikipedia'!~'.*'];
+relation(5419024)['wikidata'='Q1301361']['wikipedia'!~'.*'];
+relation(5419025)['wikidata'='Q51485526']['wikipedia'!~'.*'];
+relation(5419026)['wikidata'='Q20745900']['wikipedia'!~'.*'];
+relation(5419029)['wikidata'='Q64178987']['wikipedia'!~'.*'];
+relation(5424577)['wikidata'='Q22882']['wikipedia'!~'.*'];
+relation(5424579)['wikidata'='Q738651']['wikipedia'!~'.*'];
+relation(5443795)['wikidata'='Q1639294']['wikipedia'!~'.*'];
+relation(5443799)['wikidata'='Q2147952']['wikipedia'!~'.*'];
+relation(5555674)['wikidata'='Q15111466']['wikipedia'!~'.*'];
+relation(67059)['wikidata'='Q1297267']['wikipedia'!~'.*'];
+relation(945817)['wikidata'='Q9015']['wikipedia'!~'.*'];
+relation(945819)['wikidata'='Q9015']['wikipedia'!~'.*'];
+relation(9472237)['wikidata'='Q367296']['wikipedia'!~'.*'];
+relation(951524)['wikidata'='Q34444']['wikipedia'!~'.*'];
+relation(951538)['wikidata'='Q34444']['wikipedia'!~'.*'];
+relation(954876)['wikidata'='Q9015']['wikipedia'!~'.*'];
+relation(954926)['wikidata'='Q9015']['wikipedia'!~'.*'];
+relation(955749)['wikidata'='Q34444']['wikipedia'!~'.*'];
+way(106896084)['wikidata'='Q1380428']['wikipedia'!~'.*'];
+way(121136925)['wikidata'='Q21043608']['wikipedia'!~'.*'];
+way(133619083)['wikidata'='Q1030396']['wikipedia'!~'.*'];
+way(135398797)['wikidata'='Q2172292']['wikipedia'!~'.*'];
+way(144927960)['wikidata'='Q34417962']['wikipedia'!~'.*'];
+way(151665567)['wikidata'='Q20871631']['wikipedia'!~'.*'];
+way(17095544)['wikidata'='Q16006176']['wikipedia'!~'.*'];
+way(174779842)['wikidata'='Q1778688']['wikipedia'!~'.*'];
+way(24366393)['wikidata'='Q96195358']['wikipedia'!~'.*'];
+way(29146694)['wikidata'='Q1707056']['wikipedia'!~'.*'];
+way(310778673)['wikidata'='Q21755449']['wikipedia'!~'.*'];
+way(319638926)['wikidata'='Q1380428']['wikipedia'!~'.*'];
+way(34304068)['wikidata'='Q62026805']['wikipedia'!~'.*'];
+way(35015781)['wikidata'='Q1400362']['wikipedia'!~'.*'];
+way(35463212)['wikidata'='Q12692036']['wikipedia'!~'.*'];
+way(35463872)['wikidata'='Q2258790']['wikipedia'!~'.*'];
+way(374614252)['wikidata'='Q2321110']['wikipedia'!~'.*'];
+way(402005895)['wikidata'='Q27886773']['wikipedia'!~'.*'];
+way(419052448)['wikidata'='Q2009340']['wikipedia'!~'.*'];
+way(419072625)['wikidata'='Q1593723']['wikipedia'!~'.*'];
+way(419177029)['wikidata'='Q1619664']['wikipedia'!~'.*'];
+way(419186340)['wikidata'='Q910942']['wikipedia'!~'.*'];
+way(44446660)['wikidata'='Q1620684']['wikipedia'!~'.*'];
+way(477210902)['wikidata'='Q62026785']['wikipedia'!~'.*'];
+way(4809523)['wikidata'='Q1301616']['wikipedia'!~'.*'];
+way(490459358)['wikidata'='Q2321099']['wikipedia'!~'.*'];
+way(531473780)['wikidata'='Q67203469']['wikipedia'!~'.*'];
+way(53560933)['wikidata'='Q57784591']['wikipedia'!~'.*'];
+way(53569608)['wikidata'='Q22691074']['wikipedia'!~'.*'];
+way(53570987)['wikidata'='Q22693326']['wikipedia'!~'.*'];
+way(53572044)['wikidata'='Q18616197']['wikipedia'!~'.*'];
+way(538106528)['wikidata'='Q1314691']['wikipedia'!~'.*'];
+way(538772167)['wikidata'='Q828562']['wikipedia'!~'.*'];
+way(565109838)['wikidata'='Q910947']['wikipedia'!~'.*'];
+way(59991535)['wikidata'='Q15359602']['wikipedia'!~'.*'];
+way(73065502)['wikidata'='Q1786303']['wikipedia'!~'.*'];
+way(756484489)['wikidata'='Q20451516']['wikipedia'!~'.*'];
+way(824826506)['wikidata'='Q1581753']['wikipedia'!~'.*'];
+way(826266461)['wikidata'='Q62026806']['wikipedia'!~'.*'];
+way(827104063)['wikidata'='Q62026846']['wikipedia'!~'.*'];
+way(827105612)['wikidata'='Q33562162']['wikipedia'!~'.*'];
+way(829408124)['wikidata'='Q98812858']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag, unexpected language"><h2 id="wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/3256326993" target="_new">Philippsburg (Baden) - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Philippsburg (Baden) station" target="_new">en:Philippsburg (Baden) station</a>
+				</br>
+				Philippsburg (Baden) station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/relation/2962336" target="_new">Verwaltungsgemeinschaft Bretten - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://pl.wikipedia.org/wiki/Wsp&#243;lnota administracyjna Bretten" target="_new">pl:Wsp&#243;lnota administracyjna Bretten</a>
+				</br>
+				Wsp&#243;lnota administracyjna Bretten
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/relation/2967168" target="_new">Verwaltungsgemeinschaft Oberderdingen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://pl.wikipedia.org/wiki/Wsp&#243;lnota administracyjna Oberderdingen" target="_new">pl:Wsp&#243;lnota administracyjna Oberderdingen</a>
+				</br>
+				Wsp&#243;lnota administracyjna Oberderdingen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/relation/2967169" target="_new">Verwaltungsgemeinschaft Sulzfeld - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://pl.wikipedia.org/wiki/Wsp&#243;lnota administracyjna Sulzfeld" target="_new">pl:Wsp&#243;lnota administracyjna Sulzfeld</a>
+				</br>
+				Wsp&#243;lnota administracyjna Sulzfeld
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/relation/2967174" target="_new">Verwaltungsgemeinschaft Bruchsal - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://pl.wikipedia.org/wiki/Wsp&#243;lnota administracyjna Bruchsal" target="_new">pl:Wsp&#243;lnota administracyjna Bruchsal</a>
+				</br>
+				Wsp&#243;lnota administracyjna Bruchsal
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/relation/2967178" target="_new">Verwaltungsgemeinschaft Graben-Neudorf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://pl.wikipedia.org/wiki/Wsp&#243;lnota administracyjna Graben-Neudorf" target="_new">pl:Wsp&#243;lnota administracyjna Graben-Neudorf</a>
+				</br>
+				Wsp&#243;lnota administracyjna Graben-Neudorf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/relation/2967179" target="_new">Verwaltungsverband Philippsburg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://pl.wikipedia.org/wiki/Zwi&#261;zek gmin Philippsburg" target="_new">pl:Zwi&#261;zek gmin Philippsburg</a>
+				</br>
+				Zwi&#261;zek gmin Philippsburg
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(3256326993)['wikidata'='Q64493570']['wikipedia'!~'.*'];
+relation(2962336)['wikidata'='Q9378515']['wikipedia'!~'.*'];
+relation(2967168)['wikidata'='Q9378585']['wikipedia'!~'.*'];
+relation(2967169)['wikidata'='Q9378625']['wikipedia'!~'.*'];
+relation(2967174)['wikidata'='Q9378516']['wikipedia'!~'.*'];
+relation(2967178)['wikidata'='Q9378545']['wikipedia'!~'.*'];
+relation(2967179)['wikidata'='Q9392569']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag, unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikidata from wikipedia tag"><h2 id="wikidata from wikipedia tag">wikidata from wikipedia tag</h2></a>
+				</br>
+				Q1301361 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/1587114249" target="_new">Eichelberg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2536357 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/29910191" target="_new">Völkersbach - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q835695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/9713442159" target="_new">Kraichgau - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1352744 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/9713578666" target="_new">Alb-Pfinz-Plateau - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2639572 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/9713715733" target="_new">Albgau - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q992345 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/9713735675" target="_new">Bruhrain - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2147708 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/1483666" target="_new">Rheinhäuser Fähre - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2164026 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/2433069" target="_new">Rollenbergtunnel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q992338 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/3067362" target="_new">Bruhrainbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1275365 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/3513565" target="_new">Rheintal-Weg Abschnitt 6 - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q803419 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/3688966" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15043706 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/8212118" target="_new">Hugenotten- und Waldenserpfad, Etappe Knittlingen - Gochsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15043706 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/8212137" target="_new">Hugenotten- und Waldenserpfad, Etappe Gochsheim - Eichelberg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15043706 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/8212150" target="_new">Hugenotten- und Waldenserpfad, Etappe Eichelberg - Sinsheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/100611920" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/100611921" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/111559591" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/113695643" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/113702837" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/113702838" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/113702839" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/113702840" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/113702841" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/113702843" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/113879958" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/113879960" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/113880773" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/115834507" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/115834509" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/115834511" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/115834513" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/115837437" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/115841142" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/115841144" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/115841149" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/115841152" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/115841153" target="_new">Neubaustrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/118427980" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/120858044" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/122006454" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/125647284" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/125647288" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/125647292" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/125647295" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/126495733" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/126608602" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/126608604" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/129253934" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/133734501" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/133734502" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/133734503" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/133741370" target="_new">Neubaustrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/133820352" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/133820368" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/133847562" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/133859538" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/133869662" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/145125835" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/145125863" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/145553119" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/146181319" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/146181320" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/150763640" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/150763644" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/150763651" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/150763654" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/150893192" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/150893193" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/150893194" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/150893201" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1420634 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/150997476" target="_new">Forlenbuckel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/156403076" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/156403080" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/156403082" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/156403084" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/156403085" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/156403086" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/156403087" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/156403088" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/156403090" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/156403091" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1616887 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/173012322" target="_new">Peter und Paul-Kirche - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/179352944" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/179352990" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/179449754" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/179449756" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/179449757" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/179449758" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/219952552" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/219952561" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q432899 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/226252780" target="_new">Alt-Dettenheim - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2147708 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/22924893" target="_new">Rheinhäuser Fähre - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/23009280" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/23150604" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/24727050" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/251682954" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/251682955" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/25666647" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/25666648" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/259503559" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q185187 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/276023967" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1661603 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/284878536" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/298881802" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/30489724" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/30489726" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/305620563" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/30721576" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/307642884" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/307956697" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/307956698" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/307956700" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/307956701" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/308456525" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/308456526" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314286734" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314325284" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314325285" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314325286" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314325289" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314325294" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/31465819" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314763249" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314763250" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314776599" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314776600" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314913979" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/314913980" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/318273982" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/318273983" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/318299482" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/318299492" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/318299493" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/318299494" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/318299495" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/318628200" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/33075463" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/334381947" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/334381950" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/334381951" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/35032172" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1745904 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/35463213" target="_new">Landesfeuerwehrschule Baden-Württemberg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/373089554" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/385890450" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/385890453" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/39844580" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/39844581" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/413192364" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/42084595" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/42084597" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/42084599" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/42084600" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/452773636" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/452773637" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/452923007" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/452923008" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/454078710" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/454078712" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/5121418" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/5121419" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q551240 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/5204184" target="_new">Schnellfahrstrecke Mannheim–Stuttgart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/896123519" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/97100706" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/97100728" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/97116099" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/97116102" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/97116104" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/98963573" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1786304 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/98963574" target="_new">Kraichgaubahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1587114249)['wikidata'!~'.*']['wikipedia'='de:Eichelberg (&#214;stringen)'];
+node(29910191)['wikidata'!~'.*']['wikipedia'='de:V&#246;lkersbach'];
+node(9713442159)['wikidata'!~'.*']['wikipedia'='de:Kraichgau'];
+node(9713578666)['wikidata'!~'.*']['wikipedia'='de:Alb-Pfinz-Plateau'];
+node(9713715733)['wikidata'!~'.*']['wikipedia'='de:Albgau (Nordschwarzwald)'];
+node(9713735675)['wikidata'!~'.*']['wikipedia'='de:Bruhrain'];
+relation(1483666)['wikidata'!~'.*']['wikipedia'='de:Rheinh&#228;user F&#228;hre'];
+relation(2433069)['wikidata'!~'.*']['wikipedia'='de:Rollenbergtunnel'];
+relation(3067362)['wikidata'!~'.*']['wikipedia'='de:Bruhrainbahn'];
+relation(3513565)['wikidata'!~'.*']['wikipedia'='de:Rheintal-Weg'];
+relation(3688966)['wikidata'!~'.*']['wikipedia'='de:Bahnstrecke Wagh&#228;usel Saalbach&#8211;Graben-Neudorf'];
+relation(8212118)['wikidata'!~'.*']['wikipedia'='de:Europ&#228;ischer Kulturfernwanderweg Hugenotten- und Waldenserpfad'];
+relation(8212137)['wikidata'!~'.*']['wikipedia'='de:Europ&#228;ischer Kulturfernwanderweg Hugenotten- und Waldenserpfad'];
+relation(8212150)['wikidata'!~'.*']['wikipedia'='de:Europ&#228;ischer Kulturfernwanderweg Hugenotten- und Waldenserpfad'];
+way(100611920)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(100611921)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(111559591)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(113695643)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(113702837)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(113702838)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(113702839)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(113702840)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(113702841)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(113702843)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(113879958)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(113879960)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(113880773)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(115834507)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(115834509)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(115834511)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(115834513)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(115837437)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(115841142)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(115841144)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(115841149)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(115841152)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(115841153)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(118427980)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(120858044)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(122006454)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(125647284)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(125647288)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(125647292)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(125647295)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(126495733)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(126608602)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(126608604)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(129253934)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(133734501)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(133734502)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(133734503)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(133741370)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(133820352)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(133820368)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(133847562)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(133859538)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(133869662)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(145125835)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(145125863)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(145553119)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(146181319)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(146181320)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(150763640)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(150763644)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(150763651)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(150763654)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(150893192)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(150893193)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(150893194)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(150893201)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(150997476)['wikidata'!~'.*']['wikipedia'='de:Forlenbuckel'];
+way(156403076)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(156403080)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(156403082)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(156403084)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(156403085)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(156403086)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(156403087)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(156403088)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(156403090)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(156403091)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(173012322)['wikidata'!~'.*']['wikipedia'='de:St. Peter und Paul (Oberderdingen)'];
+way(179352944)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(179352990)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(179449754)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(179449756)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(179449757)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(179449758)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(219952552)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(219952561)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(226252780)['wikidata'!~'.*']['wikipedia'='de:Alt-Dettenheim'];
+way(22924893)['wikidata'!~'.*']['wikipedia'='de:Rheinh&#228;user F&#228;hre'];
+way(23009280)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(23150604)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(24727050)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(251682954)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(251682955)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(25666647)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(25666648)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(259503559)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(276023967)['wikidata'!~'.*']['wikipedia'='de:Wasserm&#252;hle'];
+way(284878536)['wikidata'!~'.*']['wikipedia'='de:Ritterstift Odenheim'];
+way(298881802)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(30489724)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(30489726)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(305620563)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(30721576)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(307642884)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(307956697)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(307956698)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(307956700)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(307956701)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(308456525)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(308456526)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(314286734)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(314325284)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(314325285)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(314325286)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(314325289)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(314325294)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(31465819)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(314763249)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(314763250)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(314776599)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(314776600)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(314913979)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(314913980)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(318273982)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(318273983)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(318299482)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(318299492)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(318299493)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(318299494)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(318299495)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(318628200)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(33075463)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(334381947)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(334381950)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(334381951)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(35032172)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(35463213)['wikidata'!~'.*']['wikipedia'='de:Landesfeuerwehrschule Baden-W&#252;rttemberg'];
+way(373089554)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(385890450)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(385890453)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(39844580)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(39844581)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(413192364)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(42084595)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(42084597)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(42084599)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(42084600)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(452773636)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(452773637)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(452923007)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(452923008)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(454078710)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(454078712)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(5121418)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(5121419)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(5204184)['wikidata'!~'.*']['wikipedia'='de:Schnellfahrstrecke Mannheim&#8211;Stuttgart'];
+way(896123519)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(97100706)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(97100728)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(97116099)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(97116102)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(97116104)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(98963573)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+way(98963574)['wikidata'!~'.*']['wikipedia'='de:Kraichgaubahn'];
+); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>
