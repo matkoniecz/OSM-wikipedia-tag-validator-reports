@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-01-05. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,3213 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li></ul>			</br>
+			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
+				</br>
+				wikipedia page in unexpected language - de was expected:
+				</br>
+				<a href="https://openstreetmap.org/relation/154667" target="_new">Staffelsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Staffelsee" target="_new">de:Staffelsee</a>
+				</br>
+				Staffelsee
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(154667)['wikipedia'='en:Staffelsee'];
+); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q166301 vs (missing) article redirects from de:Ammer (Ammersee) to de:Amper
+				</br>
+				<a href="https://openstreetmap.org/relation/1330429" target="_new">Ammer - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Amper" target="_new">de:Amper</a>
+				</br>
+				Amper
+				</br>
+				<hr>
+				</br>
+				Q306531 vs (missing) article redirects from de:&#214;sterreichischer Weitwanderweg 01 to de:Nordalpenweg
+				</br>
+				<a href="https://openstreetmap.org/relation/177745" target="_new">Nordalpenweg 01 - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Nordalpenweg" target="_new">de:Nordalpenweg</a>
+				</br>
+				Nordalpenweg
+				</br>
+				<hr>
+				</br>
+				Q1437589 vs (missing) article redirects from de:Bayrische Voralpen to de:Bayerische Voralpen
+				</br>
+				<a href="https://openstreetmap.org/relation/2116473" target="_new">Bayerische Voralpen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bayerische Voralpen" target="_new">de:Bayerische Voralpen</a>
+				</br>
+				Bayerische Voralpen
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(1330429)['wikidata'='Q166301']['wikipedia'='de:Ammer (Ammersee)'];
+relation(177745)['wikidata'='Q306531']['wikipedia'='de:&#214;sterreichischer Weitwanderweg 01'];
+relation(2116473)['wikidata'='Q1437589']['wikipedia'='de:Bayrische Voralpen'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1211135457" target="_new">Kriegergedächtniskapelle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kriegerged&#228;chtniskapelle (Bad Bayersoien)" target="_new">de:Kriegerged&#228;chtniskapelle (Bad Bayersoien)</a>
+				</br>
+				Kriegerged&#228;chtniskapelle (Bad Bayersoien)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1621410739" target="_new">Hochlandhütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hochlandh&#252;tte" target="_new">de:Hochlandh&#252;tte</a>
+				</br>
+				Hochlandh&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1685815045" target="_new">Klais - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Klais (Kr&#252;n)" target="_new">de:Klais (Kr&#252;n)</a>
+				</br>
+				Klais (Kr&#252;n)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1700556846" target="_new">Bad Kohlgrub - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bad Kohlgrub" target="_new">de:Bad Kohlgrub</a>
+				</br>
+				Bad Kohlgrub
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1700556878" target="_new">Scherenau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Scherenau" target="_new">de:Scherenau</a>
+				</br>
+				Scherenau
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1751573278" target="_new">Hubertuskapelle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hubertuskapelle (Saulgrub)" target="_new">de:Hubertuskapelle (Saulgrub)</a>
+				</br>
+				Hubertuskapelle (Saulgrub)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1793360283" target="_new">Zundereck - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Zundereck" target="_new">de:Zundereck</a>
+				</br>
+				Zundereck
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1833449075" target="_new">Hochblassen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hochblassen" target="_new">de:Hochblassen</a>
+				</br>
+				Hochblassen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1978075728" target="_new">Krepelschrofen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Krepelschrofen" target="_new">de:Krepelschrofen</a>
+				</br>
+				Krepelschrofen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1978075747" target="_new">Neuglägerkopf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Neugl&#228;gerkopf" target="_new">de:Neugl&#228;gerkopf</a>
+				</br>
+				Neugl&#228;gerkopf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1978075758" target="_new">Platteneck - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Platteneck (Estergebirge)" target="_new">de:Platteneck (Estergebirge)</a>
+				</br>
+				Platteneck (Estergebirge)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2076476475" target="_new">Gumpenkarspitze - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Gumpenkarspitze (Karwendel)" target="_new">de:Gumpenkarspitze (Karwendel)</a>
+				</br>
+				Gumpenkarspitze (Karwendel)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2419126850" target="_new">Krapfenkarspitze - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Krapfenkarspitze" target="_new">de:Krapfenkarspitze</a>
+				</br>
+				Krapfenkarspitze
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2441923393" target="_new">Höllentorkopf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/H&#246;llentorkopf" target="_new">de:H&#246;llentorkopf</a>
+				</br>
+				H&#246;llentorkopf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2459454628" target="_new">Maria Hilf Kirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Maria-Hilf-Kirche (Murnau am Staffelsee)" target="_new">de:Maria-Hilf-Kirche (Murnau am Staffelsee)</a>
+				</br>
+				Maria-Hilf-Kirche (Murnau am Staffelsee)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2468044863" target="_new">Hagen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hagen (Riegsee)" target="_new">de:Hagen (Riegsee)</a>
+				</br>
+				Hagen (Riegsee)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2526645259" target="_new">Elferköpfl - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Elferk&#246;pfl" target="_new">de:Elferk&#246;pfl</a>
+				</br>
+				Elferk&#246;pfl
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/259406948" target="_new">Osterfelderkopf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Osterfelderkopf" target="_new">de:Osterfelderkopf</a>
+				</br>
+				Osterfelderkopf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/259486622" target="_new">Alpspitze - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Alpspitze" target="_new">de:Alpspitze</a>
+				</br>
+				Alpspitze
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/260744946" target="_new">Niederer Fricken - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Niederer Fricken" target="_new">de:Niederer Fricken</a>
+				</br>
+				Niederer Fricken
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/267792056" target="_new">Hirschberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hirschberg (Ohlstadt)" target="_new">de:Hirschberg (Ohlstadt)</a>
+				</br>
+				Hirschberg (Ohlstadt)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/26863431" target="_new">Kramerspitz - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kramerspitz" target="_new">de:Kramerspitz</a>
+				</br>
+				Kramerspitz
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/26863436" target="_new">Kreuzspitze - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kreuzspitze (Ammergauer Alpen)" target="_new">de:Kreuzspitze (Ammergauer Alpen)</a>
+				</br>
+				Kreuzspitze (Ammergauer Alpen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/26863440" target="_new">Krottenkopf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Krottenkopf" target="_new">de:Krottenkopf</a>
+				</br>
+				Krottenkopf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/268765217" target="_new">Hirschbichel - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hirschbichel" target="_new">de:Hirschbichel</a>
+				</br>
+				Hirschbichel
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/268949227" target="_new">Hohe Kisten - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hohe Kisten" target="_new">de:Hohe Kisten</a>
+				</br>
+				Hohe Kisten
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2770355657" target="_new">Pürschling - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/P&#252;rschling" target="_new">de:P&#252;rschling</a>
+				</br>
+				P&#252;rschling
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/277654091" target="_new">Hoher Ziegspitz - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hoher Ziegspitz" target="_new">de:Hoher Ziegspitz</a>
+				</br>
+				Hoher Ziegspitz
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/277715389" target="_new">Notkarspitze - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Notkarspitze" target="_new">de:Notkarspitze</a>
+				</br>
+				Notkarspitze
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/277716192" target="_new">Kienjoch - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kienjoch" target="_new">de:Kienjoch</a>
+				</br>
+				Kienjoch
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/277716329" target="_new">Vorderer Felderkopf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Vorderer Felderkopf" target="_new">de:Vorderer Felderkopf</a>
+				</br>
+				Vorderer Felderkopf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/277722495" target="_new">Friederspitz - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Friederspitz" target="_new">de:Friederspitz</a>
+				</br>
+				Friederspitz
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/277727364" target="_new">Schellschlicht - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schellschlicht" target="_new">de:Schellschlicht</a>
+				</br>
+				Schellschlicht
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/277739502" target="_new">Graswang - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Graswang" target="_new">de:Graswang</a>
+				</br>
+				Graswang
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/286790301" target="_new">Bernadeinkopf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bernadeinkopf" target="_new">de:Bernadeinkopf</a>
+				</br>
+				Bernadeinkopf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/290506923" target="_new">Teufelstättkopf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Teufelst&#228;ttkopf" target="_new">de:Teufelst&#228;ttkopf</a>
+				</br>
+				Teufelst&#228;ttkopf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/293246279" target="_new">Dammkarhütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Dammkarh&#252;tte" target="_new">de:Dammkarh&#252;tte</a>
+				</br>
+				Dammkarh&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/296163774" target="_new">Brunnsteinhütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Brunnsteinh&#252;tte" target="_new">de:Brunnsteinh&#252;tte</a>
+				</br>
+				Brunnsteinh&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/299499722" target="_new">Geigenbau-Museum - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Geigenbaumuseum Mittenwald" target="_new">de:Geigenbaumuseum Mittenwald</a>
+				</br>
+				Geigenbaumuseum Mittenwald
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/3030449108" target="_new">Skistadion - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Olympia-Skistadion" target="_new">de:Olympia-Skistadion</a>
+				</br>
+				Olympia-Skistadion
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/304353179" target="_new">Wank - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wank (Berg)" target="_new">de:Wank (Berg)</a>
+				</br>
+				Wank (Berg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/304477193" target="_new">Hinteres Hörnle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/H&#246;rnle (Ammergauer Alpen)" target="_new">de:H&#246;rnle (Ammergauer Alpen)</a>
+				</br>
+				H&#246;rnle (Ammergauer Alpen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/340560279" target="_new">Mittenwalder Hütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Mittenwalder H&#252;tte" target="_new">de:Mittenwalder H&#252;tte</a>
+				</br>
+				Mittenwalder H&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/344362676" target="_new">Großer Aufacker - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Aufacker" target="_new">de:Aufacker</a>
+				</br>
+				Aufacker
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/357213081" target="_new">SB-Center Partenkirchen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kreissparkasse Garmisch-Partenkirchen" target="_new">de:Kreissparkasse Garmisch-Partenkirchen</a>
+				</br>
+				Kreissparkasse Garmisch-Partenkirchen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/3662166614" target="_new">Am Zahn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Am Zahn" target="_new">de:Am Zahn</a>
+				</br>
+				Am Zahn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/380989890" target="_new">Brunnsteinspitze - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Brunnensteinspitze" target="_new">de:Brunnensteinspitze</a>
+				</br>
+				Brunnensteinspitze
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/4102158270" target="_new">Königsstand - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/K&#246;nigsstand" target="_new">de:K&#246;nigsstand</a>
+				</br>
+				K&#246;nigsstand
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/4102509390" target="_new">Sefelwand - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Sefelwand" target="_new">de:Sefelwand</a>
+				</br>
+				Sefelwand
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/4104402988" target="_new">Osterfeuerberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Osterfeuerkopf" target="_new">de:Osterfeuerkopf</a>
+				</br>
+				Osterfeuerkopf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/418778317" target="_new">Hennenkopf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hennenkopf (Ammergauer Alpen)" target="_new">de:Hennenkopf (Ammergauer Alpen)</a>
+				</br>
+				Hennenkopf (Ammergauer Alpen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/429289574" target="_new">Kaltenbrunn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kaltenbrunn (Garmisch-Partenkirchen)" target="_new">de:Kaltenbrunn (Garmisch-Partenkirchen)</a>
+				</br>
+				Kaltenbrunn (Garmisch-Partenkirchen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/4331972690" target="_new">Schlossmuseum Murnau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schlo&#223;museum Murnau" target="_new">de:Schlo&#223;museum Murnau</a>
+				</br>
+				Schlo&#223;museum Murnau
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/449491364" target="_new">Bischof - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bischof (Bayerische Voralpen)" target="_new">de:Bischof (Bayerische Voralpen)</a>
+				</br>
+				Bischof (Bayerische Voralpen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/4504021793" target="_new">Garmisch-Partenkirchen (BZB) - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnhof Garmisch" target="_new">de:Bahnhof Garmisch</a>
+				</br>
+				Bahnhof Garmisch
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/4523743080" target="_new">Zunderkopf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Zunderkopf" target="_new">de:Zunderkopf</a>
+				</br>
+				Zunderkopf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/452941377" target="_new">Laber - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Laber (Berg)" target="_new">de:Laber (Berg)</a>
+				</br>
+				Laber (Berg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/463541003" target="_new">Brunnenkopf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Brunnenkopf (Berg)" target="_new">de:Brunnenkopf (Berg)</a>
+				</br>
+				Brunnenkopf (Berg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/5034081693" target="_new">Feldernkreuz - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Feldernkreuz" target="_new">de:Feldernkreuz</a>
+				</br>
+				Feldernkreuz
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/508474971" target="_new">Großer Waxenstein - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Waxenstein (Wettersteingebirge)" target="_new">de:Waxenstein (Wettersteingebirge)</a>
+				</br>
+				Waxenstein (Wettersteingebirge)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/508503691" target="_new">Innere Höllentalspitze - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/H&#246;llentalspitzen" target="_new">de:H&#246;llentalspitzen</a>
+				</br>
+				H&#246;llentalspitzen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/508503694" target="_new">Vollkarspitze - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Vollkarspitze" target="_new">de:Vollkarspitze</a>
+				</br>
+				Vollkarspitze
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/519688895" target="_new">Hoher Fricken - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hoher Fricken" target="_new">de:Hoher Fricken</a>
+				</br>
+				Hoher Fricken
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/519689159" target="_new">Kuhfluchtwasserfälle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kuhfluchtwasserf&#228;lle" target="_new">de:Kuhfluchtwasserf&#228;lle</a>
+				</br>
+				Kuhfluchtwasserf&#228;lle
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/527273302" target="_new">Kreuzwand - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kreuzwand" target="_new">de:Kreuzwand</a>
+				</br>
+				Kreuzwand
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/527273304" target="_new">Viererspitze - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Viererspitze" target="_new">de:Viererspitze</a>
+				</br>
+				Viererspitze
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/528983385" target="_new">Brunnenkopfhütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Brunnenkopfh&#252;tte" target="_new">de:Brunnenkopfh&#252;tte</a>
+				</br>
+				Brunnenkopfh&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/530185743" target="_new">Jubiläumsgrat-Biwakschachtel - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Jubil&#228;umsgrath&#252;tte" target="_new">de:Jubil&#228;umsgrath&#252;tte</a>
+				</br>
+				Jubil&#228;umsgrath&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/61080195" target="_new">Hoher Kranzberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hoher Kranzberg (Wettersteingebirge)" target="_new">de:Hoher Kranzberg (Wettersteingebirge)</a>
+				</br>
+				Hoher Kranzberg (Wettersteingebirge)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/643653896" target="_new">Hochschergen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hochschergen" target="_new">de:Hochschergen</a>
+				</br>
+				Hochschergen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/648572859" target="_new">Ölrain - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/&#214;lrain" target="_new">de:&#214;lrain</a>
+				</br>
+				&#214;lrain
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/649103397" target="_new">Langer Köchel - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Langer K&#246;chel" target="_new">de:Langer K&#246;chel</a>
+				</br>
+				Langer K&#246;chel
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/649103412" target="_new">Steinköchel - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Steink&#246;chel" target="_new">de:Steink&#246;chel</a>
+				</br>
+				Steink&#246;chel
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/649103424" target="_new">Wiesmahdköchel - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wiesmahdk&#246;chel" target="_new">de:Wiesmahdk&#246;chel</a>
+				</br>
+				Wiesmahdk&#246;chel
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/651958799" target="_new">Zwölferköpfl - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Zw&#246;lferk&#246;pfl (Estergebirge)" target="_new">de:Zw&#246;lferk&#246;pfl (Estergebirge)</a>
+				</br>
+				Zw&#246;lferk&#246;pfl (Estergebirge)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/702945914" target="_new">Rahm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rahm (Ettal)" target="_new">de:Rahm (Ettal)</a>
+				</br>
+				Rahm (Ettal)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/705251750" target="_new">Kreuzturm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kreuzturm (Estergebirge)" target="_new">de:Kreuzturm (Estergebirge)</a>
+				</br>
+				Kreuzturm (Estergebirge)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/705251831" target="_new">Teufelskapelle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Teufelskapelle" target="_new">de:Teufelskapelle</a>
+				</br>
+				Teufelskapelle
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/714142222" target="_new">Klaffen - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Klaffen" target="_new">de:Klaffen</a>
+				</br>
+				Klaffen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/773900398" target="_new">Manndl - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Manndl" target="_new">de:Manndl</a>
+				</br>
+				Manndl
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/8388392131" target="_new">Garmisch-Partenkirchen (BZB) - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnhof Garmisch" target="_new">de:Bahnhof Garmisch</a>
+				</br>
+				Bahnhof Garmisch
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/9929888204" target="_new">Staffelseemuseum - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Staffelseemuseum" target="_new">de:Staffelseemuseum</a>
+				</br>
+				Staffelseemuseum
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/14710525" target="_new">Wiesenbrütergebiet Loisach-Kochelsee-Moore - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Loisach-Kochelsee-Moore" target="_new">de:Loisach-Kochelsee-Moore</a>
+				</br>
+				Loisach-Kochelsee-Moore
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1632250" target="_new">Murnauer Moos - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Murnauer Moos" target="_new">de:Murnauer Moos</a>
+				</br>
+				Murnauer Moos
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/2068020" target="_new">Riegsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Riegsee" target="_new">de:Riegsee</a>
+				</br>
+				Riegsee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/2173930" target="_new">Wörth - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/W&#246;rth (Staffelsee)" target="_new">de:W&#246;rth (Staffelsee)</a>
+				</br>
+				W&#246;rth (Staffelsee)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/2282118" target="_new">Rießersee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rie&#223;ersee" target="_new">de:Rie&#223;ersee</a>
+				</br>
+				Rie&#223;ersee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/2557199" target="_new">Lautersee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Lautersee" target="_new">de:Lautersee</a>
+				</br>
+				Lautersee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/7069488" target="_new">Badersee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Badersee" target="_new">de:Badersee</a>
+				</br>
+				Badersee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/7711596" target="_new">5451 Murnau - Oberammergau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bahnstrecke Murnau&#8211;Oberammergau" target="_new">de:Bahnstrecke Murnau&#8211;Oberammergau</a>
+				</br>
+				Bahnstrecke Murnau&#8211;Oberammergau
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/79018" target="_new">Deutsche Alpenstraße - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Deutsche Alpenstra&#223;e" target="_new">de:Deutsche Alpenstra&#223;e</a>
+				</br>
+				Deutsche Alpenstra&#223;e
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/82573" target="_new">Europastaße E 533 - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Europastra&#223;e 533" target="_new">de:Europastra&#223;e 533</a>
+				</br>
+				Europastra&#223;e 533
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/1111610146" target="_new">Kochel-Filz bei Unterammergau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kochelfilz bei Unterammergau" target="_new">de:Kochelfilz bei Unterammergau</a>
+				</br>
+				Kochelfilz bei Unterammergau
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/1111610147" target="_new">Altenauer Moor - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Altenauer Moor" target="_new">de:Altenauer Moor</a>
+				</br>
+				Altenauer Moor
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/1111610148" target="_new">Ammerschlucht im Bereich des Scheibum - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ammerschlucht im Bereich des Scheibum" target="_new">de:Ammerschlucht im Bereich des Scheibum</a>
+				</br>
+				Ammerschlucht im Bereich des Scheibum
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/1111625476" target="_new">Buckelwiesen am Geißschädel - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Buckelwiesen am Gei&#223;sch&#228;del" target="_new">de:Buckelwiesen am Gei&#223;sch&#228;del</a>
+				</br>
+				Buckelwiesen am Gei&#223;sch&#228;del
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/1111625477" target="_new">Arnspitze - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Naturschutzgebiet Arnspitze" target="_new">de:Naturschutzgebiet Arnspitze</a>
+				</br>
+				Naturschutzgebiet Arnspitze
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/1111625478" target="_new">Riedboden - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Riedboden" target="_new">de:Riedboden</a>
+				</br>
+				Riedboden
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/11121180" target="_new">Bayersoiener See - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bayersoiener See" target="_new">de:Bayersoiener See</a>
+				</br>
+				Bayersoiener See
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/112611282" target="_new">Rollischsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rollischsee" target="_new">de:Rollischsee</a>
+				</br>
+				Rollischsee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/112681825" target="_new">St. Martin - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Martin (Weindorf)" target="_new">de:St. Martin (Weindorf)</a>
+				</br>
+				St. Martin (Weindorf)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/113281683" target="_new">Rathaus Murnau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rathaus (Murnau am Staffelsee)" target="_new">de:Rathaus (Murnau am Staffelsee)</a>
+				</br>
+				Rathaus (Murnau am Staffelsee)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/113552445" target="_new">Postamt - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Postamt (Murnau am Staffelsee)" target="_new">de:Postamt (Murnau am Staffelsee)</a>
+				</br>
+				Postamt (Murnau am Staffelsee)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/113556212" target="_new">Münter-Haus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/M&#252;nter-Haus" target="_new">de:M&#252;nter-Haus</a>
+				</br>
+				M&#252;nter-Haus
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/115402001" target="_new">Haarsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Haarsee (Ohlstadt)" target="_new">de:Haarsee (Ohlstadt)</a>
+				</br>
+				Haarsee (Ohlstadt)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/115641474" target="_new">Schloss Grafenaschau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schloss Grafenaschau" target="_new">de:Schloss Grafenaschau</a>
+				</br>
+				Schloss Grafenaschau
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/115749259" target="_new">St. Anna - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Anna (Hechendorf)" target="_new">de:St. Anna (Hechendorf)</a>
+				</br>
+				St. Anna (Hechendorf)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/116240805" target="_new">August-Schuster-Haus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/August-Schuster-Haus" target="_new">de:August-Schuster-Haus</a>
+				</br>
+				August-Schuster-Haus
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/116680068" target="_new">St. Blasius - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Blasius (Hagen)" target="_new">de:St. Blasius (Hagen)</a>
+				</br>
+				St. Blasius (Hagen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/116794924" target="_new">Schloss Rieden - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schloss Rieden" target="_new">de:Schloss Rieden</a>
+				</br>
+				Schloss Rieden
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/119788301" target="_new">Venusgrotte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Venusgrotte" target="_new">de:Venusgrotte</a>
+				</br>
+				Venusgrotte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/121123471" target="_new">Haselsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Haselsee" target="_new">de:Haselsee</a>
+				</br>
+				Haselsee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/121940390" target="_new">Krinner-Kofler-Hütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Krinner-Kofler-H&#252;tte" target="_new">de:Krinner-Kofler-H&#252;tte</a>
+				</br>
+				Krinner-Kofler-H&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/125077454" target="_new">Tennsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Tennsee" target="_new">de:Tennsee</a>
+				</br>
+				Tennsee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/128630808" target="_new">Soiernhaus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Soiernhaus" target="_new">de:Soiernhaus</a>
+				</br>
+				Soiernhaus
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/130395806" target="_new">Jubiläumsgrat - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Jubil&#228;umsgrat" target="_new">de:Jubil&#228;umsgrat</a>
+				</br>
+				Jubil&#228;umsgrat
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/140683528" target="_new">Froschhauser See - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Froschhauser See" target="_new">de:Froschhauser See</a>
+				</br>
+				Froschhauser See
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/159271760" target="_new">St. Georg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Georg (Weichs)" target="_new">de:St. Georg (Weichs)</a>
+				</br>
+				St. Georg (Weichs)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/173729998" target="_new">Maurischer Kiosk - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Maurischer Kiosk" target="_new">de:Maurischer Kiosk</a>
+				</br>
+				Maurischer Kiosk
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/184063333" target="_new">St. Laurentius - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Laurentius (Ohlstadt)" target="_new">de:St. Laurentius (Ohlstadt)</a>
+				</br>
+				St. Laurentius (Ohlstadt)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/198806742" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Pfarrhaus (Farchant)" target="_new">de:Pfarrhaus (Farchant)</a>
+				</br>
+				Pfarrhaus (Farchant)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/217504824" target="_new">Trögelhütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Tr&#246;gelh&#252;tte" target="_new">de:Tr&#246;gelh&#252;tte</a>
+				</br>
+				Tr&#246;gelh&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/231127897" target="_new">ADAC Luftrettungsstation Murnau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Christoph Murnau" target="_new">de:Christoph Murnau</a>
+				</br>
+				Christoph Murnau
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/23425364" target="_new">Ferchensee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ferchensee" target="_new">de:Ferchensee</a>
+				</br>
+				Ferchensee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/236047957" target="_new">Münchner Haus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/M&#252;nchner Haus" target="_new">de:M&#252;nchner Haus</a>
+				</br>
+				M&#252;nchner Haus
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/237142745" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kapelle (Vorderkehr)" target="_new">de:Kapelle (Vorderkehr)</a>
+				</br>
+				Kapelle (Vorderkehr)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/24952444" target="_new">Hausbergbahn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Hausbergbahn" target="_new">de:Hausbergbahn</a>
+				</br>
+				Hausbergbahn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/251911224" target="_new">St. Sebastian - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Sebastian (Kr&#252;n)" target="_new">de:St. Sebastian (Kr&#252;n)</a>
+				</br>
+				St. Sebastian (Kr&#252;n)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/255360878" target="_new">Landratsamt Garmisch-Partenkirchen Geb. E - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Landratsamt Garmisch-Partenkirchen" target="_new">de:Landratsamt Garmisch-Partenkirchen</a>
+				</br>
+				Landratsamt Garmisch-Partenkirchen
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/257092231" target="_new">Husar - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Haus zum Husaren" target="_new">de:Haus zum Husaren</a>
+				</br>
+				Haus zum Husaren
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/26186941" target="_new">Bayerische Zugspitzbahn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Zugspitztunnel" target="_new">de:Zugspitztunnel</a>
+				</br>
+				Zugspitztunnel
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/26713595" target="_new">Schachensee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schachensee" target="_new">de:Schachensee</a>
+				</br>
+				Schachensee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/26735365" target="_new">Frillensee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Frillensee (Grainau)" target="_new">de:Frillensee (Grainau)</a>
+				</br>
+				Frillensee (Grainau)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/26735591" target="_new">Karwendelbahn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Karwendelbahn (Seilbahn)" target="_new">de:Karwendelbahn (Seilbahn)</a>
+				</br>
+				Karwendelbahn (Seilbahn)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/26761684" target="_new">Stuibensee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Stuibensee" target="_new">de:Stuibensee</a>
+				</br>
+				Stuibensee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/27285705" target="_new">Luttensee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Luttensee" target="_new">de:Luttensee</a>
+				</br>
+				Luttensee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/27285721" target="_new">Schmalensee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schmalensee (Mittenwald)" target="_new">de:Schmalensee (Mittenwald)</a>
+				</br>
+				Schmalensee (Mittenwald)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/27434078" target="_new">Soilasee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Soilasee" target="_new">de:Soilasee</a>
+				</br>
+				Soilasee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/27469001" target="_new">St. Nikolaus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Nikolaus (Mittenwald)" target="_new">de:St. Nikolaus (Mittenwald)</a>
+				</br>
+				St. Nikolaus (Mittenwald)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/29044371" target="_new">Umweltforschungsstation Schneefernerhaus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schneefernerhaus" target="_new">de:Schneefernerhaus</a>
+				</br>
+				Schneefernerhaus
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/30450425" target="_new">Wankbahn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wankbahn" target="_new">de:Wankbahn</a>
+				</br>
+				Wankbahn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/30860740" target="_new">Eichsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Eichsee" target="_new">de:Eichsee</a>
+				</br>
+				Eichsee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/30903816" target="_new">Neuer Moosbergsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Neuer Moosbergsee" target="_new">de:Neuer Moosbergsee</a>
+				</br>
+				Neuer Moosbergsee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/334618347" target="_new">St. Anna - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Anna (Wamberg)" target="_new">de:St. Anna (Wamberg)</a>
+				</br>
+				St. Anna (Wamberg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/336441160" target="_new">St. Martin Zell - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Martin (Zell)" target="_new">de:St. Martin (Zell)</a>
+				</br>
+				St. Martin (Zell)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/336656328" target="_new">St. Korbinian Kleinweil - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Korbinian (Kleinweil)" target="_new">de:St. Korbinian (Kleinweil)</a>
+				</br>
+				St. Korbinian (Kleinweil)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/35147654" target="_new">Pflegersee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Pflegersee" target="_new">de:Pflegersee</a>
+				</br>
+				Pflegersee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/35331969" target="_new">Esterbergalm - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Esterbergalm" target="_new">de:Esterbergalm</a>
+				</br>
+				Esterbergalm
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/36544330" target="_new">Bockhütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Bockh&#252;tte" target="_new">de:Bockh&#252;tte</a>
+				</br>
+				Bockh&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/36545913" target="_new">Stuibenhütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Stuibenh&#252;tte" target="_new">de:Stuibenh&#252;tte</a>
+				</br>
+				Stuibenh&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/36908251" target="_new">Geroldsee (Wagenbruchsee) - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Geroldsee (Kr&#252;n)" target="_new">de:Geroldsee (Kr&#252;n)</a>
+				</br>
+				Geroldsee (Kr&#252;n)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/37702879" target="_new">Wildsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wildsee (Estergebirge)" target="_new">de:Wildsee (Estergebirge)</a>
+				</br>
+				Wildsee (Estergebirge)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/38173874" target="_new">Weilheimer Hütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Weilheimer H&#252;tte" target="_new">de:Weilheimer H&#252;tte</a>
+				</br>
+				Weilheimer H&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/397472727" target="_new">Echelsbacher Brücke - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Echelsbacher Br&#252;cke" target="_new">de:Echelsbacher Br&#252;cke</a>
+				</br>
+				Echelsbacher Br&#252;cke
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/39947105" target="_new">Enge Laine - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Enge Laine" target="_new">de:Enge Laine</a>
+				</br>
+				Enge Laine
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/406208127" target="_new">Wildensee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Wildensee (Kranzberg)" target="_new">de:Wildensee (Kranzberg)</a>
+				</br>
+				Wildensee (Kranzberg)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/41215382" target="_new">Ettaler Mühle - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ettaler M&#252;hle" target="_new">de:Ettaler M&#252;hle</a>
+				</br>
+				Ettaler M&#252;hle
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/424803703" target="_new">Wallfahrtskirche St.Anton - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Anton (Garmisch-Partenkirchen)" target="_new">de:St. Anton (Garmisch-Partenkirchen)</a>
+				</br>
+				St. Anton (Garmisch-Partenkirchen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/45574151" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kapelle St. Josef (Wurmansau)" target="_new">de:Kapelle St. Josef (Wurmansau)</a>
+				</br>
+				Kapelle St. Josef (Wurmansau)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/4760424" target="_new">Mühlwörth - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/M&#252;hlw&#246;rth" target="_new">de:M&#252;hlw&#246;rth</a>
+				</br>
+				M&#252;hlw&#246;rth
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/50677154" target="_new">Pfarrkirche Sankt Georg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Georg (Bad Bayersoien)" target="_new">de:St. Georg (Bad Bayersoien)</a>
+				</br>
+				St. Georg (Bad Bayersoien)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/50691986" target="_new">Böhmerweiher - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/B&#246;hmer Weiher" target="_new">de:B&#246;hmer Weiher</a>
+				</br>
+				B&#246;hmer Weiher
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/50692084" target="_new">Tiefsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Tiefsee (Saulgrub)" target="_new">de:Tiefsee (Saulgrub)</a>
+				</br>
+				Tiefsee (Saulgrub)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/50769220" target="_new">St. Martin - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Martin (Bad Kohlgrub)" target="_new">de:St. Martin (Bad Kohlgrub)</a>
+				</br>
+				St. Martin (Bad Kohlgrub)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/50842438" target="_new">Hörnlehütte - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/H&#246;rnleh&#252;tte" target="_new">de:H&#246;rnleh&#252;tte</a>
+				</br>
+				H&#246;rnleh&#252;tte
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/50899121" target="_new">Kappl Kirche - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Kappelkirche" target="_new">de:Kappelkirche</a>
+				</br>
+				Kappelkirche
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/50903008" target="_new">Langer Köchel See - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Langer-K&#246;chel-See" target="_new">de:Langer-K&#246;chel-See</a>
+				</br>
+				Langer-K&#246;chel-See
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/51269898" target="_new">St. Peter und Paul - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Peter und Paul (Oberammergau)" target="_new">de:St. Peter und Paul (Oberammergau)</a>
+				</br>
+				St. Peter und Paul (Oberammergau)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/547665876" target="_new">Seilbahn Zugspitze - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Eibsee-Seilbahn" target="_new">de:Eibsee-Seilbahn</a>
+				</br>
+				Eibsee-Seilbahn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/55924704" target="_new">Laber-Bergbahn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Laber Bergbahn" target="_new">de:Laber Bergbahn</a>
+				</br>
+				Laber Bergbahn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/56002843" target="_new">Dickelschwaig - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Dickelschwaig" target="_new">de:Dickelschwaig</a>
+				</br>
+				Dickelschwaig
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/56068357" target="_new">Pfarrkirche St. Ludwig - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Ludwig (Oberau)" target="_new">de:St. Ludwig (Oberau)</a>
+				</br>
+				St. Ludwig (Oberau)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/561622971" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Holzkapelle (Gschwendt)" target="_new">de:Holzkapelle (Gschwendt)</a>
+				</br>
+				Holzkapelle (Gschwendt)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/56672660" target="_new">Grubsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Grubsee" target="_new">de:Grubsee</a>
+				</br>
+				Grubsee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/56841499" target="_new">Schloss Wengwies - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Schloss Wengwies" target="_new">de:Schloss Wengwies</a>
+				</br>
+				Schloss Wengwies
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/57384714" target="_new">St. Martin - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Martin (Garmisch-Partenkirchen)" target="_new">de:St. Martin (Garmisch-Partenkirchen)</a>
+				</br>
+				St. Martin (Garmisch-Partenkirchen)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/58294964" target="_new">St. Michael - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Michael (Burgrain)" target="_new">de:St. Michael (Burgrain)</a>
+				</br>
+				St. Michael (Burgrain)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/59878009" target="_new">Lindenbach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Lindenbach (Ramsach)" target="_new">de:Lindenbach (Ramsach)</a>
+				</br>
+				Lindenbach (Ramsach)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/62088379" target="_new">St. Johannes der Täufer - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Johannes der T&#228;ufer (Grainau)" target="_new">de:St. Johannes der T&#228;ufer (Grainau)</a>
+				</br>
+				St. Johannes der T&#228;ufer (Grainau)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/70408240" target="_new">Ach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Ach (Ammer)" target="_new">de:Ach (Ammer)</a>
+				</br>
+				Ach (Ammer)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/779393654" target="_new">Rechtach - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Rechtach" target="_new">de:Rechtach</a>
+				</br>
+				Rechtach
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/783052720" target="_new">Olympia-Eissport-Zentrum - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Olympia-Eissport-Zentrum" target="_new">de:Olympia-Eissport-Zentrum</a>
+				</br>
+				Olympia-Eissport-Zentrum
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/783427685" target="_new">Halbammer - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Halbammer" target="_new">de:Halbammer</a>
+				</br>
+				Halbammer
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/837978514" target="_new">Zugspitz-Gletscherbahn - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Zugspitz-Gletscherbahn" target="_new">de:Zugspitz-Gletscherbahn</a>
+				</br>
+				Zugspitz-Gletscherbahn
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/87384879" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Michael (Seehausen am Staffelsee)" target="_new">de:St. Michael (Seehausen am Staffelsee)</a>
+				</br>
+				St. Michael (Seehausen am Staffelsee)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/95126857" target="_new">Deutsches Zentrum für Kinder- und Jugendrheumatologie - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Deutsches Zentrum f&#252;r Kinder- und Jugendrheumatologie" target="_new">de:Deutsches Zentrum f&#252;r Kinder- und Jugendrheumatologie</a>
+				</br>
+				Deutsches Zentrum f&#252;r Kinder- und Jugendrheumatologie
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/96333187" target="_new">Moosbergsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/Moosbergsee" target="_new">de:Moosbergsee</a>
+				</br>
+				Moosbergsee
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/98046019" target="_new">St. Nikolaus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://de.wikipedia.org/wiki/St. Nikolaus (Murnau am Staffelsee)" target="_new">de:St. Nikolaus (Murnau am Staffelsee)</a>
+				</br>
+				St. Nikolaus (Murnau am Staffelsee)
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1211135457)['wikidata'='Q41228187']['wikipedia'!~'.*'];
+node(1621410739)['wikidata'='Q1620056']['wikipedia'!~'.*'];
+node(1685815045)['wikidata'='Q1744252']['wikipedia'!~'.*'];
+node(1700556846)['wikidata'='Q379050']['wikipedia'!~'.*'];
+node(1700556878)['wikidata'='Q14544568']['wikipedia'!~'.*'];
+node(1751573278)['wikidata'='Q66977261']['wikipedia'!~'.*'];
+node(1793360283)['wikidata'='Q21996586']['wikipedia'!~'.*'];
+node(1833449075)['wikidata'='Q870721']['wikipedia'!~'.*'];
+node(1978075728)['wikidata'='Q15057181']['wikipedia'!~'.*'];
+node(1978075747)['wikidata'='Q31529592']['wikipedia'!~'.*'];
+node(1978075758)['wikidata'='Q2098724']['wikipedia'!~'.*'];
+node(2076476475)['wikidata'='Q15111956']['wikipedia'!~'.*'];
+node(2419126850)['wikidata'='Q15057166']['wikipedia'!~'.*'];
+node(2441923393)['wikidata'='Q1273885']['wikipedia'!~'.*'];
+node(2459454628)['wikidata'='Q55389821']['wikipedia'!~'.*'];
+node(2468044863)['wikidata'='Q1338423']['wikipedia'!~'.*'];
+node(2526645259)['wikidata'='Q21996594']['wikipedia'!~'.*'];
+node(259406948)['wikidata'='Q18560512']['wikipedia'!~'.*'];
+node(259486622)['wikidata'='Q252743']['wikipedia'!~'.*'];
+node(260744946)['wikidata'='Q31529524']['wikipedia'!~'.*'];
+node(267792056)['wikidata'='Q1620373']['wikipedia'!~'.*'];
+node(26863431)['wikidata'='Q885415']['wikipedia'!~'.*'];
+node(26863436)['wikidata'='Q279725']['wikipedia'!~'.*'];
+node(26863440)['wikidata'='Q565442']['wikipedia'!~'.*'];
+node(268765217)['wikidata'='Q15056679']['wikipedia'!~'.*'];
+node(268949227)['wikidata'='Q316328']['wikipedia'!~'.*'];
+node(2770355657)['wikidata'='Q2120961']['wikipedia'!~'.*'];
+node(277654091)['wikidata'='Q880231']['wikipedia'!~'.*'];
+node(277715389)['wikidata'='Q880033']['wikipedia'!~'.*'];
+node(277716192)['wikidata'='Q1741028']['wikipedia'!~'.*'];
+node(277716329)['wikidata'='Q2533726']['wikipedia'!~'.*'];
+node(277722495)['wikidata'='Q315901']['wikipedia'!~'.*'];
+node(277727364)['wikidata'='Q2233117']['wikipedia'!~'.*'];
+node(277739502)['wikidata'='Q14210288']['wikipedia'!~'.*'];
+node(286790301)['wikidata'='Q822140']['wikipedia'!~'.*'];
+node(290506923)['wikidata'='Q2407307']['wikipedia'!~'.*'];
+node(293246279)['wikidata'='Q98540937']['wikipedia'!~'.*'];
+node(296163774)['wikidata'='Q992924']['wikipedia'!~'.*'];
+node(299499722)['wikidata'='Q29413558']['wikipedia'!~'.*'];
+node(3030449108)['wikidata'='Q18288769']['wikipedia'!~'.*'];
+node(304353179)['wikidata'='Q833896']['wikipedia'!~'.*'];
+node(304477193)['wikidata'='Q1651825']['wikipedia'!~'.*'];
+node(340560279)['wikidata'='Q1552478']['wikipedia'!~'.*'];
+node(344362676)['wikidata'='Q759483']['wikipedia'!~'.*'];
+node(357213081)['wikidata'='Q1787777']['wikipedia'!~'.*'];
+node(3662166614)['wikidata'='Q31557182']['wikipedia'!~'.*'];
+node(380989890)['wikidata'='Q2169131']['wikipedia'!~'.*'];
+node(4102158270)['wikidata'='Q17124195']['wikipedia'!~'.*'];
+node(4102509390)['wikidata'='Q31557039']['wikipedia'!~'.*'];
+node(4104402988)['wikidata'='Q31528591']['wikipedia'!~'.*'];
+node(418778317)['wikidata'='Q31541365']['wikipedia'!~'.*'];
+node(429289574)['wikidata'='Q1722663']['wikipedia'!~'.*'];
+node(4331972690)['wikidata'='Q2244929']['wikipedia'!~'.*'];
+node(449491364)['wikidata'='Q866104']['wikipedia'!~'.*'];
+node(4504021793)['wikidata'='Q106486427']['wikipedia'!~'.*'];
+node(4523743080)['wikidata'='Q31556859']['wikipedia'!~'.*'];
+node(452941377)['wikidata'='Q1799411']['wikipedia'!~'.*'];
+node(463541003)['wikidata'='Q17310616']['wikipedia'!~'.*'];
+node(5034081693)['wikidata'='Q15056103']['wikipedia'!~'.*'];
+node(508474971)['wikidata'='Q256209']['wikipedia'!~'.*'];
+node(508503691)['wikidata'='Q265375']['wikipedia'!~'.*'];
+node(508503694)['wikidata'='Q885103']['wikipedia'!~'.*'];
+node(519688895)['wikidata'='Q315767']['wikipedia'!~'.*'];
+node(519689159)['wikidata'='Q1791188']['wikipedia'!~'.*'];
+node(527273302)['wikidata'='Q31555715']['wikipedia'!~'.*'];
+node(527273304)['wikidata'='Q15061381']['wikipedia'!~'.*'];
+node(528983385)['wikidata'='Q992808']['wikipedia'!~'.*'];
+node(530185743)['wikidata'='Q28531090']['wikipedia'!~'.*'];
+node(61080195)['wikidata'='Q177064']['wikipedia'!~'.*'];
+node(643653896)['wikidata'='Q31539804']['wikipedia'!~'.*'];
+node(648572859)['wikidata'='Q297281']['wikipedia'!~'.*'];
+node(649103397)['wikidata'='Q31532373']['wikipedia'!~'.*'];
+node(649103412)['wikidata'='Q29015416']['wikipedia'!~'.*'];
+node(649103424)['wikidata'='Q31514980']['wikipedia'!~'.*'];
+node(651958799)['wikidata'='Q22030340']['wikipedia'!~'.*'];
+node(702945914)['wikidata'='Q67155344']['wikipedia'!~'.*'];
+node(705251750)['wikidata'='Q31556891']['wikipedia'!~'.*'];
+node(705251831)['wikidata'='Q31517610']['wikipedia'!~'.*'];
+node(714142222)['wikidata'='Q1744202']['wikipedia'!~'.*'];
+node(773900398)['wikidata'='Q31555907']['wikipedia'!~'.*'];
+node(8388392131)['wikidata'='Q106486427']['wikipedia'!~'.*'];
+node(9929888204)['wikidata'='Q76629481']['wikipedia'!~'.*'];
+relation(14710525)['wikidata'='Q14548152']['wikipedia'!~'.*'];
+relation(1632250)['wikidata'='Q1953772']['wikipedia'!~'.*'];
+relation(2068020)['wikidata'='Q882295']['wikipedia'!~'.*'];
+relation(2173930)['wikidata'='Q2596532']['wikipedia'!~'.*'];
+relation(2282118)['wikidata'='Q254186']['wikipedia'!~'.*'];
+relation(2557199)['wikidata'='Q871535']['wikipedia'!~'.*'];
+relation(7069488)['wikidata'='Q262073']['wikipedia'!~'.*'];
+relation(7711596)['wikidata'='Q473070']['wikipedia'!~'.*'];
+relation(79018)['wikidata'='Q1202042']['wikipedia'!~'.*'];
+relation(82573)['wikidata'='Q745665']['wikipedia'!~'.*'];
+way(1111610146)['wikidata'='Q56480154']['wikipedia'!~'.*'];
+way(1111610147)['wikidata'='Q56502019']['wikipedia'!~'.*'];
+way(1111610148)['wikidata'='Q56468221']['wikipedia'!~'.*'];
+way(1111625476)['wikidata'='Q56579421']['wikipedia'!~'.*'];
+way(1111625477)['wikidata'='Q59361218']['wikipedia'!~'.*'];
+way(1111625478)['wikidata'='Q56510551']['wikipedia'!~'.*'];
+way(11121180)['wikidata'='Q17521520']['wikipedia'!~'.*'];
+way(112611282)['wikidata'='Q83717667']['wikipedia'!~'.*'];
+way(112681825)['wikidata'='Q98646528']['wikipedia'!~'.*'];
+way(113281683)['wikidata'='Q19964268']['wikipedia'!~'.*'];
+way(113552445)['wikidata'='Q26720205']['wikipedia'!~'.*'];
+way(113556212)['wikidata'='Q1503997']['wikipedia'!~'.*'];
+way(115402001)['wikidata'='Q88181883']['wikipedia'!~'.*'];
+way(115641474)['wikidata'='Q89484708']['wikipedia'!~'.*'];
+way(115749259)['wikidata'='Q55392404']['wikipedia'!~'.*'];
+way(116240805)['wikidata'='Q760644']['wikipedia'!~'.*'];
+way(116680068)['wikidata'='Q65088423']['wikipedia'!~'.*'];
+way(116794924)['wikidata'='Q67772766']['wikipedia'!~'.*'];
+way(119788301)['wikidata'='Q2513103']['wikipedia'!~'.*'];
+way(121123471)['wikidata'='Q50956065']['wikipedia'!~'.*'];
+way(121940390)['wikidata'='Q1789032']['wikipedia'!~'.*'];
+way(125077454)['wikidata'='Q32750892']['wikipedia'!~'.*'];
+way(128630808)['wikidata'='Q1667911']['wikipedia'!~'.*'];
+way(130395806)['wikidata'='Q175579']['wikipedia'!~'.*'];
+way(140683528)['wikidata'='Q50388845']['wikipedia'!~'.*'];
+way(159271760)['wikidata'='Q98646554']['wikipedia'!~'.*'];
+way(173729998)['wikidata'='Q1911517']['wikipedia'!~'.*'];
+way(184063333)['wikidata'='Q83720144']['wikipedia'!~'.*'];
+way(198806742)['wikidata'='Q2082445']['wikipedia'!~'.*'];
+way(217504824)['wikidata'='Q64739557']['wikipedia'!~'.*'];
+way(231127897)['wikidata'='Q17522026']['wikipedia'!~'.*'];
+way(23425364)['wikidata'='Q1255560']['wikipedia'!~'.*'];
+way(236047957)['wikidata'='Q16444']['wikipedia'!~'.*'];
+way(237142745)['wikidata'='Q41228348']['wikipedia'!~'.*'];
+way(24952444)['wikidata'='Q1591018']['wikipedia'!~'.*'];
+way(251911224)['wikidata'='Q41217969']['wikipedia'!~'.*'];
+way(255360878)['wikidata'='Q1282906']['wikipedia'!~'.*'];
+way(257092231)['wikidata'='Q1590938']['wikipedia'!~'.*'];
+way(26186941)['wikidata'='Q228521']['wikipedia'!~'.*'];
+way(26713595)['wikidata'='Q1359092']['wikipedia'!~'.*'];
+way(26735365)['wikidata'='Q256725']['wikipedia'!~'.*'];
+way(26735591)['wikidata'='Q1734716']['wikipedia'!~'.*'];
+way(26761684)['wikidata'='Q21041929']['wikipedia'!~'.*'];
+way(27285705)['wikidata'='Q30513955']['wikipedia'!~'.*'];
+way(27285721)['wikidata'='Q2245656']['wikipedia'!~'.*'];
+way(27434078)['wikidata'='Q55902849']['wikipedia'!~'.*'];
+way(27469001)['wikidata'='Q59489630']['wikipedia'!~'.*'];
+way(29044371)['wikidata'='Q2247290']['wikipedia'!~'.*'];
+way(30450425)['wikidata'='Q1281857']['wikipedia'!~'.*'];
+way(30860740)['wikidata'='Q15807479']['wikipedia'!~'.*'];
+way(30903816)['wikidata'='Q88182252']['wikipedia'!~'.*'];
+way(334618347)['wikidata'='Q98645638']['wikipedia'!~'.*'];
+way(336441160)['wikidata'='Q67174865']['wikipedia'!~'.*'];
+way(336656328)['wikidata'='Q67522861']['wikipedia'!~'.*'];
+way(35147654)['wikidata'='Q2084210']['wikipedia'!~'.*'];
+way(35331969)['wikidata'='Q30101165']['wikipedia'!~'.*'];
+way(36544330)['wikidata'='Q19342075']['wikipedia'!~'.*'];
+way(36545913)['wikidata'='Q2358966']['wikipedia'!~'.*'];
+way(36908251)['wikidata'='Q64482059']['wikipedia'!~'.*'];
+way(37702879)['wikidata'='Q30133939']['wikipedia'!~'.*'];
+way(38173874)['wikidata'='Q2555668']['wikipedia'!~'.*'];
+way(397472727)['wikidata'='Q1280290']['wikipedia'!~'.*'];
+way(39947105)['wikidata'='Q27886821']['wikipedia'!~'.*'];
+way(406208127)['wikidata'='Q14638322']['wikipedia'!~'.*'];
+way(41215382)['wikidata'='Q66027156']['wikipedia'!~'.*'];
+way(424803703)['wikidata'='Q14912491']['wikipedia'!~'.*'];
+way(45574151)['wikidata'='Q66972693']['wikipedia'!~'.*'];
+way(4760424)['wikidata'='Q1569443']['wikipedia'!~'.*'];
+way(50677154)['wikidata'='Q2083021']['wikipedia'!~'.*'];
+way(50691986)['wikidata'='Q21200782']['wikipedia'!~'.*'];
+way(50692084)['wikidata'='Q27883369']['wikipedia'!~'.*'];
+way(50769220)['wikidata'='Q41228294']['wikipedia'!~'.*'];
+way(50842438)['wikidata'='Q1516755']['wikipedia'!~'.*'];
+way(50899121)['wikidata'='Q14545091']['wikipedia'!~'.*'];
+way(50903008)['wikidata'='Q29015411']['wikipedia'!~'.*'];
+way(51269898)['wikidata'='Q2322702']['wikipedia'!~'.*'];
+way(547665876)['wikidata'='Q469852']['wikipedia'!~'.*'];
+way(55924704)['wikidata'='Q1799410']['wikipedia'!~'.*'];
+way(56002843)['wikidata'='Q67155343']['wikipedia'!~'.*'];
+way(56068357)['wikidata'='Q83634621']['wikipedia'!~'.*'];
+way(561622971)['wikidata'='Q41228227']['wikipedia'!~'.*'];
+way(56672660)['wikidata'='Q51746070']['wikipedia'!~'.*'];
+way(56841499)['wikidata'='Q89491063']['wikipedia'!~'.*'];
+way(57384714)['wikidata'='Q2321105']['wikipedia'!~'.*'];
+way(58294964)['wikidata'='Q69997293']['wikipedia'!~'.*'];
+way(59878009)['wikidata'='Q83980622']['wikipedia'!~'.*'];
+way(62088379)['wikidata'='Q26985006']['wikipedia'!~'.*'];
+way(70408240)['wikidata'='Q823008']['wikipedia'!~'.*'];
+way(779393654)['wikidata'='Q79140604']['wikipedia'!~'.*'];
+way(783052720)['wikidata'='Q2021389']['wikipedia'!~'.*'];
+way(783427685)['wikidata'='Q1570256']['wikipedia'!~'.*'];
+way(837978514)['wikidata'='Q224497']['wikipedia'!~'.*'];
+way(87384879)['wikidata'='Q55693853']['wikipedia'!~'.*'];
+way(95126857)['wikidata'='Q820562']['wikipedia'!~'.*'];
+way(96333187)['wikidata'='Q88182268']['wikipedia'!~'.*'];
+way(98046019)['wikidata'='Q42543601']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag, unexpected language"><h2 id="wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/13925786" target="_new">Mittenwald - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Mittenwald station" target="_new">en:Mittenwald station</a>
+				</br>
+				Mittenwald station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/13925787" target="_new">Klais - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Klais station" target="_new">en:Klais station</a>
+				</br>
+				Klais station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/13929049" target="_new">Eschenlohe - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Eschenlohe station" target="_new">en:Eschenlohe station</a>
+				</br>
+				Eschenlohe station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/13929109" target="_new">Oberau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Oberau station" target="_new">en:Oberau station</a>
+				</br>
+				Oberau station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/1978075939" target="_new">Schafkopf - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://nl.wikipedia.org/wiki/Schafkopf" target="_new">nl:Schafkopf</a>
+				</br>
+				Schafkopf
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/262301240" target="_new">Ohlstadt - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Ohlstadt station" target="_new">en:Ohlstadt station</a>
+				</br>
+				Ohlstadt station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/292563591" target="_new">Farchant - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Farchant station" target="_new">en:Farchant station</a>
+				</br>
+				Farchant station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/2993852687" target="_new">Garmisch-Partenkirchen Kainzenbad - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Kainzenbad station" target="_new">en:Kainzenbad station</a>
+				</br>
+				Kainzenbad station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/441050079" target="_new">Garmisch-Partenkirchen Hausberg (Zahnradbahn) - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Garmisch-Partenkirchen Hausberg station" target="_new">en:Garmisch-Partenkirchen Hausberg station</a>
+				</br>
+				Garmisch-Partenkirchen Hausberg station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/4698983146" target="_new">Uffing am Staffelsee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Uffing am Staffelsee station" target="_new">en:Uffing am Staffelsee station</a>
+				</br>
+				Uffing am Staffelsee station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/473263393" target="_new">Bad Kohlgrub - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Bad Kohlgrub station" target="_new">en:Bad Kohlgrub station</a>
+				</br>
+				Bad Kohlgrub station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/602027313" target="_new">Garmisch-Partenkirchen Hausberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Garmisch-Partenkirchen Hausberg station" target="_new">en:Garmisch-Partenkirchen Hausberg station</a>
+				</br>
+				Garmisch-Partenkirchen Hausberg station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/6581492738" target="_new">Kreuzjoch - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Kreuzjoch (Wettersteingebirge)" target="_new">en:Kreuzjoch (Wettersteingebirge)</a>
+				</br>
+				Kreuzjoch (Wettersteingebirge)
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/6693329309" target="_new">Kainzenbad - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Kainzenbad station" target="_new">en:Kainzenbad station</a>
+				</br>
+				Kainzenbad station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/8046673725" target="_new">Garmisch-Partenkirchen Hausberg - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Garmisch-Partenkirchen Hausberg station" target="_new">en:Garmisch-Partenkirchen Hausberg station</a>
+				</br>
+				Garmisch-Partenkirchen Hausberg station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/8075463477" target="_new">Oberammergau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Oberammergau station" target="_new">en:Oberammergau station</a>
+				</br>
+				Oberammergau station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/8075463478" target="_new">Unterammergau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Unterammergau station" target="_new">en:Unterammergau station</a>
+				</br>
+				Unterammergau station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/8075463479" target="_new">Altenau (Bay) - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Altenau (Bay) station" target="_new">en:Altenau (Bay) station</a>
+				</br>
+				Altenau (Bay) station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/8075463480" target="_new">Saulgrub - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Altenau (Bay) station" target="_new">en:Altenau (Bay) station</a>
+				</br>
+				Altenau (Bay) station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/8075463481" target="_new">Bad Kohlgrub Kurhaus - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Bad Kohlgrub Kurhaus station" target="_new">en:Bad Kohlgrub Kurhaus station</a>
+				</br>
+				Bad Kohlgrub Kurhaus station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/8075463482" target="_new">Grafenaschau - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Grafenaschau station" target="_new">en:Grafenaschau station</a>
+				</br>
+				Grafenaschau station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/8075463483" target="_new">Seeleiten-Berggeist - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Seeleiten-Berggeist station" target="_new">en:Seeleiten-Berggeist station</a>
+				</br>
+				Seeleiten-Berggeist station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/8075463484" target="_new">Murnau Ort - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Murnau Ort station" target="_new">en:Murnau Ort station</a>
+				</br>
+				Murnau Ort station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/way/166829548" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Unterammergau station" target="_new">en:Unterammergau station</a>
+				</br>
+				Unterammergau station
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/way/45205421" target="_new">Sachensee - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://arz.wikipedia.org/wiki/&#1576;&#1581;&#1610;&#1585;&#1607; &#1587;&#1575;&#1578;&#1588;&#1610;&#1606; &#1587;&#1609;" target="_new">arz:&#1576;&#1581;&#1610;&#1585;&#1607; &#1587;&#1575;&#1578;&#1588;&#1610;&#1606; &#1587;&#1609;</a>
+				</br>
+				&#1576;&#1581;&#1610;&#1585;&#1607; &#1587;&#1575;&#1578;&#1588;&#1610;&#1606; &#1587;&#1609;
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/way/538954797" target="_new">Skigebiet Garmisch-Classic - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://en.wikipedia.org/wiki/Garmisch Classic" target="_new">en:Garmisch Classic</a>
+				</br>
+				Garmisch Classic
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(13925786)['wikidata'='Q18608312']['wikipedia'!~'.*'];
+node(13925787)['wikidata'='Q54869449']['wikipedia'!~'.*'];
+node(13929049)['wikidata'='Q59142078']['wikipedia'!~'.*'];
+node(13929109)['wikidata'='Q108743694']['wikipedia'!~'.*'];
+node(1978075939)['wikidata'='Q22030610']['wikipedia'!~'.*'];
+node(262301240)['wikidata'='Q108743534']['wikipedia'!~'.*'];
+node(292563591)['wikidata'='Q108743707']['wikipedia'!~'.*'];
+node(2993852687)['wikidata'='Q79392972']['wikipedia'!~'.*'];
+node(441050079)['wikidata'='Q85762771']['wikipedia'!~'.*'];
+node(4698983146)['wikidata'='Q108743271']['wikipedia'!~'.*'];
+node(473263393)['wikidata'='Q108754437']['wikipedia'!~'.*'];
+node(602027313)['wikidata'='Q85762771']['wikipedia'!~'.*'];
+node(6581492738)['wikidata'='Q6436892']['wikipedia'!~'.*'];
+node(6693329309)['wikidata'='Q79392972']['wikipedia'!~'.*'];
+node(8046673725)['wikidata'='Q85762771']['wikipedia'!~'.*'];
+node(8075463477)['wikidata'='Q97012999']['wikipedia'!~'.*'];
+node(8075463478)['wikidata'='Q108750991']['wikipedia'!~'.*'];
+node(8075463479)['wikidata'='Q108751011']['wikipedia'!~'.*'];
+node(8075463480)['wikidata'='Q108751011']['wikipedia'!~'.*'];
+node(8075463481)['wikidata'='Q108751056']['wikipedia'!~'.*'];
+node(8075463482)['wikidata'='Q108754339']['wikipedia'!~'.*'];
+node(8075463483)['wikidata'='Q97394892']['wikipedia'!~'.*'];
+node(8075463484)['wikidata'='Q108301430']['wikipedia'!~'.*'];
+way(166829548)['wikidata'='Q41216807']['wikipedia'!~'.*'];
+way(45205421)['wikidata'='Q32273888']['wikipedia'!~'.*'];
+way(538954797)['wikidata'='Q5523564']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag, unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikidata from wikipedia tag"><h2 id="wikidata from wikipedia tag">wikidata from wikipedia tag</h2></a>
+				</br>
+				Q2021389 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/13131729" target="_new">Eissportzentrum - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q27989842 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/2114091" target="_new">Wetterstein und Mieminger Kette - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/3670886" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q644587 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/3729657" target="_new">Bayerische Zugspitzbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q644587 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/3729658" target="_new">RB 64: Garmisch-Partenkirchen => Zugspitzplatt - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q644587 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/3729659" target="_new">RB 64: Zugspitzplatt => Garmisch-Partenkirchen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1023969196" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1023969197" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q457296 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1028498229" target="_new">Naturschutzgebiet Arnspitze - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/104107575" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1066526545" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1066526548" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1066667743" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1066667744" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q14548152 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1104936463" target="_new">Wiesenbrütergebiet Loisach-Kochelsee-Moore (WM-SOG) - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q14548152 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1104936464" target="_new">Wiesenbrütergebiet Loisach-Kochelsee-Moore (TÖL-WOR) - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2551127 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/126798162" target="_new">histor. Wasserkraftwerk Kammerl - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/137068781" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/141125348" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/141125349" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/141125352" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/141125353" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/141125354" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/141126617" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q453805 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/223452455" target="_new">Partnach-Klamm - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/237929292" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/239357947" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26142395" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26142676" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26215556" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26215557" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/264340207" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/264340208" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26675970" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26675971" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26736985" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26737871" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26737872" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26777680" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26777682" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26777683" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26841040" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27048369" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27048371" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27049872" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27049874" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27058547" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27058548" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27058552" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27058553" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27467865" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/27467867" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/275944746" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/28427722" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/29075225" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295165118" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295425525" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295425526" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295636065" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295641073" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295641077" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295641080" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295642612" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295642613" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295647840" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295649303" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295649304" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295654582" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/295654586" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/308702331" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q808393 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/311247952" target="_new">Barmsee - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/33029113" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/33029125" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/35779347" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/35817273" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/35817274" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/365869611" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/379423277" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/379423290" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/38080955" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/38080956" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/4340753" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/47450274" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/4823227" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1715051 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/50286142" target="_new">Kramertunnel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/570514300" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/570514301" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/570514302" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/570514303" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/570514304" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/570514305" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/570516906" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/570516911" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/570516914" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/705494937" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2651338 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/71831606" target="_new">Alpspix - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2651338 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/71831612" target="_new">Alpspix - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/783045165" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/783045166" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/783045167" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/877622133" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/877622134" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315841 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/877622141" target="_new">Mittenwaldbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/912481009" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/912481010" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/93864321" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/95560284" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q315988 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/95560318" target="_new">Außerfernbahn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(13131729)['wikidata'!~'.*']['wikipedia'='de:Olympia-Eissport-Zentrum'];
+relation(2114091)['wikidata'!~'.*']['wikipedia'='de:Wettersteingebirge und Mieminger Kette'];
+relation(3670886)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+relation(3729657)['wikidata'!~'.*']['wikipedia'='de:Bayerische Zugspitzbahn'];
+relation(3729658)['wikidata'!~'.*']['wikipedia'='de:Bayerische Zugspitzbahn'];
+relation(3729659)['wikidata'!~'.*']['wikipedia'='de:Bayerische Zugspitzbahn'];
+way(1023969196)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(1023969197)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(1028498229)['wikidata'!~'.*']['wikipedia'='de:Arnspitzgruppe'];
+way(104107575)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(1066526545)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(1066526548)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(1066667743)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(1066667744)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(1104936463)['wikidata'!~'.*']['wikipedia'='de:Loisach-Kochelsee-Moore'];
+way(1104936464)['wikidata'!~'.*']['wikipedia'='de:Loisach-Kochelsee-Moore'];
+way(126798162)['wikidata'!~'.*']['wikipedia'='de:Wasserkraftwerk Kammerl'];
+way(137068781)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(141125348)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(141125349)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(141125352)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(141125353)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(141125354)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(141126617)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(223452455)['wikidata'!~'.*']['wikipedia'='de:Partnachklamm'];
+way(237929292)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(239357947)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(26142395)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(26142676)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(26215556)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(26215557)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(264340207)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(264340208)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(26675970)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(26675971)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(26736985)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(26737871)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(26737872)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(26777680)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(26777682)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(26777683)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(26841040)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(27048369)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(27048371)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(27049872)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(27049874)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(27058547)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(27058548)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(27058552)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(27058553)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(27467865)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(27467867)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(275944746)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(28427722)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(29075225)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295165118)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295425525)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295425526)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(295636065)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295641073)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295641077)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295641080)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295642612)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295642613)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295647840)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295649303)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295649304)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295654582)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(295654586)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(308702331)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(311247952)['wikidata'!~'.*']['wikipedia'='de:Barmsee'];
+way(33029113)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(33029125)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(35779347)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(35817273)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(35817274)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(365869611)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(379423277)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(379423290)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(38080955)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(38080956)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(4340753)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(47450274)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(4823227)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(50286142)['wikidata'!~'.*']['wikipedia'='de:Kramertunnel'];
+way(570514300)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(570514301)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(570514302)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(570514303)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(570514304)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(570514305)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(570516906)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(570516911)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(570516914)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(705494937)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(71831606)['wikidata'!~'.*']['wikipedia'='de:AlpspiX'];
+way(71831612)['wikidata'!~'.*']['wikipedia'='de:AlpspiX'];
+way(783045165)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(783045166)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(783045167)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(877622133)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(877622134)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(877622141)['wikidata'!~'.*']['wikipedia'='de:Mittenwaldbahn'];
+way(912481009)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(912481010)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(93864321)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(95560284)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+way(95560318)['wikidata'!~'.*']['wikipedia'='de:Au&#223;erfernbahn'];
+); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>
