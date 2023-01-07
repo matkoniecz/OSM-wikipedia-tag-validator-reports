@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2022-12-30. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-01-06. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,24 @@ This page was generated using data obtained on 2022-12-30. Please, <a href="http
 			Remember to check whatever edit makes sense! All reports are at this page because this tasks require human judgment to verify whatever proposed edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#malformed wikipedia tag">malformed wikipedia tag</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#malformed secondary wikidata tag">malformed secondary wikidata tag</a></li></ul>			</br>
+<ul><li><a href="#should use a secondary wikipedia tag - linking to a violation of law">should use a secondary wikipedia tag - linking to a violation of law</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#should use a secondary wikipedia tag - linking to a social issue">should use a secondary wikipedia tag - linking to a social issue</a></li><li><a href="#malformed secondary wikidata tag">malformed secondary wikidata tag</a></li></ul>			</br>
+			<a href="#should use a secondary wikipedia tag - linking to a violation of law"><h2 id="should use a secondary wikipedia tag - linking to a violation of law">should use a secondary wikipedia tag - linking to a violation of law</h2></a>
+				</br>
+				linked wikidata entry (Q14938066) is about a violation of law, so it is very unlikely to be correct <br />        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				</br>
+				<a href="https://openstreetmap.org/node/3008252031" target="_new">Denkmal für ermordete Polizisten - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(3008252031)['wikidata'='Q14938066'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking to a violation of law']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				</br>
 				wikidata and wikipedia tags link to a different objects (Q64026396 vs Q1742462 wikidata id assigned to linked Wikipedia article)
@@ -27,12 +44,6 @@ This page was generated using data obtained on 2022-12-30. Please, <a href="http
 				<a href="https://openstreetmap.org/relation/1649775" target="_new">Schloss Senftenegg - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
-				</br>
-				wikidata and wikipedia tags link to a different objects (Q105646963 vs Q107136960 wikidata id assigned to linked Wikipedia article)
-				</br>
-				<a href="https://openstreetmap.org/relation/7216802" target="_new">Schloss Braunsdorf - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
 			</br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			</br>
@@ -40,39 +51,15 @@ This page was generated using data obtained on 2022-12-30. Please, <a href="http
 (
 relation(10893273)['wikidata'='Q64026396']['wikipedia'='de:Kirchberg an der Wild#Schloss'];
 relation(1649775)['wikidata'='Q105643121']['wikipedia'='de:Ferschnitz#Schloss Senftenegg'];
-relation(7216802)['wikidata'='Q105646963']['wikipedia'='de:Schloss Braunsdorf'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
 			</br>
 			<hr>
 			</br>
-			<a href="#malformed wikipedia tag"><h2 id="malformed wikipedia tag">malformed wikipedia tag</h2></a>
+			<a href="#should use a secondary wikipedia tag - linking to a social issue"><h2 id="should use a secondary wikipedia tag - linking to a social issue">should use a secondary wikipedia tag - linking to a social issue</h2></a>
 				</br>
-				malformed value in wikipedia tag (Rudolfsbahn)
+				linked wikidata entry (Q18147583) is about a social issue, so it is very unlikely to be correct <br />        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
 				</br>
-				<a href="https://openstreetmap.org/relation/1877502" target="_new">R58: Amstetten => Selzthal - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-			</br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			</br>
-			<blockquote>[out:xml][timeout:3600];
-(
-relation(1877502)['wikipedia'='Rudolfsbahn'];
-); (._;>;); out meta qt;//['malformed wikipedia tag']</blockquote>
-			</br>
-			<hr>
-			</br>
-			<a href="#information board with wikipedia tag, not subject:wikipedia"><h2 id="information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</h2></a>
-				</br>
-				information board topic must be tagged with subject:wikipedia tag - not with wikipedia tag
-				</br>
-				<a href="https://openstreetmap.org/node/2398977916" target="_new">Hubmer-Buche - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				information board topic must be tagged with subject:wikipedia tag - not with wikipedia tag
-				</br>
-				<a href="https://openstreetmap.org/node/988834101" target="_new">an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/way/509472698" target="_new">Cholerafriedhof - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 			</br>
@@ -80,9 +67,8 @@ relation(1877502)['wikipedia'='Rudolfsbahn'];
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-node(2398977916)['information'='board']['wikipedia'='de:Georg Hubmer'];
-node(988834101)['information'='board']['wikipedia'='de:Heiliger Stein (Mitterretzbach)'];
-); (._;>;); out meta qt;//['information board with wikipedia tag, not subject:wikipedia']</blockquote>
+way(509472698)['wikidata'='Q18147583'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking to a social issue']</blockquote>
 			</br>
 			<hr>
 			</br>
