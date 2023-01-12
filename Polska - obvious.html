@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on various dates including 2023-01-09. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on various dates including 2023-01-11. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on various dates including 2023-01-0
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li></ul>			</br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				</br>
 				wikipedia page in unexpected language - pl was expected:
@@ -471,6 +471,40 @@ way(911590541)['wikipedia'='de:Schiedlo'];
 (
 node(3009667200)['wikidata'!~'.*']['wikipedia'!~'.*']['wikipedia:pl'='Karwowo-Polki'];
 ); (._;>;); out meta qt;//['wikipedia tag from wikipedia tag in an outdated form']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q22443563 vs (missing) article redirects from pl:Parafia Podwy&#380;szenia Krzy&#380;a &#346;wi&#281;tego w Mi&#281;tnem to pl:Parafia Podwy&#380;szenia &#346;wi&#281;tego Krzy&#380;a w Mi&#281;tnem
+				</br>
+				<a href="https://openstreetmap.org/relation/15162516" target="_new">Parafia Podwyższenia Krzyża Świętego w Miętnem - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://pl.wikipedia.org/wiki/Parafia Podwy&#380;szenia &#346;wi&#281;tego Krzy&#380;a w Mi&#281;tnem" target="_new">pl:Parafia Podwy&#380;szenia &#346;wi&#281;tego Krzy&#380;a w Mi&#281;tnem</a>
+				</br>
+				Parafia Podwy&#380;szenia &#346;wi&#281;tego Krzy&#380;a w Mi&#281;tnem
+				</br>
+				<hr>
+				</br>
+				Q1946077 vs (missing) article redirects from pl:Pilawa (powiat garwoli&#324;ski) to pl:Pilawa (miasto)
+				</br>
+				<a href="https://openstreetmap.org/relation/3008196" target="_new">Pilawa - an affected OSM element that may be improved</a>
+				</br>
+				? -> <a href="https://pl.wikipedia.org/wiki/Pilawa (miasto)" target="_new">pl:Pilawa (miasto)</a>
+				</br>
+				Pilawa (miasto)
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(15162516)['wikidata'='Q22443563']['wikipedia'='pl:Parafia Podwy&#380;szenia Krzy&#380;a &#346;wi&#281;tego w Mi&#281;tnem'];
+relation(3008196)['wikidata'='Q1946077']['wikipedia'='pl:Pilawa (powiat garwoli&#324;ski)'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
 			</br>
 			<hr>
 			</br>
@@ -1561,24 +1595,6 @@ way(988954369)['wikidata'='Q37777818']['wikipedia'!~'.*'];
 			</br>
 			<hr>
 			</br>
-			<a href="#wikidata from wikipedia tag"><h2 id="wikidata from wikipedia tag">wikidata from wikipedia tag</h2></a>
-				</br>
-				Q11822325 may be added as wikidata tag based on wikipedia tag
-				</br>
-				<a href="https://openstreetmap.org/relation/15098112" target="_new">Błociec - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-			</br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			</br>
-			<blockquote>[out:xml][timeout:3600];
-(
-relation(15098112)['wikidata'!~'.*']['wikipedia'='pl:Polska Woda'];
-relation(15098112)['wikidata'!~'.*']['wikipedia'='pl:Polska Woda'];
-); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
-			</br>
-			<hr>
-			</br>
 			<a href="#wikipedia tag in an outdated form for removal"><h2 id="wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</h2></a>
 				</br>
 				wikipedia tag in outdated form ([&#x27;wikipedia:cs&#x27;]), with wikipedia and wikidata tag present and may be safely removed
@@ -2118,6 +2134,12 @@ way(40080977)['wikidata'='Q2176231']['wikipedia'='pl:RTCN Ko&#322;owo']['wikiped
 				Q30633045 vs Q16541741
 				</br>
 				<a href="https://openstreetmap.org/way/125009574" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q84990232 vs Q30062381
+				</br>
+				<a href="https://openstreetmap.org/way/151523755" target="_new">Kościół pw. Świętej Trójcy - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -2703,6 +2725,7 @@ way(102022054)['wikidata'='Q9213226']['wikipedia'='pl:Dworek Goethego w Tarnowsk
 way(1117461453)['wikidata'='Q34883755']['wikipedia'='pl:Szywra'];
 way(124791309)['wikidata'='Q30170938']['wikipedia'='pl:Kamienica przy ulicy Senackiej 6 w Krakowie'];
 way(125009574)['wikidata'='Q30633045']['wikipedia'='pl:Dw&#243;r Hiszpa&#324;ski w Sopocie'];
+way(151523755)['wikidata'='Q84990232']['wikipedia'='pl:Ko&#347;ci&#243;&#322; Przenaj&#347;wi&#281;tszej Tr&#243;jcy w Przystajni'];
 way(167616325)['wikidata'='Q9285238']['wikipedia'='pl:Hala wystawowa Kapelusz w Chorzowie'];
 way(173216005)['wikidata'='Q35714212']['wikipedia'='pl:Jezioro Kiersztanowskie'];
 way(179130688)['wikidata'='Q11746551']['wikipedia'='pl:Ko&#347;ci&#243;&#322; &#347;w. Antoniego z Padwy w Chorzowie'];
