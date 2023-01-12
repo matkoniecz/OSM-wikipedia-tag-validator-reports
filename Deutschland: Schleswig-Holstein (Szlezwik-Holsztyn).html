@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-01-07. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-01-12. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-01-07. Please, <a href="http
 			Remember to check whatever edit makes sense! All reports are at this page because this tasks require human judgment to verify whatever proposed edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#should use a secondary wikipedia tag - linking to a human">should use a secondary wikipedia tag - linking to a human</a></li><li><a href="#should use a secondary wikipedia tag - linking to an animal or plant (and not an individual one)">should use a secondary wikipedia tag - linking to an animal or plant (and not an individual one)</a></li><li><a href="#wikipedia tag in outdated form and there is mismatch between links">wikipedia tag in outdated form and there is mismatch between links</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#should use a secondary wikipedia tag - linking to a social issue">should use a secondary wikipedia tag - linking to a social issue</a></li><li><a href="#should use a secondary wikipedia tag - linking to a social movement">should use a secondary wikipedia tag - linking to a social movement</a></li><li><a href="#should use a secondary wikipedia tag - linking to a type of structure">should use a secondary wikipedia tag - linking to a type of structure</a></li><li><a href="#should use a secondary wikipedia tag - linking to a physical process">should use a secondary wikipedia tag - linking to a physical process</a></li><li><a href="#malformed secondary wikidata tag">malformed secondary wikidata tag</a></li></ul>			</br>
+<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#should use a secondary wikipedia tag - linking to a human">should use a secondary wikipedia tag - linking to a human</a></li><li><a href="#should use a secondary wikipedia tag - linking to an animal or plant (and not an individual one)">should use a secondary wikipedia tag - linking to an animal or plant (and not an individual one)</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#wikipedia tag in outdated form and there is mismatch between links">wikipedia tag in outdated form and there is mismatch between links</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#should use a secondary wikipedia tag - linking to a social issue">should use a secondary wikipedia tag - linking to a social issue</a></li><li><a href="#should use a secondary wikipedia tag - linking to a social movement">should use a secondary wikipedia tag - linking to a social movement</a></li><li><a href="#should use a secondary wikipedia tag - linking to a type of structure">should use a secondary wikipedia tag - linking to a type of structure</a></li><li><a href="#should use a secondary wikipedia tag - linking to a physical process">should use a secondary wikipedia tag - linking to a physical process</a></li><li><a href="#malformed secondary wikidata tag">malformed secondary wikidata tag</a></li></ul>			</br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				</br>
 				wikidata and wikipedia tags link to a different objects (Q52768077 vs Q15829503 wikidata id assigned to linked Wikipedia article)
@@ -992,6 +992,23 @@ way(788025696)['wikipedia'='de:Fargesia'];
 			</br>
 			<hr>
 			</br>
+			<a href="#blacklisted connection with known replacement"><h2 id="blacklisted connection with known replacement">blacklisted connection with known replacement</h2></a>
+				</br>
+				it is a typical wrong link and it has an obvious replacement, brand:wikipedia/brand:wikidata should be used instead
+				</br>
+				<a href="https://openstreetmap.org/node/10424156500" target="_new">Würth - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(10424156500)['wikidata'='Q679750']['wikipedia'='de:W&#252;rth-Gruppe'];
+); (._;>;); out meta qt;//['blacklisted connection with known replacement']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia tag in outdated form and there is mismatch between links"><h2 id="wikipedia tag in outdated form and there is mismatch between links">wikipedia tag in outdated form and there is mismatch between links</h2></a>
 				</br>
 				wikipedia tag in outdated form ([&#x27;wikipedia:de&#x27;], with following conflicts: [&#x27;de:Flensburger Hafenbahn gives link Q1428042 conflicting with another link Q21814375&#x27;]). Mismatch between different links happened and requires human judgment to solve.
@@ -1053,23 +1070,6 @@ relation(556653)['wikidata'='Q638219']['wikipedia'='de:K&#246;nigsh&#252;gel'];
 way(147134935)['wikidata'='Q1565675']['wikipedia'='de:Wehde'];
 way(61112993)['wikidata'='Q97671024']['wikipedia'='de:Hasenholz'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not']</blockquote>
-			</br>
-			<hr>
-			</br>
-			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
-				</br>
-				network:wikidata=Q15825147 is present despite that not:network:wikidata=Q15825147 is also present - at least one of them is wrong
-				</br>
-				<a href="https://openstreetmap.org/node/9004798295" target="_new">Kropp, Schule/ZOB - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-			</br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			</br>
-			<blockquote>[out:xml][timeout:3600];
-(
-node(9004798295)['network:wikidata'='Q15825147']['not:network:wikidata'='Q15825147'];
-); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
 			</br>
 			<hr>
 			</br>
