@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-01-18. Please, <a href="http
 			This page contains reports that are tested or are known to produce false positives. Be careful with using this data.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch - for secondary tag">wikipedia wikidata mismatch - for secondary tag</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for secondary tag">wikipedia wikidata mismatch - follow wikipedia redirect - for secondary tag</a></li><li><a href="#no longer existing object">no longer existing object</a></li></ul>			</br>
+<ul><li><a href="#wikipedia wikidata mismatch - for secondary tag">wikipedia wikidata mismatch - for secondary tag</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for secondary tag">wikipedia wikidata mismatch - follow wikipedia redirect - for secondary tag</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for secondary tag">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for secondary tag</a></li><li><a href="#no longer existing object">no longer existing object</a></li></ul>			</br>
 			<a href="#wikipedia wikidata mismatch - for secondary tag"><h2 id="wikipedia wikidata mismatch - for secondary tag">wikipedia wikidata mismatch - for secondary tag</h2></a>
 				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q17047215 vs Q5283710 wikidata id assigned to linked Wikipedia article)
@@ -285,6 +285,25 @@ relation(10796149)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixb
 relation(10796150)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10796651)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for secondary tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for secondary tag"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for secondary tag">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for secondary tag</h2></a>
+			</br>
+			brand:wikidata and brand:wikipedia tags link to a different objects, because brand:wikidata tag points to a redirect that should be followed
+				</br>
+				article claims to point to disambig, brand:wikidata does not. brand:wikidata tag is likely to be correct, brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/way/717947827" target="_new">Meny Holmlia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(717947827)['brand:wikidata'='Q10581720']['brand:wikipedia'='no:Meny'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for secondary tag']</blockquote>
 			</br>
 			<hr>
 			</br>
