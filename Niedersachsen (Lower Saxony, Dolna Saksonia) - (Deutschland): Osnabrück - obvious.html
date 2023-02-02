@@ -1,0 +1,1185 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://mapsaregreat.com/style.css" /> <!-- GPLv3 licensed -->
+	</head>
+<body>
+	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
+This page was generated using data obtained on 2023-02-01. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+<br />
+<br />
+			</br>
+			<hr>
+			</br>
+			Proposed edits at this page are so obvious that automatic edit makes sense.
+			</br>
+			<hr>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li></ul>			</br>
+			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
+				</br>
+				wikipedia page in unexpected language - de was expected:
+				</br>
+				<a href="https://openstreetmap.org/way/24697501" target="_new">Botanischer Garten - an affected OSM element that may be improved</a>
+				</br>
+				en:Botanischer Garten der Universität Osnabrück -> de:Botanischer Garten Osnabrück
+				</br>
+				Botanischer Garten Osnabr&#252;ck
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(24697501)['wikipedia'='en:Botanischer Garten der Universit&#228;t Osnabr&#252;ck'];
+); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q2015295 vs (missing) article redirects from de:Oestringer Steine I-III to de:Oestringer Steine I&#8211;III
+				</br>
+				<a href="https://openstreetmap.org/node/1741686769" target="_new">Östringer Steine 2 - an affected OSM element that may be improved</a>
+				</br>
+				de:Oestringer Steine I-III -> de:Oestringer Steine I–III
+				</br>
+				Oestringer Steine I&#8211;III
+				</br>
+				<hr>
+				</br>
+				Q2015295 vs (missing) article redirects from de:Oestringer Steine I-III to de:Oestringer Steine I&#8211;III
+				</br>
+				<a href="https://openstreetmap.org/node/56978337" target="_new">Östringer Steine 1 - an affected OSM element that may be improved</a>
+				</br>
+				de:Oestringer Steine I-III -> de:Oestringer Steine I–III
+				</br>
+				Oestringer Steine I&#8211;III
+				</br>
+				<hr>
+				</br>
+				Q55520418 vs (missing) article redirects from de:Stiftung Zentrale Stelle Verpackungsregister to de:Zentrale Stelle Verpackungsregister
+				</br>
+				<a href="https://openstreetmap.org/node/5887433315" target="_new">Stiftung Zentrale Stelle Verpackungsregister - an affected OSM element that may be improved</a>
+				</br>
+				de:Stiftung Zentrale Stelle Verpackungsregister -> de:Zentrale Stelle Verpackungsregister
+				</br>
+				Zentrale Stelle Verpackungsregister
+				</br>
+				<hr>
+				</br>
+				Q802946 vs (missing) article redirects from de:Bahnstrecke Osnabr&#252;ck&#8211;Brackwede to de:Bahnstrecke Brackwede&#8211;Osnabr&#252;ck
+				</br>
+				<a href="https://openstreetmap.org/relation/2524115" target="_new">2950 Brackwede - Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				de:Bahnstrecke Osnabrück–Brackwede -> de:Bahnstrecke Brackwede–Osnabrück
+				</br>
+				Bahnstrecke Brackwede&#8211;Osnabr&#252;ck
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1741686769)['wikidata'='Q2015295']['wikipedia'='de:Oestringer Steine I-III'];
+node(56978337)['wikidata'='Q2015295']['wikipedia'='de:Oestringer Steine I-III'];
+node(5887433315)['wikidata'='Q55520418']['wikipedia'='de:Stiftung Zentrale Stelle Verpackungsregister'];
+relation(2524115)['wikidata'='Q802946']['wikipedia'='de:Bahnstrecke Osnabr&#252;ck&#8211;Brackwede'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1295304483" target="_new">Piesberg - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Piesberg'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Piesberg'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1717783599" target="_new">Ziegenbrink - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Ziegenbrink'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Ziegenbrink'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2015356781" target="_new">Universität Osnabrück Bibliothekszentrale "Alte Münze" - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Universitätsbibliothek Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Universitätsbibliothek Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2317086357" target="_new">Sozialgericht Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Sozialgericht Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Sozialgericht Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/268428092" target="_new">Stadtbibliothek Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Stadtbibliothek Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Stadtbibliothek Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/3181328945" target="_new">Marktbrunnen - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Marktbrunnen (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Marktbrunnen (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/5236930086" target="_new">Mahnmal Alte Synagoge - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Alte Synagoge (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Alte Synagoge (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/5243182767" target="_new">Osnabrück-Eversburg - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Bahnhof Osnabrück-Eversburg'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Bahnhof Osnabrück-Eversburg'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/5345722605" target="_new">Diözesanarchiv Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Diözesanarchiv Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Diözesanarchiv Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/5543594403" target="_new">Schölerberg - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Schölerberg'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Schölerberg'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/56339204" target="_new">Sutthausen - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Sutthausen'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Sutthausen'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/56978315" target="_new">Johannissteine - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Johannissteine (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Johannissteine (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/56978961" target="_new">Arbeitsgericht Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Arbeitsgericht Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Arbeitsgericht Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/56978978" target="_new">Erich Maria Remarque-Friedenszentrum - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Erich Maria Remarque-Friedenszentrum'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Erich Maria Remarque-Friedenszentrum'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/1204445" target="_new">Osningroute - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Osning-Route'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Osning-Route'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/2436774" target="_new">Kunsthalle Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Kunsthalle Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Kunsthalle Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/114324178" target="_new">Piesberger Feldbahn - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Piesberger Feldbahn'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Piesberger Feldbahn'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/119803613" target="_new">Christliches Kinderhospital Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Christliches Kinderhospital Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Christliches Kinderhospital Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/123882112" target="_new">Denkmal für die Gefallenen im Krieg Deutschland Frankreich 1870 - 1871 - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Ehrenmal auf dem Straßburger Platz'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Ehrenmal auf dem Straßburger Platz'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/131280526" target="_new">Kirche der Mutter Gottes Maria - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Mutter Gottes Maria (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Mutter Gottes Maria (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/164201620" target="_new">St. Joseph - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:St. Joseph (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:St. Joseph (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/165059103" target="_new">BBS Schölerberg - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Berufsbildende Schulen der Stadt Osnabrück am Schölerberg'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Berufsbildende Schulen der Stadt Osnabrück am Schölerberg'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/168916828" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Graf-Stauffenberg-Gymnasium (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Graf-Stauffenberg-Gymnasium (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/183556067" target="_new">Platz der Deutschen Einheit - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Platz der Deutschen Einheit (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Platz der Deutschen Einheit (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/198645222" target="_new">Piesberger Feldbahn (Brücke) - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Piesberger Feldbahn'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Piesberger Feldbahn'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/198645224" target="_new">Piesberger Feldbahn - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Piesberger Feldbahn'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Piesberger Feldbahn'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/204096456" target="_new">St. Barbara - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:St. Barbara (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:St. Barbara (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/221967099" target="_new">Glockenturm ehem. Gnadenkirche - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Gnadenkirche (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Gnadenkirche (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/23736723" target="_new">Heger Friedhof - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Heger Friedhof'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Heger Friedhof'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/237650159" target="_new">Bischöfliche Kanzlei - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Bischöfliche Kanzlei'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Bischöfliche Kanzlei'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/247707976" target="_new">Gebäude SI - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Hochschule Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Hochschule Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/24865562" target="_new">Kulturgeschichtliches Museum - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Kulturgeschichtliches Museum Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Kulturgeschichtliches Museum Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/293346645" target="_new">Rosenhof - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Rosenhof (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Rosenhof (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/315881734" target="_new">Gymnasium In der Wüste - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Gymnasium „In der Wüste“'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Gymnasium „In der Wüste“'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/331343850" target="_new">Piesberger Feldbahn (Nebengleis Verladerampe) - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Piesberger Feldbahn'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Piesberger Feldbahn'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/331343852" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Piesberger Feldbahn'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Piesberger Feldbahn'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/339747253" target="_new">Kloster Gertrudenberg - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Kloster Gertrudenberg'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Kloster Gertrudenberg'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/339747256" target="_new">Gertrudenkirche - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Kloster Gertrudenberg'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Kloster Gertrudenberg'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/341444192" target="_new">Franz-von-Assisi-Schule - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Franz-von-Assisi-Schule Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Franz-von-Assisi-Schule Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/35797481" target="_new">Sankt Johann - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:St. Johann (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:St. Johann (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/36333047" target="_new">Rathaus Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Rathaus Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Rathaus Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/371539264" target="_new">Römerbrücke - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Römerbrücke (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Römerbrücke (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/37248901" target="_new">Angelaschule Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Angelaschule (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Angelaschule (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/381911181" target="_new">Ratsgymnasium - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Ratsgymnasium Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Ratsgymnasium Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/387027924" target="_new">Marktplatz - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Markt (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Markt (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/387031485" target="_new">Gymnasialkirche - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Kleine Kirche (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Kleine Kirche (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/388220818" target="_new">Hasefriedhof - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Hasefriedhof'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Hasefriedhof'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/463511780" target="_new">Gesamtschule Schinkel - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Gesamtschule Schinkel (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Gesamtschule Schinkel (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/488931358" target="_new">Piesberger Feldbahn - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Piesberger Feldbahn'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Piesberger Feldbahn'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/488931360" target="_new">Piesberger Feldbahn (Canyon) - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Piesberger Feldbahn'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Piesberger Feldbahn'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/531335344" target="_new">Priesterseminar - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Priesterseminar Osnabrück'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Priesterseminar Osnabrück'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/65709425" target="_new">Berufsbildende Schulen Brinkstraße - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Berufsbildende Schulen des Landkreises Osnabrück, Brinkstraße'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Berufsbildende Schulen des Landkreises Osnabrück, Brinkstraße'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/768961776" target="_new">Berliner Platz - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Berliner Platz (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Berliner Platz (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/7808970" target="_new">Attersee - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Attersee (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Attersee (Osnabrück)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/89078298" target="_new">Heilig-Geist-Kirche - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Heilig-Geist-Kirche (Osnabrück-Sonnenhügel)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Heilig-Geist-Kirche (Osnabrück-Sonnenhügel)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/92142582" target="_new">Museum am Schölerberg - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Museum am Schölerberg'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Museum am Schölerberg'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/99403928" target="_new">Lutherkirche - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Lutherkirche (Osnabrück)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Lutherkirche (Osnabrück)'}}]
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1295304483)['wikidata'='Q2094104']['wikipedia'!~'.*'];
+node(1717783599)['wikidata'='Q63196767']['wikipedia'!~'.*'];
+node(2015356781)['wikidata'='Q28733444']['wikipedia'!~'.*'];
+node(2317086357)['wikidata'='Q1748827']['wikipedia'!~'.*'];
+node(268428092)['wikidata'='Q28681896']['wikipedia'!~'.*'];
+node(3181328945)['wikidata'='Q98398854']['wikipedia'!~'.*'];
+node(5236930086)['wikidata'='Q436311']['wikipedia'!~'.*'];
+node(5243182767)['wikidata'='Q61986408']['wikipedia'!~'.*'];
+node(5345722605)['wikidata'='Q28735007']['wikipedia'!~'.*'];
+node(5543594403)['wikidata'='Q2258610']['wikipedia'!~'.*'];
+node(56339204)['wikidata'='Q2369954']['wikipedia'!~'.*'];
+node(56978315)['wikidata'='Q89694180']['wikipedia'!~'.*'];
+node(56978961)['wikidata'='Q627912']['wikipedia'!~'.*'];
+node(56978978)['wikidata'='Q76636420']['wikipedia'!~'.*'];
+relation(1204445)['wikidata'='Q15837796']['wikipedia'!~'.*'];
+relation(2436774)['wikidata'='Q869696']['wikipedia'!~'.*'];
+way(114324178)['wikidata'='Q54301126']['wikipedia'!~'.*'];
+way(119803613)['wikidata'='Q60560381']['wikipedia'!~'.*'];
+way(123882112)['wikidata'='Q1300200']['wikipedia'!~'.*'];
+way(131280526)['wikidata'='Q56885934']['wikipedia'!~'.*'];
+way(164201620)['wikidata'='Q101144462']['wikipedia'!~'.*'];
+way(165059103)['wikidata'='Q26265780']['wikipedia'!~'.*'];
+way(168916828)['wikidata'='Q1541372']['wikipedia'!~'.*'];
+way(183556067)['wikidata'='Q57228596']['wikipedia'!~'.*'];
+way(198645222)['wikidata'='Q54301126']['wikipedia'!~'.*'];
+way(198645224)['wikidata'='Q54301126']['wikipedia'!~'.*'];
+way(204096456)['wikidata'='Q68685732']['wikipedia'!~'.*'];
+way(221967099)['wikidata'='Q56872993']['wikipedia'!~'.*'];
+way(23736723)['wikidata'='Q18287415']['wikipedia'!~'.*'];
+way(237650159)['wikidata'='Q866238']['wikipedia'!~'.*'];
+way(247707976)['wikidata'='Q1622135']['wikipedia'!~'.*'];
+way(24865562)['wikidata'='Q1388353']['wikipedia'!~'.*'];
+way(293346645)['wikidata'='Q29015767']['wikipedia'!~'.*'];
+way(315881734)['wikidata'='Q1558321']['wikipedia'!~'.*'];
+way(331343850)['wikidata'='Q54301126']['wikipedia'!~'.*'];
+way(331343852)['wikidata'='Q54301126']['wikipedia'!~'.*'];
+way(339747253)['wikidata'='Q1340364']['wikipedia'!~'.*'];
+way(339747256)['wikidata'='Q1340364']['wikipedia'!~'.*'];
+way(341444192)['wikidata'='Q1445931']['wikipedia'!~'.*'];
+way(35797481)['wikidata'='Q1306175']['wikipedia'!~'.*'];
+way(36333047)['wikidata'='Q2132598']['wikipedia'!~'.*'];
+way(371539264)['wikidata'='Q95578045']['wikipedia'!~'.*'];
+way(37248901)['wikidata'='Q2652823']['wikipedia'!~'.*'];
+way(381911181)['wikidata'='Q1590576']['wikipedia'!~'.*'];
+way(387027924)['wikidata'='Q56872988']['wikipedia'!~'.*'];
+way(387031485)['wikidata'='Q56872991']['wikipedia'!~'.*'];
+way(388220818)['wikidata'='Q98605408']['wikipedia'!~'.*'];
+way(463511780)['wikidata'='Q1516156']['wikipedia'!~'.*'];
+way(488931358)['wikidata'='Q54301126']['wikipedia'!~'.*'];
+way(488931360)['wikidata'='Q54301126']['wikipedia'!~'.*'];
+way(531335344)['wikidata'='Q2109614']['wikipedia'!~'.*'];
+way(65709425)['wikidata'='Q15107535']['wikipedia'!~'.*'];
+way(768961776)['wikidata'='Q58223777']['wikipedia'!~'.*'];
+way(7808970)['wikidata'='Q758015']['wikipedia'!~'.*'];
+way(89078298)['wikidata'='Q56885933']['wikipedia'!~'.*'];
+way(92142582)['wikidata'='Q27821987']['wikipedia'!~'.*'];
+way(99403928)['wikidata'='Q1877956']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikidata from wikipedia tag"><h2 id="wikidata from wikipedia tag">wikidata from wikipedia tag</h2></a>
+				</br>
+				Q1408280 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/10163966588" target="_new">Niels-Stensen-Kliniken GmbH - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q114870090 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/10164033045" target="_new">Landsmannschaft im CC Marchia Berlin zu Osnabrück e.V. - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1365357 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/3855087857" target="_new">LÜN Messstation Osnabrück Verkehr - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1365357 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/4329003355" target="_new">LÜN Messstation Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1741221 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/4359227871" target="_new">ehem. Kikxxlarena - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2051237 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/8252617139" target="_new">Paracelsus-Kliniken Deutschland - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2463920 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/13372214" target="_new">Töddenweg Etappe 1 - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q41150 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/2155203" target="_new">Jakobsweg via Baltica, Niedersachsen (Süd) - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1306175 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/5683465" target="_new">Johanniskirche - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q459884 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/relation/9462315" target="_new">(Europäischer Fernwanderweg E11, Niedersachsen (W)) - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/1117447058" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1485200 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/126555372" target="_new">Gut Gartlage - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q60650554 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/158511481" target="_new">Schlosswallhalle - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/210720029" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/210720030" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/210720032" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/210720034" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2123770 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/218624436" target="_new">Froneri Ice Cream Deutschland GmbH - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/24725766" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q28733444 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/24865413" target="_new">Gebäude 10 - Bibliothekszentrale "Alte Münze" - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q57015986 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/26515351" target="_new">Stüvehaus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/277057750" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/284522012" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/284522017" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/284522025" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1409903 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/286631994" target="_new">Berufsfeuerwehr Osnabrück - Wache 1 - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/293471886" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/293471887" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/293471892" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/293471896" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/293471900" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/307576083" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/307576084" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/307576085" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/307576086" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/366981882" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15823873 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/440756508" target="_new">Klinikum Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q27478786 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/62117818" target="_new">Neuer Jüdischer Friedhof - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/846828100" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/847246139" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1803695 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/847246140" target="_new">Pagenstecherstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q52247630 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/92163768" target="_new">Osnabrücker Sportclub - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1625063 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/92872929" target="_new">Bereitschaftspolizei Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1018272 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/93190983" target="_new">Concentrix Management Holding GmbH & Co. KG - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1742764 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/93262140" target="_new">Sievert AG - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15814766 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/way/93275252" target="_new">Heinrich Fip GmbH & Co. KG - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(10163966588)['wikidata'!~'.*']['wikipedia'='de:Niels-Stensen-Kliniken'];
+node(10164033045)['wikidata'!~'.*']['wikipedia'='de:Landsmannschaft im CC Marchia Berlin zu Osnabr&#252;ck'];
+node(3855087857)['wikidata'!~'.*']['wikipedia'='de:Lufthygienisches &#220;berwachungssystem Niedersachsen'];
+node(4329003355)['wikidata'!~'.*']['wikipedia'='de:Lufthygienisches &#220;berwachungssystem Niedersachsen'];
+node(4359227871)['wikidata'!~'.*']['wikipedia'='de:Kikxxlarena'];
+node(8252617139)['wikidata'!~'.*']['wikipedia'='de:Paracelsus-Kliniken'];
+relation(13372214)['wikidata'!~'.*']['wikipedia'='de:T&#246;ddenweg'];
+relation(2155203)['wikidata'!~'.*']['wikipedia'='de:Jakobsweg'];
+relation(5683465)['wikidata'!~'.*']['wikipedia'='de:St. Johann (Osnabr&#252;ck)'];
+relation(9462315)['wikidata'!~'.*']['wikipedia'='en:E11 European long distance path'];
+way(1117447058)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(126555372)['wikidata'!~'.*']['wikipedia'='de:Haus Gartlage'];
+way(158511481)['wikidata'!~'.*']['wikipedia'='de:Schlosswallhalle'];
+way(210720029)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(210720030)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(210720032)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(210720034)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(218624436)['wikidata'!~'.*']['wikipedia'='de:Froneri Ice Cream Deutschland'];
+way(24725766)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(24865413)['wikidata'!~'.*']['wikipedia'='de:Universit&#228;tsbibliothek Osnabr&#252;ck'];
+way(26515351)['wikidata'!~'.*']['wikipedia'='de:St&#252;vehaus'];
+way(277057750)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(284522012)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(284522017)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(284522025)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(286631994)['wikidata'!~'.*']['wikipedia'='de:Feuerwehr Osnabr&#252;ck'];
+way(293471886)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(293471887)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(293471892)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(293471896)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(293471900)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(307576083)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(307576084)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(307576085)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(307576086)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(366981882)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(440756508)['wikidata'!~'.*']['wikipedia'='de:Klinikum Osnabr&#252;ck'];
+way(62117818)['wikidata'!~'.*']['wikipedia'='de:J&#252;dische Friedh&#246;fe in Osnabr&#252;ck'];
+way(846828100)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(847246139)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(847246140)['wikidata'!~'.*']['wikipedia'='de:Pagenstecherstra&#223;e (Osnabr&#252;ck)'];
+way(92163768)['wikidata'!~'.*']['wikipedia'='de:Osnabr&#252;cker SC'];
+way(92872929)['wikidata'!~'.*']['wikipedia'='de:Landesbereitschaftspolizei Niedersachsen'];
+way(93190983)['wikidata'!~'.*']['wikipedia'='de:Buw Holding'];
+way(93262140)['wikidata'!~'.*']['wikipedia'='de:Sievert (Unternehmen)'];
+way(93275252)['wikidata'!~'.*']['wikipedia'='de:Heinrich Fip (Unternehmen)'];
+); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</h2></a>
+			</br>
+			brand:wikidata and brand:wikipedia tags link to a different objects, because brand:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q457822 vs (missing) article redirects from en:Fielmann to en:Fielmann AG
+				</br>
+				<a href="https://openstreetmap.org/node/1014395186" target="_new">Fielmann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q316004 vs (missing) article redirects from de:Dirk Rossmann GmbH to de:Rossmann (Handelskette)
+				</br>
+				<a href="https://openstreetmap.org/node/1014395224" target="_new">Rossmann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1759255 vs (missing) article redirects from en:Telef&#243;nica Europe to en:O2 (brand)
+				</br>
+				<a href="https://openstreetmap.org/node/1014395248" target="_new">O2 - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1464562 vs (missing) article redirects from de:Sch&#228;fers Brot to de:Sch&#228;fer&#8217;s Brot- und Kuchenspezialit&#228;ten
+				</br>
+				<a href="https://openstreetmap.org/node/1016598745" target="_new">Schäfer's - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q138913 vs (missing) article redirects from en:Jysk (store) to en:Jysk
+				</br>
+				<a href="https://openstreetmap.org/node/1025426929" target="_new">JYSK - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2543504 vs (missing) article redirects from en:Saturn (retailer) to en:Saturn (store)
+				</br>
+				<a href="https://openstreetmap.org/node/418347638" target="_new">Saturn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q316004 vs (missing) article redirects from de:Dirk Rossmann GmbH to de:Rossmann (Handelskette)
+				</br>
+				<a href="https://openstreetmap.org/node/474498401" target="_new">Rossmann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q160054 vs (missing) article redirects from en:AXA to en:Axa
+				</br>
+				<a href="https://openstreetmap.org/node/5858813703" target="_new">AXA - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1613532 vs (missing) article redirects from en:Hermes Group to en:Hermes (company)
+				</br>
+				<a href="https://openstreetmap.org/node/6630493701" target="_new">Hermes Paketshop - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q316004 vs (missing) article redirects from de:Dirk Rossmann GmbH to de:Rossmann (Handelskette)
+				</br>
+				<a href="https://openstreetmap.org/way/154186661" target="_new">Rossmann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q316004 vs (missing) article redirects from de:Dirk Rossmann GmbH to de:Rossmann (Handelskette)
+				</br>
+				<a href="https://openstreetmap.org/way/92761278" target="_new">Rossmann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1014395186)['brand:wikidata'='Q457822']['brand:wikipedia'='en:Fielmann'];
+node(1014395224)['brand:wikidata'='Q316004']['brand:wikipedia'='de:Dirk Rossmann GmbH'];
+node(1014395248)['brand:wikidata'='Q1759255']['brand:wikipedia'='en:Telef&#243;nica Europe'];
+node(1016598745)['brand:wikidata'='Q1464562']['brand:wikipedia'='de:Sch&#228;fers Brot'];
+node(1025426929)['brand:wikidata'='Q138913']['brand:wikipedia'='en:Jysk (store)'];
+node(418347638)['brand:wikidata'='Q2543504']['brand:wikipedia'='en:Saturn (retailer)'];
+node(474498401)['brand:wikidata'='Q316004']['brand:wikipedia'='de:Dirk Rossmann GmbH'];
+node(5858813703)['brand:wikidata'='Q160054']['brand:wikipedia'='en:AXA'];
+node(6630493701)['brand:wikidata'='Q1613532']['brand:wikipedia'='en:Hermes Group'];
+way(154186661)['brand:wikidata'='Q316004']['brand:wikipedia'='de:Dirk Rossmann GmbH'];
+way(92761278)['brand:wikidata'='Q316004']['brand:wikipedia'='de:Dirk Rossmann GmbH'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</h2></a>
+			</br>
+			network:wikidata and network:wikipedia tags link to a different objects, because network:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10110039" target="_new">Flixbus 031: Berlin ZOB => Münster Hbf. Hafenstr. - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10693304" target="_new">Flixbus N67: Amsterdam Sloterdijk => Prag, ÚAN Florenc - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10693305" target="_new">Flixbus N67: Prag, ÚAN Florenc => Amsterdam Sloterdijk - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10693366" target="_new">Flixbus N67: Amsterdam, Schiphol Airport => Prag, ÚAN Florenc - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10693367" target="_new">Flixbus N67: Prag, ÚAN Florenc => Amsterdam, Schiphol Airport - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11273222" target="_new">Flixbus 110: Osnabrück, ZOB => Stuttgart, Airport Busterminal (SAB) - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11274692" target="_new">Flixbus N110 (part DE): Puttgarden, Fährhafen => Ulm, Eberhard-Finckh-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11295858" target="_new">Flixbus N110 (part DE): Ulm, Eberhard-Finckh-Straße => Puttgarden, Fährhafen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/2912745" target="_new">Flixbus 019: Leverkusen => Norden - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/2921261" target="_new">Flixbus 019: Norden => Leverkusen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/3016685" target="_new">Flixbus 027: Wilhelmshaven, Marktstraße => München ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/3145327" target="_new">Flixbus 031: Münster Hbf. Hafenstr. => Berlin ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/5754039" target="_new">Flixbus N844: Kopenhagen Ingerslevsgade => Rotterdam Centraal - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/5754040" target="_new">Flixbus N844: Rotterdam Centraal => Kopenhagen Ingerslevsgade - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/5760607" target="_new">Flixbus N81: Berlin ZOB => Bruxelles Gare Du Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/5760608" target="_new">Flixbus N81: Bruxelles Gare Du Nord => Berlin ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/7201319" target="_new">Flixbus X31: Amsterdam Sloterdijk => Berlin ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/7201320" target="_new">Flixbus X31: Berlin ZOB => Amsterdam Sloterdijk - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/7643058" target="_new">Flixbus 110: Stuttgart, Airport Busterminal (SAB) => Osnabrück, ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(10110039)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10693304)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10693305)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10693366)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10693367)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11273222)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11274692)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11295858)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(2912745)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(2921261)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(3016685)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(3145327)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(5754039)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(5754040)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(5760607)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(5760608)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(7201319)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(7201320)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(7643058)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
+	</body>
+</html>
