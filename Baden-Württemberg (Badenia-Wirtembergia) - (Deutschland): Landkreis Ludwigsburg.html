@@ -10,10 +10,10 @@ This page was generated using data obtained on 2023-01-31. Please, <a href="http
 			</br>
 			<hr>
 			</br>
-			Remember to check whatever edit makes sense! All reports are at this page because this tasks require human judgment to verify whatever proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
+			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#malformed wikipedia tag">malformed wikipedia tag</a></li><li><a href="#should use a secondary wikipedia tag - linking to a human">should use a secondary wikipedia tag - linking to a human</a></li><li><a href="#should use a secondary wikipedia tag - linking to a brand">should use a secondary wikipedia tag - linking to a brand</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li><li><a href="#no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#malformed wikipedia tag">malformed wikipedia tag</a></li><li><a href="#should use a secondary wikipedia tag - linking to a human">should use a secondary wikipedia tag - linking to a human</a></li><li><a href="#should use a secondary wikipedia tag - linking to a brand">should use a secondary wikipedia tag - linking to a brand</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li><li><a href="#no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</a></li></ul>			</br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			</br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br />Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br />Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -468,10 +468,29 @@ way(98505759)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 				<a href="https://openstreetmap.org/relation/2890957" target="_new">ICE 60: (Basel Bad Bf =>) Karlsruhe => München - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(2890957)['network:wikidata'='Q896739']['network:wikipedia'='de:Intercity-Express'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for network prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#no longer existing brand (according to Wikidata)"><h2 id="no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</h2></a>
+			</br>
+			Wikidata claims that assigned brand object no longer exists. That means that either this shop is gone or it is rebranded. Or brand:wikidata tag is wrong. Historical, no longer existing object should not be mapped in OSM. REMEMBER TO VERIFY! WIKIDATA QUALITY MAY BE POOR!
 				</br>
-				network:wikidata and network:wikipedia tags link to a different objects (Q129172 vs Q896739 wikidata id assigned to linked Wikipedia article)
+				
 				</br>
-				<a href="https://openstreetmap.org/relation/6167907" target="_new">IC 62: Salzburg => Frankfurt - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/way/117475268" target="_new">Agip - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				
+				</br>
+				<a href="https://openstreetmap.org/way/124655852" target="_new">Marktkauf - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 			</br>
@@ -479,9 +498,9 @@ way(98505759)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-relation(2890957)['network:wikidata'='Q896739']['network:wikipedia'='de:Intercity-Express'];
-relation(6167907)['network:wikidata'='Q129172']['network:wikipedia'='de:Intercity (Deutschland)'];
-); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for network prefixed tags']</blockquote>
+way(117475268)['wikidata'='Q377915'];
+way(124655852)['wikidata'='Q1533254'];
+); (._;>;); out meta qt;//['no longer existing brand (according to Wikidata)']</blockquote>
 			</br>
 			<hr>
 			</br>

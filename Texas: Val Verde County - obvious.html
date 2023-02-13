@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-01-11. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-02-11. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-01-11. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				</br>
 				wikipedia page in unexpected language - en was expected:
@@ -32,6 +32,65 @@ This page was generated using data obtained on 2023-01-11. Please, <a href="http
 (
 way(113578493)['wikipedia'='es:Base de la Fuerza A&#233;rea Laughlin'];
 ); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</h2></a>
+			</br>
+			brand:wikidata and brand:wikipedia tags link to a different objects, because brand:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q4835088 vs (missing) article redirects from en:BBVA Compass to en:BBVA USA
+				</br>
+				<a href="https://openstreetmap.org/node/7671663053" target="_new">BBVA Compass - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q4835088 vs (missing) article redirects from en:BBVA Compass to en:BBVA USA
+				</br>
+				<a href="https://openstreetmap.org/way/199542760" target="_new">BBVA Compass - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1075788 vs (missing) article redirects from en:Choice Hotels International to en:Choice Hotels
+				</br>
+				<a href="https://openstreetmap.org/way/199545168" target="_new">Quality Inn & Suites - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q5527509 vs (missing) article redirects from en:Gatti&#x27;s Pizza to en:Mr. Gatti&#x27;s Pizza
+				</br>
+				<a href="https://openstreetmap.org/way/480113754" target="_new">Gatti's Pizza - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(7671663053)['brand:wikidata'='Q4835088']['brand:wikipedia'='en:BBVA Compass'];
+way(199542760)['brand:wikidata'='Q4835088']['brand:wikipedia'='en:BBVA Compass'];
+way(199545168)['brand:wikidata'='Q1075788']['brand:wikipedia'='en:Choice Hotels International'];
+way(480113754)['brand:wikidata'='Q5527509']['brand:wikipedia'='en:Gatti\'s Pizza'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</h2></a>
+			</br>
+			operator:wikidata and operator:wikipedia tags link to a different objects, because operator:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q8040120 vs (missing) article redirects from en:Wyndham Hotels and Resorts to en:Wyndham Hotels &amp; Resorts
+				</br>
+				<a href="https://openstreetmap.org/way/199540205" target="_new">Ramada by Wyndham Del Rio - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(199540205)['operator:wikidata'='Q8040120']['operator:wikipedia'='en:Wyndham Hotels and Resorts'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags']</blockquote>
 			</br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />

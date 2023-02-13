@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-01-13. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-02-12. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,52 @@ This page was generated using data obtained on 2023-01-13. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li></ul>			</br>
+<ul><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags</a></li></ul>			</br>
+			<a href="#wikipedia from wikidata tag, unexpected language"><h2 id="wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/node/5750262959" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'cs:Pranýř (Piotrków Trybunalski)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'cs:Pranýř (Piotrków Trybunalski)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/way/107422505" target="_new">Kamienica Rachmila Lipszyca - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'no:Rachmil Lipszycs mursteinshus'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'no:Rachmil Lipszycs mursteinshus'}}]
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(5750262959)['wikidata'='Q116058580']['wikipedia'!~'.*'];
+way(107422505)['wikidata'='Q31064353']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag, unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikidata from wikipedia tag"><h2 id="wikidata from wikipedia tag">wikidata from wikipedia tag</h2></a>
+				</br>
+				Q16548776 may be added as wikidata tag based on wikipedia tag
+				</br>
+				<a href="https://openstreetmap.org/node/3576915219" target="_new">Gajęcice-Gajówka - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(3576915219)['wikidata'!~'.*']['wikipedia'='pl:Gaj&#281;cice-Gaj&#243;wka'];
+); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia tag in an outdated form for removal"><h2 id="wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</h2></a>
 				</br>
 				wikipedia tag in outdated form ([&#x27;wikipedia:en&#x27;]), with wikipedia and wikidata tag present and may be safely removed
@@ -49,9 +94,21 @@ node(31879541)['wikidata'='Q2100357']['wikipedia'='pl:Rozprza']['wikipedia:en'='
 			</br>
 			wikidata and wikipedia tags link to a different objects, because wikidata tag points to a redirect that should be followed
 				</br>
+				Q9138454 vs Q16250065
+				</br>
+				<a href="https://openstreetmap.org/node/1470522497" target="_new">Abram - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				Q16582213 vs Q7032034
 				</br>
 				<a href="https://openstreetmap.org/node/2491258433" target="_new">Niewiadów - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q16534095 vs Q4985250
+				</br>
+				<a href="https://openstreetmap.org/node/31701684" target="_new">Budy Grabskie - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -77,7 +134,9 @@ node(31879541)['wikidata'='Q2100357']['wikipedia'='pl:Rozprza']['wikipedia:en'='
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
+node(1470522497)['wikidata'='Q9138454']['wikipedia'='pl:Abram (Polska)'];
 node(2491258433)['wikidata'='Q16582213']['wikipedia'='pl:Niewiad&#243;w'];
+node(31701684)['wikidata'='Q16534095']['wikipedia'='pl:Budy Grabskie (wie&#347;)'];
 relation(318951)['wikidata'='Q11757130']['wikipedia'='pl:Linia kolejowa nr 11'];
 relation(4262502)['wikidata'='Q25415976']['wikipedia'='pl:Brzuza (wojew&#243;dztwo &#322;&#243;dzkie)'];
 way(423711219)['wikidata'='Q30091095']['wikipedia'='pl:Ko&#347;ci&#243;&#322; &#347;w. Mateusza Aposto&#322;a i Ewangelisty i &#347;w. Rocha Wyznawcy w Nowej Sob&#243;tce'];
@@ -87,9 +146,51 @@ way(423711219)['wikidata'='Q30091095']['wikipedia'='pl:Ko&#347;ci&#243;&#322; &#
 			</br>
 			<a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier"><h2 id="wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</h2></a>
 				</br>
+				new wikipedia tag pl:Drzewica (miasto) proposed based on matching teryt:simc codes in wikidata (Q1005409) and in osm element, where teryt:simc=0973346 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/105491400" target="_new">Drzewica - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Kolonia Rzejowice proposed based on matching teryt:simc codes in wikidata (Q16599040) and in osm element, where teryt:simc=0543634 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/1493065601" target="_new">Kolonia Rzejowice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Stemplew (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q7607425) and in osm element, where teryt:simc=0297796 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/1861197281" target="_new">Stemplew - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Por&#281;by (powiat be&#322;chatowski) proposed based on matching teryt:simc codes in wikidata (Q7232919) and in osm element, where teryt:simc=0535876 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/1902140371" target="_new">Poręby - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Kosatka (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q6433007) and in osm element, where teryt:simc=0699431 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/2018074140" target="_new">Kosatka - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Sarn&#243;w-Osiedle proposed based on matching teryt:simc codes in wikidata (Q9333926) and in osm element, where teryt:simc=0702541 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/2170075329" target="_new">Sarnów-Osiedle - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Micha&#322;y (Polska) proposed based on matching teryt:simc codes in wikidata (Q11779447) and in osm element, where teryt:simc=0578756 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/2172719168" target="_new">Michały - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Szubina (osada) proposed based on matching teryt:simc codes in wikidata (Q16608833) and in osm element, where teryt:simc=0567698 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/2172719372" target="_new">Szubina - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -105,9 +206,273 @@ way(423711219)['wikidata'='Q30091095']['wikipedia'='pl:Ko&#347;ci&#243;&#322; &#
 				</br>
 				<hr>
 				</br>
+				new wikipedia tag pl:Parma (Polska) proposed based on matching teryt:simc codes in wikidata (Q3896187) and in osm element, where teryt:simc=0730402 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/280061603" target="_new">Parma - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Zelgoszcz (powiat zgierski) proposed based on matching teryt:simc codes in wikidata (Q8068754) and in osm element, where teryt:simc=0416404 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/2969871850" target="_new">Zelgoszcz - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Pi&#261;tek (miasto) proposed based on matching teryt:simc codes in wikidata (Q984274) and in osm element, where teryt:simc=0573256 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/30093005" target="_new">Piątek - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:G&#243;ry Borowskie (miejscowo&#347;&#263;) proposed based on matching teryt:simc codes in wikidata (Q11703126) and in osm element, where teryt:simc=0535273 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009688769" target="_new">Góry Borowskie - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Chojnatka (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q5104128) and in osm element, where teryt:simc=0729505 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009695690" target="_new">Chojnatka - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Czarny Las (Prusinowice) proposed based on matching teryt:simc codes in wikidata (Q5201664) and in osm element, where teryt:simc=0714580 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009696448" target="_new">Czarny Las - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Dzia&#322;y (D&#261;browice) proposed based on matching teryt:simc codes in wikidata (Q5319742) and in osm element, where teryt:simc=0562904 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009699499" target="_new">Działy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:D&#261;br&#243;wka (Gomulin-Kolonia) proposed based on matching teryt:simc codes in wikidata (Q5320773) and in osm element, where teryt:simc=0555353 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009700993" target="_new">Dąbrówka - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Grabiec (wojew&#243;dztwo &#322;&#243;dzkie) proposed based on matching teryt:simc codes in wikidata (Q16550070) and in osm element, where teryt:simc=0141580 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009703616" target="_new">Grabiec - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Hament&#243;w proposed based on matching teryt:simc codes in wikidata (Q11708520) and in osm element, where teryt:simc=0714739 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009708550" target="_new">Hamentów - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Jadwisin (K&#322;&#243;dno) proposed based on matching teryt:simc codes in wikidata (Q6121635) and in osm element, where teryt:simc=0716477 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009709367" target="_new">Jadwisin - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Jask&#243;&#322;ki (Strzelce Ma&#322;e) proposed based on matching teryt:simc codes in wikidata (Q11721323) and in osm element, where teryt:simc=0545805 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009710051" target="_new">Jaskółki - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Kresy (Kalenice) proposed based on matching teryt:simc codes in wikidata (Q16569420) and in osm element, where teryt:simc=0730796 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009718269" target="_new">Kresy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Majdany (D&#261;browice) proposed based on matching teryt:simc codes in wikidata (Q6737601) and in osm element, where teryt:simc=0562927 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009722589" target="_new">Majdany - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Marianka (Che&#322;mo) proposed based on matching teryt:simc codes in wikidata (Q11769817) and in osm element, where teryt:simc=0545656 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009723723" target="_new">Marianka - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Piotrowo (D&#261;browice) proposed based on matching teryt:simc codes in wikidata (Q7197128) and in osm element, where teryt:simc=0562933 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009736867" target="_new">Piotrowo - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Sucha Dolna (Sucha) proposed based on matching teryt:simc codes in wikidata (Q7632823) and in osm element, where teryt:simc=0716885 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009753894" target="_new">Sucha Dolna - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Sworawa (osada le&#347;na) proposed based on matching teryt:simc codes in wikidata (Q9348681) and in osm element, where teryt:simc=0711280 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009754575" target="_new">Sworawa - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Szwaby (Jamno) proposed based on matching teryt:simc codes in wikidata (Q16608846) and in osm element, where teryt:simc=0730230 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009757274" target="_new">Szwaby - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:W&#243;lki (kolonia) proposed based on matching teryt:simc codes in wikidata (Q18431500) and in osm element, where teryt:simc=0717070 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009765448" target="_new">Wólki - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:W&#243;lki (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q8041009) and in osm element, where teryt:simc=0717063 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009765450" target="_new">Wólki - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:&#321;&#281;tk&#243;w (Orch&#243;w) proposed based on matching teryt:simc codes in wikidata (Q9395218) and in osm element, where teryt:simc=0707142 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009774750" target="_new">Łętków - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Strzelce (powiat kutnowski) proposed based on matching teryt:simc codes in wikidata (Q986116) and in osm element, where teryt:simc=0577544 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31705122" target="_new">Strzelce - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Koryta (powiat &#322;&#281;czycki) proposed based on matching teryt:simc codes in wikidata (Q6432840) and in osm element, where teryt:simc=0562436 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31708551" target="_new">Koryta - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:D&#261;browice proposed based on matching teryt:simc codes in wikidata (Q985780) and in osm element, where teryt:simc=0562880 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31710268" target="_new">Dąbrowice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Sworawa proposed based on matching teryt:simc codes in wikidata (Q7659259) and in osm element, where teryt:simc=0711244 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31786444" target="_new">Sworawa - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Oko&#324; (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q7082543) and in osm element, where teryt:simc=0197787 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31793802" target="_new">Okoń - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Leniszki (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q16979207) and in osm element, where teryt:simc=0701582 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31796437" target="_new">Leniszki - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Przerycie (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q11829123) and in osm element, where teryt:simc=0699164 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31810585" target="_new">Przerycie - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Parady&#380; (wojew&#243;dztwo &#322;&#243;dzkie) proposed based on matching teryt:simc codes in wikidata (Q2259806) and in osm element, where teryt:simc=0547997 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31869129" target="_new">Paradyż - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Ma&#322;e Ko&#324;skie (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q6799310) and in osm element, where teryt:simc=0546035 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31873115" target="_new">Małe Końskie - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Brzuza (wojew&#243;dztwo &#322;&#243;dzkie) proposed based on matching teryt:simc codes in wikidata (Q24445816) and in osm element, where teryt:simc=0618036 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/31877827" target="_new">Brzuza - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Wi&#347;niowa G&#243;ra (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q8028876) and in osm element, where teryt:simc=0413140 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31879074" target="_new">Wiśniowa Góra - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Wierzbowiec (Polska) proposed based on matching teryt:simc codes in wikidata (Q9373320) and in osm element, where teryt:simc=1040964 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31879101" target="_new">Wierzbowiec - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Sucha G&#243;rna (Sucha) proposed based on matching teryt:simc codes in wikidata (Q7632825) and in osm element, where teryt:simc=0716891 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31879359" target="_new">Sucha Górna - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Sarn&#243;w (powiat podd&#281;bicki) proposed based on matching teryt:simc codes in wikidata (Q7424393) and in osm element, where teryt:simc=0702529 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31879503" target="_new">Sarnów - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Sad&#243;wka (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q7398167) and in osm element, where teryt:simc=0416195 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31879509" target="_new">Sadówka - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Praca (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q7237284) and in osm element, where teryt:simc=0555880 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31879516" target="_new">Praca - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Rozdzielna (Polska) proposed based on matching teryt:simc codes in wikidata (Q7375338) and in osm element, where teryt:simc=0727185 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31879545" target="_new">Rozdzielna - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Policzko (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q7209708) and in osm element, where teryt:simc=0548940 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31879731" target="_new">Policzko - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Oprz&#281;&#380;&#243;w (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q616413) and in osm element, where teryt:simc=0555695 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31880012" target="_new">Oprzężów - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Nosalewice (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q7061719) and in osm element, where teryt:simc=0548880 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31880074" target="_new">Nosalewice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Miejskie Pola (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q6843716) and in osm element, where teryt:simc=0548850 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31880216" target="_new">Miejskie Pola - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Ignac&#243;w Szlachecki (kolonia) proposed based on matching teryt:simc codes in wikidata (Q16559486) and in osm element, where teryt:simc=0545136 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31880636" target="_new">Kolonia Ignaców Szlachecki - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Je&#380;&#243;w proposed based on matching teryt:simc codes in wikidata (Q724474) and in osm element, where teryt:simc=0728658 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31880742" target="_new">Jeżów - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -116,17 +481,753 @@ way(423711219)['wikidata'='Q30091095']['wikipedia'='pl:Ko&#347;ci&#243;&#322; &#
 				<a href="https://openstreetmap.org/node/31881493" target="_new">Bielanki - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
+				</br>
+				new wikipedia tag pl:D&#261;browa (gmina Be&#322;chat&#243;w) proposed based on matching teryt:simc codes in wikidata (Q5320571) and in osm element, where teryt:simc=0541569 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3390459371" target="_new">Dąbrowa - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Koryta-Osada proposed based on matching teryt:simc codes in wikidata (Q11743909) and in osm element, where teryt:simc=0562442 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/4157009982" target="_new">Koryta-Osada - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Ner (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q6995847) and in osm element, where teryt:simc=0716566 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/692608393" target="_new">Ner - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Wale (Polska) proposed based on matching teryt:simc codes in wikidata (Q7961663) and in osm element, where teryt:simc=0537591 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/692608488" target="_new">Wale - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Sarn&#243;w (powiat podd&#281;bicki) proposed based on matching teryt:simc codes in wikidata (Q7424393) and in osm element, where teryt:simc=0702529 is declared
+				</br>
+				<a href="https://openstreetmap.org/relation/2939988" target="_new">Sarnów - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Sarn&#243;w-Osiedle proposed based on matching teryt:simc codes in wikidata (Q9333926) and in osm element, where teryt:simc=0702541 is declared
+				</br>
+				<a href="https://openstreetmap.org/relation/2940069" target="_new">Sarnów - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
 			</br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
+node(105491400)['teryt:simc'='0973346']['wikidata'='Q1005409']['wikipedia'='pl:Drzewica (wojew&#243;dztwo &#322;&#243;dzkie)'];
 node(1493065601)['teryt:simc'='0543634']['wikidata'='Q16599040']['wikipedia'='pl:Rzejowice (kolonia w gminie Kodr&#261;b)'];
+node(1861197281)['teryt:simc'='0297796']['wikidata'='Q7607425']['wikipedia'='pl:Stemplew (wie&#347; w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(1902140371)['teryt:simc'='0535876']['wikidata'='Q7232919']['wikipedia'='pl:Por&#281;by (gmina Be&#322;chat&#243;w)'];
+node(2018074140)['teryt:simc'='0699431']['wikidata'='Q6433007']['wikipedia'='pl:Kosatka'];
+node(2170075329)['teryt:simc'='0702541']['wikidata'='Q9333926']['wikipedia'='pl:Sarn&#243;w (osada w powiecie podd&#281;bickim)'];
+node(2172719168)['teryt:simc'='0578756']['wikidata'='Q11779447']['wikipedia'='pl:Micha&#322;y'];
+node(2172719372)['teryt:simc'='0567698']['wikidata'='Q16608833']['wikipedia'='pl:Szubina (osada w gminie Kro&#347;niewice)'];
 node(2542265854)['teryt:simc'='0197528']['wikidata'='Q11741261']['wikipedia'='pl:Kolonia Osiek'];
 node(2687808353)['teryt:simc'='0552350']['wikidata'='Q8024789']['wikipedia'='pl:Winduga (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(280061603)['teryt:simc'='0730402']['wikidata'='Q3896187']['wikipedia'='pl:Parma (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(2969871850)['teryt:simc'='0416404']['wikidata'='Q8068754']['wikipedia'='pl:Zelgoszcz (gmina Stryk&#243;w)'];
+node(30093005)['teryt:simc'='0573256']['wikidata'='Q984274']['wikipedia'='pl:Pi&#261;tek (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(3009688769)['teryt:simc'='0535273']['wikidata'='Q11703126']['wikipedia'='pl:G&#243;ry Borowskie (powiat be&#322;chatowski)'];
+node(3009695690)['teryt:simc'='0729505']['wikidata'='Q5104128']['wikipedia'='pl:Chojnatka'];
+node(3009696448)['teryt:simc'='0714580']['wikidata'='Q5201664']['wikipedia'='pl:Czarny Las (powiat zdu&#324;skowolski)'];
+node(3009699499)['teryt:simc'='0562904']['wikidata'='Q5319742']['wikipedia'='pl:Dzia&#322;y (powiat kutnowski)'];
+node(3009700993)['teryt:simc'='0555353']['wikidata'='Q5320773']['wikipedia'='pl:D&#261;br&#243;wka (gmina Wola Krzysztoporska)'];
+node(3009703616)['teryt:simc'='0141580']['wikidata'='Q16550070']['wikipedia'='pl:Grabiec (kolonia w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(3009708550)['teryt:simc'='0714739']['wikidata'='Q11708520']['wikipedia'='pl:Hament&#243;w (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(3009709367)['teryt:simc'='0716477']['wikidata'='Q6121635']['wikipedia'='pl:Jadwisin (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(3009710051)['teryt:simc'='0545805']['wikidata'='Q11721323']['wikipedia'='pl:Jask&#243;&#322;ki (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(3009718269)['teryt:simc'='0730796']['wikidata'='Q16569420']['wikipedia'='pl:Kresy (gmina &#321;yszkowice)'];
+node(3009722589)['teryt:simc'='0562927']['wikidata'='Q6737601']['wikipedia'='pl:Majdany (powiat kutnowski)'];
+node(3009723723)['teryt:simc'='0545656']['wikidata'='Q11769817']['wikipedia'='pl:Marianka (gmina Mas&#322;owice)'];
+node(3009736867)['teryt:simc'='0562933']['wikidata'='Q7197128']['wikipedia'='pl:Piotrowo (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(3009753894)['teryt:simc'='0716885']['wikidata'='Q7632823']['wikipedia'='pl:Sucha Dolna (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(3009754575)['teryt:simc'='0711280']['wikidata'='Q9348681']['wikipedia'='pl:Sworawa (osada le&#347;na w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(3009757274)['teryt:simc'='0730230']['wikidata'='Q16608846']['wikipedia'='pl:Szwaby (powiat &#322;owicki)'];
+node(3009765448)['teryt:simc'='0717070']['wikidata'='Q18431500']['wikipedia'='pl:W&#243;lki (kolonia w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(3009765450)['teryt:simc'='0717063']['wikidata'='Q8041009']['wikipedia'='pl:W&#243;lki (wie&#347; w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(3009774750)['teryt:simc'='0707142']['wikidata'='Q9395218']['wikipedia'='pl:&#321;&#281;tk&#243;w (powiat &#322;aski)'];
+node(31705122)['teryt:simc'='0577544']['wikidata'='Q986116']['wikipedia'='pl:Strzelce (wie&#347; w powiecie kutnowskim)'];
+node(31708551)['teryt:simc'='0562436']['wikidata'='Q6432840']['wikipedia'='pl:Koryta (wie&#347; w powiecie &#322;&#281;czyckim)'];
+node(31710268)['teryt:simc'='0562880']['wikidata'='Q985780']['wikipedia'='pl:D&#261;browice (powiat kutnowski)'];
+node(31786444)['teryt:simc'='0711244']['wikidata'='Q7659259']['wikipedia'='pl:Sworawa (wie&#347; w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(31793802)['teryt:simc'='0197787']['wikidata'='Q7082543']['wikipedia'='pl:Oko&#324; (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(31796437)['teryt:simc'='0701582']['wikidata'='Q16979207']['wikipedia'='pl:Leniszki (wie&#347; w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(31810585)['teryt:simc'='0699164']['wikidata'='Q11829123']['wikipedia'='pl:Przerycie (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(31869129)['teryt:simc'='0547997']['wikidata'='Q2259806']['wikipedia'='pl:Parady&#380; (powiat opoczy&#324;ski)'];
+node(31873115)['teryt:simc'='0546035']['wikidata'='Q6799310']['wikipedia'='pl:Ma&#322;e Ko&#324;skie (wie&#347; w wojew&#243;dztwie &#322;&#243;dzkim)'];
 node(31877827)['teryt:simc'='0618036']['wikidata'='Q24445816']['wikipedia'='en:Brzuza, &#321;&#243;d&#378; Voivodeship'];
+node(31879074)['teryt:simc'='0413140']['wikidata'='Q8028876']['wikipedia'='pl:Wi&#347;niowa G&#243;ra'];
+node(31879101)['teryt:simc'='1040964']['wikidata'='Q9373320']['wikipedia'='pl:Wierzbowiec'];
+node(31879359)['teryt:simc'='0716891']['wikidata'='Q7632825']['wikipedia'='pl:Sucha G&#243;rna (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(31879503)['teryt:simc'='0702529']['wikidata'='Q7424393']['wikipedia'='pl:Sarn&#243;w (wie&#347; w powiecie podd&#281;bickim)'];
+node(31879509)['teryt:simc'='0416195']['wikidata'='Q7398167']['wikipedia'='pl:Sad&#243;wka'];
+node(31879516)['teryt:simc'='0555880']['wikidata'='Q7237284']['wikipedia'='pl:Praca (wie&#347; w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(31879545)['teryt:simc'='0727185']['wikidata'='Q7375338']['wikipedia'='pl:Rozdzielna'];
+node(31879731)['teryt:simc'='0548940']['wikidata'='Q7209708']['wikipedia'='pl:Policzko (wie&#347; w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(31880012)['teryt:simc'='0555695']['wikidata'='Q616413']['wikipedia'='pl:Oprz&#281;&#380;&#243;w (wie&#347; w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(31880074)['teryt:simc'='0548880']['wikidata'='Q7061719']['wikipedia'='pl:Nosalewice (wie&#347; w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(31880216)['teryt:simc'='0548850']['wikidata'='Q6843716']['wikipedia'='pl:Miejskie Pola (wie&#347; w wojew&#243;dztwie &#322;&#243;dzkim)'];
+node(31880636)['teryt:simc'='0545136']['wikidata'='Q16559486']['wikipedia'='pl:Ignac&#243;w Szlachecki (kolonia w gminie &#321;&#281;ki Szlacheckie)'];
+node(31880742)['teryt:simc'='0728658']['wikidata'='Q724474']['wikipedia'='pl:Je&#380;&#243;w (powiat brzezi&#324;ski)'];
 node(31881493)['teryt:simc'='0725358']['wikidata'='Q4904385']['wikipedia'='pl:Bielanki'];
+node(3390459371)['teryt:simc'='0541569']['wikidata'='Q5320571']['wikipedia'='pl:D&#261;browa (gmina Kleszcz&#243;w)'];
+node(4157009982)['teryt:simc'='0562442']['wikidata'='Q11743909']['wikipedia'='pl:Koryta (osada w powiecie &#322;&#281;czyckim)'];
+node(692608393)['teryt:simc'='0716566']['wikidata'='Q6995847']['wikipedia'='pl:Ner (wojew&#243;dztwo &#322;&#243;dzkie)'];
+node(692608488)['teryt:simc'='0537591']['wikidata'='Q7961663']['wikipedia'='pl:Wale (wojew&#243;dztwo &#322;&#243;dzkie)'];
+relation(2939988)['teryt:simc'='0702529']['wikidata'='Q7424393']['wikipedia'='pl:Sarn&#243;w (wie&#347; w powiecie podd&#281;bickim)'];
+relation(2940069)['teryt:simc'='0702541']['wikidata'='Q9333926']['wikipedia'='pl:Sarn&#243;w (osada w powiecie podd&#281;bickim)'];
 ); (._;>;); out meta qt;//['wikipedia needs to be updated based on wikidata code and teryt:simc identifier']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</h2></a>
+			</br>
+			brand:wikidata and brand:wikipedia tags link to a different objects, because brand:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q154037 vs (missing) article redirects from fr:Total (entreprise) to fr:TotalEnergies
+				</br>
+				<a href="https://openstreetmap.org/node/1037791360" target="_new">Total - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
+				</br>
+				<a href="https://openstreetmap.org/node/1564015213" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
+				</br>
+				<a href="https://openstreetmap.org/node/1906128341" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
+				</br>
+				<a href="https://openstreetmap.org/node/2787456577" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
+				</br>
+				<a href="https://openstreetmap.org/node/282740630" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q138913 vs (missing) article redirects from en:Jysk (store) to en:Jysk
+				</br>
+				<a href="https://openstreetmap.org/node/3416533441" target="_new">JYSK - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q2381223 vs (missing) article redirects from en:MediaMarkt to en:Media Markt
+				</br>
+				<a href="https://openstreetmap.org/node/3847243127" target="_new">MediaMarkt - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q11741563 vs (missing) article redirects from pl:Komfort S.A. to pl:Sklepy Komfort
+				</br>
+				<a href="https://openstreetmap.org/node/4472528814" target="_new">Komfort - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
+				</br>
+				<a href="https://openstreetmap.org/node/459460662" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q138913 vs (missing) article redirects from en:Jysk (store) to en:Jysk
+				</br>
+				<a href="https://openstreetmap.org/node/4717066986" target="_new">JYSK - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q138913 vs (missing) article redirects from en:Jysk (store) to en:Jysk
+				</br>
+				<a href="https://openstreetmap.org/node/4730622797" target="_new">JYSK - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q509349 vs (missing) article redirects from en:Decathlon Group to en:Decathlon (retailer)
+				</br>
+				<a href="https://openstreetmap.org/node/5752715790" target="_new">Decathlon - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q138913 vs (missing) article redirects from en:Jysk (store) to en:Jysk
+				</br>
+				<a href="https://openstreetmap.org/node/6100700250" target="_new">JYSK - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q154037 vs (missing) article redirects from fr:Total (entreprise) to fr:TotalEnergies
+				</br>
+				<a href="https://openstreetmap.org/node/8090435914" target="_new">Total - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
+				</br>
+				<a href="https://openstreetmap.org/node/864943775" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q138913 vs (missing) article redirects from en:Jysk (store) to en:Jysk
+				</br>
+				<a href="https://openstreetmap.org/node/8892910332" target="_new">JYSK - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q138913 vs (missing) article redirects from en:Jysk (store) to en:Jysk
+				</br>
+				<a href="https://openstreetmap.org/way/149557990" target="_new">JYSK - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q971649 vs (missing) article redirects from pl:PKN Orlen to pl:Polski Koncern Naftowy Orlen
+				</br>
+				<a href="https://openstreetmap.org/way/212693288" target="_new">Orlen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q971649 vs (missing) article redirects from pl:PKN Orlen to pl:Polski Koncern Naftowy Orlen
+				</br>
+				<a href="https://openstreetmap.org/way/212693292" target="_new">Orlen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
+				</br>
+				<a href="https://openstreetmap.org/way/280783642" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
+				</br>
+				<a href="https://openstreetmap.org/way/364867032" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
+				</br>
+				<a href="https://openstreetmap.org/way/503109065" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
+				</br>
+				<a href="https://openstreetmap.org/way/713269434" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1037791360)['brand:wikidata'='Q154037']['brand:wikipedia'='fr:Total (entreprise)'];
+node(1564015213)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(1906128341)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(2787456577)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(282740630)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(3416533441)['brand:wikidata'='Q138913']['brand:wikipedia'='en:Jysk (store)'];
+node(3847243127)['brand:wikidata'='Q2381223']['brand:wikipedia'='en:MediaMarkt'];
+node(4472528814)['brand:wikidata'='Q11741563']['brand:wikipedia'='pl:Komfort S.A.'];
+node(459460662)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(4717066986)['brand:wikidata'='Q138913']['brand:wikipedia'='en:Jysk (store)'];
+node(4730622797)['brand:wikidata'='Q138913']['brand:wikipedia'='en:Jysk (store)'];
+node(5752715790)['brand:wikidata'='Q509349']['brand:wikipedia'='en:Decathlon Group'];
+node(6100700250)['brand:wikidata'='Q138913']['brand:wikipedia'='en:Jysk (store)'];
+node(8090435914)['brand:wikidata'='Q154037']['brand:wikipedia'='fr:Total (entreprise)'];
+node(864943775)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(8892910332)['brand:wikidata'='Q138913']['brand:wikipedia'='en:Jysk (store)'];
+way(149557990)['brand:wikidata'='Q138913']['brand:wikipedia'='en:Jysk (store)'];
+way(212693288)['brand:wikidata'='Q971649']['brand:wikipedia'='pl:PKN Orlen'];
+way(212693292)['brand:wikidata'='Q971649']['brand:wikipedia'='pl:PKN Orlen'];
+way(280783642)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
+way(364867032)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
+way(503109065)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
+way(713269434)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</h2></a>
+			</br>
+			operator:wikidata and operator:wikipedia tags link to a different objects, because operator:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q11804571 vs (missing) article redirects from pl:Parafia Naj&#347;wi&#281;tszego Serca Jezusowego w &#321;odzi (Radogoszcz) to pl:Parafia Naj&#347;wi&#281;tszego Serca Jezusowego i &#346;wi&#281;tej Ma&#322;gorzaty Marii Alacoque w &#321;odzi
+				</br>
+				<a href="https://openstreetmap.org/way/174542130" target="_new">Kościół Najświętszego Serca Jezusowego i Świętej Marii Małgorzaty Alacoque - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q11808638 vs (missing) article redirects from pl:Parafia &#347;w. Jana Aposto&#322;a w P&#261;tnowie to pl:Parafia &#347;w. Jana Aposto&#322;a i Ewangelisty w P&#261;tnowie
+				</br>
+				<a href="https://openstreetmap.org/way/251614780" target="_new">Kościół pw. Świętego św. Jana Apostoła i Ewangelisty - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q11809461 vs (missing) article redirects from pl:Parafia &#347;w. Maksymilian Kolbe w G&#243;rach Mokrych to pl:Parafia &#347;w. Maksymiliana Kolbe w G&#243;rach Mokrych
+				</br>
+				<a href="https://openstreetmap.org/way/253331841" target="_new">Kościół pw. Świętego Maksymilian Kolbe - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(174542130)['operator:wikidata'='Q11804571']['operator:wikipedia'='pl:Parafia Naj&#347;wi&#281;tszego Serca Jezusowego w &#321;odzi (Radogoszcz)'];
+way(251614780)['operator:wikidata'='Q11808638']['operator:wikipedia'='pl:Parafia &#347;w. Jana Aposto&#322;a w P&#261;tnowie'];
+way(253331841)['operator:wikidata'='Q11809461']['operator:wikipedia'='pl:Parafia &#347;w. Maksymilian Kolbe w G&#243;rach Mokrych'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</h2></a>
+			</br>
+			network:wikidata and network:wikipedia tags link to a different objects, because network:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10014304" target="_new">Flixbus N1282: Pula, avtobusna postaja => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10014305" target="_new">Flixbus N1282: Dworzec autobusowy Warszawa Zachodnia => Pula, avtobusna postaja - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10048737" target="_new">Flixbus N1304: München ZOB => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10051349" target="_new">Flixbus N1304: Dworzec autobusowy Warszawa Zachodnia => München ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10055654" target="_new">Flixbus 1304: Dresden, Hbf. Bayrische Straße => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10055655" target="_new">Flixbus 1304: Dworzec autobusowy Warszawa Zachodnia => Dresden, Hbf. Bayrische Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10055820" target="_new">Flixbus 1320: Berlin ZOB => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10055821" target="_new">Flixbus 1320: Dworzec autobusowy Warszawa Zachodnia => Berlin ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10055976" target="_new">Flixbus 1321: Dworzec autobusowy Warszawa Zachodnia => Berlin ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10055977" target="_new">Flixbus 1321: Berlin ZOB => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10057558" target="_new">Flixbus N1321: Berlin ZOB => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10057559" target="_new">Flixbus N1321: Dworzec autobusowy Warszawa Zachodnia => Berlin ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10057616" target="_new">Flixbus 1304: Dworzec autobusowy Warszawa Zachodnia => Dworzec autobusowy Poznań - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10058826" target="_new">Flixbus 1322: Dworzec autobusowy Warszawa Zachodnia => Hamburg ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10058827" target="_new">Flixbus 1322: Hamburg ZOB => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10060122" target="_new">Flixbus 1340: Szczecin, dworzec główny => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10060123" target="_new">Flixbus 1340: Dworzec autobusowy Warszawa Zachodnia => Szczecin, dworzec główny - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10060187" target="_new">Flixbus N1305: Wrocław, dworzec autobusowy => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10060188" target="_new">Flixbus N1305: Dworzec autobusowy Warszawa Zachodnia => Wrocław, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10060408" target="_new">Flixbus 1302: Wałbrzych Sikorskiego => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10060409" target="_new">Flixbus 1302: Dworzec autobusowy Warszawa Zachodnia => Wałbrzych Sikorskiego - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10060805" target="_new">Flixbus N1340: Szczecin, dworzec główny => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10060806" target="_new">Flixbus N1340: Dworzec autobusowy Warszawa Zachodnia => Szczecin, dworzec główny - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10061283" target="_new">Flixbus 1303: Dworzec autobusowy Warszawa Zachodnia => Karpacz Biały Jar - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10061284" target="_new">Flixbus 1303: Karpacz Biały Jar => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10062720" target="_new">Flixbus 1300: Dworzec autobusowy Warszawa Zachodnia => Praha, ÚAN Florenc - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10062721" target="_new">Flixbus 1300: Praha, ÚAN Florenc => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10063887" target="_new">Flixbus 1301: Dworzec autobusowy Warszawa Zachodnia => Praha, ÚAN Florenc - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10063888" target="_new">Flixbus 1301: Praha, ÚAN Florenc => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10064161" target="_new">Flixbus P4: Warszawa, dworzec autobusowy Młociny => Wrocław, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10064162" target="_new">Flixbus P4: Wrocław, dworzec autobusowy => Warszawa, dworzec autobusowy Młociny - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10125807" target="_new">Flixbus N1323: Vilnius, autobusų stotis => Berlin ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10125808" target="_new">Flixbus N1323: Berlin ZOB => Vilnius, autobusų stotis - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10155984" target="_new">Flixbus 1210: Dworzec autobusowy Warszawa Zachodnia => Gdynia, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10155985" target="_new">Flixbus 1210: Gdynia, dworzec autobusowy => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10179272" target="_new">Flixbus N1320: Dworzec autobusowy Warszawa Zachodnia => Bonn, Museumsmeile - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10180422" target="_new">Flixbus N1320: Bonn, Museumsmeile => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10217577" target="_new">Flixbus K767: Krynica-Zdrój, Czarny Potok => Kołobrzeg, Jagiellońska - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10246818" target="_new">Flixbus K767: Kołobrzeg, Jagiellońska => Krynica-Zdrój, Czarny Potok - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10250389" target="_new">Flixbus K787: Krynica-Zdrój, Czarny Potok => Kołobrzeg, Jagiellońska - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10250390" target="_new">Flixbus K787: Kołobrzeg, Jagiellońska => Krynica-Zdrój, Czarny Potok - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10278131" target="_new">Flixbus 1351: Bydgoszcz, dworzec autobusowy => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10278132" target="_new">Flixbus 1351: Dworzec autobusowy Warszawa Zachodnia => Bydgoszcz, dworzec autobusowy PKS - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10715333" target="_new">Flixbus N1395: Gdynia, dworzec autobusowy => Wien Erdberg, Busterminal VIB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10715334" target="_new">Flixbus N1395: Wien Erdberg, Busterminal VIB => Gdynia, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10716202" target="_new">Flixbus 1390: Kraków, dworzec autobusowy MDA => Gdynia, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10716203" target="_new">Flixbus 1390: Gdynia, dworzec autobusowy => Kraków, dworzec autobusowy MDA - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10716204" target="_new">Flixbus 1390: Gdynia <=> Kraków - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10718533" target="_new">Flixbus N1390: Zakopane, dworzec autobusowy => Gdynia, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10718534" target="_new">Flixbus N1390: Gdynia, dworzec autobusowy => Zakopane, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11588994" target="_new">Flixbus N1322: Stockelsdorf (Lübeck West) => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11588995" target="_new">Flixbus N1322: Dworzec autobusowy Warszawa Zachodnia => Stockelsdorf (Lübeck West) - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/9313746" target="_new">Flixbus 918: Dworzec autobusowy Warszawa Zachodnia => Wien, Hbf. (International Busterminal) - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/9331954" target="_new">Flixbus 918: Wien, Hbf. (International Busterminal) => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/9331994" target="_new">Flixbus N918: Wien, Hbf. (International Busterminal) => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/9331995" target="_new">Flixbus N918: Dworzec autobusowy Warszawa Zachodnia => Wien, Hbf. (International Busterminal) - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/9402387" target="_new">Flixbus N1300: Dworzec autobusowy Warszawa Zachodnia => Praha, ÚAN Florenc - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/9402388" target="_new">Flixbus N1300: Praha, ÚAN Florenc => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(10014304)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10014305)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10048737)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10051349)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10055654)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10055655)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10055820)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10055821)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10055976)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10055977)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10057558)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10057559)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10057616)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10058826)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10058827)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10060122)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10060123)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10060187)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10060188)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10060408)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10060409)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10060805)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10060806)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10061283)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10061284)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10062720)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10062721)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10063887)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10063888)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10064161)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10064162)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10125807)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10125808)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10155984)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10155985)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10179272)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10180422)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10217577)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10246818)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10250389)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10250390)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10278131)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10278132)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10715333)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10715334)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10716202)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10716203)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10716204)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10718533)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10718534)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11588994)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11588995)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9313746)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9331954)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9331994)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9331995)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9402387)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9402388)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags</h2></a>
+			</br>
+			parish:wikidata and parish:wikipedia tags link to a different objects, because parish:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q11808195 vs (missing) article redirects from pl:Parafia &#347;w. Doroty i &#347;w. Jana Chrzciciela w &#321;odzi to pl:Parafia &#347;w. Doroty w &#321;odzi
+				</br>
+				<a href="https://openstreetmap.org/way/1075181596" target="_new">Kaplica cmentarna - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(1075181596)['parish:wikidata'='Q11808195']['parish:wikipedia'='pl:Parafia &#347;w. Doroty i &#347;w. Jana Chrzciciela w &#321;odzi'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags']</blockquote>
 			</br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />

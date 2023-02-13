@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-01-13. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-02-08. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-01-13. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				</br>
 				wikipedia page in unexpected language - ja was expected:
@@ -71,6 +71,29 @@ way(759312332)['wikipedia'='en:Nippon Bunri University'];
 node(1691773449)['wikidata'='Q11354408']['wikipedia'!~'.*']['wikipedia:ja'='&#19977;&#20451;&#23665; (&#22823;&#20998;&#30476;)'];
 node(1691773455)['wikidata'='Q11512961']['wikipedia'!~'.*']['wikipedia:ja'='&#26143;&#29983;&#23665;'];
 ); (._;>;); out meta qt;//['wikipedia tag from wikipedia tag in an outdated form']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q11599312 vs (missing) article redirects from ja:&#31481;&#30000;&#21335;&#39640;&#31561;&#23398;&#26657; to ja:&#31282;&#33865;&#23398;&#22290;&#39640;&#31561;&#23398;&#26657;
+				</br>
+				<a href="https://openstreetmap.org/way/171625344" target="_new">私立竹田南高等学校 - an affected OSM element that may be improved</a>
+				</br>
+				ja:竹田南高等学校 -> ja:稲葉学園高等学校
+				</br>
+				&#31282;&#33865;&#23398;&#22290;&#39640;&#31561;&#23398;&#26657;
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(171625344)['wikidata'='Q11599312']['wikipedia'='ja:&#31481;&#30000;&#21335;&#39640;&#31561;&#23398;&#26657;'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
 			</br>
 			<hr>
 			</br>
@@ -233,6 +256,14 @@ node(1691773455)['wikidata'='Q11512961']['wikipedia'!~'.*']['wikipedia:ja'='&#26
 				<a href="https://openstreetmap.org/node/1423868913" target="_new">市立浜脇中学校 - an affected OSM element that may be improved</a>
 				</br>
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:別府市立浜脇中学校'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:別府市立浜脇中学校'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/1423869249" target="_new">市立緑ヶ丘中学校 - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:竹田市立緑ヶ丘中学校'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:竹田市立緑ヶ丘中学校'}}]
 				</br>
 				<hr>
 				</br>
@@ -598,6 +629,14 @@ node(1691773455)['wikidata'='Q11512961']['wikipedia'!~'.*']['wikipedia:ja'='&#26
 				</br>
 				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
 				</br>
+				<a href="https://openstreetmap.org/node/929170638" target="_new">鶴御崎灯台 - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:鶴御埼灯台'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:鶴御埼灯台'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
 				<a href="https://openstreetmap.org/node/9752477017" target="_new">道の駅おおの - an affected OSM element that may be improved</a>
 				</br>
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:道の駅おおの (大分県)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:道の駅おおの (大分県)'}}]
@@ -878,14 +917,6 @@ node(1691773455)['wikidata'='Q11512961']['wikipedia'!~'.*']['wikipedia:ja'='&#26
 				</br>
 				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
 				</br>
-				<a href="https://openstreetmap.org/relation/9449866" target="_new">豊後国 - an affected OSM element that may be improved</a>
-				</br>
-				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:豊後国'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:豊後国'}}]
-				</br>
-				<hr>
-				</br>
-				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
-				</br>
 				<a href="https://openstreetmap.org/relation/9449877" target="_new">豊前国 - an affected OSM element that may be improved</a>
 				</br>
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:豊前国'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:豊前国'}}]
@@ -974,7 +1005,7 @@ node(1691773455)['wikidata'='Q11512961']['wikipedia'!~'.*']['wikipedia:ja'='&#26
 				</br>
 				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
 				</br>
-				<a href="https://openstreetmap.org/way/156899408" target="_new">別府湾SA(下り) - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/way/156899408" target="_new">別府湾SA (下り) - an affected OSM element that may be improved</a>
 				</br>
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:別府湾サービスエリア'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:別府湾サービスエリア'}}]
 				</br>
@@ -1110,6 +1141,14 @@ node(1691773455)['wikidata'='Q11512961']['wikipedia'!~'.*']['wikipedia:ja'='&#26
 				</br>
 				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
 				</br>
+				<a href="https://openstreetmap.org/way/216781917" target="_new">新大分火力発電所 - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:新大分発電所'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:新大分発電所'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
 				<a href="https://openstreetmap.org/way/255192700" target="_new">筌の口共同浴場 - an affected OSM element that may be improved</a>
 				</br>
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:筌の口温泉'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:筌の口温泉'}}]
@@ -1134,7 +1173,7 @@ node(1691773455)['wikidata'='Q11512961']['wikipedia'!~'.*']['wikipedia:ja'='&#26
 				</br>
 				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
 				</br>
-				<a href="https://openstreetmap.org/way/332872440" target="_new">玖珠SA(上り) - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/way/332872440" target="_new">玖珠SA (上り) - an affected OSM element that may be improved</a>
 				</br>
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:玖珠サービスエリア'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:玖珠サービスエリア'}}]
 				</br>
@@ -1142,7 +1181,7 @@ node(1691773455)['wikidata'='Q11512961']['wikipedia'!~'.*']['wikipedia:ja'='&#26
 				</br>
 				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
 				</br>
-				<a href="https://openstreetmap.org/way/337373920" target="_new">萩尾PA(下り) - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/way/337373920" target="_new">萩尾PA (下り) - an affected OSM element that may be improved</a>
 				</br>
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:萩尾パーキングエリア'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:萩尾パーキングエリア'}}]
 				</br>
@@ -1414,6 +1453,14 @@ node(1691773455)['wikidata'='Q11512961']['wikipedia'!~'.*']['wikipedia:ja'='&#26
 				</br>
 				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
 				</br>
+				<a href="https://openstreetmap.org/way/744441184" target="_new">大岳発電所 - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:大岳発電所'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:大岳発電所'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
 				<a href="https://openstreetmap.org/way/763043270" target="_new">臼杵郵便局 - an affected OSM element that may be improved</a>
 				</br>
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'ja:臼杵郵便局'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'ja:臼杵郵便局'}}]
@@ -1460,6 +1507,7 @@ node(1423866109)['wikidata'='Q7081553']['wikipedia'!~'.*'];
 node(1423866346)['wikidata'='Q11449109']['wikipedia'!~'.*'];
 node(1423868342)['wikidata'='Q94727594']['wikipedia'!~'.*'];
 node(1423868913)['wikidata'='Q94727602']['wikipedia'!~'.*'];
+node(1423869249)['wikidata'='Q94727909']['wikipedia'!~'.*'];
 node(1423869948)['wikidata'='Q11501428']['wikipedia'!~'.*'];
 node(1423870353)['wikidata'='Q11509926']['wikipedia'!~'.*'];
 node(1423870375)['wikidata'='Q11509927']['wikipedia'!~'.*'];
@@ -1505,6 +1553,7 @@ node(744844083)['wikidata'='Q11494995']['wikipedia'!~'.*'];
 node(745177198)['wikidata'='Q5100330']['wikipedia'!~'.*'];
 node(9147873722)['wikidata'='Q11641462']['wikipedia'!~'.*'];
 node(917959524)['wikidata'='Q6924219']['wikipedia'!~'.*'];
+node(929170638)['wikidata'='Q11676022']['wikipedia'!~'.*'];
 node(9752477017)['wikidata'='Q11640678']['wikipedia'!~'.*'];
 relation(10086924)['wikidata'='Q11578738']['wikipedia'!~'.*'];
 relation(10089503)['wikidata'='Q11432686']['wikipedia'!~'.*'];
@@ -1540,7 +1589,6 @@ relation(8369525)['wikidata'='Q11465691']['wikipedia'!~'.*'];
 relation(8369634)['wikidata'='Q3785700']['wikipedia'!~'.*'];
 relation(8369650)['wikidata'='Q11559986']['wikipedia'!~'.*'];
 relation(9434895)['wikidata'='Q11378825']['wikipedia'!~'.*'];
-relation(9449866)['wikidata'='Q864148']['wikipedia'!~'.*'];
 relation(9449877)['wikidata'='Q1047134']['wikipedia'!~'.*'];
 relation(9940411)['wikidata'='Q3594042']['wikipedia'!~'.*'];
 relation(9964958)['wikidata'='Q954320']['wikipedia'!~'.*'];
@@ -1569,6 +1617,7 @@ way(212385764)['wikidata'='Q5754061']['wikipedia'!~'.*'];
 way(212723756)['wikidata'='Q11366483']['wikipedia'!~'.*'];
 way(216617624)['wikidata'='Q11390439']['wikipedia'!~'.*'];
 way(216758780)['wikidata'='Q11434572']['wikipedia'!~'.*'];
+way(216781917)['wikidata'='Q11501652']['wikipedia'!~'.*'];
 way(255192700)['wikidata'='Q11602763']['wikipedia'!~'.*'];
 way(329405670)['wikidata'='Q11432657']['wikipedia'!~'.*'];
 way(329405671)['wikidata'='Q11432884']['wikipedia'!~'.*'];
@@ -1607,6 +1656,7 @@ way(614730310)['wikidata'='Q11226747']['wikipedia'!~'.*'];
 way(675370140)['wikidata'='Q11640650']['wikipedia'!~'.*'];
 way(675371631)['wikidata'='Q11640977']['wikipedia'!~'.*'];
 way(679522840)['wikidata'='Q867370']['wikipedia'!~'.*'];
+way(744441184)['wikidata'='Q11434785']['wikipedia'!~'.*'];
 way(763043270)['wikidata'='Q11613292']['wikipedia'!~'.*'];
 way(92357403)['wikidata'='Q11396700']['wikipedia'!~'.*'];
 way(924800943)['wikidata'='Q11640798']['wikipedia'!~'.*'];
@@ -2151,12 +2201,6 @@ way(182188312)['wikidata'='Q65198575']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q11565060 may be added as wikidata tag based on wikipedia tag
-				</br>
-				<a href="https://openstreetmap.org/way/367495700" target="_new">九州電力 滝上発電所 - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1142070 may be added as wikidata tag based on wikipedia tag
 				</br>
 				<a href="https://openstreetmap.org/way/49106871" target="_new">大分城址公園 - an affected OSM element that may be improved</a>
@@ -2259,7 +2303,6 @@ relation(9659782)['wikidata'!~'.*']['wikipedia'='ja:&#20304;&#20271;&#24357;&#29
 way(156276742)['wikidata'!~'.*']['wikipedia'='ja:&#21029;&#24220;&#28207;'];
 way(156931344)['wikidata'!~'.*']['wikipedia'='ja:&#21029;&#24220;&#28286;'];
 way(182442058)['wikidata'!~'.*']['wikipedia'='ja:&#21029;&#24220;&#24066;'];
-way(367495700)['wikidata'!~'.*']['wikipedia'='ja:&#28381;&#19978;&#30330;&#38651;&#25152;'];
 way(49106871)['wikidata'!~'.*']['wikipedia'='ja:&#24220;&#20869;&#22478;'];
 way(744443595)['wikidata'!~'.*']['wikipedia'='ja:&#33733;&#21407;&#12496;&#12452;&#12490;&#12522;&#12540;&#30330;&#38651;&#25152;'];
 ); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
@@ -2280,6 +2323,109 @@ way(744443595)['wikidata'!~'.*']['wikipedia'='ja:&#33733;&#21407;&#12496;&#12452
 (
 way(119673228)['wikidata'='Q482581']['wikipedia'='ja:&#22823;&#20998;&#12473;&#12509;&#12540;&#12484;&#20844;&#22290;&#32207;&#21512;&#31478;&#25216;&#22580;']['wikipedia:en'='&#332;ita Bank Dome'];
 ); (._;>;); out meta qt;//['wikipedia tag in an outdated form for removal']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</h2></a>
+			</br>
+			brand:wikidata and brand:wikipedia tags link to a different objects, because brand:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/node/3687088611" target="_new">エネオス - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q4687898 vs (missing) article redirects from ja:&#12452;&#12540;&#12458;&#12531; to ja:&#12452;&#12540;&#12458;&#12531;&#12507;&#12540;&#12523;&#12487;&#12451;&#12531;&#12464;&#12473;
+				</br>
+				<a href="https://openstreetmap.org/node/7979568111" target="_new">AEON - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/way/125488836" target="_new">エネオス - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/way/180009199" target="_new">エネオス - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/way/180978806" target="_new">エネオス - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/way/329426536" target="_new">エネオス - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/way/751357594" target="_new">エネオス - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/way/758064191" target="_new">エネオス - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/way/760230281" target="_new">エネオス - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/way/761181883" target="_new">ENEOS - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/way/831683812" target="_new">エネオス - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/way/953785371" target="_new">エネオス - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1640290 vs (missing) article redirects from en:JXTG Nippon Oil &amp; Energy to en:Eneos
+				</br>
+				<a href="https://openstreetmap.org/way/966678505" target="_new">エネオス - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(3687088611)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+node(7979568111)['brand:wikidata'='Q4687898']['brand:wikipedia'='ja:&#12452;&#12540;&#12458;&#12531;'];
+way(125488836)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+way(180009199)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+way(180978806)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+way(329426536)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+way(751357594)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+way(758064191)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+way(760230281)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+way(761181883)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+way(831683812)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+way(953785371)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+way(966678505)['brand:wikidata'='Q1640290']['brand:wikipedia'='en:JXTG Nippon Oil & Energy'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags']</blockquote>
 			</br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
