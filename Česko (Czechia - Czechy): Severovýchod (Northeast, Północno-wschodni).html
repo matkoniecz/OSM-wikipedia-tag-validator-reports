@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-02-07. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-02-20. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-02-07. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#link to an unlinkable article">link to an unlinkable article</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li><li><a href="#no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#link to an unlinkable article">link to an unlinkable article</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li><li><a href="#no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</a></li></ul>			</br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			</br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br />Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br />Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -116,6 +116,23 @@ way(902947879)['wikidata'='Q20058097']['wikipedia'='cs:Sezemick&#233; akvadukty'
 			</br>
 			<hr>
 			</br>
+			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
+				</br>
+				operator:wikidata=Q341090 is present despite that not:operator:wikidata=Q341090 is also present - at least one of them is wrong
+				</br>
+				<a href="https://openstreetmap.org/node/3865614186" target="_new">Liberec 14 - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(3865614186)['not:operator:wikidata'='Q341090']['operator:wikidata'='Q341090'];
+); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia wikidata mismatch - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</h2></a>
 				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q450180 vs (missing) wikidata id assigned to linked Wikipedia article)
@@ -127,6 +144,12 @@ way(902947879)['wikidata'='Q20058097']['wikipedia'='cs:Sezemick&#233; akvadukty'
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q450180 vs (missing) wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/node/1500534034" target="_new">NORMA - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q42969493 vs Q537781 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2489870281" target="_new">Billa - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -150,6 +173,12 @@ way(902947879)['wikidata'='Q20058097']['wikipedia'='cs:Sezemick&#233; akvadukty'
 				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q42969493 vs Q537781 wikidata id assigned to linked Wikipedia article)
 				</br>
+				<a href="https://openstreetmap.org/way/50797878" target="_new">Billa - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q42969493 vs Q537781 wikidata id assigned to linked Wikipedia article)
+				</br>
 				<a href="https://openstreetmap.org/way/52127736" target="_new">Billa - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -166,9 +195,11 @@ way(902947879)['wikidata'='Q20058097']['wikipedia'='cs:Sezemick&#233; akvadukty'
 (
 node(1418991680)['brand:wikidata'='Q450180']['brand:wikipedia'='de:Norma (Handelskette)'];
 node(1500534034)['brand:wikidata'='Q450180']['brand:wikipedia'='de:Norma (Handelskette)'];
+node(2489870281)['brand:wikidata'='Q42969493']['brand:wikipedia'='en:Billa (supermarket)'];
 node(314686915)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
 node(5475382786)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
 way(267075776)['brand:wikidata'='Q450180']['brand:wikipedia'='de:Norma (Handelskette)'];
+way(50797878)['brand:wikidata'='Q42969493']['brand:wikipedia'='de:Billa'];
 way(52127736)['brand:wikidata'='Q42969493']['brand:wikipedia'='en:Billa (supermarket)'];
 way(55423774)['brand:wikidata'='Q24282825']['brand:wikipedia'='en:Raiffeisen Bank (Serbia)'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for brand prefixed tags']</blockquote>
@@ -229,6 +260,12 @@ relation(9256717)['network:wikidata'='Q11865048']['network:wikipedia'='cs:Doprav
 				</br>
 				
 				</br>
+				<a href="https://openstreetmap.org/relation/10119474" target="_new">Dawna linia kolejowa Jindřichovice - Mirsk - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				
+				</br>
 				<a href="https://openstreetmap.org/relation/2331920" target="_new">PP U Sítovky - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -265,6 +302,7 @@ node(1291509355)['wikidata'='Q12051378'];
 node(3701828001)['wikidata'='Q28792054'];
 node(370694876)['wikidata'='Q20851879'];
 node(7489995735)['wikidata'='Q11248046'];
+relation(10119474)['wikidata'='Q11757281'];
 relation(2331920)['wikidata'='Q11876988'];
 way(1084900649)['wikidata'='Q28044685'];
 way(174332956)['wikidata'='Q12019528'];
