@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-02-21. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-03-12. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-02-21. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag from wikipedia tag in an outdated form"><h2 id="wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</h2></a>
 				</br>
 				wikipedia tag in outdated form ([&#x27;wikipedia:de&#x27;]), wikipedia tag may be added
@@ -1491,12 +1491,6 @@ node(441241274)['wikidata'='Q51349018']['wikipedia'='de:Steinbach (Mudau)'];
 				</br>
 				<hr>
 				</br>
-				Q1958759 vs (missing) article redirects from en:M&#252;ller (German trade company) to en:M&#252;ller (store)
-				</br>
-				<a href="https://openstreetmap.org/node/6063100112" target="_new">Müller - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q316004 vs (missing) article redirects from de:Dirk Rossmann GmbH to de:Rossmann (Handelskette)
 				</br>
 				<a href="https://openstreetmap.org/way/264069164" target="_new">Rossmann - an affected OSM element that may be improved</a>
@@ -1508,9 +1502,34 @@ node(441241274)['wikidata'='Q51349018']['wikipedia'='de:Steinbach (Mudau)'];
 			<blockquote>[out:xml][timeout:3600];
 (
 node(189114573)['brand:wikidata'='Q48883773']['brand:wikipedia'='de:Denn&#8217;s Biomarkt'];
-node(6063100112)['brand:wikidata'='Q1958759']['brand:wikipedia'='en:M&#252;ller (German trade company)'];
 way(264069164)['brand:wikidata'='Q316004']['brand:wikipedia'='de:Dirk Rossmann GmbH'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</h2></a>
+			</br>
+			network:wikidata and network:wikipedia tags link to a different objects, because network:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10331155" target="_new">Flixbus N24: Mailand, Lampugnano => Hamburg ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10354543" target="_new">Flixbus 024: Zürich HB => Hamburg ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(10331155)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10354543)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags']</blockquote>
 			</br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
