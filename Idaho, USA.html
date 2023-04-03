@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-03-11. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-04-02. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-03-11. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#should use a secondary wikipedia tag - linking to a conflict">should use a secondary wikipedia tag - linking to a conflict</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li><li><a href="#no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#should use a secondary wikipedia tag - linking to a chain store">should use a secondary wikipedia tag - linking to a chain store</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#should use a secondary wikipedia tag - linking to a conflict">should use a secondary wikipedia tag - linking to a conflict</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li><li><a href="#no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</a></li></ul>			</br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			</br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br />Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br />Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -61,6 +61,23 @@ way(375105915)['wikipedia'='en:Discovery Center of Idaho'];
 (
 relation(6614762)['wikidata'='Q3913291']['wikipedia'='en:Gowen Field Air National Guard Base'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#should use a secondary wikipedia tag - linking to a chain store"><h2 id="should use a secondary wikipedia tag - linking to a chain store">should use a secondary wikipedia tag - linking to a chain store</h2></a>
+				</br>
+				linked wikidata entry (Q6810159) is about a chain store, so it is very unlikely to be correct <br />        subject:wikipedia=* or brand:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				</br>
+				<a href="https://openstreetmap.org/way/493170079" target="_new">Meineke - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(493170079)['wikidata'='Q6810159'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking to a chain store']</blockquote>
 			</br>
 			<hr>
 			</br>
@@ -201,6 +218,12 @@ relation(6614762)['wikidata'='Q3913291']['wikipedia'='en:Gowen Field Air Nationa
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
 				</br>
 				<a href="https://openstreetmap.org/node/8873807581" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4826087 vs Q7079111 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/8873854005" target="_new">AutoZone - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -513,6 +536,7 @@ node(8784572323)['brand:wikidata'='Q6541978']['brand:wikipedia'='en:Franchise Gr
 node(8816229587)['brand:wikidata'='Q109341187']['brand:wikipedia'='en:ConocoPhillips'];
 node(8853305831)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
 node(8873807581)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(8873854005)['brand:wikidata'='Q4826087']['brand:wikipedia'='en:OfficeMax'];
 node(8891092895)['brand:wikidata'='Q5495935']['brand:wikipedia'='en:Fred Meyer'];
 node(9333190300)['brand:wikidata'='Q3511885']['brand:wikipedia'='en:T-Mobile'];
 node(9549133619)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];

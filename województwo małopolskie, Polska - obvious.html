@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-03-11. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-04-02. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-03-11. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect - for subject prefixed tags">wikipedia wikidata mismatch - follow wikidata redirect - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect - for subject prefixed tags">wikipedia wikidata mismatch - follow wikidata redirect - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				</br>
 				wikipedia page in unexpected language - pl was expected:
@@ -65,6 +65,48 @@ node(680427589)['wikipedia'='de:Kanada (KZ Auschwitz)'];
 way(293340499)['wikipedia'='en:Solaris (synchrotron)'];
 way(53908378)['wikipedia'='nl:Auschwitz-Birkenau'];
 ); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q65166976 vs (missing) article redirects from pl:Rektorat Niepokalanego Serca NMP w Gorzkowie to pl:Rektorat Niepokalanego Serca Naj&#347;wi&#281;tszej Maryi Panny w Gorzkowie
+				</br>
+				<a href="https://openstreetmap.org/relation/15611400" target="_new">Rektorat samodzielny Niepokalanego Serca Najświętszej Maryi Panny w Gorzkowie - an affected OSM element that may be improved</a>
+				</br>
+				pl:Rektorat Niepokalanego Serca NMP w Gorzkowie -> pl:Rektorat Niepokalanego Serca Najświętszej Maryi Panny w Gorzkowie
+				</br>
+				Rektorat Niepokalanego Serca Naj&#347;wi&#281;tszej Maryi Panny w Gorzkowie
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(15611400)['wikidata'='Q65166976']['wikipedia'='pl:Rektorat Niepokalanego Serca NMP w Gorzkowie'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/237075238" target="_new">Asteriks - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Asteriks (skała)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Asteriks (skała)'}}]
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(237075238)['wikidata'='Q60860615']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
 			</br>
 			<hr>
 			</br>
@@ -1415,7 +1457,7 @@ node(9711819455)['subject:wikidata'='Q243427']['subject:wikipedia'='pl:&#346;wi&
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
-				<a href="https://openstreetmap.org/relation/11722662" target="_new">Flixbus N3277: Odessa, Busbahnhof => Pilsen, CAN Husova - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/11722662" target="_new">Flixbus N3277:Одеса, автовокзал => Plzeň, CAN Husova - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -1439,37 +1481,37 @@ node(9711819455)['subject:wikidata'='Q243427']['subject:wikipedia'='pl:&#346;wi&
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
-				<a href="https://openstreetmap.org/relation/9313675" target="_new">Flixbus N913: Krakau, Busbahnhof MDA => Prag, ÚAN Florenc - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9313675" target="_new">Flixbus N913: Kraków, przystanek autobusowy MDA => Praha, ÚAN Florenc - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
-				<a href="https://openstreetmap.org/relation/9313676" target="_new">Flixbus 916: Wien Erdberg, Busterminal VIB => Krakau, Busbahnhof MDA - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9313676" target="_new">Flixbus 916: Wien Erdberg, Busterminal VIB => Kraków, przystanek autobusowy MDA - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
-				<a href="https://openstreetmap.org/relation/9313744" target="_new">Flixbus N913: Prag, ÚAN Florenc => Krakau, Busbahnhof MDA - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9313744" target="_new">Flixbus N913: Praha, ÚAN Florenc => Kraków, przystanek autobusowy MDA - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
-				<a href="https://openstreetmap.org/relation/9331294" target="_new">Flixbus 913: Prag, ÚAN Florenc => Krakau, Busbahnhof MDA - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9331294" target="_new">Flixbus 913: Praha, ÚAN Florenc => Kraków, przystanek autobusowy MDAMDA - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
-				<a href="https://openstreetmap.org/relation/9331295" target="_new">Flixbus 913: Krakau, Busbahnhof MDA => Prag, ÚAN Florenc - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9331295" target="_new">Flixbus 913: Kraków, przystanek autobusowy MDA => Praha, ÚAN Florenc - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
-				<a href="https://openstreetmap.org/relation/9331953" target="_new">Flixbus 916: Krakau, Busbahnhof MDA => Wien Erdberg, Busterminal VIB - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9331953" target="_new">Flixbus 916: Kraków, przystanek autobusowy MDA => Wien Erdberg, Busterminal VIB - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -1481,13 +1523,13 @@ node(9711819455)['subject:wikidata'='Q243427']['subject:wikipedia'='pl:&#346;wi&
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
-				<a href="https://openstreetmap.org/relation/9551477" target="_new">Flixbus X913: Krakau, Busbahnhof MDA => Pilsen, CAN Husova - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9551477" target="_new">Flixbus X913: Krakau, Busbahnhof MDA => Plzeň, CAN Husova - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
-				<a href="https://openstreetmap.org/relation/9551481" target="_new">Flixbus X913: Pilsen, CAN Husova => Krakau, Busbahnhof MDA - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9551481" target="_new">Flixbus X913: Plzeň, CAN Husova => Kraków, dworzec autobusowy MDA - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -1575,6 +1617,25 @@ relation(9660076)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbu
 relation(9660077)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9904453)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags</h2></a>
+			</br>
+			parish:wikidata and parish:wikipedia tags link to a different objects, because parish:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q65166976 vs (missing) article redirects from pl:Rektorat Niepokalanego Serca NMP w Gorzkowie to pl:Rektorat Niepokalanego Serca Naj&#347;wi&#281;tszej Maryi Panny w Gorzkowie
+				</br>
+				<a href="https://openstreetmap.org/way/689207189" target="_new">Kościół pw. Niepokalanego Serca Najświętszej Maryi Panny - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(689207189)['parish:wikidata'='Q65166976']['parish:wikipedia'='pl:Rektorat Niepokalanego Serca NMP w Gorzkowie'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags']</blockquote>
 			</br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
