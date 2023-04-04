@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-02-18. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-04-03. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,24 @@ This page was generated using data obtained on 2023-02-18. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#should use a secondary wikipedia tag - linking to a sports competition">should use a secondary wikipedia tag - linking to a sports competition</a></li><li><a href="#should use a secondary wikipedia tag - linking to a broadcaster">should use a secondary wikipedia tag - linking to a broadcaster</a></li><li><a href="#should use a secondary wikipedia tag - linking to a religious denomination">should use a secondary wikipedia tag - linking to a religious denomination</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li><li><a href="#no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</a></li></ul>			</br>
+<ul><li><a href="#wikidata tag links to 404">wikidata tag links to 404</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#should use a secondary wikipedia tag - linking to a sports competition">should use a secondary wikipedia tag - linking to a sports competition</a></li><li><a href="#should use a secondary wikipedia tag - linking to a broadcaster">should use a secondary wikipedia tag - linking to a broadcaster</a></li><li><a href="#should use a secondary wikipedia tag - linking to a religious denomination">should use a secondary wikipedia tag - linking to a religious denomination</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li><li><a href="#no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</a></li></ul>			</br>
+			<a href="#wikidata tag links to 404"><h2 id="wikidata tag links to 404">wikidata tag links to 404</h2></a>
+				</br>
+				wikidata tag present on element points to not existing element (https://www.wikidata.org/wiki/Collingullie Public School&#8206;)
+				</br>
+				<a href="https://openstreetmap.org/way/472253915" target="_new">Collingullie Public School - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(472253915)['wikidata'='Collingullie Public School&#8206;'];
+); (._;>;); out meta qt;//['wikidata tag links to 404']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				</br>
 				wikidata and wikipedia tags link to a different objects (Q21919992 vs Q673418 wikidata id assigned to linked Wikipedia article)
@@ -28,6 +45,30 @@ This page was generated using data obtained on 2023-02-18. Please, <a href="http
 (
 way(173244595)['wikidata'='Q21919992']['wikipedia'='en:Bondi Beach'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
+				</br>
+				operator:wikidata=Q5260271 is present despite that not:operator:wikidata=Q5260271 is also present - at least one of them is wrong
+				</br>
+				<a href="https://openstreetmap.org/way/932671672" target="_new">Marsden High School & Meadowbank Public School - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata=Q5260271 is present despite that not:operator:wikidata=Q5260271 is also present - at least one of them is wrong
+				</br>
+				<a href="https://openstreetmap.org/way/960608393" target="_new">Denham Court Public School - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(932671672)['not:operator:wikidata'='Q5260271']['operator:wikidata'='Q5260271'];
+way(960608393)['not:operator:wikidata'='Q5260271']['operator:wikidata'='Q5260271'];
+); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
 			</br>
 			<hr>
 			</br>
@@ -99,9 +140,21 @@ way(173244595)['wikidata'='Q21919992']['wikipedia'='en:Bondi Beach'];
 				</br>
 				<hr>
 				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs Q5023980 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/1946802790" target="_new">EG Australia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/node/2053851929" target="_new">ALDI - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q5970945 vs Q3146662 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2055551346" target="_new">IGA - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -174,6 +227,12 @@ way(173244595)['wikidata'='Q21919992']['wikipedia'='en:Bondi Beach'];
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/node/3293655343" target="_new">ALDI - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/3315887741" target="_new">ALDI - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -339,12 +398,6 @@ way(173244595)['wikidata'='Q21919992']['wikipedia'='en:Bondi Beach'];
 				</br>
 				<hr>
 				</br>
-				brand:wikidata and brand:wikipedia tags link to a different objects (Q111772555 vs Q3249145 wikidata id assigned to linked Wikipedia article)
-				</br>
-				<a href="https://openstreetmap.org/node/5977077629" target="_new">Woolworths Metro - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/node/598418757" target="_new">ALDI - an affected OSM element that may be improved</a>
@@ -381,6 +434,12 @@ way(173244595)['wikidata'='Q21919992']['wikipedia'='en:Bondi Beach'];
 				</br>
 				<hr>
 				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Caltex Woolworths&#x27; to &#x27;EG Australia&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/634967651" target="_new">Woolworths Petrol - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q3088656 vs Q109676002 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/node/6453733728" target="_new">Mobil - an affected OSM element that may be improved</a>
@@ -395,19 +454,31 @@ way(173244595)['wikidata'='Q21919992']['wikipedia'='en:Bondi Beach'];
 				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q478214 vs Q17089620 wikidata id assigned to linked Wikipedia article)
 				</br>
-				<a href="https://openstreetmap.org/node/6460587589" target="_new">an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/6460587589" target="_new">Tesla Destination Charger - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs Q5023980 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/6487327775" target="_new">Woolworths Petrol - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs Q277470 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/6514816885" target="_new">Ampol Hay South - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q5970945 vs Q3146662 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/652829012" target="_new">IGA - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q277470 vs Q4748528 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/node/6796578255" target="_new">Ampol - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				brand:wikidata and brand:wikipedia tags link to a different objects (Q478214 vs Q17089620 wikidata id assigned to linked Wikipedia article)
-				</br>
-				<a href="https://openstreetmap.org/node/6816990777" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -819,9 +890,21 @@ way(173244595)['wikidata'='Q21919992']['wikipedia'='en:Bondi Beach'];
 				</br>
 				<hr>
 				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Caltex Woolworths&#x27; to &#x27;EG Australia&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/448258351" target="_new">Woolworths Petrol - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/way/456761057" target="_new">ALDI - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs Q277470 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/459023433" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -852,6 +935,12 @@ way(173244595)['wikidata'='Q21919992']['wikipedia'='en:Bondi Beach'];
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q24997583 vs Q7836087 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/way/521226316" target="_new">Travelodge - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Caltex Woolworths&#x27; to &#x27;EG Australia&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/543863761" target="_new">EG Ballina - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -933,6 +1022,12 @@ way(173244595)['wikidata'='Q21919992']['wikipedia'='en:Bondi Beach'];
 				</br>
 				<hr>
 				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/692100561" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/way/718299663" target="_new">ALDI - an affected OSM element that may be improved</a>
@@ -987,6 +1082,12 @@ way(173244595)['wikidata'='Q21919992']['wikipedia'='en:Bondi Beach'];
 				</br>
 				<hr>
 				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs Q5023980 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/853058783" target="_new">EG Australia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/way/926437413" target="_new">ALDI - an affected OSM element that may be improved</a>
@@ -1026,7 +1127,9 @@ node(1836070207)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex Woolw
 node(1906200933)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(1912644301)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex'];
 node(1912647847)['brand:wikidata'='Q3088656']['brand:wikipedia'='en:Mobil'];
+node(1946802790)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:EG Australia'];
 node(2053851929)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+node(2055551346)['brand:wikidata'='Q5970945']['brand:wikipedia'='en:IGA (supermarkets)'];
 node(2064006126)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(2264426194)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex'];
 node(262073339)['brand:wikidata'='Q3088656']['brand:wikipedia'='en:Mobil'];
@@ -1039,6 +1142,7 @@ node(3108379207)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(3118226977)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(3287366346)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(3293655343)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+node(3315887741)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(353665901)['brand:wikidata'='Q5970945']['brand:wikipedia'='en:IGA (supermarkets)'];
 node(3537362994)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(3728560027)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
@@ -1066,18 +1170,20 @@ node(5796006229)['brand:wikidata'='Q111772555']['brand:wikipedia'='en:Woolworths
 node(5828327192)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(5843265113)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(5882954785)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
-node(5977077629)['brand:wikidata'='Q111772555']['brand:wikipedia'='en:Woolworths Supermarkets'];
 node(598418757)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(602410653)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(6149404691)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(623810973)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(6243488443)['brand:wikidata'='Q5175717']['brand:wikipedia'='en:Cotton On Group'];
 node(634965885)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex Woolworths'];
+node(634967651)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex Woolworths'];
 node(6453733728)['brand:wikidata'='Q3088656']['brand:wikipedia'='en:Mobil'];
 node(6460580922)['brand:wikidata'='Q478214']['brand:wikipedia'='en:Tesla Supercharger'];
 node(6460587589)['brand:wikidata'='Q478214']['brand:wikipedia'='en:Tesla Supercharger'];
+node(6487327775)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:EG Australia'];
+node(6514816885)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex'];
+node(652829012)['brand:wikidata'='Q5970945']['brand:wikipedia'='en:IGA (supermarkets)'];
 node(6796578255)['brand:wikidata'='Q277470']['brand:wikipedia'='en:Ampol'];
-node(6816990777)['brand:wikidata'='Q478214']['brand:wikipedia'='en:Tesla Supercharger'];
 node(7140711186)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(7168111286)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(7184244213)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
@@ -1146,12 +1252,15 @@ way(441100720)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex'];
 way(441147272)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(441154940)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(441530539)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(448258351)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex Woolworths'];
 way(456761057)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(459023433)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex'];
 way(491045556)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(496431986)['brand:wikidata'='Q5175717']['brand:wikipedia'='en:Cotton On Group'];
 way(513797258)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(519453558)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(521226316)['brand:wikidata'='Q24997583']['brand:wikipedia'='en:Travelodge'];
+way(543863761)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex Woolworths'];
 way(552326603)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex'];
 way(563753573)['brand:wikidata'='Q6316068']['brand:wikipedia'='en:Just Group'];
 way(578276702)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
@@ -1165,6 +1274,7 @@ way(655646708)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(664012881)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(671004003)['brand:wikidata'='Q5970945']['brand:wikipedia'='en:IGA (supermarkets)'];
 way(689393601)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+way(692100561)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
 way(718299663)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(718299665)['brand:wikidata'='Q5970945']['brand:wikipedia'='en:IGA (supermarkets)'];
 way(728082171)['brand:wikidata'='Q111772555']['brand:wikipedia'='en:Woolworths Supermarkets'];
@@ -1174,6 +1284,7 @@ way(773692562)['brand:wikidata'='Q3088656']['brand:wikipedia'='en:Mobil'];
 way(774639069)['brand:wikidata'='Q3088656']['brand:wikipedia'='en:Mobil'];
 way(814492805)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(839545542)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(853058783)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:EG Australia'];
 way(926437413)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(929036642)['brand:wikidata'='Q3088656']['brand:wikipedia'='en:Mobil'];
 way(943827345)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
