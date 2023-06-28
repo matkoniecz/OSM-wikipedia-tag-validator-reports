@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-04-06. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-06-27. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,43 @@ This page was generated using data obtained on 2023-04-06. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for subject prefixed tags">wikipedia wikidata mismatch - for subject prefixed tags</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li><li><a href="#no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for subject prefixed tags">wikipedia wikidata mismatch - for subject prefixed tags</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li><li><a href="#no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</a></li></ul>			</br>
+			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
+			</br>
+			Wikipedia article linked from OSM object using wikipedia tag is missing.<br />Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br />Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
+				</br>
+				
+				</br>
+				<a href="https://openstreetmap.org/way/139142319" target="_new">Berka Joselewicza - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(139142319)['wikipedia'='pl:Ulica Berka Joselewicza w Sanoku'];
+); (._;>;); out meta qt;//['wikipedia tag links to 404']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q30557993 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has wikipedia tag that links redirect (&#x27;Ko&#347;ci&#243;&#322; &#347;w. Antoniego Padewskiego i klasztor kapucyn&#243;w w S&#281;dziszowie Ma&#322;opolskim&#x27; to &#x27;Klasztor Zakonu Braci Mniejszych Kapucyn&#243;w z ko&#347;cio&#322;em przyklasztornym &#347;w. Antoniego z Padwy w S&#281;dziszowie Ma&#322;opolskim&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/350895104" target="_new">Kościół pw. św. Antoniego Padewskiego - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(350895104)['wikidata'='Q30557993']['wikipedia'='pl:Ko&#347;ci&#243;&#322; &#347;w. Antoniego Padewskiego i klasztor kapucyn&#243;w w S&#281;dziszowie Ma&#322;opolskim'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia wikidata mismatch - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</h2></a>
 				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q3268010 vs Q1776022 wikidata id assigned to linked Wikipedia article)
@@ -67,12 +103,6 @@ way(977974020)['brand:wikidata'='Q2052213']['brand:wikipedia'='de:Parf&#252;meri
 				</br>
 				<hr>
 				</br>
-				subject:wikidata and subject:wikipedia tags link to a different objects (Q263827 vs Q1391933 wikidata id assigned to linked Wikipedia article)
-				</br>
-				<a href="https://openstreetmap.org/way/198060874" target="_new">Kościół pw. Matki Bożej Śnieżnej - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				subject:wikidata and subject:wikipedia tags link to a different objects (Q43982 vs Q167477 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/way/261462067" target="_new">Kościół pw. Świętego Antoniego z Padwy - an affected OSM element that may be improved</a>
@@ -84,7 +114,6 @@ way(977974020)['brand:wikidata'='Q2052213']['brand:wikipedia'='de:Parf&#252;meri
 			<blockquote>[out:xml][timeout:3600];
 (
 way(198058773)['subject:wikidata'='Q263827']['subject:wikipedia'='pl:Matka Boska &#346;nie&#380;na'];
-way(198060874)['subject:wikidata'='Q263827']['subject:wikipedia'='pl:Matka Boska &#346;nie&#380;na'];
 way(261462067)['subject:wikidata'='Q43982']['subject:wikipedia'='pl:Antoni Padewski'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for subject prefixed tags']</blockquote>
 			</br>
@@ -103,12 +132,6 @@ way(261462067)['subject:wikidata'='Q43982']['subject:wikipedia'='pl:Antoni Padew
 				
 				</br>
 				<a href="https://openstreetmap.org/node/562753780" target="_new">Lotos - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/203649671" target="_new">Lotos - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -148,7 +171,6 @@ way(261462067)['subject:wikidata'='Q43982']['subject:wikipedia'='pl:Antoni Padew
 (
 node(417916999)['wikidata'='Q1256909'];
 node(562753780)['wikidata'='Q1256909'];
-way(203649671)['wikidata'='Q1256909'];
 way(228422007)['wikidata'='Q1256909'];
 way(316070276)['wikidata'='Q1256909'];
 way(316070280)['wikidata'='Q1256909'];
@@ -167,82 +189,12 @@ way(514679299)['wikidata'='Q1256909'];
 				<a href="https://openstreetmap.org/way/168519061" target="_new">Kościół pw. Świętego Józefa Opiekuna Rodzin - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/202161893" target="_new">Kościół Św. Krzyża - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/202203717" target="_new">Archiwum Państwowe w Rzeszowie - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/232302722" target="_new">Cerkiew greckokatolicka Opieki Matki Bożej - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/239530893" target="_new">Cerkiew Opieki Matki Bożej - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/256143400" target="_new">Kościół pw. Narodzenia Najświętszej Maryi Panny - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/267669999" target="_new">Kościół pw. Świętego Stanisława Biskupa - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/280425066" target="_new">Cerkiew pw. Męczennika Dymitra - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/311186987" target="_new">Kościół pw. Trójcy Przenajświętszej - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/391656349" target="_new">Kościół pw. św. Jana Apostoła - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/566283819" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
 			</br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
 way(168519061)['wikidata'='Q42424309'];
-way(202161893)['wikidata'='Q11746285'];
-way(202203717)['wikidata'='Q9349442'];
-way(232302722)['wikidata'='Q9186930'];
-way(239530893)['wikidata'='Q9186930'];
-way(256143400)['wikidata'='Q42424305'];
-way(267669999)['wikidata'='Q11746201'];
-way(280425066)['wikidata'='Q20033852'];
-way(311186987)['wikidata'='Q42424132'];
-way(391656349)['wikidata'='Q9187659'];
-way(566283819)['wikidata'='Q9349897'];
 ); (._;>;); out meta qt;//['no longer existing object (according to Wikidata)']</blockquote>
 			</br>
 			<hr>
