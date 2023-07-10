@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-04-06. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-06-28. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-04-06. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				</br>
 				wikipedia page in unexpected language - pl was expected:
@@ -32,6 +32,138 @@ This page was generated using data obtained on 2023-04-06. Please, <a href="http
 (
 way(562463077)['wikipedia'='en:33rd Air Base'];
 ); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q7119525 vs (missing) article redirects from pl:PKP Energetyka to pl:PGE Energetyka Kolejowa
+				</br>
+				<a href="https://openstreetmap.org/way/327877023" target="_new">PKP Energetyka - an affected OSM element that may be improved</a>
+				</br>
+				pl:PKP Energetyka -> pl:PGE Energetyka Kolejowa
+				</br>
+				PGE Energetyka Kolejowa
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(327877023)['wikidata'='Q7119525']['wikipedia'='pl:PKP Energetyka'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/4795287715" target="_new">Wzgórze Lecha - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Wzgórze Lecha (Gniezno)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Wzgórze Lecha (Gniezno)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/1042662257" target="_new">Władysława Sikorskiego - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Władysława Sikorskiego w Poznaniu'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Władysława Sikorskiego w Poznaniu'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/1073147153" target="_new">Władysława Sikorskiego - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Władysława Sikorskiego w Poznaniu'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Władysława Sikorskiego w Poznaniu'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/141288357" target="_new">Świętego Czesława - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Świętego Czesława w Poznaniu'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Świętego Czesława w Poznaniu'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/222449921" target="_new">Jezioro Przedecz - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Przedecz (jezioro)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Przedecz (jezioro)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/251106047" target="_new">Świętego Czesława - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Świętego Czesława w Poznaniu'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Świętego Czesława w Poznaniu'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/36876302" target="_new">Świętego Czesława - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Świętego Czesława w Poznaniu'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Świętego Czesława w Poznaniu'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/381931647" target="_new">Kościół pw. św. Apostołów Piotra i Pawła - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Kościół Świętych Apostołów Piotra i Pawła w Dziembowie'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Kościół Świętych Apostołów Piotra i Pawła w Dziembowie'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/439132281" target="_new">Równina Oleśnicka - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Równina Oleśnicka'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Równina Oleśnicka'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/924968539" target="_new">Władysława Sikorskiego - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Władysława Sikorskiego w Poznaniu'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Władysława Sikorskiego w Poznaniu'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/924972740" target="_new">Władysława Sikorskiego - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Władysława Sikorskiego w Poznaniu'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Władysława Sikorskiego w Poznaniu'}}]
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(4795287715)['wikidata'='Q9381078']['wikipedia'!~'.*'];
+way(1042662257)['wikidata'='Q9366271']['wikipedia'!~'.*'];
+way(1073147153)['wikidata'='Q9366271']['wikipedia'!~'.*'];
+way(141288357)['wikidata'='Q9366367']['wikipedia'!~'.*'];
+way(222449921)['wikidata'='Q35715176']['wikipedia'!~'.*'];
+way(251106047)['wikidata'='Q9366367']['wikipedia'!~'.*'];
+way(36876302)['wikidata'='Q9366367']['wikipedia'!~'.*'];
+way(381931647)['wikidata'='Q33085909']['wikipedia'!~'.*'];
+way(439132281)['wikidata'='Q9325707']['wikipedia'!~'.*'];
+way(924968539)['wikidata'='Q9366271']['wikipedia'!~'.*'];
+way(924972740)['wikidata'='Q9366271']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
 			</br>
 			<hr>
 			</br>
@@ -81,12 +213,6 @@ way(129521229)['wikidata'!~'.*']['wikipedia'='pl:Kaplica &#347;w. J&#243;zefa w 
 			<a href="#wikipedia wikidata mismatch - follow wikidata redirect"><h2 id="wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</h2></a>
 			</br>
 			wikidata and wikipedia tags link to a different objects, because wikidata tag points to a redirect that should be followed
-				</br>
-				Q4986098 vs Q3646629
-				</br>
-				<a href="https://openstreetmap.org/node/253461145" target="_new">Bugaj - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
 				</br>
 				Q34883755 vs Q11784124
 				</br>
@@ -506,7 +632,6 @@ way(129521229)['wikidata'!~'.*']['wikipedia'='pl:Kaplica &#347;w. J&#243;zefa w 
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-node(253461145)['wikidata'='Q4986098']['wikipedia'='pl:Bugaj (powiat chodzieski)'];
 relation(7846976)['wikidata'='Q34883755']['wikipedia'='pl:Szywra'];
 way(1037830993)['wikidata'='Q110416687']['wikipedia'='pl:Ko&#347;ci&#243;&#322; Matki Boskiej Cz&#281;stochowskiej w Kr&#281;psku'];
 way(1117461453)['wikidata'='Q34883755']['wikipedia'='pl:Szywra'];
@@ -648,12 +773,6 @@ way(987758714)['wikidata'='Q97371395']['wikipedia'='pl:Ko&#347;ci&#243;&#322; Ma
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Klaudia (osada) proposed based on matching teryt:simc codes in wikidata (Q3815806) and in osm element, where teryt:simc=0528043 is declared
-				</br>
-				<a href="https://openstreetmap.org/node/3009674084" target="_new">Klaudia - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				new wikipedia tag pl:Nadolnik (powiat chodzieski) proposed based on matching teryt:simc codes in wikidata (Q613072) and in osm element, where teryt:simc=0529730 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/3009675564" target="_new">Nadolnik - an affected OSM element that may be improved</a>
@@ -780,7 +899,7 @@ way(987758714)['wikidata'='Q97371395']['wikipedia'='pl:Ko&#347;ci&#243;&#322; Ma
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Kosarzyn (wojew&#243;dztwo wielkopolskie) proposed based on matching teryt:simc codes in wikidata (Q6433002) and in osm element, where teryt:simc=0529670 is declared
+				new wikipedia tag pl:Kosarzyn (J&#243;zefowice) proposed based on matching teryt:simc codes in wikidata (Q6433002) and in osm element, where teryt:simc=0529670 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/31588379" target="_new">Kosarzyn - an affected OSM element that may be improved</a>
 				</br>
@@ -1023,7 +1142,6 @@ node(2998159419)['teryt:simc'='0285920']['wikidata'='Q19400802']['wikipedia'='pl
 node(3009662533)['teryt:simc'='1009339']['wikidata'='Q5202250']['wikipedia'='pl:Czy&#380;k&#243;wko'];
 node(3009671679)['teryt:simc'='0533570']['wikidata'='Q4777934']['wikipedia'='pl:Anusin (wojew&#243;dztwo wielkopolskie)'];
 node(3009673820)['teryt:simc'='0529692']['wikidata'='Q6320841']['wikipedia'='pl:J&#243;zefowo (powiat chodzieski)'];
-node(3009674084)['teryt:simc'='0528043']['wikidata'='Q3815806']['wikipedia'='pl:Klaudia (wojew&#243;dztwo wielkopolskie)'];
 node(3009675564)['teryt:simc'='0529730']['wikidata'='Q613072']['wikipedia'='pl:Nadolniki'];
 node(3009675811)['teryt:simc'='0527948']['wikidata'='Q16583721']['wikipedia'='pl:Ofelia (wojew&#243;dztwo wielkopolskie)'];
 node(3009680309)['teryt:simc'='0589843']['wikidata'='Q16621267']['wikipedia'='pl:&#321;osko&#324;'];
@@ -1181,6 +1299,12 @@ relation(4000112)['teryt:simc'='0598279']['wikidata'='Q2611973']['wikipedia'='pl
 				</br>
 				<hr>
 				</br>
+				Q2381223 vs (missing) article redirects from en:Media Markt to en:MediaMarkt
+				</br>
+				<a href="https://openstreetmap.org/node/6551618203" target="_new">MediaMarkt - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				Q1539185 vs (missing) article redirects from en:The Timberland Company to en:Timberland (company)
 				</br>
 				<a href="https://openstreetmap.org/node/6596643613" target="_new">Timberland - an affected OSM element that may be improved</a>
@@ -1277,18 +1401,6 @@ relation(4000112)['teryt:simc'='0598279']['wikidata'='Q2611973']['wikipedia'='pl
 				</br>
 				<hr>
 				</br>
-				Q1068628 vs (missing) article redirects from en:Calvin Klein (company) to en:Calvin Klein (fashion house)
-				</br>
-				<a href="https://openstreetmap.org/way/199081522" target="_new">Calvin Klein - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
-				</br>
-				<a href="https://openstreetmap.org/way/240432459" target="_new">Shell - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q154950 vs (missing) article redirects from en:Royal Dutch Shell to en:Shell plc
 				</br>
 				<a href="https://openstreetmap.org/way/294589367" target="_new">Shell - an affected OSM element that may be improved</a>
@@ -1368,6 +1480,7 @@ node(5076036783)['brand:wikidata'='Q138913']['brand:wikipedia'='en:Jysk (store)'
 node(5978044697)['brand:wikidata'='Q509349']['brand:wikipedia'='en:Decathlon Group'];
 node(601426827)['brand:wikidata'='Q457822']['brand:wikipedia'='en:Fielmann'];
 node(6131375696)['brand:wikidata'='Q319515']['brand:wikipedia'='en:Converse (shoe company)'];
+node(6551618203)['brand:wikidata'='Q2381223']['brand:wikipedia'='en:Media Markt'];
 node(6596643613)['brand:wikidata'='Q1539185']['brand:wikipedia'='en:The Timberland Company'];
 node(7843739645)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
 node(8081453493)['brand:wikidata'='Q573103']['brand:wikipedia'='en:TUI AG'];
@@ -1384,8 +1497,6 @@ node(904631765)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Sh
 way(1106147243)['brand:wikidata'='Q457822']['brand:wikipedia'='en:Fielmann'];
 way(119909655)['brand:wikidata'='Q509349']['brand:wikipedia'='en:Decathlon Group'];
 way(173309871)['brand:wikidata'='Q138913']['brand:wikipedia'='en:Jysk (store)'];
-way(199081522)['brand:wikidata'='Q1068628']['brand:wikipedia'='en:Calvin Klein (company)'];
-way(240432459)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
 way(294589367)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
 way(336762552)['brand:wikidata'='Q2913554']['brand:wikipedia'='en:Sports Direct'];
 way(36210835)['brand:wikidata'='Q971649']['brand:wikipedia'='pl:PKN Orlen'];
@@ -1409,12 +1520,19 @@ way(936887052)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch She
 				<a href="https://openstreetmap.org/node/10690315316" target="_new">POZ97M - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
+				</br>
+				Q7119525 vs (missing) article redirects from pl:PKP Energetyka to pl:PGE Energetyka Kolejowa
+				</br>
+				<a href="https://openstreetmap.org/way/783037334" target="_new">Podstacja trakcyjna "Swarzędz" - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
 			</br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
 node(10690315316)['operator:wikidata'='Q3182097']['operator:wikipedia'='pl:Inpost'];
+way(783037334)['operator:wikidata'='Q7119525']['operator:wikipedia'='pl:PKP Energetyka'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags']</blockquote>
 			</br>
 			<hr>
@@ -1635,6 +1753,30 @@ node(10690315316)['operator:wikidata'='Q3182097']['operator:wikipedia'='pl:Inpos
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
+				<a href="https://openstreetmap.org/relation/10217577" target="_new">Flixbus K767: Krynica-Zdrój, Czarny Potok => Kołobrzeg, Jagiellońska - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10246818" target="_new">Flixbus K767: Kołobrzeg, Jagiellońska => Krynica-Zdrój, Czarny Potok - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10250389" target="_new">Flixbus K787: Krynica-Zdrój, Czarny Potok => Kołobrzeg, Jagiellońska - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10250390" target="_new">Flixbus K787: Kołobrzeg, Jagiellońska => Krynica-Zdrój, Czarny Potok - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
 				<a href="https://openstreetmap.org/relation/10715735" target="_new">Flixbus 1381: Gdynia, dworzec autobusowy => Berlin ZOB - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -1738,6 +1880,10 @@ relation(10125807)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixb
 relation(10125808)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10179272)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10180422)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10217577)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10246818)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10250389)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10250390)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10715735)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10715736)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(11588994)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];

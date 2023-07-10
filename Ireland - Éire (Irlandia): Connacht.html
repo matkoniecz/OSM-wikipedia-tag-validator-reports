@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-04-07. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-07-07. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,14 +13,25 @@ This page was generated using data obtained on 2023-04-07. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#should use a secondary wikipedia tag - linking to a sports competition">should use a secondary wikipedia tag - linking to a sports competition</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li><li><a href="#no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</a></li></ul>			</br>
-			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
+<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li></ul>			</br>
+			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition</h2></a>
 				</br>
-				wikidata and wikipedia tags link to a different objects (Q116973645 vs (missing) wikidata id assigned to linked Wikipedia article)
+				linked wikidata entry (Q7138632) is about a sports competition, so it is very unlikely to be correct <br />        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
 				</br>
-				<a href="https://openstreetmap.org/relation/13068833" target="_new">Galway Wind Park - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/8366861" target="_new">Knocknacarra Parkrun - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(8366861)['wikidata'='Q7138632'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				</br>
 				wikidata and wikipedia tags link to a different objects (Q33093087 vs Q16909891 wikidata id assigned to linked Wikipedia article)
 				</br>
@@ -38,7 +49,6 @@ This page was generated using data obtained on 2023-04-07. Please, <a href="http
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-relation(13068833)['wikidata'='Q116973645']['wikipedia'='en:Galway Wind Park'];
 way(284554987)['wikidata'='Q33093087']['wikipedia'='en:Miosg&#225;n Meadhbha'];
 way(295031403)['wikidata'='Q116853952']['wikipedia'='de:Kloster Aghagower'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
@@ -164,6 +174,12 @@ way(295031403)['wikidata'='Q116853952']['wikipedia'='de:Kloster Aghagower'];
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q113556385 vs Q608845 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/node/9385590064" target="_new">Costa Express - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q478214 vs Q17089620 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/9452425331" target="_new">Athenry Supercharger - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -323,6 +339,7 @@ node(8009039466)['brand:wikidata'='Q941020']['brand:wikipedia'='en:KBC Bank'];
 node(802192655)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 node(8839145632)['brand:wikidata'='Q75236910']['brand:wikipedia'='en:Mace (shop)'];
 node(9385590064)['brand:wikidata'='Q113556385']['brand:wikipedia'='en:Costa Coffee'];
+node(9452425331)['brand:wikidata'='Q478214']['brand:wikipedia'='en:Tesla Supercharger'];
 node(9986711674)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(100724616)['brand:wikidata'='Q75236910']['brand:wikipedia'='en:Mace (shop)'];
 way(1090310513)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
@@ -353,13 +370,139 @@ way(954710156)['brand:wikidata'='Q84163322']['brand:wikipedia'='en:Wallis (retai
 				</br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				</br>
-				<a href="https://openstreetmap.org/node/9445193694" target="_new">an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/4363729818" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				</br>
-				<a href="https://openstreetmap.org/node/9456334797" target="_new">an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/4363729819" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/5907229314" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/5907229315" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/5907267407" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/5907267411" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/5907267416" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/5912412085" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/5912412095" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/5912412129" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/9671213407" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/9671213408" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/5581101" target="_new">Castlebar - Kiltimagh - Swinford - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/8712739" target="_new">Castlebar - Claremorris 38kV - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/8712768" target="_new">Dalton - Claremorris 38kV - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/8712797" target="_new">Dalton - Tuam North 38kV - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/8712799" target="_new">Dalton - Ballinrobe 38kV - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/9346751" target="_new">Ballina - Castlebar 38kV - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/9346752" target="_new">Castlebar - Lecarrow 38kV - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/9346755" target="_new">Castlebar - Knockaphuna - Aghagower 38kV - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/9346768" target="_new">Claremorris - Mace Upper 38kV - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/9346772" target="_new">Claremorris - Ballyhaunis 38kV - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/9350528" target="_new">Castlebar - Annalecka 38 kV - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 			</br>
@@ -367,32 +510,48 @@ way(954710156)['brand:wikidata'='Q84163322']['brand:wikipedia'='en:Wallis (retai
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-node(9445193694)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
-node(9456334797)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4363729818)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4363729819)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5907229314)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5907229315)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5907267407)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5907267411)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5907267416)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5912412085)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5912412095)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5912412129)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9671213407)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9671213408)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(5581101)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(8712739)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(8712768)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(8712797)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(8712799)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346751)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346752)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346755)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346768)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346772)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9350528)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for operator prefixed tags']</blockquote>
-			</br>
-			<hr>
-			</br>
-			<a href="#should use a secondary wikipedia tag - linking to a sports competition"><h2 id="should use a secondary wikipedia tag - linking to a sports competition">should use a secondary wikipedia tag - linking to a sports competition</h2></a>
-				</br>
-				linked wikidata entry (Q7138632) is about a sports competition, so it is very unlikely to be correct <br />        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
-				</br>
-				<a href="https://openstreetmap.org/relation/8366861" target="_new">Knocknacarra Parkrun - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-			</br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			</br>
-			<blockquote>[out:xml][timeout:3600];
-(
-relation(8366861)['wikidata'='Q7138632'];
-); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking to a sports competition']</blockquote>
 			</br>
 			<hr>
 			</br>
 			<a href="#no longer existing brand (according to Wikidata)"><h2 id="no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</h2></a>
 			</br>
 			Wikidata claims that assigned brand object no longer exists. That means that either this shop is gone or it is rebranded. Or brand:wikidata tag is wrong. Historical, no longer existing object should not be mapped in OSM. REMEMBER TO VERIFY! WIKIDATA QUALITY MAY BE POOR! WIKIDATA MUST NOT BE USED AS SOURCE! ALWAYS VERIFY!
+				</br>
+				
+				</br>
+				<a href="https://openstreetmap.org/node/10699163205" target="_new">Paddy Power - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				
+				</br>
+				<a href="https://openstreetmap.org/node/11021735563" target="_new">Texaco - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
 				</br>
 				
 				</br>
@@ -644,6 +803,8 @@ relation(8366861)['wikidata'='Q7138632'];
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
+node(10699163205)['wikidata'='Q3888718'];
+node(11021735563)['wikidata'='Q775060'];
 node(1173073831)['wikidata'='Q775060'];
 node(1173073866)['wikidata'='Q775060'];
 node(1371602461)['wikidata'='Q775060'];
@@ -686,116 +847,6 @@ way(720664344)['wikidata'='Q775060'];
 way(825348459)['wikidata'='Q775060'];
 way(825434631)['wikidata'='Q775060'];
 ); (._;>;); out meta qt;//['no longer existing brand (according to Wikidata)']</blockquote>
-			</br>
-			<hr>
-			</br>
-			<a href="#no longer existing object (according to Wikidata)"><h2 id="no longer existing object (according to Wikidata)">no longer existing object (according to Wikidata)</h2></a>
-			</br>
-			Wikidata claims that this object no longer exists. Historical, no longer existing object should not be mapped in OSM (except temporary marking to avoid remapping them from aerial imagery or similar sources) - so it means that either Wikidata is mistaken or has only partial data - for example it is fine to link ruins of a church to its wikipedia entry ( see https://www.wikidata.org/w/index.php?title=Wikidata:Project_chat&amp;oldid=1361617968#Tagging_ruins/remains_left_after_object ) or wikipedia/wikidata tag is wrong or OSM has an outdated object that should be removed. REMEMBER TO VERIFY! WIKIDATA QUALITY MAY BE POOR! WIKIDATA MUST NOT BE USED AS SOURCE! ALWAYS VERIFY!
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/node/1353952886" target="_new">Foxford - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/1029543221" target="_new">Dun Arann Lighthouse - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/179457941" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/180674530" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/181682743" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/181739750" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/220935378" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/220935379" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/286356613" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/293228724" target="_new">Boyle Abbey - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/293229784" target="_new">Boyle Abbey - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/317222018" target="_new">Abbeyknockmoy Abbey - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/45181427" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/713043834" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-			</br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			</br>
-			<blockquote>[out:xml][timeout:3600];
-(
-node(1353952886)['wikidata'='Q3969652'];
-way(1029543221)['wikidata'='Q5856416'];
-way(179457941)['wikidata'='Q6842345'];
-way(180674530)['wikidata'='Q6842345'];
-way(181682743)['wikidata'='Q6842345'];
-way(181739750)['wikidata'='Q6842345'];
-way(220935378)['wikidata'='Q6842345'];
-way(220935379)['wikidata'='Q6842345'];
-way(286356613)['wikidata'='Q17081727'];
-way(293228724)['wikidata'='Q896003'];
-way(293229784)['wikidata'='Q896003'];
-way(317222018)['wikidata'='Q1777349'];
-way(45181427)['wikidata'='Q6842345'];
-way(713043834)['wikidata'='Q6842345'];
-); (._;>;); out meta qt;//['no longer existing object (according to Wikidata)']</blockquote>
 			</br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />

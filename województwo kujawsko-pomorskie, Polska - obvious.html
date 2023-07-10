@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-04-06. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-06-28. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-04-06. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				</br>
 				wikipedia page in unexpected language - pl was expected:
@@ -46,7 +46,326 @@ way(100426398)['wikipedia'='en:Monastery Gate in Toru&#324;'];
 			</br>
 			<hr>
 			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q9360260 vs (missing) article redirects from pl:Elektrociep&#322;ownia PGE Toru&#324; to pl:PGE Toru&#324;
+				</br>
+				<a href="https://openstreetmap.org/way/922412500" target="_new">Elektrociepłownia PGE Toruń - an affected OSM element that may be improved</a>
+				</br>
+				pl:Elektrociepłownia PGE Toruń -> pl:PGE Toruń
+				</br>
+				PGE Toru&#324;
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(922412500)['wikidata'='Q9360260']['wikipedia'='pl:Elektrociep&#322;ownia PGE Toru&#324;'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/node/2077781139" target="_new">Jan Nepomucen - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Jan Nepomucen (pomnik w Bydgoszczy)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Jan Nepomucen (pomnik w Bydgoszczy)'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/114820918" target="_new">Królowej Jadwigi - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/124061565" target="_new">Królowej Jadwigi - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/139612994" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Kamienica Jezuicka 2 w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Kamienica Jezuicka 2 w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/139612995" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Kamienica przy ul. Farnej 6 w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Kamienica przy ul. Farnej 6 w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/139615610" target="_new">Farna - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Farna w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Farna w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/187807821" target="_new">Świętej Trójcy - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Świętej Trójcy w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Świętej Trójcy w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/196890062" target="_new">Księdza Tadeusza Malczewskiego - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Tadeusza Malczewskiego w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Tadeusza Malczewskiego w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/236739578" target="_new">Królowej Jadwigi - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/236739579" target="_new">Królowej Jadwigi - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/253708062" target="_new">Mennica 10 - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Mennica w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Mennica w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/314076871" target="_new">Królowej Jadwigi - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/329758281" target="_new">Królowej Jadwigi - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/409245983" target="_new">Królowej Jadwigi - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/421816677" target="_new">Most Jana Kiepury - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Most Jana Kiepury'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Most Jana Kiepury'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/441679333" target="_new">Królowej Jadwigi - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/45073927" target="_new">CH Rondo - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Centrum Handlowe Rondo w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Centrum Handlowe Rondo w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/45073928" target="_new">Świętej Trójcy - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Świętej Trójcy w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Świętej Trójcy w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/45079543" target="_new">Cmentarz Starofarny - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Cmentarz Starofarny w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Cmentarz Starofarny w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/45119300" target="_new">Farna - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Farna w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Farna w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/45119301" target="_new">Farna - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Farna w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Farna w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/45128334" target="_new">Mennica - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Mennica w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Mennica w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/46235580" target="_new">Królowej Jadwigi - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/523845843" target="_new">Królowej Jadwigi - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/52457232" target="_new">Świętej Trójcy - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Świętej Trójcy w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Świętej Trójcy w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/591056749" target="_new">Królowej Jadwigi - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Królowej Jadwigi w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/698261879" target="_new">Stary Kanał Bydgoski - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Śluza IV Wrocławska'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Śluza IV Wrocławska'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/723896620" target="_new">Mennica - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Mennica w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Mennica w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/723896671" target="_new">Mennica - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Ulica Mennica w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Ulica Mennica w Bydgoszczy'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/way/923208220" target="_new">Stary Rynek - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Stary Rynek w Bydgoszczy'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Stary Rynek w Bydgoszczy'}}]
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(2077781139)['wikidata'='Q11718492']['wikipedia'!~'.*'];
+way(114820918)['wikidata'='Q38250529']['wikipedia'!~'.*'];
+way(124061565)['wikidata'='Q38250529']['wikipedia'!~'.*'];
+way(139612994)['wikidata'='Q11734085']['wikipedia'!~'.*'];
+way(139612995)['wikidata'='Q11734048']['wikipedia'!~'.*'];
+way(139615610)['wikidata'='Q9365127']['wikipedia'!~'.*'];
+way(187807821)['wikidata'='Q27496691']['wikipedia'!~'.*'];
+way(196890062)['wikidata'='Q9366086']['wikipedia'!~'.*'];
+way(236739578)['wikidata'='Q38250529']['wikipedia'!~'.*'];
+way(236739579)['wikidata'='Q38250529']['wikipedia'!~'.*'];
+way(253708062)['wikidata'='Q18747839']['wikipedia'!~'.*'];
+way(314076871)['wikidata'='Q38250529']['wikipedia'!~'.*'];
+way(329758281)['wikidata'='Q38250529']['wikipedia'!~'.*'];
+way(409245983)['wikidata'='Q38250529']['wikipedia'!~'.*'];
+way(421816677)['wikidata'='Q16579355']['wikipedia'!~'.*'];
+way(441679333)['wikidata'='Q38250529']['wikipedia'!~'.*'];
+way(45073927)['wikidata'='Q9186261']['wikipedia'!~'.*'];
+way(45073928)['wikidata'='Q27496691']['wikipedia'!~'.*'];
+way(45079543)['wikidata'='Q8511500']['wikipedia'!~'.*'];
+way(45119300)['wikidata'='Q9365127']['wikipedia'!~'.*'];
+way(45119301)['wikidata'='Q9365127']['wikipedia'!~'.*'];
+way(45128334)['wikidata'='Q18747839']['wikipedia'!~'.*'];
+way(46235580)['wikidata'='Q38250529']['wikipedia'!~'.*'];
+way(523845843)['wikidata'='Q38250529']['wikipedia'!~'.*'];
+way(52457232)['wikidata'='Q27496691']['wikipedia'!~'.*'];
+way(591056749)['wikidata'='Q38250529']['wikipedia'!~'.*'];
+way(698261879)['wikidata'='Q9395469']['wikipedia'!~'.*'];
+way(723896620)['wikidata'='Q18747839']['wikipedia'!~'.*'];
+way(723896671)['wikidata'='Q18747839']['wikipedia'!~'.*'];
+way(923208220)['wikidata'='Q2333388']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia from wikidata tag, unexpected language"><h2 id="wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/way/117116162" target="_new">Garbary - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'en:Garbary Street'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'en:Garbary Street'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/way/185502204" target="_new">Garbary - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'en:Garbary Street'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'en:Garbary Street'}}]
+				</br>
+				<hr>
 				</br>
 				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
 				</br>
@@ -55,12 +374,23 @@ way(100426398)['wikipedia'='en:Monastery Gate in Toru&#324;'];
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'uk:ТЕС Влоцлавек'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'uk:ТЕС Влоцлавек'}}]
 				</br>
 				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/way/46236145" target="_new">Garbary - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'en:Garbary Street'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'en:Garbary Street'}}]
+				</br>
+				<hr>
 			</br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
+way(117116162)['wikidata'='Q65081179']['wikipedia'!~'.*'];
+way(185502204)['wikidata'='Q65081179']['wikipedia'!~'.*'];
 way(293937780)['wikidata'='Q30973342']['wikipedia'!~'.*'];
+way(46236145)['wikidata'='Q65081179']['wikipedia'!~'.*'];
 ); (._;>;); out meta qt;//['wikipedia from wikidata tag, unexpected language']</blockquote>
 			</br>
 			<hr>
@@ -340,6 +670,12 @@ way(916681389)['wikidata'='Q55554789']['wikipedia'='pl:Park na Bielanach w Torun
 				</br>
 				<hr>
 				</br>
+				new wikipedia tag pl:D&#281;bicze (Przybran&#243;wek) proposed based on matching teryt:simc codes in wikidata (Q118645215) and in osm element, where teryt:simc=0857522 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009672835" target="_new">Dębicze - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Rybaki (Szczuka) proposed based on matching teryt:simc codes in wikidata (Q9324253) and in osm element, where teryt:simc=0841188 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/3009676210" target="_new">Rybaki - an affected OSM element that may be improved</a>
@@ -370,7 +706,7 @@ way(916681389)['wikidata'='Q55554789']['wikipedia'='pl:Park na Bielanach w Torun
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Emilianowo (Sierakowy) proposed based on matching teryt:simc codes in wikidata (Q18424530) and in osm element, where teryt:simc=0870681 is declared
+				new wikipedia tag pl:Emilianowo (powiat radziejowski) proposed based on matching teryt:simc codes in wikidata (Q18424530) and in osm element, where teryt:simc=0870681 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/3009701259" target="_new">Emilianowo - an affected OSM element that may be improved</a>
 				</br>
@@ -516,6 +852,7 @@ node(3009668882)['teryt:simc'='0098631']['wikidata'='Q8063379']['wikipedia'='pl:
 node(3009671694)['teryt:simc'='0996672']['wikidata'='Q15966311']['wikipedia'='pl:Babka (osada w wojew&#243;dztwie kujawsko-pomorskim)'];
 node(3009672178)['teryt:simc'='0850106']['wikidata'='Q4986160']['wikipedia'='pl:Bugeria (osada w wojew&#243;dztwie kujawsko-pomorskim)'];
 node(3009672517)['teryt:simc'='0996689']['wikidata'='Q16538129']['wikipedia'='pl:Czarne Olendry (wojew&#243;dztwo kujawsko-pomorskie)'];
+node(3009672835)['teryt:simc'='0857522']['wikidata'='Q118645215']['wikipedia'!~'.*'];
 node(3009676210)['teryt:simc'='0841188']['wikidata'='Q9324253']['wikipedia'='pl:Rybaki (wojew&#243;dztwo kujawsko-pomorskie)'];
 node(3009678236)['teryt:simc'='0868508']['wikidata'='Q16596100']['wikipedia'='pl:Reszki (powiat rypi&#324;ski)'];
 node(3009679168)['teryt:simc'='0859107']['wikidata'='Q9347455']['wikipedia'='pl:Studniska (wojew&#243;dztwo kujawsko-pomorskie)'];
@@ -582,12 +919,6 @@ relation(6900376)['teryt:simc'='0850862']['wikidata'='Q7386579']['wikipedia'='pl
 				Q509349 vs (missing) article redirects from en:Decathlon Group to en:Decathlon (retailer)
 				</br>
 				<a href="https://openstreetmap.org/node/7863128467" target="_new">Decathlon Bydgoszcz - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q1068628 vs (missing) article redirects from en:Calvin Klein (company) to en:Calvin Klein (fashion house)
-				</br>
-				<a href="https://openstreetmap.org/node/8659179347" target="_new">Calvin Klein - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -673,7 +1004,6 @@ node(589809130)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Sh
 node(589817118)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shell'];
 node(6325133718)['brand:wikidata'='Q2913554']['brand:wikipedia'='en:Sports Direct'];
 node(7863128467)['brand:wikidata'='Q509349']['brand:wikipedia'='en:Decathlon Group'];
-node(8659179347)['brand:wikidata'='Q1068628']['brand:wikipedia'='en:Calvin Klein (company)'];
 node(8697070365)['brand:wikidata'='Q138913']['brand:wikipedia'='en:Jysk (store)'];
 way(194104928)['brand:wikidata'='Q509349']['brand:wikipedia'='en:Decathlon Group'];
 way(237171848)['brand:wikidata'='Q300518']['brand:wikipedia'='en:Obi (store)'];
@@ -700,6 +1030,12 @@ way(503106862)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch She
 				</br>
 				<hr>
 				</br>
+				Q7119525 vs (missing) article redirects from pl:PKP Energetyka to pl:PGE Energetyka Kolejowa
+				</br>
+				<a href="https://openstreetmap.org/way/1087628796" target="_new">Podstacja trakcyjna "Toruń Wschodni" - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				Q11806424 vs (missing) article redirects from pl:Parafia Wniebowzi&#281;cia Naj&#347;wi&#281;tszej Maryi Panny w Mokrym to pl:Parafia Wniebowzi&#281;cia Naj&#347;wi&#281;tszej Maryi Panny w Mokrem
 				</br>
 				<a href="https://openstreetmap.org/way/209320508" target="_new">Kościół filialny pw. Miłosierdzia Bożego - an affected OSM element that may be improved</a>
@@ -711,6 +1047,7 @@ way(503106862)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch She
 			<blockquote>[out:xml][timeout:3600];
 (
 relation(14958238)['operator:wikidata'='Q849726']['operator:wikipedia'='pl:Zgromadzenie Misji'];
+way(1087628796)['operator:wikidata'='Q7119525']['operator:wikipedia'='pl:PKP Energetyka'];
 way(209320508)['operator:wikidata'='Q11806424']['operator:wikipedia'='pl:Parafia Wniebowzi&#281;cia Naj&#347;wi&#281;tszej Maryi Panny w Mokrym'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags']</blockquote>
 			</br>
@@ -800,6 +1137,30 @@ way(209320508)['operator:wikidata'='Q11806424']['operator:wikipedia'='pl:Parafia
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
+				<a href="https://openstreetmap.org/relation/10716202" target="_new">Flixbus 1390: Kraków, dworzec autobusowy MDA => Gdynia, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10716203" target="_new">Flixbus 1390: Gdynia, dworzec autobusowy => Kraków, dworzec autobusowy MDA - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10718533" target="_new">Flixbus N1390: Zakopane, dworzec autobusowy => Gdynia, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10718534" target="_new">Flixbus N1390: Gdynia, dworzec autobusowy => Zakopane, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
 				<a href="https://openstreetmap.org/relation/9405184" target="_new">Flixbus 1380: Praha, ÚAN Florenc => Gdynia, Chylonia - Tesco - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -839,6 +1200,10 @@ relation(10278132)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixb
 relation(10715333)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10715334)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10715735)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10716202)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10716203)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10718533)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10718534)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9405184)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9405187)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9405195)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
