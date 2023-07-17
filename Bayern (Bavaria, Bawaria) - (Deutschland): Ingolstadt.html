@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-04-07. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-07-17. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,31 @@ This page was generated using data obtained on 2023-04-07. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li></ul>			</br>
+<ul><li><a href="#link to a disambiguation page">link to a disambiguation page</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li></ul>			</br>
+			<a href="#link to a disambiguation page"><h2 id="link to a disambiguation page">link to a disambiguation page</h2></a>
+				</br>
+				link leads to a disambig page - not a proper wikipedia link (according to Wikidata - if target is not a disambig check Wikidata entry whether it is correct)<br /><br />Bahnstrecke M&#252;nchen&#8211;Treuchtlingen is 5546 km away<br />Bahnstrecke Regensburg&#8211;N&#252;rnberg is 5546 km away<br />Schnellfahrstrecke N&#252;rnberg&#8211;Ingolstadt is 5546 km away<br />
+				</br>
+				<a href="https://openstreetmap.org/relation/7690346" target="_new">5934 Nürnberg - Ingolstadt - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				link leads to a disambig page - not a proper wikipedia link (according to Wikidata - if target is not a disambig check Wikidata entry whether it is correct)<br /><br />Glacisbr&#252;cke Ingolstadt is 5 m away<br />Glacisbr&#252;cke Minden is 430 km away<br />Glacisstra&#223;e is 5513 km away<br />
+				</br>
+				<a href="https://openstreetmap.org/way/61940355" target="_new">Glacisbrücke - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(7690346)['wikipedia'='de:Schnellfahrstrecke N&#252;rnberg&#8211;Ingolstadt&#8211;M&#252;nchen'];
+way(61940355)['wikipedia'='de:Glacisbr&#252;cke'];
+); (._;>;); out meta qt;//['link to a disambiguation page']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				</br>
 				wikidata and wikipedia tags link to a different objects (Q23047573 vs Q1572351 wikidata id assigned to linked Wikipedia article)
@@ -38,17 +62,11 @@ way(168959395)['wikidata'='Q435363']['wikipedia'='de:Deutsches Medizinhistorisch
 			</br>
 			<hr>
 			</br>
-			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</h2></a>
-			</br>
-			wikidata and wikipedia tags link to a different objects, because wikidata tag points to a redirect that should be followed
+			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
 				</br>
-				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				network:wikidata=Q99937594 is present despite that not:network:wikidata=Q99937594 is also present - at least one of them is wrong
 				</br>
-				<a href="https://openstreetmap.org/relation/136192" target="_new">Neubaustrecke Nürnberg–Ingolstadt - an affected OSM element that may be improved</a>
-				</br>
-				de:Schnellfahrstrecke Nürnberg–Ingolstadt–München -> en:Nuremberg–Munich high-speed railway
-				</br>
-				Nuremberg&#8211;Munich high-speed railway
+				<a href="https://openstreetmap.org/relation/4095769" target="_new">Bus X11: Hauptbahnhof => Bahnhof Audi Ingolstadt - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 			</br>
@@ -56,8 +74,8 @@ way(168959395)['wikidata'='Q435363']['wikipedia'='de:Deutsches Medizinhistorisch
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-relation(136192)['wikidata'='Q705295']['wikipedia'='de:Schnellfahrstrecke N&#252;rnberg&#8211;Ingolstadt&#8211;M&#252;nchen'];
-); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not']</blockquote>
+relation(4095769)['network:wikidata'='Q99937594']['not:network:wikidata'='Q99937594'];
+); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
 			</br>
 			<hr>
 			</br>
@@ -112,12 +130,6 @@ way(28111883)['brand:wikidata'='Q1183029']['brand:wikipedia'='de:Dehner'];
 				</br>
 				<hr>
 				</br>
-				brand:wikidata and brand:wikipedia tags link to a different objects (Q688195 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Bally Shoe&#x27; to &#x27;Bally (fashion house)&#x27;).
-				</br>
-				<a href="https://openstreetmap.org/way/236058339" target="_new">Bally - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q3472022 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Sandro (mode)&#x27; to &#x27;Groupe SMCP&#x27;).
 				</br>
 				<a href="https://openstreetmap.org/way/306373351" target="_new">Sandro - an affected OSM element that may be improved</a>
@@ -126,7 +138,13 @@ way(28111883)['brand:wikidata'='Q1183029']['brand:wikipedia'='de:Dehner'];
 				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
 				</br>
-				<a href="https://openstreetmap.org/way/31782860" target="_new">Aldi Süd - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/way/30773068" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/31782860" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -163,8 +181,8 @@ node(6011133451)['brand:wikidata'='Q450180']['brand:wikipedia'='de:Norma (Handel
 node(7204201752)['brand:wikidata'='Q56388481']['brand:wikipedia'='hu:M&#246;max'];
 way(160311902)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
 way(200949393)['brand:wikidata'='Q450180']['brand:wikipedia'='de:Norma (Handelskette)'];
-way(236058339)['brand:wikidata'='Q688195']['brand:wikipedia'='en:Bally Shoe'];
 way(306373351)['brand:wikidata'='Q3472022']['brand:wikipedia'='fr:Sandro (mode)'];
+way(30773068)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(31782860)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(319236961)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
 way(31969938)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
@@ -198,6 +216,12 @@ way(43181097)['brand:wikidata'='Q2052213']['brand:wikipedia'='de:Parf&#252;merie
 				</br>
 				
 				</br>
+				<a href="https://openstreetmap.org/way/231526820" target="_new">Scotch & Soda - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				
+				</br>
 				<a href="https://openstreetmap.org/way/30732721" target="_new">Agip - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -221,6 +245,7 @@ way(43181097)['brand:wikidata'='Q2052213']['brand:wikipedia'='de:Parf&#252;merie
 node(1781296997)['wikidata'='Q2141800'];
 node(7806846641)['wikidata'='Q377915'];
 way(121465720)['wikidata'='Q377915'];
+way(231526820)['wikidata'='Q17141914'];
 way(30732721)['wikidata'='Q377915'];
 way(43543851)['wikidata'='Q377915'];
 way(54169428)['wikidata'='Q377915'];
