@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-04-07. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-07-18. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-04-07. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination</a></li><li><a href="#link to a disambiguation page">link to a disambiguation page</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			</br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br />Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br />Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -30,6 +30,40 @@ This page was generated using data obtained on 2023-04-07. Please, <a href="http
 (
 relation(5248072)['wikipedia'='de:Vinzenz von Paul-Hospital'];
 ); (._;>;); out meta qt;//['wikipedia tag links to 404']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination</h2></a>
+				</br>
+				linked wikidata entry (Q897256) is about a religious denomination, so it is very unlikely to be correct <br />        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				</br>
+				<a href="https://openstreetmap.org/relation/6153362" target="_new">Evangelische Landeskirche in Baden - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(6153362)['wikidata'='Q897256'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#link to a disambiguation page"><h2 id="link to a disambiguation page">link to a disambiguation page</h2></a>
+				</br>
+				link leads to a disambig page - not a proper wikipedia link (according to Wikidata - if target is not a disambig check Wikidata entry whether it is correct)<br /><br />Kloster Bernstein (Sulz am Neckar) is 11 m away<br />Zisterzienserinnenkloster Bernstein is 698 km away<br />
+				</br>
+				<a href="https://openstreetmap.org/node/761500398" target="_new">Bernstein - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(761500398)['wikidata'='Q96745799'];
+); (._;>;); out meta qt;//['link to a disambiguation page']</blockquote>
 			</br>
 			<hr>
 			</br>
@@ -129,12 +163,6 @@ node(441249309)['wikidata'='Q1013869']['wikipedia'='de:Burg Schenkenberg'];
 				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
 				</br>
-				<a href="https://openstreetmap.org/way/136757075" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
-				</br>
 				<a href="https://openstreetmap.org/way/136758062" target="_new">Aldi Süd - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -189,7 +217,6 @@ node(2136232370)['brand:wikidata'='Q9322']['brand:wikipedia'='de:Bwegt'];
 node(487332409)['brand:wikidata'='Q450180']['brand:wikipedia'='de:Norma (Handelskette)'];
 way(1058961825)['brand:wikidata'='Q450180']['brand:wikipedia'='de:Norma (Handelskette)'];
 way(132086093)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
-way(136757075)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(136758062)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(137341434)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
 way(244847481)['brand:wikidata'='Q450180']['brand:wikipedia'='de:Norma (Handelskette)'];

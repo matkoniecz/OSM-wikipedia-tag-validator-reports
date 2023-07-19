@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-04-07. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-07-18. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,28 @@ This page was generated using data obtained on 2023-04-07. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li></ul>			</br>
+			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
+				</br>
+				wikipedia page in unexpected language - de was expected:
+				</br>
+				<a href="https://openstreetmap.org/relation/23063" target="_new">European route E 43 - an affected OSM element that may be improved</a>
+				</br>
+				en:European route E43 -> de:Europastraße 43
+				</br>
+				Europastra&#223;e 43
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(23063)['wikipedia'='en:European route E43'];
+); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
 			</br>
 			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
@@ -121,14 +142,6 @@ way(99014010)['wikidata'='Q897462']['wikipedia'='de:Braith-Mali-Museum'];
 				</br>
 				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
 				</br>
-				<a href="https://openstreetmap.org/relation/2951816" target="_new">Gemeindeverwaltungsverband Bad Buchau - an affected OSM element that may be improved</a>
-				</br>
-				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Związek gmin Bad Buchau'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Związek gmin Bad Buchau'}}]
-				</br>
-				<hr>
-				</br>
-				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
-				</br>
 				<a href="https://openstreetmap.org/relation/2951817" target="_new">Verwaltungsgemeinschaft Bad Schussenried - an affected OSM element that may be improved</a>
 				</br>
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Wspólnota administracyjna Bad Schussenried'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Wspólnota administracyjna Bad Schussenried'}}]
@@ -140,6 +153,14 @@ way(99014010)['wikidata'='Q897462']['wikipedia'='de:Braith-Mali-Museum'];
 				<a href="https://openstreetmap.org/way/168913012" target="_new">Blinder See - an affected OSM element that may be improved</a>
 				</br>
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'arz:بحيره بليندير سى'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'arz:بحيره بليندير سى'}}]
+				</br>
+				<hr>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				</br>
+				<a href="https://openstreetmap.org/way/504273077" target="_new">Schloss - Freiherr Reuttner von Weyl - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'en:Achstetten Castle'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'en:Achstetten Castle'}}]
 				</br>
 				<hr>
 			</br>
@@ -157,9 +178,9 @@ relation(2951707)['wikidata'='Q9392529']['wikipedia'!~'.*'];
 relation(2951708)['wikidata'='Q9378590']['wikipedia'!~'.*'];
 relation(2951720)['wikidata'='Q9392580']['wikipedia'!~'.*'];
 relation(2951721)['wikidata'='Q9378505']['wikipedia'!~'.*'];
-relation(2951816)['wikidata'='Q9392507']['wikipedia'!~'.*'];
 relation(2951817)['wikidata'='Q9378498']['wikipedia'!~'.*'];
 way(168913012)['wikidata'='Q31916087']['wikipedia'!~'.*'];
+way(504273077)['wikidata'='Q4673920']['wikipedia'!~'.*'];
 ); (._;>;); out meta qt;//['wikipedia from wikidata tag, unexpected language']</blockquote>
 			</br>
 			<hr>

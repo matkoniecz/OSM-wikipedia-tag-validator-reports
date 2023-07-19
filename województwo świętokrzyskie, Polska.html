@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-06-28. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-07-18. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,24 @@ This page was generated using data obtained on 2023-06-28. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#mismatching teryt:simc codes in wikidata and in osm element">mismatching teryt:simc codes in wikidata and in osm element</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia tag needs to be removed based on wikidata code and teryt:simc identifier">wikipedia tag needs to be removed based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for species prefixed tags">wikipedia wikidata mismatch - for species prefixed tags</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li></ul>			</br>
+<ul><li><a href="#should use a secondary wikipedia tag - linking from wikidata tag to a chain store">should use a secondary wikipedia tag - linking from wikidata tag to a chain store</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#mismatching teryt:simc codes in wikidata and in osm element">mismatching teryt:simc codes in wikidata and in osm element</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia tag needs to be removed based on wikidata code and teryt:simc identifier">wikipedia tag needs to be removed based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for species prefixed tags">wikipedia wikidata mismatch - for species prefixed tags</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li></ul>			</br>
+			<a href="#should use a secondary wikipedia tag - linking from wikidata tag to a chain store"><h2 id="should use a secondary wikipedia tag - linking from wikidata tag to a chain store">should use a secondary wikipedia tag - linking from wikidata tag to a chain store</h2></a>
+				</br>
+				linked wikidata entry (Q9345945) is about a chain store, so it is very unlikely to be correct <br />        subject:wikipedia=* or brand:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				</br>
+				<a href="https://openstreetmap.org/node/11045386131" target="_new">Stokrotka - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(11045386131)['wikidata'='Q9345945'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikidata tag to a chain store']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				</br>
 				wikidata and wikipedia tags link to a different objects (Q2562815 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has wikipedia tag that links redirect (&#x27;Ma&#322;ach&#243;w (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)&#x27; to &#x27;Ma&#322;ach&#243;w&#x27;).
@@ -450,6 +467,12 @@ way(251706125)['brand:wikidata'='Q552652']['brand:wikipedia'='en:Netto'];
 				</br>
 				<hr>
 				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q971649 vs Q1256909 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/1820036113" target="_new">Orlen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q9267646 vs (missing) wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/node/2753848944" target="_new">VeloBank - an affected OSM element that may be improved</a>
@@ -580,6 +603,7 @@ node(10797770161)['brand:wikidata'='Q110970254']['brand:wikipedia'='pl:InPost'];
 node(10916574849)['brand:wikidata'='Q110970254']['brand:wikipedia'='pl:InPost'];
 node(11010973876)['brand:wikidata'='Q28496595']['brand:wikipedia'='en:Yves Rocher (company)'];
 node(11010973884)['brand:wikidata'='Q2052213']['brand:wikipedia'='de:Parf&#252;merie Douglas'];
+node(1820036113)['brand:wikidata'='Q971649']['brand:wikipedia'='pl:Grupa Lotos'];
 node(2753848944)['brand:wikidata'='Q9267646']['brand:wikipedia'='pl:VeloBank'];
 node(3422777877)['brand:wikidata'='Q806653']['brand:wikipedia'='en:Santander Bank'];
 node(3650353940)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
@@ -606,13 +630,13 @@ way(666194570)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch 
 			</br>
 			<a href="#wikipedia wikidata mismatch - for operator prefixed tags"><h2 id="wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</h2></a>
 				</br>
-				operator:wikidata and operator:wikipedia tags link to a different objects (Q110457879 vs Q971649 wikidata id assigned to linked Wikipedia article)
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q110457879 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has operator:wikipedia tag that links redirect (&#x27;Polski Koncern Naftowy Orlen&#x27; to &#x27;Orlen&#x27;).
 				</br>
 				<a href="https://openstreetmap.org/node/9926873286" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
-				operator:wikidata and operator:wikipedia tags link to a different objects (Q110457879 vs Q971649 wikidata id assigned to linked Wikipedia article)
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q110457879 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has operator:wikipedia tag that links redirect (&#x27;Polski Koncern Naftowy Orlen&#x27; to &#x27;Orlen&#x27;).
 				</br>
 				<a href="https://openstreetmap.org/node/9966850751" target="_new">an affected OSM element that may be improved</a>
 				</br>
@@ -658,12 +682,6 @@ node(7797251792)['species:wikidata'='Q132922']['species:wikipedia'='pl:Wielb&#32
 				</br>
 				
 				</br>
-				<a href="https://openstreetmap.org/node/1820036113" target="_new">Lotos - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
 				<a href="https://openstreetmap.org/node/2519414959" target="_new">Lotos - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -677,12 +695,6 @@ node(7797251792)['species:wikidata'='Q132922']['species:wikipedia'='pl:Wielb&#32
 				
 				</br>
 				<a href="https://openstreetmap.org/node/8136983573" target="_new">LOTOS Optima SP713 - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				
-				</br>
-				<a href="https://openstreetmap.org/way/1012877081" target="_new">Lotos - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -714,11 +726,9 @@ node(7797251792)['species:wikidata'='Q132922']['species:wikipedia'='pl:Wielb&#32
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-node(1820036113)['wikidata'='Q1256909'];
 node(2519414959)['wikidata'='Q1256909'];
 node(6268786139)['wikidata'='Q9256201'];
 node(8136983573)['wikidata'='Q1256909'];
-way(1012877081)['wikidata'='Q1256909'];
 way(1035229163)['wikidata'='Q1256909'];
 way(1072613178)['wikidata'='Q1256909'];
 way(295789867)['wikidata'='Q1256909'];

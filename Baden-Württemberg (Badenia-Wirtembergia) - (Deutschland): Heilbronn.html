@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-04-07. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-07-18. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,41 @@ This page was generated using data obtained on 2023-04-07. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#information board with wikidata tag, not subject:wikidata">information board with wikidata tag, not subject:wikidata</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li></ul>			</br>
+<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a public transport network">should use a secondary wikipedia tag - linking from wikipedia tag to a public transport network</a></li><li><a href="#link to a disambiguation page">link to a disambiguation page</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#information board with wikidata tag, not subject:wikidata">information board with wikidata tag, not subject:wikidata</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#no longer existing brand (according to Wikidata)">no longer existing brand (according to Wikidata)</a></li></ul>			</br>
+			<a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a public transport network"><h2 id="should use a secondary wikipedia tag - linking from wikipedia tag to a public transport network">should use a secondary wikipedia tag - linking from wikipedia tag to a public transport network</h2></a>
+				</br>
+				linked wikidata entry (Q2326642) is about a public transport network, so it is very unlikely to be correct <br />        subject:wikipedia=* or operator:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				</br>
+				<a href="https://openstreetmap.org/relation/3211265" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(3211265)['wikipedia'='de:Stadtbahn Heilbronn'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia tag to a public transport network']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#link to a disambiguation page"><h2 id="link to a disambiguation page">link to a disambiguation page</h2></a>
+				</br>
+				link leads to a disambig page - not a proper wikipedia link (according to Wikidata - if target is not a disambig check Wikidata entry whether it is correct)<br /><br />R&#246;hrenbrunnen is 289 km away<br />Siebenr&#246;hrenbrunnen (Heilbronn) is 2 m away<br />Siebenr&#246;hrenbrunnen (Wachenheim) is 87 km away<br />
+				</br>
+				<a href="https://openstreetmap.org/way/94011461" target="_new">Siebenröhrenbrunnen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(94011461)['wikipedia'='de:Siebenr&#246;hrenbrunnen'];
+); (._;>;); out meta qt;//['link to a disambiguation page']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				</br>
 				wikidata and wikipedia tags link to a different objects (Q33220442 vs Q2576281 wikidata id assigned to linked Wikipedia article)
@@ -176,6 +210,12 @@ way(103292160)['wikidata'='Q98821319']['wikipedia'='de:Wartbergturm'];
 				</br>
 				<hr>
 				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q1637412 vs Q2307136 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/606830129" target="_new">Sparda-Bank Baden-Württemberg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				brand:wikidata and brand:wikipedia tags link to a different objects (Q85224313 vs Q16968817 wikidata id assigned to linked Wikipedia article)
 				</br>
 				<a href="https://openstreetmap.org/node/6313082347" target="_new">REWE To Go - an affected OSM element that may be improved</a>
@@ -193,6 +233,12 @@ way(103292160)['wikidata'='Q98821319']['wikipedia'='de:Wartbergturm'];
 				<a href="https://openstreetmap.org/way/135968418" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/366034037" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
 			</br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			</br>
@@ -203,9 +249,11 @@ node(318202790)['brand:wikidata'='Q450180']['brand:wikipedia'='de:Norma (Handels
 node(318208668)['brand:wikidata'='Q1637412']['brand:wikipedia'='de:Sparda-Bank (Deutschland)'];
 node(414085542)['brand:wikidata'='Q16968817']['brand:wikipedia'='de:Rewe (Markt)'];
 node(4623258059)['brand:wikidata'='Q2052213']['brand:wikipedia'='de:Parf&#252;merie Douglas'];
+node(606830129)['brand:wikidata'='Q1637412']['brand:wikipedia'='de:Sparda-Bank (Deutschland)'];
 node(6313082347)['brand:wikidata'='Q85224313']['brand:wikipedia'='en:REWE'];
 way(108369469)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
 way(135968418)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(366034037)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for brand prefixed tags']</blockquote>
 			</br>
 			<hr>
