@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-08-01. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-08-23. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,24 @@ This page was generated using data obtained on 2023-08-01. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#mismatching teryt:simc codes in wikidata and in osm element">mismatching teryt:simc codes in wikidata and in osm element</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for flag prefixed tags">wikipedia wikidata mismatch - for flag prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#link to a disambiguation page">link to a disambiguation page</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#malformed wikipedia tag">malformed wikipedia tag</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#mismatching teryt:simc codes in wikidata and in osm element">mismatching teryt:simc codes in wikidata and in osm element</a></li><li><a href="#wikipedia tag in outdated form and there is mismatch between links">wikipedia tag in outdated form and there is mismatch between links</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for flag prefixed tags">wikipedia wikidata mismatch - for flag prefixed tags</a></li></ul>			</br>
+			<a href="#link to a disambiguation page"><h2 id="link to a disambiguation page">link to a disambiguation page</h2></a>
+				</br>
+				link leads to a disambig page - not a proper wikipedia link (according to Wikidata - if target is not a disambig check Wikidata entry whether it is correct)<br /><br />Bia&#322;oru&#347; is 530 km away<br />Bledzew (gmina) is 341 km away<br />Czarna D&#261;br&#243;wka (gmina) is 171 km away<br />Do&#322;gie is 6244 km away<br />D&#322;ugie Jezioro is 6244 km away<br />D&#322;ugie Jezioro (Pojezierze Wa&#322;eckie) is 254 km away<br />Ewa Wolnicz-Paw&#322;owska is 6244 km away<br />Gustaw Leyding-Mielecki is 6244 km away<br />G&#322;&#243;wny Urz&#261;d Geodezji i Kartografii is 188 km away<br />I&#324;sko (gmina) is 298 km away<br />
+				</br>
+				<a href="https://openstreetmap.org/way/31548544" target="_new">Długie - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(31548544)['wikidata'='Q402538'];
+); (._;>;); out meta qt;//['link to a disambiguation page']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				</br>
 				wikidata and wikipedia tags link to a different objects (Q2039092 vs Q31135925 wikidata id assigned to linked Wikipedia article)
@@ -56,6 +73,23 @@ way(282809153)['wikidata'='Q2039092']['wikipedia'='pl:I&#322;awa G&#322;&#243;wn
 way(31023136)['wikidata'='Q35716325']['wikipedia'='de:Jezioro &#346;wi&#281;tajno (Olecko)'];
 way(80597403)['wikidata'='Q4112502']['wikipedia'='pl:&#321;awta'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#malformed wikipedia tag"><h2 id="malformed wikipedia tag">malformed wikipedia tag</h2></a>
+				</br>
+				malformed value in wikipedia tag (https://pl.wikipedia.org/wiki/Oblaci)
+				</br>
+				<a href="https://openstreetmap.org/way/286504163" target="_new">Dom Zakonny Misjonarzy Oblatów MN - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(286504163)['wikipedia'='https://pl.wikipedia.org/wiki/Oblaci'];
+); (._;>;); out meta qt;//['malformed wikipedia tag']</blockquote>
 			</br>
 			<hr>
 			</br>
@@ -160,6 +194,23 @@ node(31578447)['teryt:simc'='0472466']['wikidata'='Q8071611'];
 node(478404999)['teryt:simc'='0847191']['wikidata'='Q4981378'];
 node(4850734603)['teryt:simc'='1045565']['wikidata'='Q11799277'];
 ); (._;>;); out meta qt;//['mismatching teryt:simc codes in wikidata and in osm element']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia tag in outdated form and there is mismatch between links"><h2 id="wikipedia tag in outdated form and there is mismatch between links">wikipedia tag in outdated form and there is mismatch between links</h2></a>
+				</br>
+				wikipedia tag in outdated form ([&#x27;wikipedia:de&#x27;, &#x27;wikipedia:pl&#x27;], with following conflicts: [&#x27;pl:https://pl.wikipedia.org/wiki/Georg_Jacob_Steenke gives no link conflicting with another link Q1506097&#x27;, &#x27;de:https://de.wikipedia.org/wiki/Georg_Steenke gives no link conflicting with another link Q1506097&#x27;]). Mismatch between different links happened and requires human judgment to solve.
+				</br>
+				<a href="https://openstreetmap.org/node/11132139804" target="_new">Georga Jackoba Steenke - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(11132139804)['wikidata'='Q1506097']['wikipedia'!~'.*']['wikipedia:de'='https://de.wikipedia.org/wiki/Georg_Steenke']['wikipedia:pl'='https://pl.wikipedia.org/wiki/Georg_Jacob_Steenke'];
+); (._;>;); out meta qt;//['wikipedia tag in outdated form and there is mismatch between links']</blockquote>
 			</br>
 			<hr>
 			</br>
