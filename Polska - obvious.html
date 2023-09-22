@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on various dates including 2023-09-16, -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on various dates including -data-was-not-downloaded-for-now-, 2023-09-21. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on various dates including 2023-09-1
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				</br>
 				wikipedia page in unexpected language - pl was expected:
@@ -70,12 +70,31 @@ This page was generated using data obtained on various dates including 2023-09-1
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-node(472147202)['wikipedia'='en:Ethnographic Museum of Krak&#243;w'];
-node(680427589)['wikipedia'='de:Kanada (KZ Auschwitz)'];
-way(293340499)['wikipedia'='en:Solaris (synchrotron)'];
-way(385174811)['wikipedia'='en:Institute of Nuclear Physics of the Polish Academy of Sciences'];
-way(53908378)['wikipedia'='nl:Auschwitz-Birkenau'];
+node(472147202)['wikidata'='Q194616']['wikipedia'='en:Ethnographic Museum of Krak&#243;w'];
+node(680427589)['wikidata'='Q1723436']['wikipedia'='de:Kanada (KZ Auschwitz)'];
+way(293340499)['wikidata'='Q16605140']['wikipedia'='en:Solaris (synchrotron)'];
+way(385174811)['wikidata'='Q11713028']['wikipedia'='en:Institute of Nuclear Physics of the Polish Academy of Sciences'];
+way(53908378)['wikidata'='Q663764']['wikipedia'='nl:Auschwitz-Birkenau'];
 ); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				</br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				</br>
+				<a href="https://openstreetmap.org/relation/16357211" target="_new">Drewniane cerkwie w polskim i ukraińskim regionie Karpat / Дерев’яні церкви карпатського регіону Польщі та України - an affected OSM element that may be improved</a>
+				</br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Drewniane cerkwie w polskim i ukraińskim regionie Karpat'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Drewniane cerkwie w polskim i ukraińskim regionie Karpat'}}]
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(16357211)['wikidata'='Q8032604']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
 			</br>
 			<hr>
 			</br>
@@ -266,6 +285,12 @@ relation(2119457)['wikidata'!~'.*']['wikipedia'='pl:Zamek Kr&#243;lewski w Niepo
 				</br>
 				<hr>
 				</br>
+				Q30161885 vs Q11811576
+				</br>
+				<a href="https://openstreetmap.org/relation/174174" target="_new">Park Anny i Erazma Jerzmanowskich - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				Q86671521 vs Q30168149
 				</br>
 				<a href="https://openstreetmap.org/way/138515640" target="_new">Kamienica Pod Matką Boską - an affected OSM element that may be improved</a>
@@ -440,15 +465,33 @@ relation(2119457)['wikidata'!~'.*']['wikipedia'='pl:Zamek Kr&#243;lewski w Niepo
 				</br>
 				<hr>
 				</br>
+				Q30169188 vs Q9182268
+				</br>
+				<a href="https://openstreetmap.org/way/238867638" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				Q56327524 vs Q30168601
 				</br>
 				<a href="https://openstreetmap.org/way/304534997" target="_new">Kamienica Celestyńska - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
+				Q30162108 vs Q11695360
+				</br>
+				<a href="https://openstreetmap.org/way/306863421" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				Q42514801 vs Q30159445
 				</br>
 				<a href="https://openstreetmap.org/way/324110795" target="_new">Kaplica pw św. Stanisława Biskupa - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q30171751 vs Q11694657
+				</br>
+				<a href="https://openstreetmap.org/way/325406360" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -494,6 +537,7 @@ node(3598422900)['wikidata'='Q31791435']['wikipedia'='pl:Kobylarz'];
 node(3600809099)['wikidata'='Q31791438']['wikipedia'='pl:Kobylarzowa Turnia'];
 node(692632217)['wikidata'='Q33519193']['wikipedia'='pl:Wola Radziszowska'];
 node(692632434)['wikidata'='Q35699055']['wikipedia'='pl:Konary (wojew&#243;dztwo ma&#322;opolskie)'];
+relation(174174)['wikidata'='Q30161885']['wikipedia'='pl:Park im. Anny i Erazma Jerzmanowskich w Prokocimiu'];
 way(138515640)['wikidata'='Q86671521']['wikipedia'='pl:Kamienica Pod Matk&#261; Bosk&#261; w Krakowie'];
 way(138515642)['wikidata'='Q86671697']['wikipedia'='pl:Kamienica Pod Wiewi&#243;rk&#261; w Krakowie'];
 way(138515643)['wikidata'='Q86671402']['wikipedia'='pl:Kamienica Wanzamowska w Krakowie'];
@@ -523,8 +567,11 @@ way(230039111)['wikidata'='Q48861295']['wikipedia'='pl:Ko&#347;ci&#243;&#322; Po
 way(231537231)['wikidata'='Q110388618']['wikipedia'='pl:Ko&#347;ci&#243;&#322; &#347;w. Tr&#243;jcy i &#347;w. Klary w Starym S&#261;czu'];
 way(231950122)['wikidata'='Q84991088']['wikipedia'='pl:Ko&#347;ci&#243;&#322; Wniebowzi&#281;cia Naj&#347;wi&#281;tszej Maryi Panny w Ple&#347;nej'];
 way(232749832)['wikidata'='Q30333427']['wikipedia'='pl:Ko&#347;ci&#243;&#322; &#347;w. Katarzyny w Ulinie Wielkiej'];
+way(238867638)['wikidata'='Q30169188']['wikipedia'='pl:Bursa Grochowa w Krakowie'];
 way(304534997)['wikidata'='Q56327524']['wikipedia'='pl:Kamienica Celesty&#324;ska w Krakowie'];
+way(306863421)['wikidata'='Q30162108']['wikipedia'='pl:Dworek Pod Jeleniem w Krakowie'];
 way(324110795)['wikidata'='Q42514801']['wikipedia'='pl:Ko&#347;ci&#243;&#322; &#347;w. Stanis&#322;awa Biskupa w Odernem'];
+way(325406360)['wikidata'='Q30171751']['wikipedia'='pl:Dom Poller&#243;w w Krakowie'];
 way(390479201)['wikidata'='Q30217010']['wikipedia'='pl:Dw&#243;r Emila Zegad&#322;owicza w Gorzeniu G&#243;rnym'];
 way(45889321)['wikidata'='Q30172598']['wikipedia'='pl:Cmentarz &#380;ydowski w Tarnowie'];
 way(513954684)['wikidata'='Q8512880']['wikipedia'='pl:Cmentarz wojenny nr 191 &#8211; Lubcza'];
@@ -1181,6 +1228,12 @@ node(692609586)['teryt:simc'='0963514']['wikidata'='Q5191383']['wikipedia'='pl:J
 				</br>
 				<hr>
 				</br>
+				Q971649 vs (missing) article redirects from en:PKN Orlen to en:Orlen
+				</br>
+				<a href="https://openstreetmap.org/node/1980060497" target="_new">Orlen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				Q154037 vs (missing) article redirects from fr:Total (entreprise) to fr:TotalEnergies
 				</br>
 				<a href="https://openstreetmap.org/node/1992882634" target="_new">Total - an affected OSM element that may be improved</a>
@@ -1643,12 +1696,6 @@ node(692609586)['teryt:simc'='0963514']['wikidata'='Q5191383']['wikipedia'='pl:J
 				</br>
 				<hr>
 				</br>
-				Q971649 vs (missing) article redirects from en:PKN Orlen to en:Orlen
-				</br>
-				<a href="https://openstreetmap.org/way/93798841" target="_new">Orlen - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q610492 vs (missing) article redirects from en:SPAR (retailer) to en:Spar (retailer)
 				</br>
 				<a href="https://openstreetmap.org/way/999577784" target="_new">Spar - an affected OSM element that may be improved</a>
@@ -1670,6 +1717,7 @@ node(1875329542)['brand:wikidata'='Q971649']['brand:wikipedia'='en:PKN Orlen'];
 node(1903097991)['brand:wikidata'='Q971649']['brand:wikipedia'='en:PKN Orlen'];
 node(1916278963)['brand:wikidata'='Q4650251']['brand:wikipedia'='en:ABC Stores (Hawaii)'];
 node(1937701528)['brand:wikidata'='Q971649']['brand:wikipedia'='en:PKN Orlen'];
+node(1980060497)['brand:wikidata'='Q971649']['brand:wikipedia'='en:PKN Orlen'];
 node(1992882634)['brand:wikidata'='Q154037']['brand:wikipedia'='fr:Total (entreprise)'];
 node(2000577229)['brand:wikidata'='Q971649']['brand:wikipedia'='en:PKN Orlen'];
 node(2050447076)['brand:wikidata'='Q971649']['brand:wikipedia'='en:PKN Orlen'];
@@ -1747,7 +1795,6 @@ way(82857314)['brand:wikidata'='Q154950']['brand:wikipedia'='en:Royal Dutch Shel
 way(828578065)['brand:wikidata'='Q971649']['brand:wikipedia'='en:PKN Orlen'];
 way(923823150)['brand:wikidata'='Q971649']['brand:wikipedia'='en:PKN Orlen'];
 way(925843379)['brand:wikidata'='Q971649']['brand:wikipedia'='en:PKN Orlen'];
-way(93798841)['brand:wikidata'='Q971649']['brand:wikipedia'='en:PKN Orlen'];
 way(999577784)['brand:wikidata'='Q610492']['brand:wikipedia'='en:SPAR (retailer)'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for brand prefixed tags']</blockquote>
 			</br>
