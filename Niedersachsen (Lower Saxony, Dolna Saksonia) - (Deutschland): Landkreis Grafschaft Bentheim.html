@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-10-15. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,288 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a type of structure">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a type of structure</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a food">should use a secondary wikipedia tag - linking from wikipedia tag to a food</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for species prefixed tags">wikipedia wikidata mismatch - for species prefixed tags</a></li><li><a href="#species secondary tag links something that is not species according to wikidata (checking P105)">species secondary tag links something that is not species according to wikidata (checking P105)</a></li></ul>			</br>
+			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a type of structure"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a type of structure">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a type of structure</h2></a>
+				</br>
+				linked wikidata entry (Q523342) is about a type of structure, so it is very unlikely to be correct <br />        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				</br>
+				<a href="https://openstreetmap.org/node/4438920966" target="_new">Lager Alexisdorf - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(4438920966)['wikidata'='Q523342'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a type of structure']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a food"><h2 id="should use a secondary wikipedia tag - linking from wikipedia tag to a food">should use a secondary wikipedia tag - linking from wikipedia tag to a food</h2></a>
+				</br>
+				linked wikidata entry (Q158767) is about a food, so it is very unlikely to be correct <br />        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				</br>
+				<a href="https://openstreetmap.org/way/218861752" target="_new">Dinkel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(218861752)['wikipedia'='de:Dinkel'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia tag to a food']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</h2></a>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q344744 vs Q1181510 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/3115481611" target="_new">Mobilcom Debitel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/136999924" target="_new">ALDI Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/312407389" target="_new">ALDI Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/968263984" target="_new">ALDI Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(3115481611)['brand:wikidata'='Q344744']['brand:wikipedia'='en:Debitel'];
+way(136999924)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+way(312407389)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+way(968263984)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for brand prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - for species prefixed tags"><h2 id="wikipedia wikidata mismatch - for species prefixed tags">wikipedia wikidata mismatch - for species prefixed tags</h2></a>
+				</br>
+				species:wikidata and species:wikipedia tags link to a different objects (Q331065 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has species:wikipedia tag that links redirect (&#x27;Zebrafink&#x27; to &#x27;Zebrafinken&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/10116395285" target="_new">Zebrafink - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(10116395285)['species:wikidata'='Q331065']['species:wikipedia'='de:Zebrafink'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for species prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#species secondary tag links something that is not species according to wikidata (checking P105)"><h2 id="species secondary tag links something that is not species according to wikidata (checking P105)">species secondary tag links something that is not species according to wikidata (checking P105)</h2></a>
+				</br>
+				no matching P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111450383" target="_new">Präriehund - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111462418" target="_new">Brahma-Huhn - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111462574" target="_new">Buntes Bentheimer Schwein - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111462575" target="_new">Altdt. Schwarzbuntes Niederungsrind - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111462576" target="_new">Bentheimer Landschaf - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111462577" target="_new">Poitou-Esel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111584484" target="_new">Cröllwitzer Pute - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111584521" target="_new">Twentse Landgans - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no matching P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111584583" target="_new">Totenkopfaffen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no matching P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111584691" target="_new">Zweifinger-Faultier - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no matching P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111655128" target="_new">Stachelschwein - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no matching P105
+				</br>
+				<a href="https://openstreetmap.org/node/10111663076" target="_new">Amurleopard - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no matching P105
+				</br>
+				<a href="https://openstreetmap.org/node/10114600830" target="_new">Zwergesel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10114600831" target="_new">Zwergziege - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no matching P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395265" target="_new">Kolben-, Tafel- & Moorente - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no matching P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395266" target="_new">Mandarin- & Brautente - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395356" target="_new">Ouessantschaf - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395357" target="_new">Seidenhuhn & Antwerpener Bartzwerg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395362" target="_new">Buntes Bentheimer Schwein - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395363" target="_new">Jakobsschaf - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395364" target="_new">Poitou-Esel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395365" target="_new">Lakenvelder Rind - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395367" target="_new">Niederländische Landziege - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395392" target="_new">Kraienkopp - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395404" target="_new">Krummschnabelente - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no matching P105
+				</br>
+				<a href="https://openstreetmap.org/node/10116395405" target="_new">Riesenschecke - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(10111450383)['species:wikidata'='Q30359']['species:wikipedia'='de:Pr&#228;riehunde'];
+node(10111462418)['species:wikidata'='Q848926']['species:wikipedia'='de:Brahma (Huhn)'];
+node(10111462574)['species:wikidata'='Q818254']['species:wikipedia'='de:Bentheimer Landschwein'];
+node(10111462575)['species:wikidata'='Q474809']['species:wikipedia'='de:Deutsches Schwarzbuntes Niederungsrind'];
+node(10111462576)['species:wikidata'='Q818257']['species:wikipedia'='de:Bentheimer Landschaf'];
+node(10111462577)['species:wikidata'='Q653702']['species:wikipedia'='de:Poitou-Esel'];
+node(10111584484)['species:wikidata'='Q3028280']['species:wikipedia'='de:Cr&#246;llwitzer Pute'];
+node(10111584521)['species:wikidata'='Q2679377']['species:wikipedia'='en:Twente goose'];
+node(10111584583)['species:wikidata'='Q309200']['species:wikipedia'='de:Totenkopfaffen'];
+node(10111584691)['species:wikidata'='Q511079']['species:wikipedia'='de:Zweifinger-Faultiere'];
+node(10111655128)['species:wikidata'='Q302006']['species:wikipedia'='de:Stachelschweine'];
+node(10111663076)['species:wikidata'='Q192967']['species:wikipedia'='de:Amurleopard'];
+node(10114600830)['species:wikidata'='Q19707']['species:wikipedia'='de:Hausesel'];
+node(10114600831)['species:wikidata'='Q2934']['species:wikipedia'='de:Hausziege'];
+node(10116395265)['species:wikidata'='Q516377']['species:wikipedia'='de:Tauchenten'];
+node(10116395266)['species:wikidata'='Q131450']['species:wikipedia'='de:Aix (Gattung)'];
+node(10116395356)['species:wikidata'='Q1469688']['species:wikipedia'='de:Ouessantschaf'];
+node(10116395357)['species:wikidata'='Q780']['species:wikipedia'='de:Haushuhn'];
+node(10116395362)['species:wikidata'='Q818254']['species:wikipedia'='de:Bentheimer Landschwein'];
+node(10116395363)['species:wikidata'='Q486745']['species:wikipedia'='de:Jakobschaf'];
+node(10116395364)['species:wikidata'='Q653702']['species:wikipedia'='de:Poitou-Esel'];
+node(10116395365)['species:wikidata'='Q1479146']['species:wikipedia'='de:Lakenvelder Rind'];
+node(10116395367)['species:wikidata'='Q2934']['species:wikipedia'='de:Hausziege'];
+node(10116395392)['species:wikidata'='Q848926']['species:wikipedia'='de:Brahma (Huhn)'];
+node(10116395404)['species:wikidata'='Q5317315']['species:wikipedia'='en:Hook Bill'];
+node(10116395405)['species:wikidata'='Q149017']['species:wikipedia'='de:Hauskaninchen'];
+); (._;>;); out meta qt;//['species secondary tag links something that is not species according to wikidata (checking P105)']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>
