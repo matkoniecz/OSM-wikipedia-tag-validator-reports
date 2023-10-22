@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-10-21. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,1635 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a human">should use a secondary wikipedia tag - linking from wikipedia tag to a human</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#invalid old-style wikipedia tag">invalid old-style wikipedia tag</a></li><li><a href="#malformed secondary wikidata tag">malformed secondary wikidata tag</a></li><li><a href="#malformed wikipedia tag - for architect prefixed tags">malformed wikipedia tag - for architect prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for name:etymology prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for name:etymology prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for name:etymology prefixed tags">wikipedia wikidata mismatch - for name:etymology prefixed tags</a></li><li><a href="#species secondary tag links something that is not species according to wikidata (checking P105)">species secondary tag links something that is not species according to wikidata (checking P105)</a></li></ul>			</br>
+			<a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a human"><h2 id="should use a secondary wikipedia tag - linking from wikipedia tag to a human">should use a secondary wikipedia tag - linking from wikipedia tag to a human</h2></a>
+				</br>
+				linked wikidata entry (Q1373454) is about a human, so it is very unlikely to be correct <br />        subject:wikipedia=* or name:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				</br>
+				<a href="https://openstreetmap.org/node/7666463710" target="_new">Objektive Landschaft - Kartografisches Baumzeichen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(7666463710)['wikipedia'='de:Peter Br&#252;ning'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia tag to a human']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q1886621 vs Q54801974 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/3111627286" target="_new">Mettmann Zentrum - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q2500376 vs Q59974480 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/1536439" target="_new">Urdenbacher Kämpe - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q121295966 vs Q661002 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/relation/5756145" target="_new">U72: Ratingen Mitte → Hellriegelstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q97152484 vs Q1586071 wikidata id assigned to linked Wikipedia article) Note that this OSM object has wikipedia tag that links redirect (&#x27;Textilfabrik_Cromford&#x27; to &#x27;Textilfabrik Cromford&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/129805574" target="_new">Herrenhaus Cromford - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(3111627286)['wikidata'='Q1886621']['wikipedia'='de:Haltepunkt Mettmann Zentrum'];
+relation(1536439)['wikidata'='Q2500376']['wikipedia'='de:Urdenbacher K&#228;mpe'];
+relation(5756145)['wikidata'='Q121295966']['wikipedia'='en:D&#252;sseldorf Stadtbahn'];
+way(129805574)['wikidata'='Q97152484']['wikipedia'='de:Textilfabrik_Cromford'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#invalid old-style wikipedia tag"><h2 id="invalid old-style wikipedia tag">invalid old-style wikipedia tag</h2></a>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/1183050503" target="_new">Hasselbecker Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/1193931129" target="_new">Agnesstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/1207506380" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/1207506381" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/14345969" target="_new">Dr.-Kessel-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/144913299" target="_new">Esprit-Allee - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/14575120" target="_new">Karl-Mücher-Weg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148301749" target="_new">Am Stadion - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148301750" target="_new">Am Stadion - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148301759" target="_new">Stadionring - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148303609" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148310281" target="_new">Brunostraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148310282" target="_new">Franz-Rath-Platz - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148310293" target="_new">Steinhausgäßchen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148310294" target="_new">Steinhausgäßchen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148311207" target="_new">Am Alten Steinhaus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148311208" target="_new">Am Alten Steinhaus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148311211" target="_new">Am Alten Steinhaus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148311218" target="_new">Brunostraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148311639" target="_new">Franz-Rath-Platz - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148311640" target="_new">Franz-Rath-Platz - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/148836282" target="_new">Brunostraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/158246125" target="_new">Bertramsweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/158684803" target="_new">Bertramsweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/158684808" target="_new">Bertramsweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/158684817" target="_new">Bertramsweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/159509521" target="_new">Bertramsweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/159509526" target="_new">Bertramsweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/159509530" target="_new">Bertramsweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/180947698" target="_new">Hasselbecker Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/192339937" target="_new">Dr.-Kessel-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/197631888" target="_new">Am Alten Steinhaus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/197631891" target="_new">Am Alten Steinhaus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/20232005" target="_new">Agnesstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/20232013" target="_new">Elisabethstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/20232021" target="_new">Robert-Zapp-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/24726089" target="_new">Daniel-Goldbach-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/24726671" target="_new">Bertramsweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/24782204" target="_new">Angerstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/24782205" target="_new">Angerstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/24912768" target="_new">Hubert-Wollenberg-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/24912769" target="_new">Hubert-Wollenberg-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/24912770" target="_new">Hubert-Wollenberg-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/24912771" target="_new">Hubert-Wollenberg-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/24921752" target="_new">Am Seeufer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25005553" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25008729" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25050278" target="_new">Am Grünen See - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25050303" target="_new">Am Grünen See - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25050307" target="_new">Am Grünen See - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25050313" target="_new">Am Grünen See - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25050321" target="_new">Am Grünen See - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25289812" target="_new">Am Seeufer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25383101" target="_new">Karl-Mücher-Weg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25383102" target="_new">Karl-Mücher-Weg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25401074" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25401076" target="_new">Theo-Leuchten-Weg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25423824" target="_new">Zur Spiegelglasfabrik - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25423825" target="_new">Zur Spiegelglasfabrik - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25425905" target="_new">Am Seeufer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25425907" target="_new">Am Seeufer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25425908" target="_new">Am Seeufer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25425909" target="_new">Am Seeufer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25425912" target="_new">Am Seeufer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25426893" target="_new">Am Seeufer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25427940" target="_new">Glasbergweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25429775" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25429776" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25659329" target="_new">Am Trinsenturm - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/25946167" target="_new">Am Alten Steinhaus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/29380381" target="_new">Theo-Leuchten-Weg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/30144976" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/30673192" target="_new">Theo-Leuchten-Weg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/358311330" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/358311331" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/358311332" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/358311333" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/358311334" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/358329868" target="_new">Am Seeufer - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/358329892" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/358329894" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/358329896" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/358329898" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/374752176" target="_new">Daniel-Goldbach-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/38957896" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/40940262" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/4476914" target="_new">Dr.-Kessel-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/52251319" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/52609305" target="_new">Angerstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/550911859" target="_new">Elisabethstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/575912635" target="_new">Brunostraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/764363752" target="_new">Bertramsweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/80339452" target="_new">Steinhausgäßchen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/814938712" target="_new">Daniel-Goldbach-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/814938713" target="_new">Daniel-Goldbach-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/814989724" target="_new">Elisabethstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/849576801" target="_new">Stadionring - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/849576802" target="_new">Stadionring - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/849576804" target="_new">Stadionring - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/849576807" target="_new">Stadionring - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/851279512" target="_new">Stadionring - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/851788446" target="_new">Stadionring - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/889574579" target="_new">Stadionring - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/8905747" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/8905803" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/8905833" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/961725309" target="_new">Glasbergweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/961725310" target="_new">Glasbergweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/961725313" target="_new">Theo-Leuchten-Weg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/9665248" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/9665268" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/97073141" target="_new">Karl-Mücher-Weg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/97073150" target="_new">Karl-Mücher-Weg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/97073155" target="_new">Karl-Mücher-Weg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form (name:etymology:wikipedia:missing), is not using any known language code
+				</br>
+				<a href="https://openstreetmap.org/way/97073156" target="_new">Karl-Mücher-Weg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(1183050503)['name:etymology:wikipedia:missing'='de:Honschaft Hasselbeck (Amt Mettmann)'];
+way(1193931129)['name:etymology:wikipedia:missing'='de:Agnes von Kleve (1296-1360), Landesherrin, verlieh Ratingen das Biergr&#252;tgerechtsam'];
+way(1207506380)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(1207506381)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(14345969)['name:etymology:wikipedia:missing'='de:Johann_Hubert_Kessel'];
+way(144913299)['name:etymology:wikipedia:missing'='de:Esprit_Holdings'];
+way(14575120)['name:etymology:wikipedia:missing'='de:Karl_Josef_M&#252;cher'];
+way(148301749)['name:etymology:wikipedia:missing'='de:Ratingen Stadium'];
+way(148301750)['name:etymology:wikipedia:missing'='de:Ratingen Stadium'];
+way(148301759)['name:etymology:wikipedia:missing'='de:Ratingen Stadium'];
+way(148303609)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(148310281)['name:etymology:wikipedia:missing'='de:Bruno de Duysborgh genannt Meens (gest. 1411)'];
+way(148310282)['name:etymology:wikipedia:missing'='de:Franz Rath (1907 - 1969)'];
+way(148310293)['name:etymology:wikipedia:missing'='de:Altes Steinhaus (Ratingen)'];
+way(148310294)['name:etymology:wikipedia:missing'='de:Altes Steinhaus (Ratingen)'];
+way(148311207)['name:etymology:wikipedia:missing'='de:Altes Steinhaus (Ratingen)'];
+way(148311208)['name:etymology:wikipedia:missing'='de:Altes Steinhaus (Ratingen)'];
+way(148311211)['name:etymology:wikipedia:missing'='de:Altes Steinhaus (Ratingen)'];
+way(148311218)['name:etymology:wikipedia:missing'='de:Bruno de Duysborgh genannt Meens (gest. 1411)'];
+way(148311639)['name:etymology:wikipedia:missing'='de:Franz Rath (1907 - 1969)'];
+way(148311640)['name:etymology:wikipedia:missing'='de:Franz Rath (1907 - 1969)'];
+way(148836282)['name:etymology:wikipedia:missing'='de:Bruno de Duysborgh genannt Meens (gest. 1411)'];
+way(158246125)['name:etymology:wikipedia:missing'='de:Joseph Bertrams (1875-1945), Landwirt, Gemeindevorsteher in Eckamp, Gr&#252;nder und Leiter der Feuerwehr Tiefenbroich'];
+way(158684803)['name:etymology:wikipedia:missing'='de:Joseph Bertrams (1875-1945), Landwirt, Gemeindevorsteher in Eckamp, Gr&#252;nder und Leiter der Feuerwehr Tiefenbroich'];
+way(158684808)['name:etymology:wikipedia:missing'='de:Joseph Bertrams (1875-1945), Landwirt, Gemeindevorsteher in Eckamp, Gr&#252;nder und Leiter der Feuerwehr Tiefenbroich'];
+way(158684817)['name:etymology:wikipedia:missing'='de:Joseph Bertrams (1875-1945), Landwirt, Gemeindevorsteher in Eckamp, Gr&#252;nder und Leiter der Feuerwehr Tiefenbroich'];
+way(159509521)['name:etymology:wikipedia:missing'='de:Joseph Bertrams (1875-1945), Landwirt, Gemeindevorsteher in Eckamp, Gr&#252;nder und Leiter der Feuerwehr Tiefenbroich'];
+way(159509526)['name:etymology:wikipedia:missing'='de:Joseph Bertrams (1875-1945), Landwirt, Gemeindevorsteher in Eckamp, Gr&#252;nder und Leiter der Feuerwehr Tiefenbroich'];
+way(159509530)['name:etymology:wikipedia:missing'='de:Joseph Bertrams (1875-1945), Landwirt, Gemeindevorsteher in Eckamp, Gr&#252;nder und Leiter der Feuerwehr Tiefenbroich'];
+way(180947698)['name:etymology:wikipedia:missing'='de:Honschaft Hasselbeck (Amt Mettmann)'];
+way(192339937)['name:etymology:wikipedia:missing'='de:Johann_Hubert_Kessel'];
+way(197631888)['name:etymology:wikipedia:missing'='de:Altes Steinhaus (Ratingen)'];
+way(197631891)['name:etymology:wikipedia:missing'='de:Altes Steinhaus (Ratingen)'];
+way(20232005)['name:etymology:wikipedia:missing'='de:Agnes von Kleve (1296-1360), Landesherrin, verlieh Ratingen das Biergr&#252;tgerechtsam'];
+way(20232013)['name:etymology:wikipedia:missing'='de:Elisabeth von Geldern ( - 1313-03-31), Herzogin von Geldern, Graf Adolf und Elisabeth von Berg erhoben Ratingen zur Stadt'];
+way(20232021)['name:etymology:wikipedia:missing'='de:Robert Zapp (1837-1913), Unternehmer, Stahlh&#228;ndler'];
+way(24726089)['name:etymology:wikipedia:missing'='de:Daniel Goldbach (1568-1635), erster Prediger der reformierten Gemeinde in Ratingen'];
+way(24726671)['name:etymology:wikipedia:missing'='de:Joseph Bertrams (1875-1945), Landwirt, Gemeindevorsteher in Eckamp, Gr&#252;nder und Leiter der Feuerwehr Tiefenbroich'];
+way(24782204)['name:etymology:wikipedia:missing'='de:Angerbach'];
+way(24782205)['name:etymology:wikipedia:missing'='de:Angerbach'];
+way(24912768)['name:etymology:wikipedia:missing'='de:Hubert Wollenberg (1914-1992), Ratsmitglied, hat sich um den Ortsteil Eckamp verdient gemacht'];
+way(24912769)['name:etymology:wikipedia:missing'='de:Hubert Wollenberg (1914-1992), Ratsmitglied, hat sich um den Ortsteil Eckamp verdient gemacht'];
+way(24912770)['name:etymology:wikipedia:missing'='de:Hubert Wollenberg (1914-1992), Ratsmitglied, hat sich um den Ortsteil Eckamp verdient gemacht'];
+way(24912771)['name:etymology:wikipedia:missing'='de:Hubert Wollenberg (1914-1992), Ratsmitglied, hat sich um den Ortsteil Eckamp verdient gemacht'];
+way(24921752)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25005553)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(25008729)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(25050278)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25050303)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25050307)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25050313)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25050321)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25289812)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25383101)['name:etymology:wikipedia:missing'='de:Karl_Josef_M&#252;cher'];
+way(25383102)['name:etymology:wikipedia:missing'='de:Karl_Josef_M&#252;cher'];
+way(25401074)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(25401076)['name:etymology:wikipedia:missing'='de:Theo Leuchten (1922-1988), Besitzer von Gut Volkardey, Ratingen'];
+way(25423824)['name:etymology:wikipedia:missing'='de:Rheinische Spiegelglasfabrik'];
+way(25423825)['name:etymology:wikipedia:missing'='de:Rheinische Spiegelglasfabrik'];
+way(25425905)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25425907)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25425908)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25425909)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25425912)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25426893)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(25427940)['name:etymology:wikipedia:missing'='de:Rheinische Spiegelglasfabrik'];
+way(25429775)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(25429776)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(25659329)['name:etymology:wikipedia:missing'='Trinsenturm_(Ratingen)'];
+way(25946167)['name:etymology:wikipedia:missing'='de:Altes Steinhaus (Ratingen)'];
+way(29380381)['name:etymology:wikipedia:missing'='de:Theo Leuchten (1922-1988), Besitzer von Gut Volkardey, Ratingen'];
+way(30144976)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(30673192)['name:etymology:wikipedia:missing'='de:Theo Leuchten (1922-1988), Besitzer von Gut Volkardey, Ratingen'];
+way(358311330)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(358311331)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(358311332)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(358311333)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(358311334)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(358329868)['name:etymology:wikipedia:missing'='de:Gr&#252;ner See (Ratingen)'];
+way(358329892)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(358329894)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(358329896)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(358329898)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(374752176)['name:etymology:wikipedia:missing'='de:Daniel Goldbach (1568-1635), erster Prediger der reformierten Gemeinde in Ratingen'];
+way(38957896)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(40940262)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(4476914)['name:etymology:wikipedia:missing'='de:Johann_Hubert_Kessel'];
+way(52251319)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(52609305)['name:etymology:wikipedia:missing'='de:Angerbach'];
+way(550911859)['name:etymology:wikipedia:missing'='de:Elisabeth von Geldern ( - 1313-03-31), Herzogin von Geldern, Graf Adolf und Elisabeth von Berg erhoben Ratingen zur Stadt'];
+way(575912635)['name:etymology:wikipedia:missing'='de:Bruno de Duysborgh genannt Meens (gest. 1411)'];
+way(764363752)['name:etymology:wikipedia:missing'='de:Joseph Bertrams (1875-1945), Landwirt, Gemeindevorsteher in Eckamp, Gr&#252;nder und Leiter der Feuerwehr Tiefenbroich'];
+way(80339452)['name:etymology:wikipedia:missing'='de:Altes Steinhaus (Ratingen)'];
+way(814938712)['name:etymology:wikipedia:missing'='de:Daniel Goldbach (1568-1635), erster Prediger der reformierten Gemeinde in Ratingen'];
+way(814938713)['name:etymology:wikipedia:missing'='de:Daniel Goldbach (1568-1635), erster Prediger der reformierten Gemeinde in Ratingen'];
+way(814989724)['name:etymology:wikipedia:missing'='de:Elisabeth von Geldern ( - 1313-03-31), Herzogin von Geldern, Graf Adolf und Elisabeth von Berg erhoben Ratingen zur Stadt'];
+way(849576801)['name:etymology:wikipedia:missing'='de:Ratingen Stadium'];
+way(849576802)['name:etymology:wikipedia:missing'='de:Ratingen Stadium'];
+way(849576804)['name:etymology:wikipedia:missing'='de:Ratingen Stadium'];
+way(849576807)['name:etymology:wikipedia:missing'='de:Ratingen Stadium'];
+way(851279512)['name:etymology:wikipedia:missing'='de:Ratingen Stadium'];
+way(851788446)['name:etymology:wikipedia:missing'='de:Ratingen Stadium'];
+way(889574579)['name:etymology:wikipedia:missing'='de:Ratingen Stadium'];
+way(8905747)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(8905803)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(8905833)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(961725309)['name:etymology:wikipedia:missing'='de:Rheinische Spiegelglasfabrik'];
+way(961725310)['name:etymology:wikipedia:missing'='de:Rheinische Spiegelglasfabrik'];
+way(961725313)['name:etymology:wikipedia:missing'='de:Theo Leuchten (1922-1988), Besitzer von Gut Volkardey, Ratingen'];
+way(9665248)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(9665268)['name:etymology:wikipedia:missing'='de:Gut Volkardey, Ratingen'];
+way(97073141)['name:etymology:wikipedia:missing'='de:Karl_Josef_M&#252;cher'];
+way(97073150)['name:etymology:wikipedia:missing'='de:Karl_Josef_M&#252;cher'];
+way(97073155)['name:etymology:wikipedia:missing'='de:Karl_Josef_M&#252;cher'];
+way(97073156)['name:etymology:wikipedia:missing'='de:Karl_Josef_M&#252;cher'];
+); (._;>;); out meta qt;//['invalid old-style wikipedia tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#malformed secondary wikidata tag"><h2 id="malformed secondary wikidata tag">malformed secondary wikidata tag</h2></a>
+				</br>
+				malformed value in name:etymology:wikidata:missing tag (Peter Kockerscheidt (1845-1932), Besitzer des Guts Zum Eigen, Landrat, Beigeordneter in Eckamp)
+				</br>
+				<a href="https://openstreetmap.org/way/142899695" target="_new">Kockerscheidtweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed value in name:etymology:wikidata:missing tag (Peter Kockerscheidt (1845-1932), Besitzer des Guts Zum Eigen, Landrat, Beigeordneter in Eckamp)
+				</br>
+				<a href="https://openstreetmap.org/way/142899699" target="_new">Kockerscheidtweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed value in name:etymology:wikidata:missing tag (Gut Volkardey, Ratingen)
+				</br>
+				<a href="https://openstreetmap.org/way/148302750" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed value in name:etymology:wikidata:missing tag (Peter Kockerscheidt (1845-1932), Besitzer des Guts Zum Eigen, Landrat, Beigeordneter in Eckamp)
+				</br>
+				<a href="https://openstreetmap.org/way/25438170" target="_new">Kockerscheidtweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed value in name:etymology:wikidata:missing tag (Gut Volkardey, Ratingen)
+				</br>
+				<a href="https://openstreetmap.org/way/358329887" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed value in name:etymology:wikidata:missing tag (Gut Volkardey, Ratingen)
+				</br>
+				<a href="https://openstreetmap.org/way/358329889" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed value in name:etymology:wikidata:missing tag (Gut Volkardey, Ratingen)
+				</br>
+				<a href="https://openstreetmap.org/way/358329891" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed value in name:etymology:wikidata:missing tag (Gut Volkardey, Ratingen)
+				</br>
+				<a href="https://openstreetmap.org/way/851788436" target="_new">Volkardeyer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(142899695)['name:etymology:wikidata:missing'='Peter Kockerscheidt (1845-1932), Besitzer des Guts Zum Eigen, Landrat, Beigeordneter in Eckamp'];
+way(142899699)['name:etymology:wikidata:missing'='Peter Kockerscheidt (1845-1932), Besitzer des Guts Zum Eigen, Landrat, Beigeordneter in Eckamp'];
+way(148302750)['name:etymology:wikidata:missing'='Gut Volkardey, Ratingen'];
+way(25438170)['name:etymology:wikidata:missing'='Peter Kockerscheidt (1845-1932), Besitzer des Guts Zum Eigen, Landrat, Beigeordneter in Eckamp'];
+way(358329887)['name:etymology:wikidata:missing'='Gut Volkardey, Ratingen'];
+way(358329889)['name:etymology:wikidata:missing'='Gut Volkardey, Ratingen'];
+way(358329891)['name:etymology:wikidata:missing'='Gut Volkardey, Ratingen'];
+way(851788436)['name:etymology:wikidata:missing'='Gut Volkardey, Ratingen'];
+); (._;>;); out meta qt;//['malformed secondary wikidata tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#malformed wikipedia tag - for architect prefixed tags"><h2 id="malformed wikipedia tag - for architect prefixed tags">malformed wikipedia tag - for architect prefixed tags</h2></a>
+				</br>
+				malformed architect:wikipedia tag (https://de.wikipedia.org/wiki/Gottfried_B%C3%B6hm)
+				</br>
+				<a href="https://openstreetmap.org/way/115768554" target="_new">Mariendom - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed architect:wikipedia tag (https://de.wikipedia.org/wiki/August_Carl_Lange)
+				</br>
+				<a href="https://openstreetmap.org/way/144587585" target="_new">Marienburg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				malformed architect:wikipedia tag (https://de.wikipedia.org/wiki/Heinrich_Plange)
+				</br>
+				<a href="https://openstreetmap.org/way/180787661" target="_new">Neanderkirche - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(115768554)['architect:wikipedia'='https://de.wikipedia.org/wiki/Gottfried_B%C3%B6hm'];
+way(144587585)['architect:wikipedia'='https://de.wikipedia.org/wiki/August_Carl_Lange'];
+way(180787661)['architect:wikipedia'='https://de.wikipedia.org/wiki/Heinrich_Plange'];
+); (._;>;); out meta qt;//['malformed wikipedia tag - for architect prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags</h2></a>
+			</br>
+			brand:wikidata and brand:wikipedia tags link to a different objects, because brand:wikidata tag points to a redirect that should be followed
+				</br>
+				article claims to point to disambig, brand:wikidata does not. brand:wikidata tag is likely to be correct, brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/way/144289404" target="_new">Dehner - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(144289404)['brand:wikidata'='Q1183029']['brand:wikipedia'='de:Dehner'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags</h2></a>
+			</br>
+			operator:wikidata and operator:wikipedia tags link to a different objects, because operator:wikidata tag points to a redirect that should be followed
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/1814115211" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/1814115212" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/1814115218" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/1920007874" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/2503268712" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/3150265519" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/364522606" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/3726298478" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/372878315" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/372886693" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/443359712" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/4700697323" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/528219719" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/6571212896" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/663258163" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/767822351" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/879816627" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/879816649" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, operator:wikidata does not. operator:wikidata tag is likely to be correct, operator:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/879816655" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1814115211)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(1814115212)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(1814115218)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(1920007874)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(2503268712)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(3150265519)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(364522606)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(3726298478)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(372878315)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(372886693)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(443359712)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(4700697323)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(528219719)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(6571212896)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(663258163)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(767822351)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(879816627)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(879816649)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+node(879816655)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsche Post'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for name:etymology prefixed tags"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for name:etymology prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for name:etymology prefixed tags</h2></a>
+			</br>
+			name:etymology:wikidata and name:etymology:wikipedia tags link to a different objects, because name:etymology:wikidata tag points to a redirect that should be followed
+				</br>
+				article claims to point to disambig, name:etymology:wikidata does not. name:etymology:wikidata tag is likely to be correct, name:etymology:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/way/25409489" target="_new">Goldregenweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, name:etymology:wikidata does not. name:etymology:wikidata tag is likely to be correct, name:etymology:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/way/25409637" target="_new">Goldregenweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, name:etymology:wikidata does not. name:etymology:wikidata tag is likely to be correct, name:etymology:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/way/38752027" target="_new">Goldregenweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, name:etymology:wikidata does not. name:etymology:wikidata tag is likely to be correct, name:etymology:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/way/38752029" target="_new">Goldregenweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, name:etymology:wikidata does not. name:etymology:wikidata tag is likely to be correct, name:etymology:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/way/38752030" target="_new">Goldregenweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, name:etymology:wikidata does not. name:etymology:wikidata tag is likely to be correct, name:etymology:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/way/38905738" target="_new">Goldregenweg - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(25409489)['name:etymology:wikidata'='Q147184']['name:etymology:wikipedia'='de:Goldregen'];
+way(25409637)['name:etymology:wikidata'='Q147184']['name:etymology:wikipedia'='de:Goldregen'];
+way(38752027)['name:etymology:wikidata'='Q147184']['name:etymology:wikipedia'='de:Goldregen'];
+way(38752029)['name:etymology:wikidata'='Q147184']['name:etymology:wikipedia'='de:Goldregen'];
+way(38752030)['name:etymology:wikidata'='Q147184']['name:etymology:wikipedia'='de:Goldregen'];
+way(38905738)['name:etymology:wikidata'='Q147184']['name:etymology:wikipedia'='de:Goldregen'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for name:etymology prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</h2></a>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/1026889289" target="_new">ALDI Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q2401561 vs (missing) wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/1347814525" target="_new">O2 - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q344744 vs Q1181510 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/1347814530" target="_new">Mobilcom Debitel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q19284021 vs Q1267518 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/1362971071" target="_new">Getränke Hoffmann - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/1619217623" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q48883773 vs Q1189641 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/1619217627" target="_new">denn's Biomarkt - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/1785984659" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q344744 vs Q1181510 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2056530858" target="_new">Mobilcom Debitel - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2498067559" target="_new">ALDI Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2508590925" target="_new">ALDI Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2611544725" target="_new">ALDI Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/2999531281" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q109930371 vs Q2031095 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2999531282" target="_new">Star - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q2052213 vs Q570747 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/4322034980" target="_new">Douglas - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q640418 vs Q594721 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/4322035190" target="_new">Vero Moda - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/436466295" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q109930239 vs Q1563517 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/4531447143" target="_new">HEM - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/500809261" target="_new">ALDI Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/513903186" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/5655384028" target="_new">Aldi Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q640418 vs Q594721 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/6478656803" target="_new">Vero Moda - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q36646398 vs Q109649255 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/6478656818" target="_new">Volksbank im Bergischen Land - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q109930371 vs Q2031095 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/665723243" target="_new">star Tankstelle - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q36646398 vs Q109649255 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/6794601870" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q478214 vs Q17089620 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/7396258107" target="_new">Hilden Supercharger - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q109930371 vs Q2031095 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/740877347" target="_new">Star /Orlen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q36646398 vs Q109649255 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/8948572051" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/9589923036" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q2052213 vs Q570747 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/992023991" target="_new">Douglas - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/102046792" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/104051219" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/110224509" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/122111324" target="_new">ALDI Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/133758971" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/144773643" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs Q154950 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/150807377" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/227785115" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/24996688" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/29388223" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q109930371 vs Q2031095 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/298785264" target="_new">Star - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/30709244" target="_new">ALDI Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/49232908" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/775915741" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/87296003" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/90837713" target="_new">ALDI Nord - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/91221326" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/926338818" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/97543781" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171672 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/981661604" target="_new">ALDI Süd - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1026889289)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+node(1347814525)['brand:wikidata'='Q2401561']['brand:wikipedia'='de:O2 Deutschland'];
+node(1347814530)['brand:wikidata'='Q344744']['brand:wikipedia'='en:Debitel'];
+node(1362971071)['brand:wikidata'='Q19284021']['brand:wikipedia'='de:Dursty Getr&#228;nkem&#228;rkte'];
+node(1619217623)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+node(1619217627)['brand:wikidata'='Q48883773']['brand:wikipedia'='de:Dennree'];
+node(1785984659)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+node(2056530858)['brand:wikidata'='Q344744']['brand:wikipedia'='en:Debitel'];
+node(2498067559)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+node(2508590925)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+node(2611544725)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+node(2999531281)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(2999531282)['brand:wikidata'='Q109930371']['brand:wikipedia'='de:Orlen Deutschland'];
+node(4322034980)['brand:wikidata'='Q2052213']['brand:wikipedia'='de:Parf&#252;merie Douglas'];
+node(4322035190)['brand:wikidata'='Q640418']['brand:wikipedia'='en:Bestseller (company)'];
+node(436466295)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+node(4531447143)['brand:wikidata'='Q109930239']['brand:wikipedia'='de:Deutsche Tamoil'];
+node(500809261)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+node(513903186)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+node(5655384028)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+node(6478656803)['brand:wikidata'='Q640418']['brand:wikipedia'='en:Bestseller (company)'];
+node(6478656818)['brand:wikidata'='Q36646398']['brand:wikipedia'='en:Volksbank'];
+node(665723243)['brand:wikidata'='Q109930371']['brand:wikipedia'='de:Orlen Deutschland'];
+node(6794601870)['brand:wikidata'='Q36646398']['brand:wikipedia'='en:Volksbank'];
+node(7396258107)['brand:wikidata'='Q478214']['brand:wikipedia'='en:Tesla Supercharger'];
+node(740877347)['brand:wikidata'='Q109930371']['brand:wikipedia'='de:Orlen Deutschland'];
+node(8948572051)['brand:wikidata'='Q36646398']['brand:wikipedia'='en:Volksbank'];
+node(9589923036)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(992023991)['brand:wikidata'='Q2052213']['brand:wikipedia'='de:Parf&#252;merie Douglas'];
+way(102046792)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(104051219)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(110224509)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(122111324)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+way(133758971)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(144773643)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+way(150807377)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Shell plc'];
+way(227785115)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(24996688)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(29388223)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(298785264)['brand:wikidata'='Q109930371']['brand:wikipedia'='de:Orlen Deutschland'];
+way(30709244)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+way(49232908)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(775915741)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(87296003)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(90837713)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+way(91221326)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(926338818)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+way(97543781)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+way(981661604)['brand:wikidata'='Q41171672']['brand:wikipedia'='en:Aldi'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for brand prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - for name:etymology prefixed tags"><h2 id="wikipedia wikidata mismatch - for name:etymology prefixed tags">wikipedia wikidata mismatch - for name:etymology prefixed tags</h2></a>
+				</br>
+				name:etymology:wikidata and name:etymology:wikipedia tags link to a different objects (Q1718 vs (missing) wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/101532637" target="_new">Düsseldorfer Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				name:etymology:wikidata and name:etymology:wikipedia tags link to a different objects (Q97321422 vs Q3791 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/148310305" target="_new">Turmstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				name:etymology:wikidata and name:etymology:wikipedia tags link to a different objects (Q97321422 vs Q3791 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/148311227" target="_new">Turmstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				name:etymology:wikidata and name:etymology:wikipedia tags link to a different objects (Q1895069 vs (missing) wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/24726220" target="_new">Margaretenstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				name:etymology:wikidata and name:etymology:wikipedia tags link to a different objects (Q1895069 vs (missing) wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/24726221" target="_new">Margaretenstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				name:etymology:wikidata and name:etymology:wikipedia tags link to a different objects (Q1730390 vs (missing) wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/36571274" target="_new">Dietrich-Bonhoeffer-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				name:etymology:wikidata and name:etymology:wikipedia tags link to a different objects (Q97321422 vs Q3791 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/374240381" target="_new">Turmstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				name:etymology:wikidata and name:etymology:wikipedia tags link to a different objects (Q97321422 vs Q3791 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/376107650" target="_new">Turmstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				name:etymology:wikidata and name:etymology:wikipedia tags link to a different objects (Q97321422 vs Q3791 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/376107653" target="_new">Turmstraße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(101532637)['name:etymology:wikidata'='Q1718']['name:etymology:wikipedia'='de:D&#252;sseldorfer'];
+way(148310305)['name:etymology:wikidata'='Q97321422']['name:etymology:wikipedia'='de:Ratingen#Stadtmauer'];
+way(148311227)['name:etymology:wikidata'='Q97321422']['name:etymology:wikipedia'='de:Ratingen#Stadtmauer'];
+way(24726220)['name:etymology:wikidata'='Q1895069']['name:etymology:wikipedia'='de:Margarethe von Ravensberg-Berg'];
+way(24726221)['name:etymology:wikidata'='Q1895069']['name:etymology:wikipedia'='de:Margarethe von Ravensberg-Berg'];
+way(36571274)['name:etymology:wikidata'='Q1730390']['name:etymology:wikipedia'='de:Dietrich Bonnhoeffer'];
+way(374240381)['name:etymology:wikidata'='Q97321422']['name:etymology:wikipedia'='de:Ratingen#Stadtmauer'];
+way(376107650)['name:etymology:wikidata'='Q97321422']['name:etymology:wikipedia'='de:Ratingen#Stadtmauer'];
+way(376107653)['name:etymology:wikidata'='Q97321422']['name:etymology:wikipedia'='de:Ratingen#Stadtmauer'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for name:etymology prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#species secondary tag links something that is not species according to wikidata (checking P105)"><h2 id="species secondary tag links something that is not species according to wikidata (checking P105)">species secondary tag links something that is not species according to wikidata (checking P105)</h2></a>
+				</br>
+				no P105
+				</br>
+				<a href="https://openstreetmap.org/way/874018555" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(874018555)['species:wikidata'='Q2934']['species:wikipedia'='de:Hausziege'];
+); (._;>;); out meta qt;//['species secondary tag links something that is not species according to wikidata (checking P105)']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>
