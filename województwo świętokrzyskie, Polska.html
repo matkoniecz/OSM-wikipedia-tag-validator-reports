@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-10-23. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,720 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#mismatching teryt:simc codes in wikidata and in osm element">mismatching teryt:simc codes in wikidata and in osm element</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia tag needs to be removed based on wikidata code and teryt:simc identifier">wikipedia tag needs to be removed based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for species prefixed tags">wikipedia wikidata mismatch - for species prefixed tags</a></li><li><a href="#species secondary tag links something that is not species according to wikidata (checking P105)">species secondary tag links something that is not species according to wikidata (checking P105)</a></li></ul>			</br>
+			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q2562815 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has wikipedia tag that links redirect (&#x27;Ma&#322;ach&#243;w (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)&#x27; to &#x27;Ma&#322;ach&#243;w&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/relation/4455133" target="_new">Małachów - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q33490638 vs Q30333491 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/1095479484" target="_new">Kościół pw. Wniebowzięcia Najświętszej Maryi Panny - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q2646705 vs Q33509788 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/262249712" target="_new">Kościół pw. Świętego Floriana - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikidata and wikipedia tags link to a different objects (Q30909614 vs Q33504869 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/352363045" target="_new">Kaplica Matki Bożej Pocieszenia w Dąbrowie - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(4455133)['wikidata'='Q2562815']['wikipedia'='pl:Ma&#322;ach&#243;w (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)'];
+way(1095479484)['wikidata'='Q33490638']['wikipedia'='pl:Ko&#347;ci&#243;&#322; Wniebowzi&#281;cia Naj&#347;wi&#281;tszej Maryi Panny i klasztor Franciszkan&#243;w w Ch&#281;cinach'];
+way(262249712)['wikidata'='Q2646705']['wikipedia'='pl:Ko&#347;ci&#243;&#322; &#347;w. Floriana w Koprzywnicy'];
+way(352363045)['wikidata'='Q30909614']['wikipedia'='pl:Kaplica Matki Bo&#380;ej Pocieszenia w Kielcach'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#blacklisted connection with known replacement"><h2 id="blacklisted connection with known replacement">blacklisted connection with known replacement</h2></a>
+				</br>
+				it is a typical wrong link and it has an obvious replacement, brand:wikipedia/brand:wikidata should be used instead
+				</br>
+				<a href="https://openstreetmap.org/node/3548623127" target="_new">Mohito - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(3548623127)['wikidata'='Q107410616']['wikipedia'='pl:Mohito'];
+); (._;>;); out meta qt;//['blacklisted connection with known replacement']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#mismatching teryt:simc codes in wikidata and in osm element"><h2 id="mismatching teryt:simc codes in wikidata and in osm element">mismatching teryt:simc codes in wikidata and in osm element</h2></a>
+				</br>
+				mismatching teryt:simc codes in wikidata (Q6154933) where 0802490 is declared and in osm element, where teryt:simc=0802550 is declared. TERYT database may be searched at http://eteryt.stat.gov.pl/eTeryt/rejestr_teryt/udostepnianie_danych/baza_teryt/uzytkownicy_indywidualni/wyszukiwanie/wyszukiwanie.aspx?contrast=default (switch to SIMC tab) 
+				</br>
+				<a href="https://openstreetmap.org/node/1860306892" target="_new">Janowice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				mismatching teryt:simc codes in wikidata (Q6743434) where 0800887 is declared and in osm element, where teryt:simc=0800893 is declared. TERYT database may be searched at http://eteryt.stat.gov.pl/eTeryt/rejestr_teryt/udostepnianie_danych/baza_teryt/uzytkownicy_indywidualni/wyszukiwanie/wyszukiwanie.aspx?contrast=default (switch to SIMC tab) 
+				</br>
+				<a href="https://openstreetmap.org/node/3009702193" target="_new">Gajek - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				mismatching teryt:simc codes in wikidata (Q6440095) where 0241815 is declared and in osm element, where teryt:simc=0241821 is declared. TERYT database may be searched at http://eteryt.stat.gov.pl/eTeryt/rejestr_teryt/udostepnianie_danych/baza_teryt/uzytkownicy_indywidualni/wyszukiwanie/wyszukiwanie.aspx?contrast=default (switch to SIMC tab) 
+				</br>
+				<a href="https://openstreetmap.org/node/3009715589" target="_new">Kolonia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				mismatching teryt:simc codes in wikidata (Q38745019) where 0273838 is declared and in osm element, where teryt:simc=0273821 is declared. TERYT database may be searched at http://eteryt.stat.gov.pl/eTeryt/rejestr_teryt/udostepnianie_danych/baza_teryt/uzytkownicy_indywidualni/wyszukiwanie/wyszukiwanie.aspx?contrast=default (switch to SIMC tab) 
+				</br>
+				<a href="https://openstreetmap.org/node/3009748652" target="_new">Sieniów - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				mismatching teryt:simc codes in wikidata (Q38744828) where 0228010 is declared and in osm element, where teryt:simc=0229010 is declared. TERYT database may be searched at http://eteryt.stat.gov.pl/eTeryt/rejestr_teryt/udostepnianie_danych/baza_teryt/uzytkownicy_indywidualni/wyszukiwanie/wyszukiwanie.aspx?contrast=default (switch to SIMC tab) 
+				</br>
+				<a href="https://openstreetmap.org/node/3009771039" target="_new">Zatartacze - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				mismatching teryt:simc codes in wikidata (Q2052251) where 0275694 is declared and in osm element, where teryt:simc=0246994 is declared. TERYT database may be searched at http://eteryt.stat.gov.pl/eTeryt/rejestr_teryt/udostepnianie_danych/baza_teryt/uzytkownicy_indywidualni/wyszukiwanie/wyszukiwanie.aspx?contrast=default (switch to SIMC tab) 
+				</br>
+				<a href="https://openstreetmap.org/node/31899199" target="_new">Boksycka - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1860306892)['teryt:simc'='0802550']['wikidata'='Q6154933'];
+node(3009702193)['teryt:simc'='0800893']['wikidata'='Q6743434'];
+node(3009715589)['teryt:simc'='0241821']['wikidata'='Q6440095'];
+node(3009748652)['teryt:simc'='0273821']['wikidata'='Q38745019'];
+node(3009771039)['teryt:simc'='0229010']['wikidata'='Q38744828'];
+node(31899199)['teryt:simc'='0246994']['wikidata'='Q2052251'];
+); (._;>;); out meta qt;//['mismatching teryt:simc codes in wikidata and in osm element']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikidata tag points to a redirect that should be followed
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/4453566" target="_new">Kornica - an affected OSM element that may be improved</a>
+				</br>
+				pl:Kornica -> pl:Kornica (Polska)
+				</br>
+				Kornica (Polska)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/4454523" target="_new">Izabelów - an affected OSM element that may be improved</a>
+				</br>
+				pl:Izabelów -> pl:Izabelów (województwo świętokrzyskie)
+				</br>
+				Izabel&#243;w (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/4638103" target="_new">Pakuły - an affected OSM element that may be improved</a>
+				</br>
+				pl:Pakuły -> pl:Pakuły (województwo świętokrzyskie)
+				</br>
+				Paku&#322;y (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6134659" target="_new">Wodacz - an affected OSM element that may be improved</a>
+				</br>
+				pl:Wodacz -> pl:Wodacz (Polska)
+				</br>
+				Wodacz (Polska)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6135139" target="_new">Promyk - an affected OSM element that may be improved</a>
+				</br>
+				pl:Promyk -> pl:Promyk (województwo świętokrzyskie)
+				</br>
+				Promyk (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6152251" target="_new">Podlaszcze - an affected OSM element that may be improved</a>
+				</br>
+				pl:Podlaszcze -> pl:Podlaszcze (województwo świętokrzyskie)
+				</br>
+				Podlaszcze (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6243424" target="_new">Sitkówka - an affected OSM element that may be improved</a>
+				</br>
+				pl:Sitkówka -> pl:Sitkówka (wieś)
+				</br>
+				Sitk&#243;wka (wie&#347;)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6264684" target="_new">Barcza - an affected OSM element that may be improved</a>
+				</br>
+				pl:Barcza -> pl:Barcza (wieś)
+				</br>
+				Barcza (wie&#347;)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6271509" target="_new">Parcelanci - an affected OSM element that may be improved</a>
+				</br>
+				pl:Parcelanci -> pl:Parcelanci (województwo świętokrzyskie)
+				</br>
+				Parcelanci (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6296126" target="_new">Widełki - an affected OSM element that may be improved</a>
+				</br>
+				pl:Widełki -> pl:Widełki (województwo świętokrzyskie)
+				</br>
+				Wide&#322;ki (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6364056" target="_new">Mokradle - an affected OSM element that may be improved</a>
+				</br>
+				pl:Mokradle -> pl:Mokradle (Wólka Pokłonna)
+				</br>
+				Mokradle (W&#243;lka Pok&#322;onna)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6474491" target="_new">Mozgawa - an affected OSM element that may be improved</a>
+				</br>
+				pl:Mozgawa -> pl:Mozgawa (wieś)
+				</br>
+				Mozgawa (wie&#347;)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6504568" target="_new">Rzędów - an affected OSM element that may be improved</a>
+				</br>
+				pl:Rzędów -> pl:Rzędów (województwo świętokrzyskie)
+				</br>
+				Rz&#281;d&#243;w (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6505751" target="_new">Kostera - an affected OSM element that may be improved</a>
+				</br>
+				pl:Kostera -> pl:Kostera (województwo świętokrzyskie)
+				</br>
+				Kostera (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/relation/6581187" target="_new">Wzory - an affected OSM element that may be improved</a>
+				</br>
+				pl:Wzory -> pl:Wzory (województwo świętokrzyskie)
+				</br>
+				Wzory (wojew&#243;dztwo &#347;wi&#281;tokrzyskie)
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(4453566)['wikidata'='Q2156021']['wikipedia'='pl:Kornica'];
+relation(4454523)['wikidata'='Q2132661']['wikipedia'='pl:Izabel&#243;w'];
+relation(4638103)['wikidata'='Q111525']['wikipedia'='pl:Paku&#322;y'];
+relation(6134659)['wikidata'='Q8028990']['wikipedia'='pl:Wodacz'];
+relation(6135139)['wikidata'='Q11827783']['wikipedia'='pl:Promyk'];
+relation(6152251)['wikidata'='Q7206872']['wikipedia'='pl:Podlaszcze'];
+relation(6243424)['wikidata'='Q7531953']['wikipedia'='pl:Sitk&#243;wka'];
+relation(6264684)['wikidata'='Q661821']['wikipedia'='pl:Barcza'];
+relation(6271509)['wikidata'='Q11811239']['wikipedia'='pl:Parcelanci'];
+relation(6296126)['wikidata'='Q7998710']['wikipedia'='pl:Wide&#322;ki'];
+relation(6364056)['wikidata'='Q16579020']['wikipedia'='pl:Mokradle'];
+relation(6474491)['wikidata'='Q2181906']['wikipedia'='pl:Mozgawa'];
+relation(6504568)['wikidata'='Q7385836']['wikipedia'='pl:Rz&#281;d&#243;w'];
+relation(6505751)['wikidata'='Q6433545']['wikipedia'='pl:Kostera'];
+relation(6581187)['wikidata'='Q8040730']['wikipedia'='pl:Wzory'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
+				</br>
+				brand:wikidata=Q7205598 is present despite that not:brand:wikidata=Q7205598 is also present - at least one of them is wrong
+				</br>
+				<a href="https://openstreetmap.org/node/2914749379" target="_new">Plus - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata=Q2589061 is present despite that not:brand:wikidata=Q2589061 is also present - at least one of them is wrong
+				</br>
+				<a href="https://openstreetmap.org/way/353212940" target="_new">Żabka - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(2914749379)['brand:wikidata'='Q7205598']['not:brand:wikidata'='Q7205598'];
+way(353212940)['brand:wikidata'='Q2589061']['not:brand:wikidata'='Q2589061'];
+); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia tag needs to be removed based on wikidata code and teryt:simc identifier"><h2 id="wikipedia tag needs to be removed based on wikidata code and teryt:simc identifier">wikipedia tag needs to be removed based on wikidata code and teryt:simc identifier</h2></a>
+				</br>
+				 it seems that wikipedia tag should be removed given matching teryt:simc codes in wikidata (Q18432201) and in osm element, where teryt:simc=0947596 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009725689" target="_new">Mirów - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				 it seems that wikipedia tag should be removed given matching teryt:simc codes in wikidata (Q16591107) and in osm element, where teryt:simc=0229234 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009742070" target="_new">Praga - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				 it seems that wikipedia tag should be removed given matching teryt:simc codes in wikidata (Q16616533) and in osm element, where teryt:simc=0229257 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009764029" target="_new">Wrzosy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				 it seems that wikipedia tag should be removed given matching teryt:simc codes in wikidata (Q16613042) and in osm element, where teryt:simc=0229719 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31893203" target="_new">Urzyce - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(3009725689)['teryt:simc'='0947596']['wikidata'='Q18432201']['wikipedia'='pl:Mir&#243;w (cz&#281;&#347;&#263; miasta w powiecie pi&#324;czowskim)'];
+node(3009742070)['teryt:simc'='0229234']['wikidata'='Q16591107']['wikipedia'='pl:Praga (cz&#281;&#347;&#263; wsi w powiecie ostrowieckim)'];
+node(3009764029)['teryt:simc'='0229257']['wikidata'='Q16616533']['wikipedia'='pl:Wrzosy (cz&#281;&#347;&#263; wsi w powiecie ostrowieckim)'];
+node(31893203)['teryt:simc'='0229719']['wikidata'='Q16613042']['wikipedia'='pl:Urzyce (cz&#281;&#347;&#263; wsi w powiecie ostrowieckim)'];
+); (._;>;); out meta qt;//['wikipedia tag needs to be removed based on wikidata code and teryt:simc identifier']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags</h2></a>
+			</br>
+			brand:wikidata and brand:wikipedia tags link to a different objects, because brand:wikidata tag points to a redirect that should be followed
+				</br>
+				article claims to point to disambig, brand:wikidata does not. brand:wikidata tag is likely to be correct, brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/2911929116" target="_new">T-Mobile - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, brand:wikidata does not. brand:wikidata tag is likely to be correct, brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/4602712953" target="_new">T-Mobile - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, brand:wikidata does not. brand:wikidata tag is likely to be correct, brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/6761428017" target="_new">T-Mobile - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, brand:wikidata does not. brand:wikidata tag is likely to be correct, brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/7294403441" target="_new">T-Mobile - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, brand:wikidata does not. brand:wikidata tag is likely to be correct, brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/7837112873" target="_new">T-Mobile - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, brand:wikidata does not. brand:wikidata tag is likely to be correct, brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/8455004013" target="_new">T-Mobile - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, brand:wikidata does not. brand:wikidata tag is likely to be correct, brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/9188667556" target="_new">T-Mobile - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, brand:wikidata does not. brand:wikidata tag is likely to be correct, brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/way/251706125" target="_new">Netto - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, brand:wikidata does not. brand:wikidata tag is likely to be correct, brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/way/884926397" target="_new">T-Mobile - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(2911929116)['brand:wikidata'='Q327634']['brand:wikipedia'='en:T-Mobile'];
+node(4602712953)['brand:wikidata'='Q327634']['brand:wikipedia'='en:T-Mobile'];
+node(6761428017)['brand:wikidata'='Q327634']['brand:wikipedia'='en:T-Mobile'];
+node(7294403441)['brand:wikidata'='Q327634']['brand:wikipedia'='en:T-Mobile'];
+node(7837112873)['brand:wikidata'='Q327634']['brand:wikipedia'='en:T-Mobile'];
+node(8455004013)['brand:wikidata'='Q327634']['brand:wikipedia'='en:T-Mobile'];
+node(9188667556)['brand:wikidata'='Q327634']['brand:wikipedia'='en:T-Mobile'];
+way(251706125)['brand:wikidata'='Q552652']['brand:wikipedia'='en:Netto'];
+way(884926397)['brand:wikidata'='Q327634']['brand:wikipedia'='en:T-Mobile'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for brand prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</h2></a>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q1364603 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;KiK&#x27; to &#x27;KIK&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/10099179971" target="_new">TEDi - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110970254 vs Q3182097 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/10173869912" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110970254 vs Q3182097 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/10797770161" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110970254 vs Q3182097 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/10916574849" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q28496595 vs Q1477321 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/11010973876" target="_new">Yves Rocher - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q2052213 vs Q570747 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/11010973884" target="_new">Douglas - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110970254 vs Q3182097 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/11210422861" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q971649 vs Q1256909 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/1820036113" target="_new">Orlen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q9267646 vs (missing) wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2753848944" target="_new">Getin Bank - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q806653 vs Q5835668 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2753865583" target="_new">Santander - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q806653 vs Q5835668 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/3422777877" target="_new">Santander - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/3650353940" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q2689639 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Carrefour Market&#x27; to &#x27;Carrefour (enseigne)&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/4818381171" target="_new">Carrefour Market - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q2689639 vs Q217599 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/5048367721" target="_new">Carrefour Market - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q9267646 vs (missing) wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/6761428009" target="_new">Velo Bank - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q108403242 vs Q875796 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/7046896052" target="_new">Maxi Zoo - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q9267646 vs (missing) wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/8511424048" target="_new">VeloBank - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q25857973 vs (missing) wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/8853800285" target="_new">Fortuna - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q2052213 vs Q570747 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/9491485632" target="_new">Douglas - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110970254 vs Q3182097 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/9504399446" target="_new">Paczkomat InPost - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110970254 vs Q3182097 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/9516328656" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110970254 vs Q3182097 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/9516328657" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q883965 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;KiK&#x27; to &#x27;KIK&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/9949480910" target="_new">KiK - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q41171373 vs Q125054 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/138017441" target="_new">ALDI - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/225119645" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/268315768" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/278979190" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/439328620" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q25857973 vs (missing) wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/453072961" target="_new">Fortuna - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/666194570" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(10099179971)['brand:wikidata'='Q1364603']['brand:wikipedia'='pl:KiK'];
+node(10173869912)['brand:wikidata'='Q110970254']['brand:wikipedia'='pl:InPost'];
+node(10797770161)['brand:wikidata'='Q110970254']['brand:wikipedia'='pl:InPost'];
+node(10916574849)['brand:wikidata'='Q110970254']['brand:wikipedia'='pl:InPost'];
+node(11010973876)['brand:wikidata'='Q28496595']['brand:wikipedia'='en:Yves Rocher (company)'];
+node(11010973884)['brand:wikidata'='Q2052213']['brand:wikipedia'='de:Parf&#252;merie Douglas'];
+node(11210422861)['brand:wikidata'='Q110970254']['brand:wikipedia'='pl:InPost'];
+node(1820036113)['brand:wikidata'='Q971649']['brand:wikipedia'='pl:Grupa Lotos'];
+node(2753848944)['brand:wikidata'='Q9267646']['brand:wikipedia'='pl:VeloBank'];
+node(2753865583)['brand:wikidata'='Q806653']['brand:wikipedia'='en:Santander Bank'];
+node(3422777877)['brand:wikidata'='Q806653']['brand:wikipedia'='en:Santander Bank'];
+node(3650353940)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(4818381171)['brand:wikidata'='Q2689639']['brand:wikipedia'='fr:Carrefour Market'];
+node(5048367721)['brand:wikidata'='Q2689639']['brand:wikipedia'='fr:Carrefour (enseigne)'];
+node(6761428009)['brand:wikidata'='Q9267646']['brand:wikipedia'='pl:VeloBank'];
+node(7046896052)['brand:wikidata'='Q108403242']['brand:wikipedia'='en:Fressnapf'];
+node(8511424048)['brand:wikidata'='Q9267646']['brand:wikipedia'='pl:VeloBank'];
+node(8853800285)['brand:wikidata'='Q25857973']['brand:wikipedia'='en:Fortuna Entertainment Group'];
+node(9491485632)['brand:wikidata'='Q2052213']['brand:wikipedia'='de:Parf&#252;merie Douglas'];
+node(9504399446)['brand:wikidata'='Q110970254']['brand:wikipedia'='pl:InPost'];
+node(9516328656)['brand:wikidata'='Q110970254']['brand:wikipedia'='pl:InPost'];
+node(9516328657)['brand:wikidata'='Q110970254']['brand:wikipedia'='pl:InPost'];
+node(9949480910)['brand:wikidata'='Q883965']['brand:wikipedia'='pl:KiK'];
+way(138017441)['brand:wikidata'='Q41171373']['brand:wikipedia'='en:Aldi'];
+way(225119645)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+way(268315768)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+way(278979190)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+way(439328620)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+way(453072961)['brand:wikidata'='Q25857973']['brand:wikipedia'='en:Fortuna Entertainment Group'];
+way(666194570)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for brand prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - for operator prefixed tags"><h2 id="wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</h2></a>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q110457879 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has operator:wikipedia tag that links redirect (&#x27;Polski Koncern Naftowy Orlen&#x27; to &#x27;Orlen&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/9926873286" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q110457879 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has operator:wikipedia tag that links redirect (&#x27;Polski Koncern Naftowy Orlen&#x27; to &#x27;Orlen&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/9966850751" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(9926873286)['operator:wikidata'='Q110457879']['operator:wikipedia'='pl:Polski Koncern Naftowy Orlen'];
+node(9966850751)['operator:wikidata'='Q110457879']['operator:wikipedia'='pl:Polski Koncern Naftowy Orlen'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for operator prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - for species prefixed tags"><h2 id="wikipedia wikidata mismatch - for species prefixed tags">wikipedia wikidata mismatch - for species prefixed tags</h2></a>
+				</br>
+				species:wikidata and species:wikipedia tags link to a different objects (Q19171 vs Q12214029 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/7797251789" target="_new">Nandu - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				species:wikidata and species:wikipedia tags link to a different objects (Q132922 vs Q3030198 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/7797251792" target="_new">Wielbłąd Dwugarbny - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(7797251789)['species:wikidata'='Q19171']['species:wikipedia'='pl:Nandu'];
+node(7797251792)['species:wikidata'='Q132922']['species:wikipedia'='pl:Wielb&#322;&#261;d dwugarbny'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for species prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#species secondary tag links something that is not species according to wikidata (checking P105)"><h2 id="species secondary tag links something that is not species according to wikidata (checking P105)">species secondary tag links something that is not species according to wikidata (checking P105)</h2></a>
+				</br>
+				no matching P105
+				</br>
+				<a href="https://openstreetmap.org/node/7797251788" target="_new">Struś afrykański - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				no matching P105
+				</br>
+				<a href="https://openstreetmap.org/node/7797251791" target="_new">Nieświszczuk - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(7797251788)['species:wikidata'='Q3976170']['species:wikipedia'='en:North African ostrich'];
+node(7797251791)['species:wikidata'='Q30359']['species:wikipedia'='pl:Nie&#347;wiszczuk'];
+); (._;>;); out meta qt;//['species secondary tag links something that is not species according to wikidata (checking P105)']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>
