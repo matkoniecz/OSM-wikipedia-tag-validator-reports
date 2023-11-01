@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on -data-was-not-downloaded-for-now-. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-11-01. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,218 @@ This page was generated using data obtained on -data-was-not-downloaded-for-now-
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</a></li></ul>			</br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikidata tag points to a redirect that should be followed
+				</br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/2276465796" target="_new">Mount Geikie - an affected OSM element that may be improved</a>
+				</br>
+				en:Mount Geikie -> en:Mount Geikie (Tasmania)
+				</br>
+				Mount Geikie (Tasmania)
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(2276465796)['wikidata'='Q1708006']['wikipedia'='en:Mount Geikie'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
+				</br>
+				brand:wikidata=Q285328 is present despite that not:brand:wikidata=Q285328 is also present - at least one of them is wrong
+				</br>
+				<a href="https://openstreetmap.org/node/3989330331" target="_new">Commonwealth Bank - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				operator:wikidata=Q1142936 is present despite that not:operator:wikidata=Q1142936 is also present - at least one of them is wrong
+				</br>
+				<a href="https://openstreetmap.org/node/3989335359" target="_new">Scottsdale Post Office - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata=Q109807592 is present despite that not:brand:wikidata=Q109807592 is also present - at least one of them is wrong
+				</br>
+				<a href="https://openstreetmap.org/way/435899390" target="_new">Cellarbrations - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(3989330331)['brand:wikidata'='Q285328']['not:brand:wikidata'='Q285328'];
+node(3989335359)['not:operator:wikidata'='Q1142936']['operator:wikidata'='Q1142936'];
+way(435899390)['brand:wikidata'='Q109807592']['not:brand:wikidata'='Q109807592'];
+); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - for brand prefixed tags"><h2 id="wikipedia wikidata mismatch - for brand prefixed tags">wikipedia wikidata mismatch - for brand prefixed tags</h2></a>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q3088656 vs Q109676002 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/1017202667" target="_new">Mobil - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/2348832744" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs Q5023980 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2448058163" target="_new">Woolworths Petrol - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q5970945 vs Q3146662 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2666771476" target="_new">IGA - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q5175717 vs Q113992257 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/2746896733" target="_new">Cotton On - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q5970945 vs Q3146662 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/3224580044" target="_new">IGA - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/node/3947013433" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q5175717 vs Q113992257 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/7940775285" target="_new">Cotton On - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q5970945 vs Q3146662 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/8556611508" target="_new">IGA - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q5175717 vs Q113992257 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/8574719667" target="_new">Cotton On - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q6316068 vs Q111149236 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/8574719668" target="_new">Just Jeans - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q5175717 vs Q113992257 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/9153522022" target="_new">Cotton On - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q285328 vs Q1430985 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/node/9869411985" target="_new">Commonwealth Bank - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q110716465 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Royal Dutch Shell&#x27; to &#x27;Shell plc&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/1001927184" target="_new">Shell - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs Q152057 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/180644601" target="_new">Ampol - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q24997583 vs Q7836087 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/326651299" target="_new">Travelodge Hotel Hobart - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs Q277470 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/363928177" target="_new">Ampol - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Caltex Woolworths&#x27; to &#x27;EG Australia&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/390325102" target="_new">Woolworths Petrol - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q4748528 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has brand:wikipedia tag that links redirect (&#x27;Caltex Woolworths&#x27; to &#x27;EG Australia&#x27;).
+				</br>
+				<a href="https://openstreetmap.org/way/452331326" target="_new">EG Australia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q105846396 vs Q277470 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/692660714" target="_new">Mood Food Huonville - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				brand:wikidata and brand:wikipedia tags link to a different objects (Q5970945 vs Q3146662 wikidata id assigned to linked Wikipedia article)
+				</br>
+				<a href="https://openstreetmap.org/way/729012246" target="_new">IGA - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1017202667)['brand:wikidata'='Q3088656']['brand:wikipedia'='en:Mobil'];
+node(2348832744)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(2448058163)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:EG Australia'];
+node(2666771476)['brand:wikidata'='Q5970945']['brand:wikipedia'='en:IGA (supermarkets)'];
+node(2746896733)['brand:wikidata'='Q5175717']['brand:wikipedia'='en:Cotton On Group'];
+node(3224580044)['brand:wikidata'='Q5970945']['brand:wikipedia'='en:IGA (supermarkets)'];
+node(3947013433)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+node(7940775285)['brand:wikidata'='Q5175717']['brand:wikipedia'='en:Cotton On Group'];
+node(8556611508)['brand:wikidata'='Q5970945']['brand:wikipedia'='en:IGA (supermarkets)'];
+node(8574719667)['brand:wikidata'='Q5175717']['brand:wikipedia'='en:Cotton On Group'];
+node(8574719668)['brand:wikidata'='Q6316068']['brand:wikipedia'='en:Just Group'];
+node(9153522022)['brand:wikidata'='Q5175717']['brand:wikipedia'='en:Cotton On Group'];
+node(9869411985)['brand:wikidata'='Q285328']['brand:wikipedia'='en:National Australia Bank'];
+way(1001927184)['brand:wikidata'='Q110716465']['brand:wikipedia'='en:Royal Dutch Shell'];
+way(180644601)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:BP'];
+way(326651299)['brand:wikidata'='Q24997583']['brand:wikipedia'='en:Travelodge'];
+way(363928177)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex'];
+way(390325102)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex Woolworths'];
+way(452331326)['brand:wikidata'='Q4748528']['brand:wikipedia'='en:Caltex Woolworths'];
+way(692660714)['brand:wikidata'='Q105846396']['brand:wikipedia'='en:Caltex'];
+way(729012246)['brand:wikidata'='Q5970945']['brand:wikipedia'='en:IGA (supermarkets)'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for brand prefixed tags']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>
