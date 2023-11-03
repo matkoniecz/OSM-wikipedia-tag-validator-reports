@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-10-21. Please, <a href="http
 			This page contains reports that are tested or are known to produce false positives. Be careful with using this data.
 			</br>
 			<hr>
-<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a general industry">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a general industry</a></li></ul>			</br>
+<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a general industry">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a general industry</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags</a></li></ul>			</br>
 			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a general industry"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a general industry">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a general industry</h2></a>
 				</br>
 				linked wikidata entry (Q1201729) is about a general industry, so it is very unlikely to be correct <br />        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
@@ -28,6 +28,32 @@ This page was generated using data obtained on 2023-10-21. Please, <a href="http
 (
 node(4917775840)['wikidata'='Q1201729'];
 ); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a general industry']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags</h2></a>
+			</br>
+			post_office:brand:wikidata and post_office:brand:wikipedia tags link to a different objects, because post_office:brand:wikidata tag points to a redirect that should be followed
+				</br>
+				article claims to point to disambig, post_office:brand:wikidata does not. post_office:brand:wikidata tag is likely to be correct, post_office:brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/2992152359" target="_new">Der faire Kaufladen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				article claims to point to disambig, post_office:brand:wikidata does not. post_office:brand:wikidata tag is likely to be correct, post_office:brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/8837036999" target="_new">Rund ums Rad - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(2992152359)['post_office:brand:wikidata'='Q113529068']['post_office:brand:wikipedia'='de:Deutsche Post'];
+node(8837036999)['post_office:brand:wikidata'='Q113529068']['post_office:brand:wikipedia'='de:Deutsche Post'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags']</blockquote>
 			</br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />

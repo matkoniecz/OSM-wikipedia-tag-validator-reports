@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-10-17. Please, <a href="http
 			This page contains reports that are tested or are known to produce false positives. Be careful with using this data.
 			</br>
 			<hr>
-<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to an intentional human activity">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to an intentional human activity</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikidata tag to an intentional human activity">should use a secondary wikipedia tag - linking from wikidata tag to an intentional human activity</a></li></ul>			</br>
+<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to an intentional human activity">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to an intentional human activity</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikidata tag to an intentional human activity">should use a secondary wikipedia tag - linking from wikidata tag to an intentional human activity</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags</a></li></ul>			</br>
 			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to an intentional human activity"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to an intentional human activity">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to an intentional human activity</h2></a>
 				</br>
 				linked wikidata entry (Q23785329) is about an intentional human activity, so it is very unlikely to be correct <br />        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br />        in case of change remember to remove wikidata tag if it is present <br />        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
@@ -45,6 +45,25 @@ way(244088233)['wikidata'='Q23785329'];
 (
 node(2461369774)['wikidata'='Q55326744'];
 ); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikidata tag to an intentional human activity']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags</h2></a>
+			</br>
+			post_office:brand:wikidata and post_office:brand:wikipedia tags link to a different objects, because post_office:brand:wikidata tag points to a redirect that should be followed
+				</br>
+				article claims to point to disambig, post_office:brand:wikidata does not. post_office:brand:wikidata tag is likely to be correct, post_office:brand:wikipedia tag almost certainly is not
+				</br>
+				<a href="https://openstreetmap.org/node/6544489630" target="_new">Presse & Lotto - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(6544489630)['post_office:brand:wikidata'='Q113529068']['post_office:brand:wikipedia'='de:Deutsche Post'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for post_office:brand prefixed tags']</blockquote>
 			</br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
