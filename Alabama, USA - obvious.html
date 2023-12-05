@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-09-21. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-11-30. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-09-21. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				</br>
 				wikipedia page in unexpected language - en was expected:
@@ -80,13 +80,58 @@ This page was generated using data obtained on 2023-09-21. Please, <a href="http
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-node(153556488)['wikipedia'='fr:Wetumpka'];
-node(153573428)['wikipedia'='fr:Kennedy (Alabama)'];
-node(153651919)['wikipedia'='fr:Elmore (Alabama)'];
-node(153678854)['wikipedia'='fr:Deatsville'];
-node(153709108)['wikipedia'='fr:Frisco City'];
-way(404006412)['wikipedia'='de:U.S. Post Office Anniston'];
+node(153556488)['wikidata'='Q79433']['wikipedia'='fr:Wetumpka'];
+node(153573428)['wikidata'='Q67761']['wikipedia'='fr:Kennedy (Alabama)'];
+node(153651919)['wikidata'='Q66310']['wikipedia'='fr:Elmore (Alabama)'];
+node(153678854)['wikidata'='Q67244']['wikipedia'='fr:Deatsville'];
+node(153709108)['wikidata'='Q65893']['wikipedia'='fr:Frisco City'];
+way(404006412)['wikidata'='Q118853']['wikipedia'='de:U.S. Post Office Anniston'];
 ); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q19461462 vs (missing) article redirects from en:E.L. Newman Lustron House to en:E. L. Newman Lustron House
+				</br>
+				<a href="https://openstreetmap.org/way/465945599" target="_new">E. L. Newman Lustron House - an affected OSM element that may be improved</a>
+				</br>
+				en:E.L. Newman Lustron House -> en:E. L. Newman Lustron House
+				</br>
+				E. L. Newman Lustron House
+				</br>
+				<hr>
+				</br>
+				Q18216988 vs (missing) article redirects from en:E.H. Darby Lustron House to en:E. H. Darby Lustron House
+				</br>
+				<a href="https://openstreetmap.org/way/465946838" target="_new">E. H. Darby Lustron House - an affected OSM element that may be improved</a>
+				</br>
+				en:E.H. Darby Lustron House -> en:E. H. Darby Lustron House
+				</br>
+				E. H. Darby Lustron House
+				</br>
+				<hr>
+				</br>
+				Q106670254 vs (missing) article redirects from en:The Helton Cottage to en:Helton Cottage
+				</br>
+				<a href="https://openstreetmap.org/way/919966902" target="_new">The Helton Cottage - an affected OSM element that may be improved</a>
+				</br>
+				en:The Helton Cottage -> en:Helton Cottage
+				</br>
+				Helton Cottage
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(465945599)['wikidata'='Q19461462']['wikipedia'='en:E.L. Newman Lustron House'];
+way(465946838)['wikidata'='Q18216988']['wikipedia'='en:E.H. Darby Lustron House'];
+way(919966902)['wikidata'='Q106670254']['wikipedia'='en:The Helton Cottage'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
 			</br>
 			<hr>
 			</br>
