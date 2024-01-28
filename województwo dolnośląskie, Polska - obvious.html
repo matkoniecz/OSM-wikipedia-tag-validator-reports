@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-12-05. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2024-01-13. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-12-05. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for name:etymology prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for name:etymology prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for parish prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for name:etymology prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for name:etymology prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				</br>
 				wikipedia page in unexpected language - pl was expected:
@@ -79,6 +79,29 @@ way(195135125)['wikidata'='Q9386509']['wikipedia'='de:Bolzenschloss (Burg)'];
 			</br>
 			<hr>
 			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q802570 vs (missing) article redirects from cs:&#381;elezni&#269;n&#237; tra&#357; Trutnov &#8211; Kr&#225;lovec &#8211; Lubawka/&#381;acl&#233;&#345; to cs:&#381;elezni&#269;n&#237; tra&#357; Kr&#225;lovec&#8211;&#381;acl&#233;&#345;
+				</br>
+				<a href="https://openstreetmap.org/relation/49042" target="_new">043 – Trutnov – Žacléř - an affected OSM element that may be improved</a>
+				</br>
+				cs:Železniční trať Trutnov – Královec – Lubawka/Žacléř -> cs:Železniční trať Královec–Žacléř
+				</br>
+				&#381;elezni&#269;n&#237; tra&#357; Kr&#225;lovec&#8211;&#381;acl&#233;&#345;
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(49042)['wikidata'='Q802570']['wikipedia'='cs:&#381;elezni&#269;n&#237; tra&#357; Trutnov &#8211; Kr&#225;lovec &#8211; Lubawka/&#381;acl&#233;&#345;'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
 			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
 				</br>
 				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
@@ -86,14 +109,6 @@ way(195135125)['wikidata'='Q9386509']['wikipedia'='de:Bolzenschloss (Burg)'];
 				<a href="https://openstreetmap.org/relation/14381936" target="_new">Oldřišský potok / Czerwona Woda - an affected OSM element that may be improved</a>
 				</br>
 				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Czerwona Woda (dopływ Nysy Łużyckiej)'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Czerwona Woda (dopływ Nysy Łużyckiej)'}}]
-				</br>
-				<hr>
-				</br>
-				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
-				</br>
-				<a href="https://openstreetmap.org/relation/16413229" target="_new">Lausitz - an affected OSM element that may be improved</a>
-				</br>
-				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Łużyce'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Łużyce'}}]
 				</br>
 				<hr>
 				</br>
@@ -118,7 +133,6 @@ way(195135125)['wikidata'='Q9386509']['wikipedia'='de:Bolzenschloss (Burg)'];
 			<blockquote>[out:xml][timeout:3600];
 (
 relation(14381936)['wikidata'='Q1595261']['wikipedia'!~'.*'];
-relation(16413229)['wikidata'='Q32530']['wikipedia'!~'.*'];
 relation(6536761)['wikidata'='Q105110743']['wikipedia'!~'.*'];
 way(404372678)['wikidata'='Q1595261']['wikipedia'!~'.*'];
 ); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
@@ -294,9 +308,33 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 			</br>
 			<a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier"><h2 id="wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</h2></a>
 				</br>
+				new wikipedia tag pl:Bork&#243;w (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q4945716) and in osm element, where teryt:simc=0366333 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/1666487997" target="_new">Borków - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Golkowice (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q9274388) and in osm element, where teryt:simc=0366221 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/1666488000" target="_new">Golkowice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Kaczyce (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q6344887) and in osm element, where teryt:simc=0366280 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/1666488001" target="_new">Kaczyce - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Psary (Gniewomierz) proposed based on matching teryt:simc codes in wikidata (Q7254015) and in osm element, where teryt:simc=0365026 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/1733155628" target="_new">Psary - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Kietlice (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q16566510) and in osm element, where teryt:simc=0852298 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/1792429186" target="_new">Kietlice - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -324,6 +362,12 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
+				new wikipedia tag pl:Podlesie (powiat wa&#322;brzyski) proposed based on matching teryt:simc codes in wikidata (Q7206917) and in osm element, where teryt:simc=0856451 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/1956165217" target="_new">Podlesie - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Twardowice (P&#322;onina) proposed based on matching teryt:simc codes in wikidata (Q16656334) and in osm element, where teryt:simc=0189486 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/1980982310" target="_new">Twardowice - an affected OSM element that may be improved</a>
@@ -336,21 +380,33 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
+				new wikipedia tag pl:Czaplice (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q9197785) and in osm element, where teryt:simc=0882483 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/2211740259" target="_new">Czaplice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Maj&#243;wka (Bielisz&#243;w) proposed based on matching teryt:simc codes in wikidata (Q6738522) and in osm element, where teryt:simc=0370560 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/2211740273" target="_new">Majówka - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Smark&#243;w (Warz&#281;gowo) proposed based on matching teryt:simc codes in wikidata (Q9338621) and in osm element, where teryt:simc=0883583 is declared
+				new wikipedia tag pl:Rog&#243;wek (powiat wo&#322;owski) proposed based on matching teryt:simc codes in wikidata (Q7359622) and in osm element, where teryt:simc=0882833 is declared
 				</br>
-				<a href="https://openstreetmap.org/node/2211746672" target="_new">Smarków - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/2211746633" target="_new">Rogówek - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
 				new wikipedia tag pl:Stanowice (Dasz&#243;w) proposed based on matching teryt:simc codes in wikidata (Q7600153) and in osm element, where teryt:simc=0370620 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/2211746673" target="_new">Stanowice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:W&#281;glewo (powiat wo&#322;owski) proposed based on matching teryt:simc codes in wikidata (Q8041132) and in osm element, where teryt:simc=0882460 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/2211746840" target="_new">Węglewo - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -384,18 +440,6 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Bor&#243;w (Przesieczna) proposed based on matching teryt:simc codes in wikidata (Q11688664) and in osm element, where teryt:simc=0367054 is declared
-				</br>
-				<a href="https://openstreetmap.org/node/2251316012" target="_new">Borów - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				new wikipedia tag pl:Teodor&#243;w (Nowa Ku&#378;nia) proposed based on matching teryt:simc codes in wikidata (Q7701117) and in osm element, where teryt:simc=0367025 is declared
-				</br>
-				<a href="https://openstreetmap.org/node/2254008291" target="_new">Teodorów - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				new wikipedia tag pl:Piekielna G&#243;ra (Szczytna) proposed based on matching teryt:simc codes in wikidata (Q16587732) and in osm element, where teryt:simc=0984634 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/2285987081" target="_new">Piekielna Góra - an affected OSM element that may be improved</a>
@@ -405,12 +449,6 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				new wikipedia tag pl:Gozdno (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q5590253) and in osm element, where teryt:simc=0192695 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/2491756721" target="_new">Gozdno - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				new wikipedia tag pl:Biskupice (Stobno) proposed based on matching teryt:simc codes in wikidata (Q9172218) and in osm element, where teryt:simc=0883494 is declared
-				</br>
-				<a href="https://openstreetmap.org/node/2689137792" target="_new">Biskupice - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -438,9 +476,15 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:K&#261;ty (Moj&#281;cice) proposed based on matching teryt:simc codes in wikidata (Q11751985) and in osm element, where teryt:simc=0883347 is declared
+				new wikipedia tag pl:M&#322;oty (powiat wo&#322;owski) proposed based on matching teryt:simc codes in wikidata (Q11788121) and in osm element, where teryt:simc=0882715 is declared
 				</br>
-				<a href="https://openstreetmap.org/node/2690542148" target="_new">Kąty - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/2706322698" target="_new">Młoty - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:&#379;ychlin (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q9397661) and in osm element, where teryt:simc=0883519 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/2713932816" target="_new">Żychlin - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -459,6 +503,12 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				new wikipedia tag pl:&#346;l&#281;za (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q8081940) and in osm element, where teryt:simc=0875603 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/294209655" target="_new">Ślęza - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Bukowiec (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q4987079) and in osm element, where teryt:simc=0191365 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/2961951749" target="_new">Bukowiec - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -510,6 +560,12 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
+				new wikipedia tag pl:Januszowice (Wojan&#243;w) proposed based on matching teryt:simc codes in wikidata (Q11721180) and in osm element, where teryt:simc=0191483 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/3009709847" target="_new">Januszowice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Kopanina (Kromn&#243;w) proposed based on matching teryt:simc codes in wikidata (Q6430960) and in osm element, where teryt:simc=0192399 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/3009716369" target="_new">Kopanina - an affected OSM element that may be improved</a>
@@ -522,9 +578,9 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:K&#261;ty (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q11751982) and in osm element, where teryt:simc=0363151 is declared
+				new wikipedia tag pl:Marian&#243;wek (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q6762489) and in osm element, where teryt:simc=0852170 is declared
 				</br>
-				<a href="https://openstreetmap.org/node/3009720453" target="_new">Kąty - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/3009723764" target="_new">Marianówek - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -540,9 +596,9 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Rakowice (Szklary) proposed based on matching teryt:simc codes in wikidata (Q13427174) and in osm element, where teryt:simc=0856630 is declared
+				new wikipedia tag pl:Ska&#322;a (powiat strzeli&#324;ski) proposed based on matching teryt:simc codes in wikidata (Q7534224) and in osm element, where teryt:simc=0875744 is declared
 				</br>
-				<a href="https://openstreetmap.org/node/3009746302" target="_new">Rakowice - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/3009748954" target="_new">Skała - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -558,6 +614,12 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
+				new wikipedia tag pl:Unis&#322;awice (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q7887066) and in osm element, where teryt:simc=0377319 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31781692" target="_new">Unisławice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Wie&#380;a (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q7999450) and in osm element, where teryt:simc=0189658 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/31783716" target="_new">Wieża - an affected OSM element that may be improved</a>
@@ -567,6 +629,12 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				new wikipedia tag pl:Su&#322;&#243;w Wielki proposed based on matching teryt:simc codes in wikidata (Q7651551) and in osm element, where teryt:simc=0377390 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/31786650" target="_new">Sułów Wielki - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Stronia (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q7624751) and in osm element, where teryt:simc=0872668 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31786901" target="_new">Stronia - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -612,12 +680,6 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Dobromil (&#321;agosz&#243;w Wielki) proposed based on matching teryt:simc codes in wikidata (Q5286800) and in osm element, where teryt:simc=0367002 is declared
-				</br>
-				<a href="https://openstreetmap.org/node/31806873" target="_new">Dobromil - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				new wikipedia tag pl:Zawisz&#243;w proposed based on matching teryt:simc codes in wikidata (Q8067494) and in osm element, where teryt:simc=0856333 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/31916416" target="_new">Zawiszów - an affected OSM element that may be improved</a>
@@ -636,15 +698,21 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
+				new wikipedia tag pl:Sadowice (powiat strzeli&#324;ski) proposed based on matching teryt:simc codes in wikidata (Q7398053) and in osm element, where teryt:simc=0875856 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/31917293" target="_new">Sadowice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Sob&#243;tka (miasto) proposed based on matching teryt:simc codes in wikidata (Q992910) and in osm element, where teryt:simc=0987294 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/349011984" target="_new">Sobótka - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Stronie &#346;l&#261;skie (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q958601) and in osm element, where teryt:simc=0855670 is declared
+				new wikipedia tag pl:Stronie-Wie&#347; proposed based on matching teryt:simc codes in wikidata (Q958601) and in osm element, where teryt:simc=0855670 is declared
 				</br>
-				<a href="https://openstreetmap.org/node/350013640" target="_new">Stronie Śląskie-Wieś - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/350013640" target="_new">Stronie-Wieś - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -666,6 +734,12 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
+				new wikipedia tag pl:Nowolesie (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q7066841) and in osm element, where teryt:simc=0880573 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/414077492" target="_new">Nowolesie - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Leszczyniec (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q606765) and in osm element, where teryt:simc=0189931 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/418569490" target="_new">Leszczyniec - an affected OSM element that may be improved</a>
@@ -681,6 +755,12 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				new wikipedia tag pl:Lisowice (powiat &#347;redzki) proposed based on matching teryt:simc codes in wikidata (Q6559072) and in osm element, where teryt:simc=0876070 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/430419283" target="_new">Lisowice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Bysz&#243;w (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q5004606) and in osm element, where teryt:simc=0852335 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/435361220" target="_new">Byszów - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -714,6 +794,12 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
+				new wikipedia tag pl:Jod&#322;ownik (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q6208184) and in osm element, where teryt:simc=0852192 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/692605284" target="_new">Jodłownik - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Lutomierz-Kolonia proposed based on matching teryt:simc codes in wikidata (Q6705854) and in osm element, where teryt:simc=0855457 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/692605324" target="_new">Lutomierz-Kolonia - an affected OSM element that may be improved</a>
@@ -726,9 +812,9 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Zawadka (Szyman&#243;w) proposed based on matching teryt:simc codes in wikidata (Q8067352) and in osm element, where teryt:simc=0876991 is declared
+				new wikipedia tag pl:Celina (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q9185671) and in osm element, where teryt:simc=0874532 is declared
 				</br>
-				<a href="https://openstreetmap.org/node/692625236" target="_new">Zawadka - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/692625279" target="_new">Celina - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -750,15 +836,15 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Wodnica (Tarchalice) proposed based on matching teryt:simc codes in wikidata (Q8029007) and in osm element, where teryt:simc=0883548 is declared
-				</br>
-				<a href="https://openstreetmap.org/node/692625455" target="_new">Wodnica - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				new wikipedia tag pl:Proszkowa proposed based on matching teryt:simc codes in wikidata (Q955576) and in osm element, where teryt:simc=0883413 is declared
 				</br>
 				<a href="https://openstreetmap.org/node/692625485" target="_new">Proszkowa - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Dobrocinek (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q5286768) and in osm element, where teryt:simc=0852358 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/692626265" target="_new">Dobrocinek - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -768,9 +854,27 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
+				new wikipedia tag pl:W&#243;jcin (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q8040761) and in osm element, where teryt:simc=0875709 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/726786151" target="_new">Wójcin - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Rakowice (powiat strzeli&#324;ski) proposed based on matching teryt:simc codes in wikidata (Q9303688) and in osm element, where teryt:simc=0875900 is declared
+				</br>
+				<a href="https://openstreetmap.org/node/768576100" target="_new">Rakowice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:W&#261;sosz (miasto) proposed based on matching teryt:simc codes in wikidata (Q1006065) and in osm element, where teryt:simc=0954662 is declared
 				</br>
 				<a href="https://openstreetmap.org/relation/2709647" target="_new">Wąsosz - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				new wikipedia tag pl:Bukowiec (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q4987079) and in osm element, where teryt:simc=0191365 is declared
+				</br>
+				<a href="https://openstreetmap.org/relation/2936845" target="_new">Bukowiec - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -852,36 +956,6 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Jab&#322;oniec (Miedziana) proposed based on matching teryt:simc codes in wikidata (Q6110346) and in osm element, where teryt:simc=0192494 is declared
-				</br>
-				<a href="https://openstreetmap.org/relation/6143780" target="_new">Jabłoniec - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				new wikipedia tag pl:Nowoszyce (Bierna) proposed based on matching teryt:simc codes in wikidata (Q11793784) and in osm element, where teryt:simc=0192459 is declared
-				</br>
-				<a href="https://openstreetmap.org/relation/6143781" target="_new">Nowoszyce - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				new wikipedia tag pl:&#321;owin (Miedziana) proposed based on matching teryt:simc codes in wikidata (Q9394420) and in osm element, where teryt:simc=0192502 is declared
-				</br>
-				<a href="https://openstreetmap.org/relation/6143782" target="_new">Łowin - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				new wikipedia tag pl:Ksawer&#243;w (Wilka) proposed based on matching teryt:simc codes in wikidata (Q6440720) and in osm element, where teryt:simc=0192637 is declared
-				</br>
-				<a href="https://openstreetmap.org/relation/6146534" target="_new">Ksawerów - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				new wikipedia tag pl:Podg&#243;rze (Sulik&#243;w) proposed based on matching teryt:simc codes in wikidata (Q7206782) and in osm element, where teryt:simc=0192583 is declared
-				</br>
-				<a href="https://openstreetmap.org/relation/6146535" target="_new">Podgórze - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				new wikipedia tag pl:P&#322;oski (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q7265144) and in osm element, where teryt:simc=0377331 is declared
 				</br>
 				<a href="https://openstreetmap.org/relation/6202742" target="_new">Płoski - an affected OSM element that may be improved</a>
@@ -924,9 +998,9 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Nowoszyce (wojew&#243;dztwo dolno&#347;l&#261;skie) proposed based on matching teryt:simc codes in wikidata (Q7066879) and in osm element, where teryt:simc=0879110 is declared
+				new wikipedia tag pl:Stronia (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q7624751) and in osm element, where teryt:simc=0872668 is declared
 				</br>
-				<a href="https://openstreetmap.org/relation/6256993" target="_new">Nowoszyce - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/6257116" target="_new">Stronia - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -954,7 +1028,7 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
-				new wikipedia tag pl:Stronie &#346;l&#261;skie (wie&#347;) proposed based on matching teryt:simc codes in wikidata (Q958601) and in osm element, where teryt:simc=0855670 is declared
+				new wikipedia tag pl:Stronie-Wie&#347; proposed based on matching teryt:simc codes in wikidata (Q958601) and in osm element, where teryt:simc=0855670 is declared
 				</br>
 				<a href="https://openstreetmap.org/relation/6419570" target="_new">Stronie Śląskie - an affected OSM element that may be improved</a>
 				</br>
@@ -1038,6 +1112,12 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 				</br>
 				<hr>
 				</br>
+				new wikipedia tag pl:Januszowice (Wojan&#243;w) proposed based on matching teryt:simc codes in wikidata (Q11721180) and in osm element, where teryt:simc=0191483 is declared
+				</br>
+				<a href="https://openstreetmap.org/relation/7706443" target="_new">Januszowice - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
 				new wikipedia tag pl:Mi&#281;dzylesie (Kopaniec) proposed based on matching teryt:simc codes in wikidata (Q11783710) and in osm element, where teryt:simc=0192376 is declared
 				</br>
 				<a href="https://openstreetmap.org/relation/7707208" target="_new">Międzylesie - an affected OSM element that may be improved</a>
@@ -1072,34 +1152,40 @@ node(7298057790)['wikidata'='Q49146805']['wikipedia'='ceb:Prze&#322;&#281;cz Trz
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
+node(1666487997)['teryt:simc'='0366333']['wikidata'='Q4945716']['wikipedia'='pl:Bork&#243;w (Wojszyn)'];
+node(1666488000)['teryt:simc'='0366221']['wikidata'='Q9274388']['wikipedia'='pl:Golkowice (Droglowice)'];
+node(1666488001)['teryt:simc'='0366280']['wikidata'='Q6344887']['wikipedia'='pl:Kaczyce (Piersna)'];
 node(1733155628)['teryt:simc'='0365026']['wikidata'='Q7254015']['wikipedia'='pl:Psary (powiat legnicki)'];
+node(1792429186)['teryt:simc'='0852298']['wikidata'='Q16566510']['wikipedia'='pl:Kietlice (Owiesno)'];
 node(1803030807)['teryt:simc'='0876525']['wikidata'='Q8080603']['wikipedia'='pl:Por&#281;ba (gmina Kro&#347;nice)'];
 node(1862712099)['teryt:simc'='0377354']['wikidata'='Q8074964']['wikipedia'='pl:Zubrza (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(1884657574)['teryt:simc'='0878659']['wikidata'='Q7066856']['wikipedia'='pl:Nowosielce (Lubn&#243;w)'];
 node(1904701199)['teryt:simc'='0370814']['wikidata'='Q4945617']['wikipedia'='pl:Borki (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
+node(1956165217)['teryt:simc'='0856451']['wikidata'='Q7206917']['wikipedia'='pl:Podlesie (Olszyniec)'];
 node(1980982310)['teryt:simc'='0189486']['wikidata'='Q16656334']['wikipedia'='pl:Twardowice (powiat jaworski)'];
 node(1981031394)['teryt:simc'='0189569']['wikidata'='Q9209136']['wikipedia'='pl:Dolinka (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
+node(2211740259)['teryt:simc'='0882483']['wikidata'='Q9197785']['wikipedia'='pl:Czaplice (Bia&#322;awy Wielkie)'];
 node(2211740273)['teryt:simc'='0370560']['wikidata'='Q6738522']['wikipedia'='pl:Maj&#243;wka (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-node(2211746672)['teryt:simc'='0883583']['wikidata'='Q9338621']['wikipedia'='pl:Smark&#243;w (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
+node(2211746633)['teryt:simc'='0882833']['wikidata'='Q7359622']['wikipedia'='pl:Rog&#243;wek (Wi&#324;sko)'];
 node(2211746673)['teryt:simc'='0370620']['wikidata'='Q7600153']['wikipedia'='pl:Stanowice (powiat g&#243;rowski)'];
+node(2211746840)['teryt:simc'='0882460']['wikidata'='Q8041132']['wikipedia'='pl:W&#281;glewo (Bia&#322;awy Ma&#322;e)'];
 node(2219052599)['teryt:simc'='0365411']['wikidata'='Q8080533']['wikipedia'='pl:&#321;azek'];
 node(2238310635)['teryt:simc'='0877861']['wikidata'='Q5590332']['wikipedia'='pl:Go&#322;kowo (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(2239048883)['teryt:simc'='0876637']['wikidata'='Q16616271']['wikipedia'='pl:Wolanka (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(2239856053)['teryt:simc'='0877832']['wikidata'='Q11751980']['wikipedia'='pl:K&#261;ty (powiat milicki)'];
 node(2239856074)['teryt:simc'='0878197']['wikidata'='Q11754042']['wikipedia'='pl:Lelik&#243;w (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-node(2251316012)['teryt:simc'='0367054']['wikidata'='Q11688664']['wikipedia'='pl:Bor&#243;w (powiat polkowicki)'];
-node(2254008291)['teryt:simc'='0367025']['wikidata'='Q7701117']['wikipedia'='pl:Teodor&#243;w (powiat polkowicki)'];
 node(2285987081)['teryt:simc'='0984634']['wikidata'='Q16587732']['wikipedia'='pl:Piekielna G&#243;ra'];
 node(2491756721)['teryt:simc'='0192695']['wikidata'='Q5590253']['wikipedia'='pl:Gozdno (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-node(2689137792)['teryt:simc'='0883494']['wikidata'='Q9172218']['wikipedia'='pl:Biskupice (powiat wo&#322;owski)'];
 node(2689137848)['teryt:simc'='0370694']['wikidata'='Q646212']['wikipedia'='pl:R&#243;wna (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(2689137864)['teryt:simc'='0370790']['wikidata'='Q8067492']['wikipedia'='pl:Zawisz&#243;w (powiat g&#243;rowski)'];
 node(268951046)['teryt:simc'='0189374']['wikidata'='Q11727140']['wikipedia'='pl:Je&#380;&#243;w (powiat jaworski)'];
 node(268983147)['teryt:simc'='0368711']['wikidata'='Q11793519']['wikipedia'='pl:Nowa Ziemia (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-node(2690542148)['teryt:simc'='0883347']['wikidata'='Q11751985']['wikipedia'='pl:K&#261;ty (powiat wo&#322;owski)'];
+node(2706322698)['teryt:simc'='0882715']['wikidata'='Q11788121']['wikipedia'='pl:M&#322;oty (Krzel&#243;w)'];
+node(2713932816)['teryt:simc'='0883519']['wikidata'='Q9397661']['wikipedia'='pl:&#379;ychlin (Straszowice)'];
 node(2899625375)['teryt:simc'='0192376']['wikidata'='Q11783710']['wikipedia'='pl:Mi&#281;dzylesie (powiat karkonoski)'];
 node(2915609895)['teryt:simc'='0209600']['wikidata'='Q9396866']['wikipedia'='pl:&#346;wi&#281;ty Marek (powiat ole&#347;nicki)'];
 node(294209655)['teryt:simc'='0875603']['wikidata'='Q8081940']['wikipedia'='pl:&#346;l&#281;za (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
+node(2961951749)['teryt:simc'='0191365']['wikidata'='Q4987079']['wikipedia'='pl:Bukowiec (powiat karkonoski)'];
 node(2968187899)['teryt:simc'='0882402']['wikidata'='Q11733774']['wikipedia'='pl:Kalina (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(2968187902)['teryt:simc'='1004891']['wikidata'='Q11752057']['wikipedia'='pl:K&#281;szyce (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(2971678074)['teryt:simc'='0879423']['wikidata'='Q9198674']['wikipedia'='pl:Czernica (powiat o&#322;awski)'];
@@ -1108,16 +1194,19 @@ node(3009692096)['teryt:simc'='1063758']['wikidata'='Q11689035']['wikipedia'='pl
 node(3009692816)['teryt:simc'='0855084']['wikidata'='Q11689244']['wikipedia'='pl:B&#322;ogocice (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(3009702143)['teryt:simc'='0852826']['wikidata'='Q16548618']['wikipedia'='pl:Gaj (powiat k&#322;odzki)'];
 node(3009703662)['teryt:simc'='0880509']['wikidata'='Q9275211']['wikipedia'='pl:Grabiny (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
+node(3009709847)['teryt:simc'='0191483']['wikidata'='Q11721180']['wikipedia'='pl:Januszowice (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(3009716369)['teryt:simc'='0192399']['wikidata'='Q6430960']['wikipedia'='pl:Kopanina (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(3009717007)['teryt:simc'='0191247']['wikidata'='Q6434128']['wikipedia'='pl:Kotlina (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-node(3009720453)['teryt:simc'='0363151']['wikidata'='Q11751982']['wikipedia'='pl:K&#261;ty (powiat polkowicki)'];
+node(3009723764)['teryt:simc'='0852170']['wikidata'='Q6762489']['wikipedia'='pl:Marian&#243;wek (Dobrocin)'];
 node(3009723971)['teryt:simc'='0884565']['wikidata'='Q11770999']['wikipedia'='pl:Marz&#281;cice (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(3009726855)['teryt:simc'='0880656']['wikidata'='Q6949066']['wikipedia'='pl:Myszkowice (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-node(3009746302)['teryt:simc'='0856630']['wikidata'='Q13427174']['wikipedia'='pl:Rakowice (powiat z&#261;bkowicki)'];
+node(3009748954)['teryt:simc'='0875744']['wikidata'='Q7534224']['wikipedia'='pl:Ska&#322;a (Go&#322;ostowice)'];
 node(3009764016)['teryt:simc'='0854512']['wikidata'='Q16616527']['wikipedia'='pl:Wrze&#347;nik'];
 node(3009772511)['teryt:simc'='0880596']['wikidata'='Q9391243']['wikipedia'='pl:Zimnod&#243;&#322; (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
+node(31781692)['teryt:simc'='0377319']['wikidata'='Q7887066']['wikipedia'='pl:Unis&#322;awice (&#321;ugi)'];
 node(31783716)['teryt:simc'='0189658']['wikidata'='Q7999450']['wikipedia'='pl:Wie&#380;a'];
 node(31786650)['teryt:simc'='0377390']['wikidata'='Q7651551']['wikipedia'='pl:Su&#322;&#243;w Wielki (wie&#347; w wojew&#243;dztwie dolno&#347;l&#261;skim)'];
+node(31786901)['teryt:simc'='0872668']['wikidata'='Q7624751']['wikipedia'='pl:Stronia (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(31788066)['teryt:simc'='0209556']['wikidata'='Q19401512']['wikipedia'='pl:&#346;liz&#243;w (wie&#347; w wojew&#243;dztwie dolno&#347;l&#261;skim)'];
 node(31793343)['teryt:simc'='0367344']['wikidata'='Q7104142']['wikipedia'='pl:Orsk (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(31795616)['teryt:simc'='0877424']['wikidata'='Q521851']['wikipedia'='pl:Mi&#281;kinia (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
@@ -1125,33 +1214,39 @@ node(31797948)['teryt:simc'='0364481']['wikidata'='Q535321']['wikipedia'='pl:Kot
 node(31799617)['teryt:simc'='0877849']['wikidata'='Q6428000']['wikipedia'='pl:Kol&#281;da (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(31803928)['teryt:simc'='0197089']['wikidata'='Q5590392']['wikipedia'='pl:Go&#322;&#281;bice'];
 node(31805371)['teryt:simc'='0877683']['wikidata'='Q2878892']['wikipedia'='pl:G&#261;dkowice (wie&#347;)'];
-node(31806873)['teryt:simc'='0367002']['wikidata'='Q5286800']['wikipedia'='pl:Dobromil (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(31916416)['teryt:simc'='0856333']['wikidata'='Q8067494']['wikipedia'='pl:Zawisz&#243;w (powiat &#347;widnicki)'];
 node(31917050)['teryt:simc'='0874680']['wikidata'='Q9343661']['wikipedia'='pl:Stank&#243;w (powiat o&#322;awski)'];
 node(31917058)['teryt:simc'='0875916']['wikidata'='Q7595924']['wikipedia'='pl:Stach&#243;w'];
+node(31917293)['teryt:simc'='0875856']['wikidata'='Q7398053']['wikipedia'='pl:Sadowice (Lipowa)'];
 node(349011984)['teryt:simc'='0987294']['wikidata'='Q992910']['wikipedia'='pl:Sob&#243;tka (powiat wroc&#322;awski)'];
 node(350013640)['teryt:simc'='0855670']['wikidata'='Q958601']['wikipedia'='pl:Stronie &#346;l&#261;skie (gmina Stronie &#346;l&#261;skie)'];
 node(369598568)['teryt:simc'='0954449']['wikidata'='Q746395']['wikipedia'='pl:G&#243;ra'];
 node(413329391)['teryt:simc'='0882738']['wikidata'='Q6799461']['wikipedia'='pl:Ma&#322;owice (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(413350476)['teryt:simc'='0874414']['wikidata'='Q7198378']['wikipedia'='pl:Piskorz&#243;w'];
+node(414077492)['teryt:simc'='0880573']['wikidata'='Q7066841']['wikipedia'='pl:Nowolesie'];
 node(418569490)['teryt:simc'='0189931']['wikidata'='Q606765']['wikipedia'='pl:Leszczyniec (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(422809233)['teryt:simc'='0856340']['wikidata'='Q1269474']['wikipedia'='pl:Dzie&#263;morowice'];
 node(430419283)['teryt:simc'='0876070']['wikidata'='Q6559072']['wikipedia'='pl:Lisowice (wie&#347; w powiecie &#347;redzkim)'];
+node(435361220)['teryt:simc'='0852335']['wikidata'='Q5004606']['wikipedia'='pl:Bysz&#243;w (Roztocznik)'];
 node(438208327)['teryt:simc'='0875589']['wikidata'='Q1447509']['wikipedia'='pl:Solna (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(469343105)['teryt:simc'='0878582']['wikidata'='Q2746763']['wikipedia'='pl:Jary'];
 node(487107906)['teryt:simc'='0880515']['wikidata'='Q595188']['wikipedia'='pl:Mojk&#243;w (powiat strzeli&#324;ski)'];
 node(582525268)['teryt:simc'='0852542']['wikidata'='Q11813243']['wikipedia'='pl:Pasieczna'];
 node(610848010)['teryt:simc'='0853180']['wikidata'='Q9338118']['wikipedia'='pl:Skowronki (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
+node(692605284)['teryt:simc'='0852192']['wikidata'='Q6208184']['wikipedia'='pl:Jod&#322;ownik (Ostroszowice)'];
 node(692605324)['teryt:simc'='0855457']['wikidata'='Q6705854']['wikipedia'='pl:Lutomierz (kolonia w wojew&#243;dztwie dolno&#347;l&#261;skim)'];
 node(692605556)['teryt:simc'='0857002']['wikidata'='Q1090170']['wikipedia'='pl:Chwalis&#322;aw (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-node(692625236)['teryt:simc'='0876991']['wikidata'='Q8067352']['wikipedia'='pl:Zawadka (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
+node(692625279)['teryt:simc'='0874532']['wikidata'='Q9185671']['wikipedia'='pl:Celina (Biskupice O&#322;awskie)'];
 node(692625282)['teryt:simc'='0879328']['wikidata'='Q2038358']['wikipedia'='pl:Bolech&#243;w'];
 node(692625283)['teryt:simc'='0879363']['wikidata'='Q6125672']['wikipedia'='pl:Jakubowice (powiat o&#322;awski)'];
 node(692625385)['teryt:simc'='0876502']['wikidata'='Q8080615']['wikipedia'='pl:&#321;azy Ma&#322;e (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-node(692625455)['teryt:simc'='0883548']['wikidata'='Q8029007']['wikipedia'='pl:Wodnica (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 node(692625485)['teryt:simc'='0883413']['wikidata'='Q955576']['wikipedia'='pl:Proszkowa (Polska)'];
+node(692626265)['teryt:simc'='0852358']['wikidata'='Q5286768']['wikipedia'='pl:Dobrocinek (Roztocznik)'];
 node(692632451)['teryt:simc'='0954662']['wikidata'='Q1006065']['wikipedia'='pl:W&#261;sosz (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
+node(726786151)['teryt:simc'='0875709']['wikidata'='Q8040761']['wikipedia'='pl:W&#243;jcin (B&#322;otnica)'];
+node(768576100)['teryt:simc'='0875900']['wikidata'='Q9303688']['wikipedia'='pl:Rakowice (Prusy)'];
 relation(2709647)['teryt:simc'='0954662']['wikidata'='Q1006065']['wikipedia'='pl:W&#261;sosz (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
+relation(2936845)['teryt:simc'='0191365']['wikidata'='Q4987079']['wikipedia'='pl:Bukowiec (powiat karkonoski)'];
 relation(2965480)['teryt:simc'='0189931']['wikidata'='Q606765']['wikipedia'='pl:Leszczyniec (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 relation(3249920)['teryt:simc'='0189204']['wikidata'='Q7065942']['wikipedia'='pl:Nowa (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 relation(3249996)['teryt:simc'='0189300']['wikidata'='Q7649861']['wikipedia'='pl:Suszki'];
@@ -1165,11 +1260,6 @@ relation(6078485)['teryt:simc'='0191247']['wikidata'='Q6434128']['wikipedia'='pl
 relation(6100194)['teryt:simc'='0364481']['wikidata'='Q535321']['wikipedia'='pl:Kotla (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 relation(6105765)['teryt:simc'='0367344']['wikidata'='Q7104142']['wikipedia'='pl:Orsk (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 relation(6109364)['teryt:simc'='0370837']['wikidata'='Q8068097']['wikipedia'='pl:Zdzies&#322;awice (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-relation(6143780)['teryt:simc'='0192494']['wikidata'='Q6110346']['wikipedia'='pl:Jab&#322;oniec (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-relation(6143781)['teryt:simc'='0192459']['wikidata'='Q11793784']['wikipedia'='pl:Nowoszyce (powiat zgorzelecki)'];
-relation(6143782)['teryt:simc'='0192502']['wikidata'='Q9394420']['wikipedia'='pl:&#321;owin (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-relation(6146534)['teryt:simc'='0192637']['wikidata'='Q6440720']['wikipedia'='pl:Ksawer&#243;w (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
-relation(6146535)['teryt:simc'='0192583']['wikidata'='Q7206782']['wikipedia'='pl:Podg&#243;rze (powiat zgorzelecki)'];
 relation(6202742)['teryt:simc'='0377331']['wikidata'='Q7265144']['wikipedia'='pl:P&#322;oski'];
 relation(6202745)['teryt:simc'='0377390']['wikidata'='Q7651551']['wikipedia'='pl:Su&#322;&#243;w Wielki (wie&#347; w wojew&#243;dztwie dolno&#347;l&#261;skim)'];
 relation(6229258)['teryt:simc'='0877683']['wikidata'='Q2878892']['wikipedia'='pl:G&#261;dkowice (wie&#347;)'];
@@ -1177,7 +1267,7 @@ relation(6229261)['teryt:simc'='0877849']['wikidata'='Q6428000']['wikipedia'='pl
 relation(6242433)['teryt:simc'='0854943']['wikidata'='Q2056241']['wikipedia'='pl:Pasterka (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 relation(6252517)['teryt:simc'='0197089']['wikidata'='Q5590392']['wikipedia'='pl:Go&#322;&#281;bice'];
 relation(6256984)['teryt:simc'='0878978']['wikidata'='Q545726']['wikipedia'='pl:D&#261;browa (gmina Ole&#347;nica)'];
-relation(6256993)['teryt:simc'='0879110']['wikidata'='Q7066879']['wikipedia'='pl:Nowoszyce (powiat ole&#347;nicki)'];
+relation(6257116)['teryt:simc'='0872668']['wikidata'='Q7624751']['wikipedia'='pl:Stronia (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 relation(6405988)['teryt:simc'='0852246']['wikidata'='Q577863']['wikipedia'='pl:Mo&#347;cisko'];
 relation(6405996)['teryt:simc'='0853949']['wikidata'='Q7206885']['wikipedia'='pl:Podlesie (powiat dzier&#380;oniowski)'];
 relation(6410512)['teryt:simc'='0854038']['wikidata'='Q830423']['wikipedia'='pl:Bo&#380;k&#243;w (wie&#347;)'];
@@ -1196,6 +1286,7 @@ relation(7264956)['teryt:simc'='0876689']['wikidata'='Q16572945']['wikipedia'='p
 relation(7684578)['teryt:simc'='0368711']['wikidata'='Q11793519']['wikipedia'='pl:Nowa Ziemia (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 relation(7702495)['teryt:simc'='0370553']['wikidata'='Q5103479']['wikipedia'='pl:Chobienia (powiat g&#243;rowski)'];
 relation(7704642)['teryt:simc'='1063758']['wikidata'='Q11689035']['wikipedia'='pl:Budniki (Karkonosze)'];
+relation(7706443)['teryt:simc'='0191483']['wikidata'='Q11721180']['wikipedia'='pl:Januszowice (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 relation(7707208)['teryt:simc'='0192376']['wikidata'='Q11783710']['wikipedia'='pl:Mi&#281;dzylesie (powiat karkonoski)'];
 relation(7707209)['teryt:simc'='0192399']['wikidata'='Q6430960']['wikipedia'='pl:Kopanina (wojew&#243;dztwo dolno&#347;l&#261;skie)'];
 relation(7719833)['teryt:simc'='0853100']['wikidata'='Q16615883']['wikipedia'='pl:Wojb&#243;rz (osada)'];
@@ -1678,18 +1769,6 @@ way(907668992)['operator:wikidata'='Q7119525']['operator:wikipedia'='pl:PKP Ener
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
-				<a href="https://openstreetmap.org/relation/10048737" target="_new">Flixbus N1304: München ZOB => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
-				</br>
-				<a href="https://openstreetmap.org/relation/10051349" target="_new">Flixbus N1304: Dworzec autobusowy Warszawa Zachodnia => München ZOB - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
-				</br>
 				<a href="https://openstreetmap.org/relation/10055654" target="_new">Flixbus 1304: Dresden, Hbf. Bayrische Straße => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -1702,7 +1781,19 @@ way(907668992)['operator:wikidata'='Q7119525']['operator:wikipedia'='pl:PKP Ener
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
+				<a href="https://openstreetmap.org/relation/10060187" target="_new">Flixbus N1305: Wrocław, dworzec autobusowy => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
 				<a href="https://openstreetmap.org/relation/10060188" target="_new">Flixbus N1305: Dworzec autobusowy Warszawa Zachodnia => Wrocław, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10060408" target="_new">Flixbus 1302: Wałbrzych Sikorskiego => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -1715,6 +1806,24 @@ way(907668992)['operator:wikidata'='Q7119525']['operator:wikipedia'='pl:PKP Ener
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
 				<a href="https://openstreetmap.org/relation/10061283" target="_new">Flixbus 1303: Dworzec autobusowy Warszawa Zachodnia => Karpacz Biały Jar - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10061284" target="_new">Flixbus 1303: Karpacz Biały Jar => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10062495" target="_new">Flixbus 1306: Karpacz Biały Jar => Poznań, dworzec autobusowy - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10062496" target="_new">Flixbus 1306: Poznań, dworzec autobusowy => Karpacz Biały Jar - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -1786,6 +1895,12 @@ way(907668992)['operator:wikidata'='Q7119525']['operator:wikipedia'='pl:PKP Ener
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
+				<a href="https://openstreetmap.org/relation/10064162" target="_new">Flixbus P4: Wrocław, dworzec autobusowy => Warszawa, dworzec autobusowy Młociny - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
 				<a href="https://openstreetmap.org/relation/10068220" target="_new">Flixbus N1360: Bremen, Hbf. => Medyka Granica - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -1852,18 +1967,6 @@ way(907668992)['operator:wikidata'='Q7119525']['operator:wikipedia'='pl:PKP Ener
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
-				<a href="https://openstreetmap.org/relation/10547272" target="_new">Flixbus N3202: Karlsruhe, Hbf. Südseite => Київ, автовокзал - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
-				</br>
-				<a href="https://openstreetmap.org/relation/10547273" target="_new">Flixbus N3202: Київ, автовокзал => Karlsruhe, Hbf. Südseite - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
-				</br>
 				<a href="https://openstreetmap.org/relation/10550574" target="_new">Flixbus N3201: Rostock, ZOB => Київ, автовокзал - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -1895,18 +1998,6 @@ way(907668992)['operator:wikidata'='Q7119525']['operator:wikipedia'='pl:PKP Ener
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
 				<a href="https://openstreetmap.org/relation/10755416" target="_new">Flixbus N3200: Київ, автовокзал => Köln, Flughafen - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
-				</br>
-				<a href="https://openstreetmap.org/relation/9158951" target="_new">Flixbus N3203: Stuttgart Airport Busterminal (SAB) => Київ, Автостанція - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
-				</br>
-				<a href="https://openstreetmap.org/relation/9172075" target="_new">Flixbus N3203: Київ, Автостанція => Stuttgart Airport Busterminal (SAB) - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -1974,13 +2065,16 @@ way(907668992)['operator:wikidata'='Q7119525']['operator:wikipedia'='pl:PKP Ener
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-relation(10048737)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
-relation(10051349)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10055654)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10055655)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10060187)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10060188)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10060408)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10060409)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10061283)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10061284)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10062495)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10062496)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10062720)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10062721)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10063887)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
@@ -1992,6 +2086,7 @@ relation(10064012)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixb
 relation(10064082)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10064083)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10064161)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10064162)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10068220)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10068221)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10068222)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
@@ -2003,16 +2098,12 @@ relation(10072391)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixb
 relation(10072392)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10073012)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10073013)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
-relation(10547272)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
-relation(10547273)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10550574)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10550575)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10744511)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10744512)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10755415)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(10755416)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
-relation(9158951)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
-relation(9172075)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9331466)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9331467)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9386023)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];

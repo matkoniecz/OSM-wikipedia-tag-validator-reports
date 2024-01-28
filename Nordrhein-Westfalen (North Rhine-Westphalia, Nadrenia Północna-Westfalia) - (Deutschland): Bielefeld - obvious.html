@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-11-25. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2024-01-04. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-11-25. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				</br>
 				wikipedia page in unexpected language - de was expected:
@@ -39,6 +39,26 @@ node(1874497571)['wikidata'='Q4956029']['wikipedia'='en:Brake bei Bielefeld stat
 			</br>
 			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
 				</br>
+				Q185604 vs (missing) article redirects from de:Bahnstrecke Paderborn&#8211;Bielefeld to de:Bahnstrecke Paderborn&#8211;Brackwede
+				</br>
+				<a href="https://openstreetmap.org/relation/2523325" target="_new">2960 Paderborn Hbf - Brackwede - an affected OSM element that may be improved</a>
+				</br>
+				de:Bahnstrecke Paderborn–Bielefeld -> de:Bahnstrecke Paderborn–Brackwede
+				</br>
+				Bahnstrecke Paderborn&#8211;Brackwede
+				</br>
+				<hr>
+				</br>
+				Q802946 vs (missing) article redirects from de:Bahnstrecke Osnabr&#252;ck&#8211;Brackwede to de:Bahnstrecke Brackwede&#8211;Osnabr&#252;ck
+				</br>
+				<a href="https://openstreetmap.org/relation/2524115" target="_new">2950 Brackwede - Osnabrück - an affected OSM element that may be improved</a>
+				</br>
+				de:Bahnstrecke Osnabrück–Brackwede -> de:Bahnstrecke Brackwede–Osnabrück
+				</br>
+				Bahnstrecke Brackwede&#8211;Osnabr&#252;ck
+				</br>
+				<hr>
+				</br>
 				Q5410853 vs (missing) article redirects from de:Center of Excellence Cognitive Interaction Technology to de:Exzellenzcluster Kognitive Interaktionstechnologie
 				</br>
 				<a href="https://openstreetmap.org/relation/2929060" target="_new">Exzellenzcluster Kognitive Interaktionstechnologie (CITEC) - an affected OSM element that may be improved</a>
@@ -53,39 +73,16 @@ node(1874497571)['wikidata'='Q4956029']['wikipedia'='en:Brake bei Bielefeld stat
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
+relation(2523325)['wikidata'='Q185604']['wikipedia'='de:Bahnstrecke Paderborn&#8211;Bielefeld'];
+relation(2524115)['wikidata'='Q802946']['wikipedia'='de:Bahnstrecke Osnabr&#252;ck&#8211;Brackwede'];
 relation(2929060)['wikidata'='Q5410853']['wikipedia'='de:Center of Excellence Cognitive Interaction Technology'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
-			</br>
-			<hr>
-			</br>
-			<a href="#wikipedia from wikidata tag, unexpected language"><h2 id="wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</h2></a>
-				</br>
-				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
-				</br>
-				<a href="https://openstreetmap.org/node/1875417136" target="_new">Quelle - an affected OSM element that may be improved</a>
-				</br>
-				failed to describe proposed relinking here (was: {'current': None, 'to': 'en:Quelle station'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'en:Quelle station'}}]
-				</br>
-				<hr>
-			</br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			</br>
-			<blockquote>[out:xml][timeout:3600];
-(
-node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
-); (._;>;); out meta qt;//['wikipedia from wikidata tag, unexpected language']</blockquote>
 			</br>
 			<hr>
 			</br>
 			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</h2></a>
 			</br>
 			operator:wikidata and operator:wikipedia tags link to a different objects, because operator:wikipedia tag points to a redirect that should be followed
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1000278859" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
 				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
@@ -108,12 +105,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/11238659105" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1231223455" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -483,12 +474,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1362214104" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/1382927499" target="_new">Werning - an affected OSM element that may be improved</a>
@@ -585,21 +570,9 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1453792808" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/1557092751" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1577649411" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -624,12 +597,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/1621355766" target="_new">Rathaus - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1628900525" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -672,12 +639,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/1650997470" target="_new">Wellensiek - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1657902866" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -729,12 +690,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1685690282" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/1686539052" target="_new">Sieker - an affected OSM element that may be improved</a>
@@ -762,12 +717,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/1688726707" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1728623719" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -819,12 +768,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1733583843" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/1734990190" target="_new">Hauptbahnhof (U) - an affected OSM element that may be improved</a>
@@ -861,12 +804,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1755682569" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/1766627339" target="_new">an affected OSM element that may be improved</a>
@@ -888,12 +825,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/1773339036" target="_new">Stieghorst - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/1828435289" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -1089,27 +1020,9 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2210390985" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2263132528" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/2267280716" target="_new">Hassebrock - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2292526977" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -1143,18 +1056,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/243169772" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2445652712" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/2456031046" target="_new">Zur Bülte - an affected OSM element that may be improved</a>
@@ -1164,18 +1065,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/2456031047" target="_new">Zur Bülte - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2478330346" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2501847979" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -1359,132 +1248,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692492655" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692512594" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692616654" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692616685" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692616690" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692616691" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692616693" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692616696" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692616703" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692732752" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692732755" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692732756" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692732757" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692732758" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692732759" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692732763" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692732768" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692732769" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692732776" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692732778" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/2692906964" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/2693343591" target="_new">Koblenzer Straße - an affected OSM element that may be improved</a>
@@ -1626,18 +1389,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/280458827" target="_new">Koblenzer Straße - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/282626993" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/283084076" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -1815,21 +1566,9 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/356951433" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/358177054" target="_new">Baumheide - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/367090297" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -2019,18 +1758,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/412758444" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/4133547227" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/4151871744" target="_new">Mozartstraße/Synagoge - an affected OSM element that may be improved</a>
@@ -2052,84 +1779,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/419640431" target="_new">Babenhausen Süd - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/4347838496" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/4347871651" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/450943316" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/451665421" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/452561190" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/453316254" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/453316269" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/453316304" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/453316311" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/453316322" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/453316332" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/453316351" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/459960543" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -2157,42 +1806,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/471761640" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/471761641" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/472981281" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/472981329" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/472981332" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/472981337" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/473401080" target="_new">Keilerweg - an affected OSM element that may be improved</a>
@@ -2211,63 +1824,15 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/4759264211" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/479395776" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/479725601" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/482823509" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/490532009" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/4970808321" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/5112610605" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/516263356" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/535814130" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/544388515" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -2313,21 +1878,9 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/571389116" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/580993983" target="_new">Pappelkrug - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/582689216" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -2355,30 +1908,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/606062792" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/610896356" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/610896358" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/612046834" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/616512363" target="_new">Stieghorst Friedhof - an affected OSM element that may be improved</a>
@@ -2394,12 +1923,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/616886990" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/618890282" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -2538,12 +2061,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/622130422" target="_new">Wacholderweg - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/625271636" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -2865,12 +2382,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/655174168" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/6572175981" target="_new">Adenauerplatz - an affected OSM element that may be improved</a>
@@ -2910,12 +2421,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/6591755596" target="_new">Wittekindstraße (U) - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/659220542" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -3063,12 +2568,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/667030536" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/6687677215" target="_new">Deciusstraße - an affected OSM element that may be improved</a>
@@ -3147,12 +2646,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/676634666" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/6782322572" target="_new">Graf-von-Stauffenberg-Straße - an affected OSM element that may be improved</a>
@@ -3195,18 +2688,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/679210837" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/679210838" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/6793148613" target="_new">Dornberg Bürgerzentrum - an affected OSM element that may be improved</a>
@@ -3219,12 +2700,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/679712512" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/6799448302" target="_new">Dornberg Kleinbahnhof - an affected OSM element that may be improved</a>
@@ -3234,18 +2709,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/6799448303" target="_new">Dornberg Kleinbahnhof - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/680241370" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/680241394" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -3273,18 +2736,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/688399474" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/688401849" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/691391948" target="_new">Antaresstraße - an affected OSM element that may be improved</a>
@@ -3309,12 +2760,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/704015587" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/7046649244" target="_new">Marktstraße - an affected OSM element that may be improved</a>
@@ -3336,12 +2781,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/7046649247" target="_new">Marktstraße - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/705501887" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -3384,18 +2823,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/7218499873" target="_new">Thomashof - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/724247856" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/736968203" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -3471,12 +2898,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/7782769951" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/7825084585" target="_new">Rudolf-Oetker-Halle - an affected OSM element that may be improved</a>
@@ -3498,48 +2919,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/8082098068" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/844222531" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/846494920" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/8479156698" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/848241595" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/848241605" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/848241617" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/848241621" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -3603,24 +2982,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				<hr>
 				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/8922760194" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/894933363" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/894933676" target="_new">an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/8974365854" target="_new">Pödinghauser Straße - an affected OSM element that may be improved</a>
@@ -3630,12 +2991,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/8974365855" target="_new">Pödinghauser Straße - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/907288195" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -3654,12 +3009,6 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/node/9190340670" target="_new">Landgericht - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				Q157645 vs (missing) article redirects from en:Deutsche Post to en:DHL Group
-				</br>
-				<a href="https://openstreetmap.org/node/9208352118" target="_new">an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -3959,6 +3308,12 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				</br>
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
+				<a href="https://openstreetmap.org/relation/2091330" target="_new">Bus 21: Am Alten Bauhof => Werther - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
+				</br>
 				<a href="https://openstreetmap.org/relation/2096604" target="_new">Bus 24: Sieker => Dornberg - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -4104,6 +3459,12 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
 				</br>
 				<a href="https://openstreetmap.org/relation/29034" target="_new">StadtBahn 3: Babenhausen Süd => Dürkopp Tor 6 - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q1941281 vs (missing) article redirects from de:moBiel to de:MoBiel
+				</br>
+				<a href="https://openstreetmap.org/relation/331864" target="_new">Bus 21: Werther => Am Alten Bauhof - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 				</br>
@@ -5953,12 +5314,10 @@ node(1875417136)['wikidata'='Q7271199']['wikipedia'!~'.*'];
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-node(1000278859)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(10113720236)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(10114034839)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(10114034840)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(11238659105)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(1231223455)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(1301443635)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1301451481)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1311794378)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6020,7 +5379,6 @@ node(1359138949)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(1359138950)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1359139194)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1359139232)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(1362214104)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(1382927499)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1382927500)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1386391878)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6037,14 +5395,11 @@ node(1386534272)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(1386534283)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1416935915)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1416935926)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(1453792808)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(1557092751)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(1577649411)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(1578924679)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1590683300)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1621161730)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1621355766)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(1628900525)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(1650901390)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1650901393)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1650918585)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6052,7 +5407,6 @@ node(1650918586)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(1650997203)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1650997208)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1650997470)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(1657902866)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(1658780580)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1660114947)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1662768536)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6061,13 +5415,11 @@ node(1662923367)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(1662923370)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1662923373)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1662923578)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(1685690282)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(1686539052)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1686539054)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1686539058)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1686539085)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1688726707)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(1728623719)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(1733064836)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1733064842)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1733064844)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6076,19 +5428,16 @@ node(1733064846)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(1733064859)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1733094424)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1733094426)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(1733583843)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(1734990190)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1734990191)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1739618288)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1742083527)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1748066519)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1748066522)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(1755682569)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(1766627339)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1773339034)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1773339035)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1773339036)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(1828435289)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(183846844)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(183846903)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(1901315236)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6121,21 +5470,14 @@ node(213770873)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'
 node(213770965)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(213770983)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(213771052)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(2210390985)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2263132528)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(2267280716)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(2292526977)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(2299592303)['operator:wikidata'='Q1381343']['operator:wikipedia'='de:Evangelisches Krankenhaus Bielefeld'];
 node(2360603401)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(2419001240)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(2419001241)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(2419001242)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(243169772)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2445652712)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(2456031046)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(2456031047)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(2478330346)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2501847979)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(2531503669)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(2531503670)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(2531503671)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6166,27 +5508,6 @@ node(2661556228)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(2688970893)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(2688970898)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(2688971005)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(2692492655)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692512594)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692616654)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692616685)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692616690)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692616691)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692616693)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692616696)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692616703)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692732752)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692732755)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692732756)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692732757)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692732758)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692732759)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692732763)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692732768)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692732769)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692732776)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692732778)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(2692906964)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(2693343591)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(269542858)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(269542860)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6211,8 +5532,6 @@ node(280275584)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'
 node(280275603)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(280431643)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(280458827)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(282626993)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(283084076)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(2831924116)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(2831924117)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(2831924118)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6242,9 +5561,7 @@ node(35493566)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel']
 node(35495083)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(35495084)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(35495093)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(356951433)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(358177054)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(367090297)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(3787633495)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(3830513482)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(385209792)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6276,48 +5593,19 @@ node(4124205128)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(4124205129)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(4124205130)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(4124205131)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(412758444)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(4133547227)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(4151871744)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(4151871745)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(418506570)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(419640431)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(4347838496)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(4347871651)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(450943316)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(451665421)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(452561190)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(453316254)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(453316269)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(453316304)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(453316311)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(453316322)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(453316332)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(453316351)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(459960543)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(462165592)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(46426050)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(46426122)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(465192766)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(471761640)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(471761641)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(472981281)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(472981329)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(472981332)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(472981337)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(473401080)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(473401081)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(4746996638)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(4759264211)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(479395776)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(479725601)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(482823509)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(490532009)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(4970808321)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(5112610605)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(516263356)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(535814130)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(544388515)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(566379938)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(567177014)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(567177015)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6325,21 +5613,14 @@ node(567177020)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'
 node(567177021)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(567177023)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(567177029)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(571389116)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(580993983)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(582689216)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(5899119760)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(5899119761)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(605280278)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(605504119)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(606062792)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(610896356)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(610896358)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(612046834)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(616512363)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(616512364)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(616886990)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(618890282)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(620873628)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(620883347)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(620883349)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6363,7 +5644,6 @@ node(622130406)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'
 node(622130413)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(622130419)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(622130422)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(625271636)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(625958229)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(625958230)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(625958233)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6417,7 +5697,6 @@ node(6513056509)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(6521432260)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6539128515)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6539128549)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(655174168)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(6572175981)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6572181388)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6572181389)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6425,7 +5704,6 @@ node(6586750076)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(6591755585)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6591755586)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6591755596)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(659220542)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(6596445118)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6596445124)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6596445125)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6450,7 +5728,6 @@ node(6604650788)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(6646653172)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6647033149)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6651066523)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(667030536)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(6687677215)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6687677216)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6687810906)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6464,7 +5741,6 @@ node(6707776720)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(6708008011)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6715812719)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6715924488)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(676634666)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(6782322572)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6782634110)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6783063692)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6472,31 +5748,22 @@ node(6783170615)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(6783170616)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6787778180)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6787778319)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(679210837)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(679210838)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(6793148613)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6793148615)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(679712512)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(6799448302)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6799448303)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(680241370)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(680241394)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(6805802779)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6812133637)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6882587162)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6882587176)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(688399474)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(688401849)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(691391948)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(691391981)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6945841846)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(6947742521)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(704015587)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(7046649244)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(7046649245)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(7046649246)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(7046649247)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(705501887)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(707378611)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(707378613)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(7139776363)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6504,8 +5771,6 @@ node(7139824609)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(7139824613)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(7145885531)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(7218499873)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(724247856)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(736968203)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(748839239)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(748839240)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(7527401252)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6518,18 +5783,10 @@ node(7631315432)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(7731018600)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(775884843)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(7770686525)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(7782769951)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(7825084585)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(8038995994)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(8038995995)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(8082098068)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(844222531)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(846494920)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(8479156698)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(848241595)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(848241605)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(848241617)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(848241621)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(864702345)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(864702346)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(864712661)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6540,16 +5797,11 @@ node(8721376025)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 node(8721376026)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(8721376027)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(8721376028)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(8922760194)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(894933363)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
-node(894933676)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(8974365854)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(8974365855)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(907288195)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(9121008093)['operator:wikidata'='Q1613532']['operator:wikipedia'='en:Hermes Group'];
 node(9190340669)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(9190340670)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
-node(9208352118)['operator:wikidata'='Q157645']['operator:wikipedia'='en:Deutsche Post'];
 node(9257153092)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(9257153093)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 node(9257153094)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6599,6 +5851,7 @@ relation(174708)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel
 relation(2067326)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 relation(2068281)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 relation(2068799)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
+relation(2091330)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 relation(2096604)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 relation(2096647)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 relation(2096648)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6624,6 +5877,7 @@ relation(2563486)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBie
 relation(29032)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 relation(29033)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 relation(29034)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
+relation(331864)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 relation(399759)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 relation(405270)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 relation(412213)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
@@ -6932,6 +6186,151 @@ way(993690991)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel']
 way(993988065)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 way(994919067)['operator:wikidata'='Q1941281']['operator:wikipedia'='de:moBiel'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</h2></a>
+			</br>
+			network:wikidata and network:wikipedia tags link to a different objects, because network:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10110505" target="_new">Flixbus 038: Berlin ZOB => Bonn, Museumsmeile - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10179272" target="_new">Flixbus N1320: Dworzec autobusowy Warszawa Zachodnia => Bonn, Museumsmeile - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10180422" target="_new">Flixbus N1320: Bonn, Museumsmeile => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10702329" target="_new">Flixbus 167: Praha, ÚAN Florenc => Düsseldorf ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10702330" target="_new">Flixbus 167: Düsseldorf ZOB => Praha, ÚAN Florenc - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10755415" target="_new">Flixbus N3200: Köln, Flughafen => Київ, автовокзал - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10755416" target="_new">Flixbus N3200: Київ, автовокзал => Köln, Flughafen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10773365" target="_new">Flixbus 073(part GER): Puttgarden, Fährhafen => Köln, Flughafen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/10773366" target="_new">Flixbus 073(part GER): Köln, Flughafen => Puttgarden, Fährhafen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11273222" target="_new">Flixbus 110: Osnabrück, ZOB => Stuttgart, Airport Busterminal (SAB) - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11273883" target="_new">Flixbus N30: Düsseldorf ZOB => Berlin ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11273884" target="_new">Flixbus N30: Berlin ZOB => Düsseldorf ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11274692" target="_new">Flixbus N110 (part DE): Puttgarden, Fährhafen => Ulm, Eberhard-Finckh-Straße - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11295858" target="_new">Flixbus N110 (part DE): Ulm, Eberhard-Finckh-Straße => Puttgarden, Fährhafen - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/3016480" target="_new">Flixbus 030: Berlin ZOB => Koblenz ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/3144678" target="_new">Flixbus 038: Bonn, Museumsmeile => Berlin ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/7643058" target="_new">Flixbus 110: Stuttgart, Airport Busterminal (SAB) => Osnabrück, ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/7767482" target="_new">Flixbus 059: Paderborn, Maspernplatz => Berlin ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/9513296" target="_new">Flixbus 059: Berlin ZOB => Paderborn, Maspernplatz - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(10110505)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10179272)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10180422)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10702329)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10702330)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10755415)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10755416)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10773365)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10773366)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11273222)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11273883)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11273884)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11274692)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11295858)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(3016480)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(3144678)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(7643058)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(7767482)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9513296)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags']</blockquote>
 			</br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />

@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2023-11-30. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2023-12-28. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2023-11-30. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				</br>
 				wikipedia page in unexpected language - de was expected:
@@ -35,13 +35,13 @@ node(1983651284)['wikidata'='Q572280']['wikipedia'='en:Neuenhaus'];
 			</br>
 			<hr>
 			</br>
-			<a href="#wikipedia from wikidata tag, unexpected language"><h2 id="wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</h2></a>
+			<a href="#wikipedia tag from wikipedia tag in an outdated form"><h2 id="wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</h2></a>
 				</br>
-				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article
+				wikipedia tag in outdated form ([&#x27;wikipedia:de&#x27;, &#x27;wikipedia:nl&#x27;]), wikipedia tag may be added
 				</br>
-				<a href="https://openstreetmap.org/node/427530099" target="_new">Schüttorf - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9953917" target="_new">Grenzaa - an affected OSM element that may be improved</a>
 				</br>
-				failed to describe proposed relinking here (was: {'current': None, 'to': 'en:Schüttorf railway station'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'en:Schüttorf railway station'}}]
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'de:Grenzaa'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'de:Grenzaa'}}]
 				</br>
 				<hr>
 			</br>
@@ -49,8 +49,31 @@ node(1983651284)['wikidata'='Q572280']['wikipedia'='en:Neuenhaus'];
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-node(427530099)['wikidata'='Q7433366']['wikipedia'!~'.*'];
-); (._;>;); out meta qt;//['wikipedia from wikidata tag, unexpected language']</blockquote>
+relation(9953917)['wikidata'='Q314766']['wikipedia'!~'.*']['wikipedia:de'='Grenzaa']['wikipedia:nl'='Schoonebeker Diep'];
+); (._;>;); out meta qt;//['wikipedia tag from wikipedia tag in an outdated form']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q1399540 vs (missing) article redirects from de:Nordhorn Range to de:Luft-/Bodenschie&#223;platz Nordhorn
+				</br>
+				<a href="https://openstreetmap.org/way/70909727" target="_new">Luft-Boden-Schießplatz Nordhorn - an affected OSM element that may be improved</a>
+				</br>
+				de:Nordhorn Range -> de:Luft-/Bodenschießplatz Nordhorn
+				</br>
+				Luft-/Bodenschie&#223;platz Nordhorn
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(70909727)['wikidata'='Q1399540']['wikipedia'='de:Nordhorn Range'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
 			</br>
 			<hr>
 			</br>
@@ -108,6 +131,12 @@ node(427530099)['wikidata'='Q7433366']['wikipedia'!~'.*'];
 				</br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				</br>
+				<a href="https://openstreetmap.org/relation/7201319" target="_new">Flixbus X31: Amsterdam Sloterdijk => Berlin ZOB - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
 				<a href="https://openstreetmap.org/relation/7201320" target="_new">Flixbus X31: Berlin ZOB => Amsterdam Sloterdijk - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
@@ -124,6 +153,7 @@ relation(5754039)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbu
 relation(5754040)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(5760607)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(5760608)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(7201319)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(7201320)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags']</blockquote>
 			</br>
