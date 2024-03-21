@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on various dates including 2024-01-27. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on various dates including 2024-03-20. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,259 @@ This page was generated using data obtained on various dates including 2024-01-2
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			</br>
 			<hr>
-<ul></ul><h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li></ul>			</br>
+			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
+				</br>
+				wikipedia page in unexpected language - lv was expected:
+				</br>
+				<a href="https://openstreetmap.org/node/29532673" target="_new">Ogre - an affected OSM element that may be improved</a>
+				</br>
+				en:Ogre, Latvia -> lv:Ogre
+				</br>
+				Ogre
+				</br>
+				<hr>
+				</br>
+				wikipedia page in unexpected language - lv was expected:
+				</br>
+				<a href="https://openstreetmap.org/relation/147428" target="_new">Kleisti - an affected OSM element that may be improved</a>
+				</br>
+				en:Kleisti -> lv:Kleisti (Rīga)
+				</br>
+				Kleisti (R&#299;ga)
+				</br>
+				<hr>
+				</br>
+				wikipedia page in unexpected language - lv was expected:
+				</br>
+				<a href="https://openstreetmap.org/way/121221735" target="_new">Svētās Trīsvienības Baznīca - an affected OSM element that may be improved</a>
+				</br>
+				en:Holy Trinity Cathedral, Liepāja -> lv:Liepājas Svētās Trīsvienības katedrāle
+				</br>
+				Liep&#257;jas Sv&#275;t&#257;s Tr&#299;svien&#299;bas katedr&#257;le
+				</br>
+				<hr>
+				</br>
+				wikipedia page in unexpected language - lv was expected:
+				</br>
+				<a href="https://openstreetmap.org/way/90279586" target="_new">Informācijas Sistēmu Menedžmenta augstskola - an affected OSM element that may be improved</a>
+				</br>
+				en:ISMA University -> lv:Informācijas sistēmu menedžmenta augstskola
+				</br>
+				Inform&#257;cijas sist&#275;mu mened&#382;menta augstskola
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(29532673)['wikidata'='Q731915']['wikipedia'='en:Ogre, Latvia'];
+relation(147428)['wikidata'='Q6420387']['wikipedia'='en:Kleisti'];
+way(121221735)['wikidata'='Q1257628']['wikipedia'='en:Holy Trinity Cathedral, Liep&#257;ja'];
+way(90279586)['wikidata'='Q23136317']['wikipedia'='en:ISMA University'];
+); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				</br>
+				Q15219499 vs (missing) article redirects from lv:Pasienes Sv&#275;t&#257; Dominika Romas kato&#316;u bazn&#299;ca to lv:Pasienes bazn&#299;ca
+				</br>
+				<a href="https://openstreetmap.org/node/1402600749" target="_new">Pasiene - an affected OSM element that may be improved</a>
+				</br>
+				lv:Pasienes Svētā Dominika Romas katoļu baznīca -> lv:Pasienes baznīca
+				</br>
+				Pasienes bazn&#299;ca
+				</br>
+				<hr>
+				</br>
+				Q17384368 vs (missing) article redirects from lv:Riharda V&#257;gnera iela (R&#299;ga) to lv:Riharda V&#257;gnera iela
+				</br>
+				<a href="https://openstreetmap.org/relation/15670357" target="_new">Riharda Vāgnera iela - an affected OSM element that may be improved</a>
+				</br>
+				lv:Riharda Vāgnera iela (Rīga) -> lv:Riharda Vāgnera iela
+				</br>
+				Riharda V&#257;gnera iela
+				</br>
+				<hr>
+				</br>
+				Q21002223 vs (missing) article redirects from lv:Turge&#326;eva iela to lv:Vilhelma Purv&#299;&#353;a iela (R&#299;ga)
+				</br>
+				<a href="https://openstreetmap.org/relation/15673044" target="_new">Vilhelma Purvīša iela - an affected OSM element that may be improved</a>
+				</br>
+				lv:Turgeņeva iela -> lv:Vilhelma Purvīša iela (Rīga)
+				</br>
+				Vilhelma Purv&#299;&#353;a iela (R&#299;ga)
+				</br>
+				<hr>
+				</br>
+				Q25938091 vs (missing) article redirects from lv:Pu&#353;kina iela (R&#299;ga) to lv:K&#257;r&#316;a M&#299;lenbaha iela (R&#299;ga)
+				</br>
+				<a href="https://openstreetmap.org/relation/15673045" target="_new">Kārļa Mīlenbaha iela - an affected OSM element that may be improved</a>
+				</br>
+				lv:Puškina iela (Rīga) -> lv:Kārļa Mīlenbaha iela (Rīga)
+				</br>
+				K&#257;r&#316;a M&#299;lenbaha iela (R&#299;ga)
+				</br>
+				<hr>
+				</br>
+				Q16357024 vs (missing) article redirects from lv:Gogo&#316;a iela to lv:Em&#299;lijas Benjami&#326;as iela
+				</br>
+				<a href="https://openstreetmap.org/relation/15673047" target="_new">Emīlijas Benjamiņas iela - an affected OSM element that may be improved</a>
+				</br>
+				lv:Gogoļa iela -> lv:Emīlijas Benjamiņas iela
+				</br>
+				Em&#299;lijas Benjami&#326;as iela
+				</br>
+				<hr>
+				</br>
+				Q4394573 vs (missing) article redirects from lv:R&#299;gas HES &#363;denskr&#257;tuve to lv:R&#299;gas &#363;denskr&#257;tuve
+				</br>
+				<a href="https://openstreetmap.org/relation/5462605" target="_new">Rīgas ūdenskrātuve - an affected OSM element that may be improved</a>
+				</br>
+				lv:Rīgas HES ūdenskrātuve -> lv:Rīgas ūdenskrātuve
+				</br>
+				R&#299;gas &#363;denskr&#257;tuve
+				</br>
+				<hr>
+				</br>
+				Q2534084 vs (missing) article redirects from ru:&#1055;&#1077;&#1095;&#1086;&#1088;&#1089;&#1082;&#1080;&#1081; &#1088;&#1072;&#1081;&#1086;&#1085; to ru:&#1055;&#1077;&#1095;&#1086;&#1088;&#1089;&#1082;&#1080;&#1081; &#1088;&#1072;&#1081;&#1086;&#1085; (&#1055;&#1089;&#1082;&#1086;&#1074;&#1089;&#1082;&#1072;&#1103; &#1086;&#1073;&#1083;&#1072;&#1089;&#1090;&#1100;)
+				</br>
+				<a href="https://openstreetmap.org/relation/956298" target="_new">Печорский муниципальный округ - an affected OSM element that may be improved</a>
+				</br>
+				ru:Печорский район -> ru:Печорский район (Псковская область)
+				</br>
+				&#1055;&#1077;&#1095;&#1086;&#1088;&#1089;&#1082;&#1080;&#1081; &#1088;&#1072;&#1081;&#1086;&#1085; (&#1055;&#1089;&#1082;&#1086;&#1074;&#1089;&#1082;&#1072;&#1103; &#1086;&#1073;&#1083;&#1072;&#1089;&#1090;&#1100;)
+				</br>
+				<hr>
+				</br>
+				Q4300374 vs (missing) article redirects from lv:Daugavpils Sv&#275;t&#257; Nikolaja vectic&#299;bnieku bazn&#299;ca to lv:Daugavpils Sv. Nikolaja vectic&#299;bnieku bazn&#299;ca
+				</br>
+				<a href="https://openstreetmap.org/way/129571412" target="_new">Daugavpils Vecticībnieku Pomoras Baznīca - an affected OSM element that may be improved</a>
+				</br>
+				lv:Daugavpils Svētā Nikolaja vecticībnieku baznīca -> lv:Daugavpils Sv. Nikolaja vecticībnieku baznīca
+				</br>
+				Daugavpils Sv. Nikolaja vectic&#299;bnieku bazn&#299;ca
+				</br>
+				<hr>
+				</br>
+				Q2662755 vs (missing) article redirects from ru:&#1050;&#1077;&#1075;&#1091;&#1084;&#1089;&#1089;&#1082;&#1072;&#1103; &#1043;&#1069;&#1057; to ru:&#1050;&#1077;&#1075;&#1091;&#1084;&#1089;&#1082;&#1072;&#1103; &#1043;&#1069;&#1057;
+				</br>
+				<a href="https://openstreetmap.org/way/142179844" target="_new">an affected OSM element that may be improved</a>
+				</br>
+				ru:Кегумсская ГЭС -> ru:Кегумская ГЭС
+				</br>
+				&#1050;&#1077;&#1075;&#1091;&#1084;&#1089;&#1082;&#1072;&#1103; &#1043;&#1069;&#1057;
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(1402600749)['wikidata'='Q15219499']['wikipedia'='lv:Pasienes Sv&#275;t&#257; Dominika Romas kato&#316;u bazn&#299;ca'];
+relation(15670357)['wikidata'='Q17384368']['wikipedia'='lv:Riharda V&#257;gnera iela (R&#299;ga)'];
+relation(15673044)['wikidata'='Q21002223']['wikipedia'='lv:Turge&#326;eva iela'];
+relation(15673045)['wikidata'='Q25938091']['wikipedia'='lv:Pu&#353;kina iela (R&#299;ga)'];
+relation(15673047)['wikidata'='Q16357024']['wikipedia'='lv:Gogo&#316;a iela'];
+relation(5462605)['wikidata'='Q4394573']['wikipedia'='lv:R&#299;gas HES &#363;denskr&#257;tuve'];
+relation(956298)['wikidata'='Q2534084']['wikipedia'='ru:&#1055;&#1077;&#1095;&#1086;&#1088;&#1089;&#1082;&#1080;&#1081; &#1088;&#1072;&#1081;&#1086;&#1085;'];
+way(129571412)['wikidata'='Q4300374']['wikipedia'='lv:Daugavpils Sv&#275;t&#257; Nikolaja vectic&#299;bnieku bazn&#299;ca'];
+way(142179844)['wikidata'='Q2662755']['wikipedia'='ru:&#1050;&#1077;&#1075;&#1091;&#1084;&#1089;&#1089;&#1082;&#1072;&#1103; &#1043;&#1069;&#1057;'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia tag in an outdated form for removal"><h2 id="wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</h2></a>
+				</br>
+				wikipedia tag in outdated form ([&#x27;wikipedia:pl&#x27;]), with wikipedia and wikidata tag present and may be safely removed
+				</br>
+				<a href="https://openstreetmap.org/relation/70691" target="_new">Браслаўскі раён - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				wikipedia tag in outdated form ([&#x27;wikipedia:pl&#x27;]), with wikipedia and wikidata tag present and may be safely removed
+				</br>
+				<a href="https://openstreetmap.org/relation/8534004" target="_new">Zilupe / Сінюха / Синяя - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(70691)['wikidata'='Q1517382']['wikipedia'='ru:&#1041;&#1088;&#1072;&#1089;&#1083;&#1072;&#1074;&#1089;&#1082;&#1080;&#1081; &#1088;&#1072;&#1081;&#1086;&#1085;']['wikipedia:pl'='Rejon bras&#322;awski'];
+relation(8534004)['wikidata'='Q203369']['wikipedia'='lv:Zilupe (upe)']['wikipedia:pl'='Zilupe (rzeka)'];
+); (._;>;); out meta qt;//['wikipedia tag in an outdated form for removal']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikidata redirect"><h2 id="wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</h2></a>
+			</br>
+			wikidata and wikipedia tags link to a different objects, because wikidata tag points to a redirect that should be followed
+				</br>
+				Q19830038 vs Q2917011
+				</br>
+				<a href="https://openstreetmap.org/way/118956831" target="_new">LU Botāniskais Dārzs - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(118956831)['wikidata'='Q19830038']['wikipedia'='lv:Latvijas Universit&#257;tes Bot&#257;niskais d&#257;rzs'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikidata redirect']</blockquote>
+			</br>
+			<hr>
+			</br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</h2></a>
+			</br>
+			network:wikidata and network:wikipedia tags link to a different objects, because network:wikipedia tag points to a redirect that should be followed
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11612349" target="_new">Flixbus 1229: Rīgas Starptautiskā autoosta => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11612350" target="_new">Flixbus 1229: Dworzec autobusowy Warszawa Zachodnia => Rīgas Starptautiskā autoosta - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11613099" target="_new">Flixbus N1229: Tallinn, D-terminali parvlaevasadam => Dworzec autobusowy Warszawa Zachodnia - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+				</br>
+				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
+				</br>
+				<a href="https://openstreetmap.org/relation/11613100" target="_new">Flixbus N1229: Dworzec autobusowy Warszawa Zachodnia => Tallinn, D-terminali parvlaevasadam - an affected OSM element that may be improved</a>
+				</br>
+				<hr>
+			</br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			</br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(11612349)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11612349)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11612350)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11612350)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11613099)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11613099)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11613100)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(11613100)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags']</blockquote>
+			</br>
+			<hr>
+<h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
 <p class="small">Note to self: online version hosted at <a href="https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports">https://matkoniecz.github.io/OSM-wikipedia-tag-validator-reports</a>, files are stored at <a href="https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports">https://github.com/matkoniecz/OSM-wikipedia-tag-validator-reports</a>.		</div>
 	</body>
 </html>
