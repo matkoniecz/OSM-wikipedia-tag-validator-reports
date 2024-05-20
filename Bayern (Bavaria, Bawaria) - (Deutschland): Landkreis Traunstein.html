@@ -4,7 +4,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br />
-This page was generated using data obtained on 2024-04-24. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
+This page was generated using data obtained on 2024-05-15. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br />
 <br />
 <br />
 			</br>
@@ -13,7 +13,7 @@ This page was generated using data obtained on 2024-04-24. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			</br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li></ul>			</br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#malformed secondary wikidata tag - for brand prefixed tags">malformed secondary wikidata tag - for brand prefixed tags</a></li></ul>			</br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			</br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br />Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br />Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -40,26 +40,12 @@ way(25931923)['wikipedia'='de:Rauschbergbahn (au&#223;er Betrieb)'];
 				<a href="https://openstreetmap.org/node/240127791" target="_new">Reit im Winkl - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
-				</br>
-				wikidata and wikipedia tags link to a different objects (Q17283185 vs Q4138 wikidata id assigned to linked Wikipedia article)
-				</br>
-				<a href="https://openstreetmap.org/relation/2608236" target="_new">Chiemsee - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				wikidata and wikipedia tags link to a different objects (Q17283081 vs Q314769 wikidata id assigned to linked Wikipedia article)
-				</br>
-				<a href="https://openstreetmap.org/relation/941677" target="_new">Waginger See - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
 			</br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
 node(240127791)['wikidata'='Q32252818']['wikipedia'='de:Reit im Winkl'];
-relation(2608236)['wikidata'='Q17283185']['wikipedia'='de:Chiemsee'];
-relation(941677)['wikidata'='Q17283081']['wikipedia'='de:Waginger See'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
 			</br>
 			<hr>
@@ -81,17 +67,11 @@ node(2985644111)['information'='board']['wikipedia'='de:Bifu&#223;'];
 			</br>
 			<hr>
 			</br>
-			<a href="#wikipedia wikidata mismatch - for operator prefixed tags"><h2 id="wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</h2></a>
+			<a href="#malformed secondary wikidata tag - for brand prefixed tags"><h2 id="malformed secondary wikidata tag - for brand prefixed tags">malformed secondary wikidata tag - for brand prefixed tags</h2></a>
 				</br>
-				operator:wikidata and operator:wikipedia tags link to a different objects (Q107477739 vs Q1273383 wikidata id assigned to linked Wikipedia article)
+				malformed value in brand:wikidata tag (de:ADAC)
 				</br>
-				<a href="https://openstreetmap.org/relation/1364614" target="_new">1059 Prien - Siegsdorf - an affected OSM element that may be improved</a>
-				</br>
-				<hr>
-				</br>
-				operator:wikidata and operator:wikipedia tags link to a different objects (Q107477739 vs Q1273383 wikidata id assigned to linked Wikipedia article)
-				</br>
-				<a href="https://openstreetmap.org/relation/1364620" target="_new">1058 Marienberg - Grassau - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/11362018877" target="_new">ADAC Geschäftsstelle - an affected OSM element that may be improved</a>
 				</br>
 				<hr>
 			</br>
@@ -99,9 +79,8 @@ node(2985644111)['information'='board']['wikipedia'='de:Bifu&#223;'];
 			</br>
 			<blockquote>[out:xml][timeout:3600];
 (
-relation(1364614)['operator:wikidata'='Q107477739']['operator:wikipedia'='de:Bayernwerk'];
-relation(1364620)['operator:wikidata'='Q107477739']['operator:wikipedia'='de:Bayernwerk'];
-); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for operator prefixed tags']</blockquote>
+node(11362018877)['brand:wikidata'='de:ADAC'];
+); (._;>;); out meta qt;//['malformed secondary wikidata tag - for brand prefixed tags']</blockquote>
 			</br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br />
