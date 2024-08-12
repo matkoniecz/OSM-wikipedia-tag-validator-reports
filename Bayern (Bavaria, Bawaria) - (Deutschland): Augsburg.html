@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2024-06-09. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2024-08-12. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2024-06-09. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a travel">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a travel</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#malformed secondary wikipedia tag - for artist prefixed tags">malformed secondary wikipedia tag - for artist prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#malformed secondary wikidata tag - for network prefixed tags">malformed secondary wikidata tag - for network prefixed tags</a></li><li><a href="#something is wrong with wikipedia tag - fixme:wikipedia is present">something is wrong with wikipedia tag - fixme:wikipedia is present</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a travel">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a travel</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a protest">should use a secondary wikipedia tag - linking from wikipedia tag to a protest</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#malformed secondary wikipedia tag - for artist prefixed tags">malformed secondary wikipedia tag - for artist prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li><li><a href="#something is wrong with wikipedia tag - fixme:wikipedia is present">something is wrong with wikipedia tag - fixme:wikipedia is present</a></li></ul>			<br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			<br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br>Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br>Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -65,6 +65,23 @@ node(6672733208)['wikidata'='Q1730233'];
 (
 relation(9217839)['wikidata'='Q2521677'];
 ); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a travel']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a protest"><h2 id="should use a secondary wikipedia tag - linking from wikipedia tag to a protest">should use a secondary wikipedia tag - linking from wikipedia tag to a protest</h2></a>
+				<br>
+				linked wikidata entry (Q2935206)(Klimacamp article) is about a protest, so it is very unlikely to be correct <br>        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br>        in case of change remember to add such prefix (or remove) wikidata tag if it is present <br>        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				<br>
+				<a href="https://openstreetmap.org/way/1238107471" target="_new">Klimacamp Augsburg - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(1238107471)['wikipedia'='de:Klimacamp'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia tag to a protest']</blockquote>
 			<br>
 			<hr>
 			<br>
@@ -157,11 +174,23 @@ node(9187097054)['operator:wikidata'='Q41171672']['operator:wikipedia'='de:Aldi 
 			<br>
 			<hr>
 			<br>
-			<a href="#malformed secondary wikidata tag - for network prefixed tags"><h2 id="malformed secondary wikidata tag - for network prefixed tags">malformed secondary wikidata tag - for network prefixed tags</h2></a>
+			<a href="#wikipedia wikidata mismatch - for network prefixed tags"><h2 id="wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</h2></a>
 				<br>
-				malformed value in network:wikidata tag (Sparkassen-Finanzgruppe)
+				network:wikidata and network:wikipedia tags link to a different objects (Q896739 vs Q129172 wikidata id assigned to linked Wikipedia article)
 				<br>
-				<a href="https://openstreetmap.org/node/303966093" target="_new">Stadtsparkasse Augsburg Beratungs.Center Wertachbrücke - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/2890957" target="_new">ICE 60: (Basel Bad Bf =>) Karlsruhe => München - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q896739 vs Q129172 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/3134320" target="_new">IC 24: Hamburg-Altona => Oberstdorf - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q896739 vs Q129172 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/6193559" target="_new">IC 24: Oberstdorf => Hamburg-Altona - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 			<br>
@@ -169,8 +198,10 @@ node(9187097054)['operator:wikidata'='Q41171672']['operator:wikipedia'='de:Aldi 
 			<br>
 			<blockquote>[out:xml][timeout:3600];
 (
-node(303966093)['network:wikidata'='Sparkassen-Finanzgruppe'];
-); (._;>;); out meta qt;//['malformed secondary wikidata tag - for network prefixed tags']</blockquote>
+relation(2890957)['network:wikidata'='Q896739']['network:wikipedia'='de:Intercity-Express'];
+relation(3134320)['network:wikidata'='Q896739']['network:wikipedia'='de:Intercity-Express'];
+relation(6193559)['network:wikidata'='Q896739']['network:wikipedia'='de:Intercity-Express'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for network prefixed tags']</blockquote>
 			<br>
 			<hr>
 			<br>
