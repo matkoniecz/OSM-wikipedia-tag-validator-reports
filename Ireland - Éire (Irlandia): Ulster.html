@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2024-05-14. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2024-08-14. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2024-05-14. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a public transport network">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a public transport network</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a word or phrase">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a word or phrase</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a legal action">should use a secondary wikipedia tag - linking from wikipedia tag to a legal action</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia tag in outdated form and there is mismatch between links">wikipedia tag in outdated form and there is mismatch between links</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li><li><a href="#malformed secondary wikidata tag - for operator prefixed tags">malformed secondary wikidata tag - for operator prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a public transport network">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a public transport network</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a word or phrase">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a word or phrase</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a legal action">should use a secondary wikipedia tag - linking from wikipedia tag to a legal action</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia tag in outdated form and there is mismatch between links">wikipedia tag in outdated form and there is mismatch between links</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li></ul>			<br>
 			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a public transport network"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a public transport network">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a public transport network</h2></a>
 				<br>
 				linked wikidata entry (Q7880069)(Ulsterbus article) is about a public transport network, so it is very unlikely to be correct <br>        subject:wikipedia=* or operator:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br>        in case of change remember to add such prefix (or remove) wikidata tag if it is present <br>        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
@@ -153,6 +153,23 @@ relation(4183318)['wikidata'='Q5444365']['wikipedia'!~'.*']['wikipedia:en'='Ferm
 way(232261503)['wikidata'!~'.*']['wikipedia'!~'.*']['wikipedia:en'='Former Ulster Railway (1837&#8211;1876), then became part of the Great Northern Railway (Ireland), closed 1957.'];
 way(488438856)['wikidata'='Q55263439']['wikipedia'!~'.*']['wikipedia:en'='Carnegie library'];
 ); (._;>;); out meta qt;//['wikipedia tag in outdated form and there is mismatch between links']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
+				<br>
+				brand:wikidata=Q714491 is present despite that not:brand:wikidata=Q714491 is also present - at least one of them is wrong
+				<br>
+				<a href="https://openstreetmap.org/way/776972262" target="_new">M&S Foodhall - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(776972262)['brand:wikidata'='Q714491']['not:brand:wikidata'='Q714491'];
+); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
 			<br>
 			<hr>
 			<br>
@@ -313,23 +330,6 @@ way(691406091)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Gr
 relation(1638615)['network:wikidata'='Q7880069']['network:wikipedia'='en:Metro (Belfast)'];
 relation(16919024)['network:wikidata'='Q7880069']['network:wikipedia'='en:Metro (Belfast)'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for network prefixed tags']</blockquote>
-			<br>
-			<hr>
-			<br>
-			<a href="#malformed secondary wikidata tag - for operator prefixed tags"><h2 id="malformed secondary wikidata tag - for operator prefixed tags">malformed secondary wikidata tag - for operator prefixed tags</h2></a>
-				<br>
-				malformed value in operator:wikidata tag (Q17093192.)
-				<br>
-				<a href="https://openstreetmap.org/way/505973060" target="_new">Lakeland Dairies Drying Plant - an affected OSM element that may be improved</a>
-				<br>
-				<hr>
-			<br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			<br>
-			<blockquote>[out:xml][timeout:3600];
-(
-way(505973060)['operator:wikidata'='Q17093192.'];
-); (._;>;); out meta qt;//['malformed secondary wikidata tag - for operator prefixed tags']</blockquote>
 			<br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br>
