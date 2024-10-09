@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2024-08-12. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2024-10-08. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,31 @@ This page was generated using data obtained on 2024-08-12. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a vehicle model or class">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a vehicle model or class</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#malformed secondary wikidata tag - for network prefixed tags">malformed secondary wikidata tag - for network prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a vehicle model or class">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a vehicle model or class</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#malformed secondary wikidata tag - for network prefixed tags">malformed secondary wikidata tag - for network prefixed tags</a></li></ul>			<br>
+			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human</h2></a>
+				<br>
+				linked wikidata entry (Q74048)(Bernhard Danckelmann (Forstwissenschaftler) article) is about a human, so it is very unlikely to be correct <br>        subject:wikipedia=* or name:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br>        in case of change remember to add such prefix (or remove) wikidata tag if it is present <br>        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				<br>
+				<a href="https://openstreetmap.org/node/12136453077" target="_new">Bernhard Danckelmann - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				linked wikidata entry (Q316829)(Paul Wunderlich article) is about a human, so it is very unlikely to be correct <br>        subject:wikipedia=* or name:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br>        in case of change remember to add such prefix (or remove) wikidata tag if it is present <br>        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				<br>
+				<a href="https://openstreetmap.org/node/1828848447" target="_new">Raubvogel - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(12136453077)['wikidata'='Q74048'];
+node(1828848447)['wikidata'='Q316829'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a vehicle model or class"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a vehicle model or class">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a vehicle model or class</h2></a>
 				<br>
 				linked wikidata entry (Q159067)(Tupolew Tu-134 article) is about a vehicle model or class, so it is very unlikely to be correct <br>        subject:wikipedia=* or model:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br>        in case of change remember to add such prefix (or remove) wikidata tag if it is present <br>        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
@@ -123,6 +147,23 @@ way(132618039)['wikidata'='Q32065718']['wikipedia'='de:Lottschesee'];
 way(288509627)['wikidata'='Q101647282']['wikipedia'='de:Weidendammer Br&#252;cke'];
 way(37872402)['wikidata'='Q111890960']['wikipedia'='de:Steintor (Bernau)'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#information board with wikipedia tag, not subject:wikipedia"><h2 id="information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</h2></a>
+				<br>
+				information board topic must be tagged with subject:wikipedia tag - not with wikipedia tag
+				<br>
+				<a href="https://openstreetmap.org/node/12136453078" target="_new">Danckelmann-Denkmal - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(12136453078)['information'='board']['wikipedia'='de:Bernhard Danckelmann (Forstwissenschaftler)'];
+); (._;>;); out meta qt;//['information board with wikipedia tag, not subject:wikipedia']</blockquote>
 			<br>
 			<hr>
 			<br>

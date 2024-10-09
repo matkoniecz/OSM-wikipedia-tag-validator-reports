@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2024-08-07. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2024-10-07. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,41 @@ This page was generated using data obtained on 2024-08-07. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for name:etymology prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for name:etymology prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for name:etymology prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for name:etymology prefixed tags</a></li></ul>			<br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			<br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				<br>
+				Q5352545 vs (missing) article redirects from en:Ela Township, Lake County, Illinois to en:Ela Township, Illinois
+				<br>
+				<a href="https://openstreetmap.org/relation/17920855" target="_new">Ela Township - an affected OSM element that may be improved</a>
+				<br>
+				en:Ela Township, Lake County, Illinois -> en:Ela Township, Illinois
+				<br>
+				Ela Township, Illinois
+				<br>
+				<hr>
+				<br>
+				Q5352545 vs (missing) article redirects from en:Ela Township, Lake County, Illinois to en:Ela Township, Illinois
+				<br>
+				<a href="https://openstreetmap.org/way/1306480869" target="_new">Ela Township - an affected OSM element that may be improved</a>
+				<br>
+				en:Ela Township, Lake County, Illinois -> en:Ela Township, Illinois
+				<br>
+				Ela Township, Illinois
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(17920855)['wikidata'='Q5352545']['wikipedia'='en:Ela Township, Lake County, Illinois'];
+way(1306480869)['wikidata'='Q5352545']['wikipedia'='en:Ela Township, Lake County, Illinois'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</h2></a>
 			<br>
 			operator:wikidata and operator:wikipedia tags link to a different objects, because operator:wikipedia tag points to a redirect that should be followed
@@ -243,6 +277,12 @@ way(760594108)['species:wikidata'='Q787']['species:wikipedia'='en:Domestic pig']
 				<a href="https://openstreetmap.org/way/229339889" target="_new">Edgar Allen Poe Classical School - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
+				<br>
+				Q8027 vs (missing) article redirects from en:Martin Luther King Jr to en:Martin Luther King Jr.
+				<br>
+				<a href="https://openstreetmap.org/way/554582210" target="_new">Martin Luther King Jr Plaza Apartments - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
 			<br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			<br>
@@ -253,6 +293,7 @@ way(1239172215)['name:etymology:wikidata'='Q8027']['name:etymology:wikipedia'='e
 way(22015097)['name:etymology:wikidata'='Q1205690']['name:etymology:wikipedia'='en:Pellinore'];
 way(224813550)['name:etymology:wikidata'='Q5046892']['name:etymology:wikipedia'='en:Carson Pirie Scott'];
 way(229339889)['name:etymology:wikidata'='Q16867']['name:etymology:wikipedia'='en:Edgar Allen Poe'];
+way(554582210)['name:etymology:wikidata'='Q8027']['name:etymology:wikipedia'='en:Martin Luther King Jr'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for name:etymology prefixed tags']</blockquote>
 			<br>
 			<hr>
