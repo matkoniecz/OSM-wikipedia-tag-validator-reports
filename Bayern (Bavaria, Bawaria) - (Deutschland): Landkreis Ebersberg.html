@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2024-08-12. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2024-10-10. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,24 +14,7 @@ This page was generated using data obtained on 2024-08-12. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li></ul>			<br>
-			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human</h2></a>
-				<br>
-				linked wikidata entry (Q46727426)(Georg Kirner article) is about a human, so it is very unlikely to be correct <br>        subject:wikipedia=* or name:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br>        in case of change remember to add such prefix (or remove) wikidata tag if it is present <br>        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
-				<br>
-				<a href="https://openstreetmap.org/node/7653444381" target="_new">an affected OSM element that may be improved</a>
-				<br>
-				<hr>
-			<br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			<br>
-			<blockquote>[out:xml][timeout:3600];
-(
-node(7653444381)['wikidata'='Q46727426'];
-); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human']</blockquote>
-			<br>
-			<hr>
-			<br>
+<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#malformed secondary wikipedia tag - for subject prefixed tags">malformed secondary wikipedia tag - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li></ul>			<br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				<br>
 				wikidata and wikipedia tags link to a different objects (Q124211563 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has wikipedia tag that links redirect (&#x27;Schalldorf (Emmering)&#x27; to &#x27;Emmering (Landkreis Ebersberg)&#x27;).
@@ -63,6 +46,23 @@ node(83079180)['wikidata'='Q124211563']['wikipedia'='de:Schalldorf (Emmering)'];
 (
 node(7197779477)['information'='board']['wikipedia'='de:Schlacht bei Hohenlinden'];
 ); (._;>;); out meta qt;//['information board with wikipedia tag, not subject:wikipedia']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#malformed secondary wikipedia tag - for subject prefixed tags"><h2 id="malformed secondary wikipedia tag - for subject prefixed tags">malformed secondary wikipedia tag - for subject prefixed tags</h2></a>
+				<br>
+				malformed value in subject:wikipedia tag (Georg Kirner)
+				<br>
+				<a href="https://openstreetmap.org/node/7653444381" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(7653444381)['subject:wikipedia'='Georg Kirner'];
+); (._;>;); out meta qt;//['malformed secondary wikipedia tag - for subject prefixed tags']</blockquote>
 			<br>
 			<hr>
 			<br>

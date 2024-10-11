@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2024-05-27. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2024-10-10. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,26 @@ This page was generated using data obtained on 2024-05-27. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a software">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a software</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to an aspect in a geographic region">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to an aspect in a geographic region</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#malformed wikipedia tag">malformed wikipedia tag</a></li><li><a href="#malformed secondary wikipedia tag - for operator prefixed tags">malformed secondary wikipedia tag - for operator prefixed tags</a></li><li><a href="#malformed secondary wikipedia tag - for artist prefixed tags">malformed secondary wikipedia tag - for artist prefixed tags</a></li><li><a href="#wikipedia tag links bot wikipedia">wikipedia tag links bot wikipedia</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a software">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a software</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to an aspect in a geographic region">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to an aspect in a geographic region</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#malformed wikipedia tag">malformed wikipedia tag</a></li><li><a href="#malformed secondary wikipedia tag - for operator prefixed tags">malformed secondary wikipedia tag - for operator prefixed tags</a></li><li><a href="#malformed secondary wikipedia tag - for artist prefixed tags">malformed secondary wikipedia tag - for artist prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia tag links bot wikipedia">wikipedia tag links bot wikipedia</a></li></ul>			<br>
+			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
+			<br>
+			Wikipedia article linked from OSM object using wikipedia tag is missing.<br>Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br>Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
+				<br>
+				
+				<br>
+				<a href="https://openstreetmap.org/node/358805290" target="_new">Main Top - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(358805290)['wikipedia'='en:Main Top (bukid sa Tinipong Bansa)'];
+); (._;>;); out meta qt;//['wikipedia tag links to 404']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a software"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a software">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a software</h2></a>
 				<br>
 				linked wikidata entry (Q1142035)(Crunchyroll article) is about a software, so it is very unlikely to be correct <br>        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br>        in case of change remember to add such prefix (or remove) wikidata tag if it is present <br>        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
@@ -173,17 +192,47 @@ way(1192514369)['artist:wikipedia'='https://en.wikipedia.org/wiki/Bip_Apollo'];
 			<br>
 			<hr>
 			<br>
+			<a href="#wikipedia wikidata mismatch - for operator prefixed tags"><h2 id="wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</h2></a>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q17077936 vs Q4735954 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/2671868139" target="_new">Bay Wheels - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q17077936 vs Q4735954 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/1093485839" target="_new">Bay Wheels - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(2671868139)['operator:wikidata'='Q17077936']['operator:wikipedia'='en:Motivate (company)'];
+way(1093485839)['operator:wikidata'='Q17077936']['operator:wikipedia'='en:Motivate (company)'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for operator prefixed tags']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia tag links bot wikipedia"><h2 id="wikipedia tag links bot wikipedia">wikipedia tag links bot wikipedia</h2></a>
 				<br>
 				wikipedia page in unexpected language - ceb is a low quality, bot generated wikipedia - it should not be linked
 				<br>
-				<a href="https://openstreetmap.org/node/358771486" target="_new">Needles - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/1350854547" target="_new">Huntington Falls - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
 				wikipedia page in unexpected language - ceb is a low quality, bot generated wikipedia - it should not be linked
 				<br>
-				<a href="https://openstreetmap.org/node/358776881" target="_new">Sutro Forest - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/358764889" target="_new">Double Rock - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				wikipedia page in unexpected language - ceb is a low quality, bot generated wikipedia - it should not be linked
+				<br>
+				<a href="https://openstreetmap.org/node/358771486" target="_new">Needles - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -213,13 +262,19 @@ way(1192514369)['artist:wikipedia'='https://en.wikipedia.org/wiki/Bip_Apollo'];
 				<br>
 				wikipedia page in unexpected language - ceb is a low quality, bot generated wikipedia - it should not be linked
 				<br>
+				<a href="https://openstreetmap.org/node/358851226" target="_new">Rob Hill - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				wikipedia page in unexpected language - ceb is a low quality, bot generated wikipedia - it should not be linked
+				<br>
 				<a href="https://openstreetmap.org/node/369163811" target="_new">South Bay - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
 				wikipedia page in unexpected language - ceb is a low quality, bot generated wikipedia - it should not be linked
 				<br>
-				<a href="https://openstreetmap.org/node/369170951" target="_new">Aquatic Park Cove - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/369170951" target="_new">Aquatic Cove - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -269,12 +324,14 @@ way(1192514369)['artist:wikipedia'='https://en.wikipedia.org/wiki/Bip_Apollo'];
 			<br>
 			<blockquote>[out:xml][timeout:3600];
 (
+node(1350854547)['wikidata'='Q49091598']['wikipedia'='ceb:Huntington_Falls'];
+node(358764889)['wikidata'='Q49636898']['wikipedia'='ceb:Double Rock (pulo sa Tinipong Bansa, California, San Francisco County)'];
 node(358771486)['wikidata'='Q49662187']['wikipedia'='ceb:Needles (pulo sa Tinipong Bansa, California, San Francisco County)'];
-node(358776881)['wikidata'='Q49332492']['wikipedia'='ceb:Sutro Forest'];
 node(358803216)['wikidata'='Q35730125']['wikipedia'='ceb:Buena Vista Heights'];
 node(358803277)['wikidata'='Q49493469']['wikipedia'='ceb:George Sterling Memorial'];
 node(358805248)['wikidata'='Q49488334']['wikipedia'='ceb:Farallon Islands State Game Refuge'];
 node(358805387)['wikidata'='Q49490630']['wikipedia'='ceb:Fort Mason Historic District'];
+node(358851226)['wikidata'='Q49068706']['wikipedia'='ceb:Rob Hill'];
 node(369163811)['wikidata'='Q49392561']['wikipedia'='ceb:South Bay (luuk sa Tinipong Bansa, California, San Francisco County)'];
 node(369170951)['wikidata'='Q49373024']['wikipedia'='ceb:Aquatic Cove'];
 relation(3947724)['wikidata'='Q49521698']['wikipedia'='ceb:Marin Headlands State Park'];
