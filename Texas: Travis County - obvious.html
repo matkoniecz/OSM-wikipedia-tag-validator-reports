@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2024-08-14. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2024-10-11. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,30 @@ This page was generated using data obtained on 2024-08-14. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li></ul>			<br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			<br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				<br>
+				Q4797628 vs (missing) article redirects from en:Arthouse at the Jones Center to en:Jones Center on Congress Avenue
+				<br>
+				<a href="https://openstreetmap.org/way/929864020" target="_new">The Contemporary Austin - Jones Center on Congress Avenue;The Contemporary Austin - Jones Center - an affected OSM element that may be improved</a>
+				<br>
+				en:Arthouse at the Jones Center -> en:Jones Center on Congress Avenue
+				<br>
+				Jones Center on Congress Avenue
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(929864020)['wikidata'='Q4797628']['wikipedia'='en:Arthouse at the Jones Center'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</h2></a>
 			<br>
 			operator:wikidata and operator:wikipedia tags link to a different objects, because operator:wikipedia tag points to a redirect that should be followed
@@ -40,18 +63,6 @@ way(566754318)['operator:wikidata'='Q96372437']['operator:wikipedia'='en:Ascensi
 				<br>
 				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
 				<br>
-				<a href="https://openstreetmap.org/relation/9460745" target="_new">Flixbus 2231: San Antonio => Dallas - an affected OSM element that may be improved</a>
-				<br>
-				<hr>
-				<br>
-				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
-				<br>
-				<a href="https://openstreetmap.org/relation/9460746" target="_new">Flixbus 2231: Dallas => San Antonio - an affected OSM element that may be improved</a>
-				<br>
-				<hr>
-				<br>
-				Q15712258 vs (missing) article redirects from en:Flixbus to en:FlixBus
-				<br>
 				<a href="https://openstreetmap.org/relation/9460881" target="_new">Flixbus 2271: Houston => Austin - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
@@ -66,8 +77,6 @@ way(566754318)['operator:wikidata'='Q96372437']['operator:wikipedia'='en:Ascensi
 			<br>
 			<blockquote>[out:xml][timeout:3600];
 (
-relation(9460745)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
-relation(9460746)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9460881)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9460882)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags']</blockquote>

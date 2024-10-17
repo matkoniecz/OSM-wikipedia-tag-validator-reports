@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2024-08-13. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2024-10-11. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2024-08-13. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia from wikidata tag">wikipedia from wikidata tag</a></li><li><a href="#wikipedia from wikidata tag, unexpected language">wikipedia from wikidata tag, unexpected language</a></li><li><a href="#wikidata from wikipedia tag">wikidata from wikipedia tag</a></li><li><a href="#wikipedia needs to be updated based on wikidata code and teryt:simc identifier">wikipedia needs to be updated based on wikidata code and teryt:simc identifier</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags</a></li></ul>			<br>
 			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
 				<br>
 				wikipedia page in unexpected language - pl was expected:
@@ -33,6 +33,57 @@ This page was generated using data obtained on 2024-08-13. Please, <a href="http
 (
 way(562463077)['wikidata'='Q4635247']['wikipedia'='en:33rd Air Base'];
 ); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
+			<br>
+			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
+				<br>
+				Q47437598 vs (missing) article redirects from pl:Wojew&#243;dzki Szpital dla Nerwowo i Psychicznie Chorych Dziekanka to pl:Wojew&#243;dzki Szpital dla Nerwowo i Psychicznie Chorych &#8222;Dziekanka&#8221; im. Aleksandra Piotrowskiego
+				<br>
+				<a href="https://openstreetmap.org/way/172456781" target="_new">Wojewódzki Szpital dla Nerwowo i Psychicznie Chorych "Dziekanka" im. Aleksandra Piotrowskiego - an affected OSM element that may be improved</a>
+				<br>
+				pl:Wojewódzki Szpital dla Nerwowo i Psychicznie Chorych Dziekanka -> pl:Wojewódzki Szpital dla Nerwowo i Psychicznie Chorych „Dziekanka” im. Aleksandra Piotrowskiego
+				<br>
+				Wojew&#243;dzki Szpital dla Nerwowo i Psychicznie Chorych &#8222;Dziekanka&#8221; im. Aleksandra Piotrowskiego
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(172456781)['wikidata'='Q47437598']['wikipedia'='pl:Wojew&#243;dzki Szpital dla Nerwowo i Psychicznie Chorych Dziekanka'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#wikipedia from wikidata tag"><h2 id="wikipedia from wikidata tag">wikipedia from wikidata tag</h2></a>
+				<br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				<br>
+				<a href="https://openstreetmap.org/way/1202844476" target="_new">Słupia Wielka - an affected OSM element that may be improved</a>
+				<br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Słupia Wielka'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Słupia Wielka'}}]
+				<br>
+				<hr>
+				<br>
+				without wikipedia tag, without wikipedia:language tags, with wikidata tag present that provides article, article language is not surprising
+				<br>
+				<a href="https://openstreetmap.org/way/28108693" target="_new">Jezioro Witobelskie - an affected OSM element that may be improved</a>
+				<br>
+				failed to describe proposed relinking here (was: {'current': None, 'to': 'pl:Jezioro Witobelskie'}), dump of raw proposed_tagging_changes: [{'from': {'wikipedia': None}, 'to': {'wikipedia': 'pl:Jezioro Witobelskie'}}]
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(1202844476)['wikidata'='Q7667487']['wikipedia'!~'.*'];
+way(28108693)['wikidata'='Q11726922']['wikipedia'!~'.*'];
+); (._;>;); out meta qt;//['wikipedia from wikidata tag']</blockquote>
 			<br>
 			<hr>
 			<br>
@@ -57,9 +108,21 @@ way(233493783)['wikidata'='Q33088106']['wikipedia'!~'.*'];
 			<br>
 			<a href="#wikidata from wikipedia tag"><h2 id="wikidata from wikipedia tag">wikidata from wikipedia tag</h2></a>
 				<br>
-				Q11743431 may be added as wikidata tag based on wikipedia tag
+				Q11700339 may be added as wikidata tag based on wikipedia tag
 				<br>
-				<a href="https://openstreetmap.org/relation/17732212" target="_new">Kopanica/Rów Polski - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/node/12141806059" target="_new">Kościół Jezusa Chrystusa Świętych w Dniach Ostatnich - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				Q9193555 may be added as wikidata tag based on wikipedia tag
+				<br>
+				<a href="https://openstreetmap.org/way/243402537" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				Q32999268 may be added as wikidata tag based on wikipedia tag
+				<br>
+				<a href="https://openstreetmap.org/way/458896036" target="_new">Pałac w Kościelcu - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 			<br>
@@ -67,7 +130,9 @@ way(233493783)['wikidata'='Q33088106']['wikipedia'!~'.*'];
 			<br>
 			<blockquote>[out:xml][timeout:3600];
 (
-relation(17732212)['wikidata'!~'.*']['wikipedia'='pl:Kopanica (rzeka)'];
+node(12141806059)['wikidata'!~'.*']['wikipedia'='pl:Gmina Ko&#347;cio&#322;a Jezusa Chrystusa &#346;wi&#281;tych w Dniach Ostatnich w Poznaniu'];
+way(243402537)['wikidata'!~'.*']['wikipedia'='pl:Cmentarz parafialny w Witkowie'];
+way(458896036)['wikidata'!~'.*']['wikipedia'='pl:Pa&#322;ac w Ko&#347;cielcu'];
 ); (._;>;); out meta qt;//['wikidata from wikipedia tag']</blockquote>
 			<br>
 			<hr>

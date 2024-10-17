@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2024-06-09. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2024-10-11. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2024-06-09. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a public transport network">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a public transport network</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia tag links bot wikipedia">wikipedia tag links bot wikipedia</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a public transport network">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a public transport network</a></li><li><a href="#link to a disambiguation page">link to a disambiguation page</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia tag links bot wikipedia">wikipedia tag links bot wikipedia</a></li></ul>			<br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			<br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br>Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br>Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -135,6 +135,23 @@ relation(14728551)['wikidata'='Q7413424'];
 			<br>
 			<hr>
 			<br>
+			<a href="#link to a disambiguation page"><h2 id="link to a disambiguation page">link to a disambiguation page</h2></a>
+				<br>
+				link leads to a disambig page - not a proper wikipedia link (according to Wikidata - if target is not a disambig check Wikidata entry whether it is correct)<br><br>Contra Costa County, California is 611 km away<br>San Bernardino County, California is 119 km away<br>
+				<br>
+				<a href="https://openstreetmap.org/node/150944208" target="_new">Greenspot - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(150944208)['wikidata'='Q5604564'];
+); (._;>;); out meta qt;//['link to a disambiguation page']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				<br>
 				wikidata and wikipedia tags link to a different objects (Q6986640 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has wikidata tag links a redirect (Q6986640 to Q5351305). Note that this OSM object has wikipedia tag that links redirect (&#x27;Needles station&#x27; to &#x27;El Garces Intermodal Transportation Facility&#x27;).
@@ -166,24 +183,13 @@ way(168473269)['wikidata'='Q97301887']['wikipedia'='en:United States Penitentiar
 			<br>
 			<hr>
 			<br>
-			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
+			<a href="#wikipedia tag links bot wikipedia"><h2 id="wikipedia tag links bot wikipedia">wikipedia tag links bot wikipedia</h2></a>
 				<br>
-				brand:wikidata=Q7941609 is present despite that not:brand:wikidata=Q7941609 is also present - at least one of them is wrong
+				wikipedia page in unexpected language - ceb is a low quality, bot generated wikipedia - it should not be linked
 				<br>
-				<a href="https://openstreetmap.org/way/131505634" target="_new">Vons - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/1202956" target="_new">China Lake - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
-			<br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			<br>
-			<blockquote>[out:xml][timeout:3600];
-(
-way(131505634)['brand:wikidata'='Q7941609']['not:brand:wikidata'='Q7941609'];
-); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
-			<br>
-			<hr>
-			<br>
-			<a href="#wikipedia tag links bot wikipedia"><h2 id="wikipedia tag links bot wikipedia">wikipedia tag links bot wikipedia</h2></a>
 				<br>
 				wikipedia page in unexpected language - ceb is a low quality, bot generated wikipedia - it should not be linked
 				<br>
@@ -195,6 +201,7 @@ way(131505634)['brand:wikidata'='Q7941609']['not:brand:wikidata'='Q7941609'];
 			<br>
 			<blockquote>[out:xml][timeout:3600];
 (
+relation(1202956)['wikidata'='Q49587863']['wikipedia'='ceb:China Lake (patag sa Tinipong Bansa, California)'];
 way(37552738)['wikidata'='Q49471801']['wikipedia'='ceb:Abraham Lincoln Shrine'];
 ); (._;>;); out meta qt;//['wikipedia tag links bot wikipedia']</blockquote>
 			<br>

@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2024-03-20. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2024-10-11. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,28 @@ This page was generated using data obtained on 2024-03-20. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li></ul>			<br>
+			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
+				<br>
+				wikipedia page in unexpected language - lv was expected:
+				<br>
+				<a href="https://openstreetmap.org/way/625750361" target="_new">Daugavpils Starptautiskā Lidosta - an affected OSM element that may be improved</a>
+				<br>
+				en:Daugavpils International Airport -> lv:Daugavpils lidlauks
+				<br>
+				Daugavpils lidlauks
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(625750361)['wikidata'='Q2371274']['wikipedia'='en:Daugavpils International Airport'];
+); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
 			<br>
 			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
@@ -38,6 +59,26 @@ This page was generated using data obtained on 2024-03-20. Please, <a href="http
 				Daugavpils Sv. Nikolaja vectic&#299;bnieku bazn&#299;ca
 				<br>
 				<hr>
+				<br>
+				Q16360403 vs (missing) article redirects from lv:Krustpils kult&#363;ras nams to lv:Krustpils kult&#363;ras centrs
+				<br>
+				<a href="https://openstreetmap.org/way/200478381" target="_new">Krustpils kultūras centrs - an affected OSM element that may be improved</a>
+				<br>
+				lv:Krustpils kultūras nams -> lv:Krustpils kultūras centrs
+				<br>
+				Krustpils kult&#363;ras centrs
+				<br>
+				<hr>
+				<br>
+				Q15220040 vs (missing) article redirects from lv:Vi&#316;akas Vissv&#275;t&#257;s J&#275;zus Sirds Romas kato&#316;u bazn&#299;ca to lv:Vi&#316;akas kato&#316;u bazn&#299;ca
+				<br>
+				<a href="https://openstreetmap.org/way/223880604" target="_new">Viļakas Vissvētā Jēzus Sirds Romas katoļu baznīca - an affected OSM element that may be improved</a>
+				<br>
+				lv:Viļakas Vissvētās Jēzus Sirds Romas katoļu baznīca -> lv:Viļakas katoļu baznīca
+				<br>
+				Vi&#316;akas kato&#316;u bazn&#299;ca
+				<br>
+				<hr>
 			<br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			<br>
@@ -45,7 +86,26 @@ This page was generated using data obtained on 2024-03-20. Please, <a href="http
 (
 node(1402600749)['wikidata'='Q15219499']['wikipedia'='lv:Pasienes Sv&#275;t&#257; Dominika Romas kato&#316;u bazn&#299;ca'];
 way(129571412)['wikidata'='Q4300374']['wikipedia'='lv:Daugavpils Sv&#275;t&#257; Nikolaja vectic&#299;bnieku bazn&#299;ca'];
+way(200478381)['wikidata'='Q16360403']['wikipedia'='lv:Krustpils kult&#363;ras nams'];
+way(223880604)['wikidata'='Q15220040']['wikipedia'='lv:Vi&#316;akas Vissv&#275;t&#257;s J&#275;zus Sirds Romas kato&#316;u bazn&#299;ca'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#wikipedia tag in an outdated form for removal"><h2 id="wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</h2></a>
+				<br>
+				wikipedia tag in outdated form ([&#x27;wikipedia:lv&#x27;]), with wikipedia and wikidata tag present and may be safely removed
+				<br>
+				<a href="https://openstreetmap.org/way/591568247" target="_new">Rūbeža / Рубеж - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(591568247)['wikidata'!~'.*']['wikipedia'='lv:R&#363;be&#382;a upe']['wikipedia:lv'='R&#363;be&#382;a upe'];
+); (._;>;); out meta qt;//['wikipedia tag in an outdated form for removal']</blockquote>
 			<br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br>

@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2024-06-09. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2024-10-11. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2024-06-09. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#wikidata tag links to 404">wikidata tag links to 404</a></li><li><a href="#information board with wikipedia tag, not subject:wikipedia">information board with wikipedia tag, not subject:wikipedia</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li></ul>			<br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			<br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br>Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br>Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -31,6 +31,23 @@ This page was generated using data obtained on 2024-06-09. Please, <a href="http
 (
 node(150939823)['wikipedia'='en:Cairns Corner, California'];
 ); (._;>;); out meta qt;//['wikipedia tag links to 404']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#wikidata tag links to 404"><h2 id="wikidata tag links to 404">wikidata tag links to 404</h2></a>
+				<br>
+				wikidata tag present on element points to not existing element (https://www.wikidata.org/wiki/Q49245905;Q49889120)
+				<br>
+				<a href="https://openstreetmap.org/relation/13893039" target="_new">Davis Ditch - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(13893039)['wikidata'='Q49245905;Q49889120'];
+); (._;>;); out meta qt;//['wikidata tag links to 404']</blockquote>
 			<br>
 			<hr>
 			<br>
@@ -55,7 +72,7 @@ node(4723829104)['information'='board']['wikipedia'='en:Ash Mountain Entrance Si
 				<br>
 				it is a typical wrong link and it has an obvious replacement, brand:wikipedia/brand:wikidata should be used instead
 				<br>
-				<a href="https://openstreetmap.org/node/10936411796" target="_new">Downtown Visalia USPS - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/way/1321549566" target="_new">Downtown Visalia USPS - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 			<br>
@@ -63,25 +80,8 @@ node(4723829104)['information'='board']['wikipedia'='en:Ash Mountain Entrance Si
 			<br>
 			<blockquote>[out:xml][timeout:3600];
 (
-node(10936411796)['wikipedia'='en:United States Postal Service'];
+way(1321549566)['wikipedia'='en:United States Postal Service'];
 ); (._;>;); out meta qt;//['blacklisted connection with known replacement']</blockquote>
-			<br>
-			<hr>
-			<br>
-			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
-				<br>
-				brand:wikidata=Q37158 is present despite that not:brand:wikidata=Q37158 is also present - at least one of them is wrong
-				<br>
-				<a href="https://openstreetmap.org/node/9345267826" target="_new">Starbucks - an affected OSM element that may be improved</a>
-				<br>
-				<hr>
-			<br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			<br>
-			<blockquote>[out:xml][timeout:3600];
-(
-node(9345267826)['brand:wikidata'='Q37158']['not:brand:wikidata'='Q37158'];
-); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
 			<br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br>
