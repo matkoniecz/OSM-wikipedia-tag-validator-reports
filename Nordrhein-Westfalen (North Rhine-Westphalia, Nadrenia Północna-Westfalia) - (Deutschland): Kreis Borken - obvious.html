@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2025-03-27. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2025-05-15. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,28 @@ This page was generated using data obtained on 2025-03-27. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li></ul>			<br>
+			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
+				<br>
+				wikipedia page in unexpected language - de was expected:
+				<br>
+				<a href="https://openstreetmap.org/relation/2323309" target="_new">Nederland - an affected OSM element that may be improved</a>
+				<br>
+				nl:Koninkrijk der Nederlanden -> de:Königreich der Niederlande
+				<br>
+				K&#246;nigreich der Niederlande
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(2323309)['wikidata'='Q29999']['wikipedia'='nl:Koninkrijk der Nederlanden'];
+); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
 			<br>
 			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
@@ -68,6 +89,23 @@ node(427582584)['wikidata'='Q1749181']['wikipedia'='de:Funkturm Gro&#223; Reken 
 node(4306279483)['wikidata'='Q2791950']['wikipedia'='de:Gemen (Borken)'];
 node(8412927592)['wikidata'='Q55827183']['wikipedia'='de:H&#252;lsten (Reken)'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#wikipedia tag in an outdated form for removal"><h2 id="wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</h2></a>
+				<br>
+				wikipedia tag in outdated form ([&#x27;wikipedia:de&#x27;, &#x27;wikipedia:fr&#x27;]), with wikipedia and wikidata tag present and may be safely removed
+				<br>
+				<a href="https://openstreetmap.org/relation/12728392" target="_new">Benelux - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(12728392)['wikidata'='Q13116']['wikipedia'='nl:Benelux']['wikipedia:de'='Benelux']['wikipedia:fr'='Benelux'];
+); (._;>;); out meta qt;//['wikipedia tag in an outdated form for removal']</blockquote>
 			<br>
 			<hr>
 			<br>
