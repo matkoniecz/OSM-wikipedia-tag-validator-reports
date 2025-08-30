@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2025-05-19. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2025-08-29. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2025-05-19. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#malformed secondary wikidata tag - for operator prefixed tags">malformed secondary wikidata tag - for operator prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#wikipedia tag in outdated form and there is mismatch between links">wikipedia tag in outdated form and there is mismatch between links</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li></ul>			<br>
 			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a religious denomination</h2></a>
 				<br>
 				linked wikidata entry (Q42504)(The Church of Jesus Christ of Latter-day Saints article) is about a religious denomination, so it is very unlikely to be correct <br>        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br>        in case of change remember to add such prefix (or remove) wikidata tag if it is present <br>        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
@@ -98,6 +98,23 @@ way(723886399)['wikidata'='Q7090329']['wikipedia'='en:Omni Hotels & Resorts'];
 			<br>
 			<hr>
 			<br>
+			<a href="#wikipedia tag in outdated form and there is mismatch between links"><h2 id="wikipedia tag in outdated form and there is mismatch between links">wikipedia tag in outdated form and there is mismatch between links</h2></a>
+				<br>
+				wikipedia tag in outdated form ([&#x27;wikipedia:eo&#x27;], with following conflicts: [&#x27;eo:https://eo.wikipedia.org/wiki/Carrollton_(Teksaso) gives no link conflicting with another link Q128261&#x27;]). Mismatch between different links happened and requires human judgment to solve.
+				<br>
+				<a href="https://openstreetmap.org/relation/6402220" target="_new">Carrollton - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(6402220)['wikidata'='Q128261']['wikipedia'='en:Carrollton, Texas']['wikipedia:eo'='https://eo.wikipedia.org/wiki/Carrollton_(Teksaso)'];
+); (._;>;); out meta qt;//['wikipedia tag in outdated form and there is mismatch between links']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
 				<br>
 				operator:wikidata=Q668687 is present despite that not:operator:wikidata=Q668687 is also present - at least one of them is wrong
@@ -126,23 +143,6 @@ node(11907919374)['not:operator:wikidata'='Q668687']['operator:wikidata'='Q66868
 way(668769236)['brand:wikidata'='Q5430314']['not:brand:wikidata'='Q5430314'];
 way(955192373)['not:operator:wikidata'='Q668687']['operator:wikidata'='Q668687'];
 ); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
-			<br>
-			<hr>
-			<br>
-			<a href="#malformed secondary wikidata tag - for operator prefixed tags"><h2 id="malformed secondary wikidata tag - for operator prefixed tags">malformed secondary wikidata tag - for operator prefixed tags</h2></a>
-				<br>
-				malformed value in operator:wikidata tag ((WikiData ID))
-				<br>
-				<a href="https://openstreetmap.org/node/12843036425" target="_new">an affected OSM element that may be improved</a>
-				<br>
-				<hr>
-			<br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			<br>
-			<blockquote>[out:xml][timeout:3600];
-(
-node(12843036425)['operator:wikidata'='(WikiData ID)'];
-); (._;>;); out meta qt;//['malformed secondary wikidata tag - for operator prefixed tags']</blockquote>
 			<br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br>
