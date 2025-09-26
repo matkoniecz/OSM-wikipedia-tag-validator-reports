@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2025-08-31. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2025-09-26. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2025-08-31. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#invalid old-style wikipedia tag">invalid old-style wikipedia tag</a></li><li><a href="#malformed wikipedia tag">malformed wikipedia tag</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#malformed secondary wikipedia tag - for operator prefixed tags">malformed secondary wikipedia tag - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for model prefixed tags">wikipedia wikidata mismatch - for model prefixed tags</a></li><li><a href="#bridge:wikipedia and bridge:wikidata - move to bridge outline">bridge:wikipedia and bridge:wikidata - move to bridge outline</a></li><li><a href="#malformed secondary wikidata tag - for name:etymology prefixed tags">malformed secondary wikidata tag - for name:etymology prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#link to a disambiguation page">link to a disambiguation page</a></li><li><a href="#invalid old-style wikipedia tag">invalid old-style wikipedia tag</a></li><li><a href="#malformed wikipedia tag">malformed wikipedia tag</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#malformed secondary wikipedia tag - for operator prefixed tags">malformed secondary wikipedia tag - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for model prefixed tags">wikipedia wikidata mismatch - for model prefixed tags</a></li><li><a href="#bridge:wikipedia and bridge:wikidata - move to bridge outline">bridge:wikipedia and bridge:wikidata - move to bridge outline</a></li><li><a href="#malformed secondary wikidata tag - for name:etymology prefixed tags">malformed secondary wikidata tag - for name:etymology prefixed tags</a></li></ul>			<br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			<br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br>Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br>Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -108,6 +108,23 @@ relation(10435350)['wikipedia'='en:Louisiana HIghway 1252'];
 relation(10442102)['wikipedia'='en:Louisiana HIghway 1167'];
 relation(10516547)['wikipedia'='en:Louisiana HIghway 1236'];
 ); (._;>;); out meta qt;//['wikipedia tag links to 404']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#link to a disambiguation page"><h2 id="link to a disambiguation page">link to a disambiguation page</h2></a>
+				<br>
+				link leads to a disambig page - not a proper wikipedia link (according to Wikidata - if target is not a disambig check Wikidata entry whether it is correct)<br><br>Arnaudville, Louisiana is 53 km away<br>Bayou Teche is 43 km away<br>Breaux Bridge, Louisiana is 41 km away<br>Catahoula, Louisiana is 23 km away<br>Charenton, Louisiana is 17 km away<br>Henderson, Louisiana is 37 km away<br>Louisiana Highway 182 is 10165 km away<br>Louisiana Highway 31 is 10165 km away<br>Louisiana Highway 347 &lt;no location data on wikidata&gt;<br>Louisiana Highway 352 &lt;no location data on wikidata&gt;<br>
+				<br>
+				<a href="https://openstreetmap.org/relation/19550852" target="_new">Bayou Teche National Scenic Byway - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(19550852)['wikidata'='Q30689040'];
+); (._;>;); out meta qt;//['link to a disambiguation page']</blockquote>
 			<br>
 			<hr>
 			<br>
@@ -376,12 +393,26 @@ node(6134049686)['operator:wikidata'='Q7642102']['operator:wikipedia'='en:Brooks
 				<a href="https://openstreetmap.org/node/6391817145" target="_new">FlixBus Baton Rouge - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9474517" target="_new">Flixbus 2211: Houston => New Orleans - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9474518" target="_new">Flixbus 2211: New Orleans => Houston - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
 			<br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			<br>
 			<blockquote>[out:xml][timeout:3600];
 (
 node(6391817145)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9474517)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9474518)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for network prefixed tags']</blockquote>
 			<br>
 			<hr>

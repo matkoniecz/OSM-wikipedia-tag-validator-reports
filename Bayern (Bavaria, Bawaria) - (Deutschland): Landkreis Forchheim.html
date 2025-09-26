@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2025-08-31. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2025-09-26. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2025-08-31. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#malformed secondary wikipedia tag - for artist prefixed tags">malformed secondary wikipedia tag - for artist prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#malformed secondary wikipedia tag - for artist prefixed tags">malformed secondary wikipedia tag - for artist prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li></ul>			<br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				<br>
 				wikidata and wikipedia tags link to a different objects (Q74262043 vs Q74296026 wikidata id assigned to linked Wikipedia article)
@@ -23,9 +23,21 @@ This page was generated using data obtained on 2025-08-31. Please, <a href="http
 				<br>
 				<hr>
 				<br>
+				wikidata and wikipedia tags link to a different objects (Q466879 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has wikipedia tag that links redirect (&#x27;Schnellfahrstrecke N&#252;rnberg&#8211;Erfurt&#x27; to &#x27;Verkehrsprojekt Deutsche Einheit Nr. 8&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/3563767" target="_new">Schnellfahrstrecke Nürnberg-Erfurt - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
 				wikidata and wikipedia tags link to a different objects (Q106050352 vs Q995446 wikidata id assigned to linked Wikipedia article)
 				<br>
 				<a href="https://openstreetmap.org/relation/91206" target="_new">Frankenweg Teil 5 - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				wikidata and wikipedia tags link to a different objects (Q466879 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has wikipedia tag that links redirect (&#x27;Schnellfahrstrecke N&#252;rnberg&#8211;Erfurt&#x27; to &#x27;Verkehrsprojekt Deutsche Einheit Nr. 8&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9210667" target="_new">5919 Eltersdorf - Leipzig Hbf - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -94,7 +106,9 @@ This page was generated using data obtained on 2025-08-31. Please, <a href="http
 			<blockquote>[out:xml][timeout:3600];
 (
 node(9240810010)['wikidata'='Q74262043']['wikipedia'='de:St. Walpurgis (Kirchehrenbach)'];
+relation(3563767)['wikidata'='Q466879']['wikipedia'='de:Schnellfahrstrecke N&#252;rnberg&#8211;Erfurt'];
 relation(91206)['wikidata'='Q106050352']['wikipedia'='de:Frankenweg'];
+relation(9210667)['wikidata'='Q466879']['wikipedia'='de:Schnellfahrstrecke N&#252;rnberg&#8211;Erfurt'];
 way(1327071927)['wikidata'='Q55164796']['wikipedia'='de:Ludwig-Donau-Main-Kanal'];
 way(1327071928)['wikidata'='Q55164796']['wikipedia'='de:Ludwig-Donau-Main-Kanal'];
 way(1337360247)['wikidata'='Q55164796']['wikipedia'='de:Ludwig-Donau-Main-Kanal'];
@@ -123,6 +137,29 @@ way(565941758)['wikidata'='Q55164796']['wikipedia'='de:Ludwig-Donau-Main-Kanal']
 (
 node(5714144022)['wikipedia'='de:Amplifon'];
 ); (._;>;); out meta qt;//['blacklisted connection with known replacement']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</h2></a>
+			<br>
+			wikidata and wikipedia tags link to a different objects, because wikidata tag points to a redirect that should be followed
+				<br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				<br>
+				<a href="https://openstreetmap.org/relation/3633213" target="_new">Ailsbach - an affected OSM element that may be improved</a>
+				<br>
+				de:Ailsbach -> de:Ailsbach (Püttlach)
+				<br>
+				Ailsbach (P&#252;ttlach)
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(3633213)['wikidata'='Q405356']['wikipedia'='de:Ailsbach'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not']</blockquote>
 			<br>
 			<hr>
 			<br>
