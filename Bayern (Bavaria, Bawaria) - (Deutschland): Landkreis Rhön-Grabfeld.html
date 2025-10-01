@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2025-08-30. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2025-09-26. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2025-08-30. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li></ul>			<br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			<br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br>Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br>Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -31,23 +31,6 @@ This page was generated using data obtained on 2025-08-30. Please, <a href="http
 (
 node(7367075107)['wikipedia'='de:Schlossm&#252;hle (W&#252;lfershausen an der Saale)'];
 ); (._;>;); out meta qt;//['wikipedia tag links to 404']</blockquote>
-			<br>
-			<hr>
-			<br>
-			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human</h2></a>
-				<br>
-				linked wikidata entry (Q94939049)(Johann Wilhelm Rost article) is about a human, so it is very unlikely to be correct <br>        subject:wikipedia=* or name:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br>        in case of change remember to add such prefix (or remove) wikidata tag if it is present <br>        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
-				<br>
-				<a href="https://openstreetmap.org/node/12481828291" target="_new">Johann Wilhelm Rost - an affected OSM element that may be improved</a>
-				<br>
-				<hr>
-			<br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			<br>
-			<blockquote>[out:xml][timeout:3600];
-(
-node(12481828291)['wikidata'='Q94939049'];
-); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a human']</blockquote>
 			<br>
 			<hr>
 			<br>
@@ -110,6 +93,29 @@ way(891028844)['wikidata'='Q61952092']['wikipedia'='de:Liste der Naturschutzgebi
 			<br>
 			<hr>
 			<br>
+			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</h2></a>
+			<br>
+			wikidata and wikipedia tags link to a different objects, because wikidata tag points to a redirect that should be followed
+				<br>
+				article claims to point to disambig, wikidata does not. wikidata tag is likely to be correct, wikipedia tag almost certainly is not
+				<br>
+				<a href="https://openstreetmap.org/relation/6430553" target="_new">Sinntalbahn - an affected OSM element that may be improved</a>
+				<br>
+				de:Sinntalbahn -> de:Bahnstrecke Jossa–Wildflecken
+				<br>
+				Bahnstrecke Jossa&#8211;Wildflecken
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(6430553)['wikidata'='Q1254512']['wikipedia'='de:Sinntalbahn'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags"><h2 id="wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for operator prefixed tags</h2></a>
 			<br>
 			operator:wikidata and operator:wikipedia tags link to a different objects, because operator:wikidata tag points to a redirect that should be followed
@@ -143,6 +149,226 @@ node(4011677710)['operator:wikidata'='Q157645']['operator:wikipedia'='de:Deutsch
 (
 way(93314574)['operator:wikidata'='Q107477739']['operator:wikipedia'='de:Bayernwerk'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for operator prefixed tags']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#wikipedia wikidata mismatch - for network prefixed tags"><h2 id="wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</h2></a>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/2272122625" target="_new">Bad Königshofen Marktplatz - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5199985228" target="_new">Herschfeld Nachtigallweg - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5199985229" target="_new">Herschfeld Nachtigallweg - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5199985255" target="_new">Bad Neustadt Borsigstraße - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5199985256" target="_new">Bad Neustadt Borsigstraße - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9223885840" target="_new">Bad Königshofen Am Hopfengarten - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9223891963" target="_new">Bad Königshofen An der Gipsmühle - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9223909830" target="_new">Bad Königshofen Am Kirchleinsgrund - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9223939676" target="_new">Bad Königshofen Bahnhofstraße - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9223959143" target="_new">Bad Königshofen franken care - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9224003594" target="_new">Bad Königshofen Kellereistraße - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9224049562" target="_new">Bad Königshofen Klostergarten - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9224568490" target="_new">Bad Königshofen Martin-Luther-Straße - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9224736824" target="_new">Bad Königshofen Marktplatz - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9224749103" target="_new">Bad Königshofen Realschule - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9242600999" target="_new">Bad Königshofen Spitalwaldstraße - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9242813611" target="_new">Bad Königshofen ZOB 2 - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9242813612" target="_new">Bad Königshofen ZOB 5 - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9242813613" target="_new">Bad Königshofen ZOB 4 - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9242813614" target="_new">Bad Königshofen ZOB 3 - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/10758015" target="_new">8304 Bad Königshofen -> Bad Neustadt - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/10843341" target="_new">NESSI 4 - Saalestraße => ZOB => Marktplatz => Bahnhof => Herschfeld - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/11299576" target="_new">8304 Bad Königshofen - Bad Neustadt - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/13134314" target="_new">NESSI 1: Bad Neustadt, Bünd/Nord => Bahnhof => Marktplatz => Gartenstadt - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/13134664" target="_new">NESSI 2 - Rhön-Klinik/Herschfeld => Bahnhof => Marktplatz => Rhön-Klinik/Neuhaus - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/13134758" target="_new">NESSI 3 - Westl. Außenstadt - Marktplatz - Bahnhof - Brendlorenzen, Am Bersbach - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/13146955" target="_new">NESSI 4 - Herschfeld=> Bahnhof => Marktplatz => ZOB => Saalestraße - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/6483586" target="_new">NESSI 1: Bad Neustadt, Gartenstadt => Marktplatz => Bahnhof => Bünd/Nord - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/6483587" target="_new">NESSI 2 - Rhön-Klinik/Neuhaus => Marktplatz => Bahnhof => Rhön-Klinik/Herschfeld - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q131385745 vs Q1424574 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/6483588" target="_new">NESSI 3 - Brendlorenzen, Am Bersbach => Bahnhof => Marktplatz => Westl. Außenstadt - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(2272122625)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(5199985228)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(5199985229)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(5199985255)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(5199985256)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9223885840)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9223891963)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9223909830)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9223939676)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9223959143)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9224003594)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9224049562)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9224568490)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9224736824)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9224749103)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9242600999)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9242813611)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9242813612)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9242813613)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+node(9242813614)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+relation(10758015)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+relation(10843341)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+relation(11299576)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+relation(13134314)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+relation(13134664)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+relation(13134758)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+relation(13146955)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+relation(6483586)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+relation(6483587)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+relation(6483588)['network:wikidata'='Q131385745']['network:wikipedia'='de:Verkehrsgemeinschaft Rh&#246;n-Grabfeld'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for network prefixed tags']</blockquote>
 			<br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br>

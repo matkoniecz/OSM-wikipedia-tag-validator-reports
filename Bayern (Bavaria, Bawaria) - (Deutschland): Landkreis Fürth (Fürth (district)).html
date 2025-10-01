@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2025-08-30. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2025-09-26. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,12 +14,41 @@ This page was generated using data obtained on 2025-08-30. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#link to a disambiguation page">link to a disambiguation page</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li></ul>			<br>
+			<a href="#link to a disambiguation page"><h2 id="link to a disambiguation page">link to a disambiguation page</h2></a>
+				<br>
+				link leads to a disambig page - not a proper wikipedia link (according to Wikidata - if target is not a disambig check Wikidata entry whether it is correct)<br><br>Georg Theodor Bauer is 5554 km away<br>Miltenberg is 119 km away<br>Theo Bauer is 5554 km away<br>Theodor Bauer (Architekt) &lt;no location data on wikidata&gt;<br>Theodor Bauer (Bobfahrer) &lt;no location data on wikidata&gt;<br>Theodor Bauer (Kaufmann) &lt;no location data on wikidata&gt;<br>Theodor Bauer (Politiker) is 5554 km away<br>Theodor Bauer (Richter) &lt;no location data on wikidata&gt;<br>
+				<br>
+				<a href="https://openstreetmap.org/relation/269440" target="_new">Theodor-Bauer-Weg - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(269440)['wikidata'='Q1641979'];
+); (._;>;); out meta qt;//['link to a disambiguation page']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				<br>
 				wikidata and wikipedia tags link to a different objects (Q32239528 vs Q521186 wikidata id assigned to linked Wikipedia article)
 				<br>
 				<a href="https://openstreetmap.org/node/3567076537" target="_new">Puschendorf - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				wikidata and wikipedia tags link to a different objects (Q106066633 vs Q41150 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/132384" target="_new">Wanderweg Jakobsweg Tillyschanz > Nürnberg, Abschnitt Ensdorf - Stein - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				wikidata and wikipedia tags link to a different objects (Q120645275 vs Q802903 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/4237198" target="_new">5902 Nürnberg Hbf - Schnelldorf Streckenwechsel 4951/5902 - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -34,6 +63,8 @@ This page was generated using data obtained on 2025-08-30. Please, <a href="http
 			<blockquote>[out:xml][timeout:3600];
 (
 node(3567076537)['wikidata'='Q32239528']['wikipedia'='de:Puschendorf'];
+relation(132384)['wikidata'='Q106066633']['wikipedia'='de:Jakobsweg'];
+relation(4237198)['wikidata'='Q120645275']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Crailsheim'];
 way(83044394)['wikidata'='Q41365845']['wikipedia'='de:Liste der Baudenkm&#228;ler in Ammerndorf'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
 			<br>

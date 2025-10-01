@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2025-08-30. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2025-09-26. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,28 @@ This page was generated using data obtained on 2025-08-30. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikidata redirect">wikipedia wikidata mismatch - follow wikidata redirect</a></li></ul>			<br>
+			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
+				<br>
+				wikipedia page in unexpected language - de was expected:
+				<br>
+				<a href="https://openstreetmap.org/relation/80053" target="_new">European route E51 - an affected OSM element that may be improved</a>
+				<br>
+				en:European route E51 -> de:Europastraße 51
+				<br>
+				Europastra&#223;e 51
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(80053)['wikidata'='Q692108']['wikipedia'='en:European route E51'];
+); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
 			<br>
 			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
@@ -39,6 +60,16 @@ This page was generated using data obtained on 2025-08-30. Please, <a href="http
 				<br>
 				<hr>
 				<br>
+				Q283170 vs (missing) article redirects from de:Bahnstrecke N&#252;rnberg&#8211;Regensburg to de:Bahnstrecke Regensburg&#8211;N&#252;rnberg
+				<br>
+				<a href="https://openstreetmap.org/relation/216295" target="_new">KBS 880 Nürnberg - Regensburg - Passau - an affected OSM element that may be improved</a>
+				<br>
+				de:Bahnstrecke Nürnberg–Regensburg -> de:Bahnstrecke Regensburg–Nürnberg
+				<br>
+				Bahnstrecke Regensburg&#8211;N&#252;rnberg
+				<br>
+				<hr>
+				<br>
 				Q16548583 vs (missing) article redirects from de:5-Fl&#252;sse-Radweg to de:F&#252;nf-Fl&#252;sse-Radweg
 				<br>
 				<a href="https://openstreetmap.org/relation/3306" target="_new">Fünf-Flüsse-Radweg (07) - an affected OSM element that may be improved</a>
@@ -48,6 +79,26 @@ This page was generated using data obtained on 2025-08-30. Please, <a href="http
 				F&#252;nf-Fl&#252;sse-Radweg
 				<br>
 				<hr>
+				<br>
+				Q2246941 vs (missing) article redirects from de:Schnaittachtalbahn to de:Bahnstrecke Neunkirchen a Sand&#8211;Simmelsdorf-H&#252;ttenbach
+				<br>
+				<a href="https://openstreetmap.org/relation/966697" target="_new">RB 31: Simmelsdorf-Hüttenbach => Nürnberg Hauptbahnhof - an affected OSM element that may be improved</a>
+				<br>
+				de:Schnaittachtalbahn -> de:Bahnstrecke Neunkirchen a Sand–Simmelsdorf-Hüttenbach
+				<br>
+				Bahnstrecke Neunkirchen a Sand&#8211;Simmelsdorf-H&#252;ttenbach
+				<br>
+				<hr>
+				<br>
+				Q2246941 vs (missing) article redirects from de:Schnaittachtalbahn to de:Bahnstrecke Neunkirchen a Sand&#8211;Simmelsdorf-H&#252;ttenbach
+				<br>
+				<a href="https://openstreetmap.org/relation/966699" target="_new">RB 31: Nürnberg Hauptbahnhof => Simmelsdorf-Hüttenbach - an affected OSM element that may be improved</a>
+				<br>
+				de:Schnaittachtalbahn -> de:Bahnstrecke Neunkirchen a Sand–Simmelsdorf-Hüttenbach
+				<br>
+				Bahnstrecke Neunkirchen a Sand&#8211;Simmelsdorf-H&#252;ttenbach
+				<br>
+				<hr>
 			<br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			<br>
@@ -55,7 +106,10 @@ This page was generated using data obtained on 2025-08-30. Please, <a href="http
 (
 node(277636021)['wikidata'='Q1183021']['wikipedia'='de:Dehnberger Hoftheater'];
 node(619865775)['wikidata'='Q1948143']['wikipedia'='de:Moritzberg (Mittelfranken)'];
+relation(216295)['wikidata'='Q283170']['wikipedia'='de:Bahnstrecke N&#252;rnberg&#8211;Regensburg'];
 relation(3306)['wikidata'='Q16548583']['wikipedia'='de:5-Fl&#252;sse-Radweg'];
+relation(966697)['wikidata'='Q2246941']['wikipedia'='de:Schnaittachtalbahn'];
+relation(966699)['wikidata'='Q2246941']['wikipedia'='de:Schnaittachtalbahn'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
 			<br>
 			<hr>
