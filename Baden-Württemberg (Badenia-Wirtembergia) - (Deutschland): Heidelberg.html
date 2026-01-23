@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2025-09-26. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2026-01-19. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2025-09-26. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#invalid old-style wikipedia tag">invalid old-style wikipedia tag</a></li><li><a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for name:etymology prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for name:etymology prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for name:etymology prefixed tags">wikipedia wikidata mismatch - for name:etymology prefixed tags</a></li><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia tag to an animal or plant (and not an individual one)">should use a secondary wikipedia tag - linking from wikipedia tag to an animal or plant (and not an individual one)</a></li><li><a href="#invalid old-style wikipedia tag">invalid old-style wikipedia tag</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for name:etymology prefixed tags">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not - for name:etymology prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for name:etymology prefixed tags">wikipedia wikidata mismatch - for name:etymology prefixed tags</a></li></ul>			<br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			<br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br>Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br>Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -41,6 +41,23 @@ way(339124364)['wikipedia'='de:Wasserturm (Eppelheimer Stra&#223;e)'];
 			<br>
 			<hr>
 			<br>
+			<a href="#should use a secondary wikipedia tag - linking from wikipedia tag to an animal or plant (and not an individual one)"><h2 id="should use a secondary wikipedia tag - linking from wikipedia tag to an animal or plant (and not an individual one)">should use a secondary wikipedia tag - linking from wikipedia tag to an animal or plant (and not an individual one)</h2></a>
+				<br>
+				linked wikidata entry (Q146186)(Mispel article) is about an animal or plant (and not an individual one), so it is very unlikely to be correct <br>        subject:wikipedia=* or taxon:wikipedia tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br>        in case of change remember to add such prefix (or remove) wikidata tag if it is present <br>        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				<br>
+				<a href="https://openstreetmap.org/node/13277308922" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(13277308922)['wikipedia'='de:Mispel'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia tag to an animal or plant (and not an individual one)']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#invalid old-style wikipedia tag"><h2 id="invalid old-style wikipedia tag">invalid old-style wikipedia tag</h2></a>
 				<br>
 				wikipedia tag in outdated form (brand:wikipedia:de), is not using any known language code
@@ -55,23 +72,6 @@ way(339124364)['wikipedia'='de:Wasserturm (Eppelheimer Stra&#223;e)'];
 (
 node(5316446086)['brand:wikipedia:de'='Freenet_AG'];
 ); (._;>;); out meta qt;//['invalid old-style wikipedia tag']</blockquote>
-			<br>
-			<hr>
-			<br>
-			<a href="#wikipedia/wikidata type tag that is incorrect according to not:* tag"><h2 id="wikipedia/wikidata type tag that is incorrect according to not:* tag">wikipedia/wikidata type tag that is incorrect according to not:* tag</h2></a>
-				<br>
-				network:wikidata=Q1553051 is present despite that not:network:wikidata=Q1553051 is also present - at least one of them is wrong
-				<br>
-				<a href="https://openstreetmap.org/relation/2553322" target="_new">RNV 5: Weinheim => Mannheim => Heidelberg => Weinheim - an affected OSM element that may be improved</a>
-				<br>
-				<hr>
-			<br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			<br>
-			<blockquote>[out:xml][timeout:3600];
-(
-relation(2553322)['network:wikidata'='Q1553051']['not:network:wikidata'='Q1553051'];
-); (._;>;); out meta qt;//['wikipedia/wikidata type tag that is incorrect according to not:* tag']</blockquote>
 			<br>
 			<hr>
 			<br>
@@ -111,6 +111,79 @@ node(8712348503)['operator:wikidata'='Q41171672']['operator:wikipedia'='de:Aldi 
 			<br>
 			<hr>
 			<br>
+			<a href="#wikipedia wikidata mismatch - for network prefixed tags"><h2 id="wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</h2></a>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q129172 vs Q896739 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/6167907" target="_new">IC 62: Salzburg => Frankfurt - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9255801" target="_new">Flixbus N950: Frankfurt (Main) => Osijek - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9262564" target="_new">Flixbus N950: Osijek => Frankfurt (Main) - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9675953" target="_new">Flixbus 900: Zagreb, Autobusni kolodvor => Frankfurt (Main) Hbf - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9675954" target="_new">Flixbus 900: Frankfurt (Main) Hbf => Zagreb, Autobusni kolodvor - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9691936" target="_new">Flixbus N948: Split, autobusna stanica => Frankfurt (Main) Hbf - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9691937" target="_new">Flixbus N948: Frankfurt (Main) Hbf => Split, autobusna stanica - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9920082" target="_new">Flixbus N277: Lido di Jesolo => Frankfurt (Main) Hbf - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9920083" target="_new">Flixbus N277: Frankfurt (Main) Hbf => Lido di Jesolo - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(6167907)['network:wikidata'='Q129172']['network:wikipedia'='de:Intercity (Deutschland)'];
+relation(9255801)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9262564)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9675953)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9675954)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9691936)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9691937)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9920082)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9920083)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for network prefixed tags']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia wikidata mismatch - for name:etymology prefixed tags"><h2 id="wikipedia wikidata mismatch - for name:etymology prefixed tags">wikipedia wikidata mismatch - for name:etymology prefixed tags</h2></a>
 				<br>
 				name:etymology:wikidata and name:etymology:wikipedia tags link to a different objects (Q94748665 vs (missing) wikidata id assigned to linked Wikipedia article)
@@ -139,49 +212,6 @@ way(1164649008)['name:etymology:wikidata'='Q94748665']['name:etymology:wikipedia
 way(848303438)['name:etymology:wikidata'='Q134661']['name:etymology:wikipedia'='de:George Bool'];
 way(939493365)['name:etymology:wikidata'='Q94748665']['name:etymology:wikipedia'='de:Marie Clauss'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for name:etymology prefixed tags']</blockquote>
-			<br>
-			<hr>
-			<br>
-			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
-				<br>
-				wikipedia page in unexpected language - de was expected:
-				<br>
-				<a href="https://openstreetmap.org/node/6512022103" target="_new">OSADL - an affected OSM element that may be improved</a>
-				<br>
-				en:OSADL -> de:OSADL
-				<br>
-				OSADL
-				<br>
-				<hr>
-				<br>
-				wikipedia page in unexpected language - de was expected:
-				<br>
-				<a href="https://openstreetmap.org/way/1025230812" target="_new">Campbell Barracks - an affected OSM element that may be improved</a>
-				<br>
-				en:Campbell Barracks -> de:Campbell Barracks
-				<br>
-				Campbell Barracks
-				<br>
-				<hr>
-				<br>
-				wikipedia page in unexpected language - de was expected:
-				<br>
-				<a href="https://openstreetmap.org/way/391678866" target="_new">Campbell Barracks - an affected OSM element that may be improved</a>
-				<br>
-				en:Campbell Barracks -> de:Campbell Barracks
-				<br>
-				Campbell Barracks
-				<br>
-				<hr>
-			<br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			<br>
-			<blockquote>[out:xml][timeout:3600];
-(
-node(6512022103)['wikidata'='Q1502951']['wikipedia'='en:OSADL'];
-way(1025230812)['wikidata'='Q5027996']['wikipedia'='en:Campbell Barracks'];
-way(391678866)['wikidata'='Q5027996']['wikipedia'='en:Campbell Barracks'];
-); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
 			<br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br>

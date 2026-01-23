@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2025-09-26. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2026-01-18. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,50 @@ This page was generated using data obtained on 2025-09-26. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag in unexpected language, good one in expected language found">wikipedia tag in unexpected language, good one in expected language found</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li></ul>			<br>
+			<a href="#wikipedia tag in unexpected language, good one in expected language found"><h2 id="wikipedia tag in unexpected language, good one in expected language found">wikipedia tag in unexpected language, good one in expected language found</h2></a>
+				<br>
+				wikipedia page in unexpected language - de was expected:
+				<br>
+				<a href="https://openstreetmap.org/relation/154667" target="_new">Staffelsee - an affected OSM element that may be improved</a>
+				<br>
+				en:Staffelsee -> de:Staffelsee
+				<br>
+				Staffelsee
+				<br>
+				<hr>
+				<br>
+				wikipedia page in unexpected language - de was expected:
+				<br>
+				<a href="https://openstreetmap.org/way/223452455" target="_new">Partnachklamm - an affected OSM element that may be improved</a>
+				<br>
+				en:Partnach Gorge -> de:Partnachklamm
+				<br>
+				Partnachklamm
+				<br>
+				<hr>
+				<br>
+				wikipedia page in unexpected language - de was expected:
+				<br>
+				<a href="https://openstreetmap.org/way/547665876" target="_new">Seilbahn Zugspitze - an affected OSM element that may be improved</a>
+				<br>
+				en:Seilbahn Zugspitze -> de:Seilbahn Zugspitze
+				<br>
+				Seilbahn Zugspitze
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(154667)['wikidata'='Q278982']['wikipedia'='en:Staffelsee'];
+way(223452455)['wikidata'='Q453805']['wikipedia'='en:Partnach Gorge'];
+way(547665876)['wikidata'='Q46621606']['wikipedia'='en:Seilbahn Zugspitze'];
+); (._;>;); out meta qt;//['wikipedia tag in unexpected language, good one in expected language found']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia wikidata mismatch - follow wikipedia redirect"><h2 id="wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</h2></a>
 			<br>
 			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
@@ -26,6 +69,16 @@ This page was generated using data obtained on 2025-09-26. Please, <a href="http
 				de:Landesbund für Vogelschutz in Bayern -> de:Landesbund für Vogel- und Naturschutz in Bayern
 				<br>
 				Landesbund f&#252;r Vogel- und Naturschutz in Bayern
+				<br>
+				<hr>
+				<br>
+				Q166301 vs (missing) article redirects from de:Ammer (Ammersee) to de:Amper
+				<br>
+				<a href="https://openstreetmap.org/relation/1330429" target="_new">Ammer - an affected OSM element that may be improved</a>
+				<br>
+				de:Ammer (Ammersee) -> de:Amper
+				<br>
+				Amper
 				<br>
 				<hr>
 				<br>
@@ -44,6 +97,7 @@ This page was generated using data obtained on 2025-09-26. Please, <a href="http
 			<blockquote>[out:xml][timeout:3600];
 (
 node(8777454210)['wikidata'='Q1681659']['wikipedia'='de:Landesbund f&#252;r Vogelschutz in Bayern'];
+relation(1330429)['wikidata'='Q166301']['wikipedia'='de:Ammer (Ammersee)'];
 way(264363480)['wikidata'='Q67206453']['wikipedia'='de:Mari&#228; Himmelfahrt (Ettal)'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
 			<br>

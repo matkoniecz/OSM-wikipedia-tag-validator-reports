@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2025-08-31. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2026-01-19. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,16 +14,10 @@ This page was generated using data obtained on 2025-08-31. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#malformed wikipedia tag">malformed wikipedia tag</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#malformed secondary wikipedia tag - for operator prefixed tags">malformed secondary wikipedia tag - for operator prefixed tags</a></li><li><a href="#malformed secondary wikipedia tag - for name:etymology prefixed tags">malformed secondary wikipedia tag - for name:etymology prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia tag unexpected language">wikipedia tag unexpected language</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not">wikipedia wikidata mismatch - wikipedia points to disambiguation page and wikidata does not</a></li><li><a href="#malformed secondary wikipedia tag - for operator prefixed tags">malformed secondary wikipedia tag - for operator prefixed tags</a></li><li><a href="#malformed secondary wikipedia tag - for name:etymology prefixed tags">malformed secondary wikipedia tag - for name:etymology prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li></ul>			<br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			<br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br>Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br>Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
-				<br>
-				
-				<br>
-				<a href="https://openstreetmap.org/relation/9834110" target="_new">Boyle - an affected OSM element that may be improved</a>
-				<br>
-				<hr>
 				<br>
 				
 				<br>
@@ -35,9 +29,25 @@ This page was generated using data obtained on 2025-08-31. Please, <a href="http
 			<br>
 			<blockquote>[out:xml][timeout:3600];
 (
-relation(9834110)['wikipedia'='en:River Boyle (Ireland)'];
 way(241640014)['wikipedia'='en:River Boyle (Ireland)'];
 ); (._;>;); out meta qt;//['wikipedia tag links to 404']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition"><h2 id="should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition</h2></a>
+				<br>
+				linked wikidata entry (Q7138632)(Parkrun article) is about a sports competition, so it is very unlikely to be correct <br>        subject:wikipedia=*  tag would be probably better         (see https://wiki.openstreetmap.org/wiki/Key:wikipedia#Secondary_Wikipedia_links for full list of what else may be applicable) <br>        in case of change remember to add such prefix (or remove) wikidata tag if it is present <br>        object categorised by Wikidata - wrong classification may be caused by wrong data on Wikidata
+				<br>
+				<a href="https://openstreetmap.org/relation/8366861" target="_new">Knocknacarra Parkrun - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(8366861)['wikidata'='Q7138632'];
+); (._;>;); out meta qt;//['should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a sports competition']</blockquote>
 			<br>
 			<hr>
 			<br>
@@ -76,23 +86,6 @@ way(251271424)['wikidata'='Q30246724']['wikipedia'='en:Lough Rynn Castle'];
 way(284554987)['wikidata'='Q33093087']['wikipedia'='en:Miosg&#225;n Meadhbha'];
 way(295031403)['wikidata'='Q116853952']['wikipedia'='de:Kloster Aghagower'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
-			<br>
-			<hr>
-			<br>
-			<a href="#malformed wikipedia tag"><h2 id="malformed wikipedia tag">malformed wikipedia tag</h2></a>
-				<br>
-				malformed value in wikipedia tag (https://en.m.wikipedia.org/wiki/Galway_Famine_Ship_Memorial) expected forma will be like en:Idaho - with language code, colon and article name
-				<br>
-				<a href="https://openstreetmap.org/node/1314978177" target="_new">Famine Ship Memorial - an affected OSM element that may be improved</a>
-				<br>
-				<hr>
-			<br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			<br>
-			<blockquote>[out:xml][timeout:3600];
-(
-node(1314978177)['wikipedia'='https://en.m.wikipedia.org/wiki/Galway_Famine_Ship_Memorial'];
-); (._;>;); out meta qt;//['malformed wikipedia tag']</blockquote>
 			<br>
 			<hr>
 			<br>
@@ -199,7 +192,529 @@ way(25771889)['name:etymology:wikipedia'='John Elliott Cairnes'];
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
+				<a href="https://openstreetmap.org/node/10746389653" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/10753222120" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/10753222121" target="_new">Railway - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
 				<a href="https://openstreetmap.org/node/11396995786" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/11753763671" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/1256175147" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/12767796366" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/12780132452" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/13255638479" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/13265122199" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/13319719174" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/2131172209" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/2131172211" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/281351340" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/3373761580" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/3375248132" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/3779505070" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/3781747153" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/3889562640" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/3889562965" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/3889563022" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/3889574297" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/3905774935" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/3958637629" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4416021872" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4416021886" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4429311320" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4429408658" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4429408670" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4429408671" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4429423284" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4432011407" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4432083931" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4457687458" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4466169043" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4466169050" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4471735467" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4588400250" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4588415534" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4588729084" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4674213800" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4735737528" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4736781523" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4736781524" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4937174944" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4937225699" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4938704780" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4948318358" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4948373640" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4948373659" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4948373683" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4948373704" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4948374436" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4948374440" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4948402086" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4948645525" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4951828449" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4951828458" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4951828463" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4951828470" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4971611067" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4984107421" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/4995716206" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5000883643" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5000903125" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5015994233" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5017111284" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5017111286" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5017111288" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5017111303" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5017166254" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5017295214" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5017295228" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5018399108" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5023199733" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5023323698" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5023323699" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5025970109" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5025972331" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5026051059" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5032987271" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5032987272" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5032987273" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5032987274" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5045070520" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5045070521" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5074677216" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5082874435" target="_new">an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -217,7 +732,241 @@ way(25771889)['name:etymology:wikipedia'='John Elliott Cairnes'];
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
+				<a href="https://openstreetmap.org/node/5082874454" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5082874455" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5082874456" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5082874458" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5082874459" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5082874460" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5082874473" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5082874474" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5090556564" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5090556565" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5090556566" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5100049768" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5170267998" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5238319284" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5240356953" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5314863331" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5314876055" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
 				<a href="https://openstreetmap.org/node/5874313421" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5874321503" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5874321504" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5875721669" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5876278503" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5877057513" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5877057514" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5877172859" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5877172860" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5879869843" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5879885241" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5879885274" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5879885311" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5879944544" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5879944545" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5879944546" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5881710793" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5902329209" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5902345817" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5902345818" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5902345819" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5902424116" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5907228273" target="_new">an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -247,7 +996,25 @@ way(25771889)['name:etymology:wikipedia'='John Elliott Cairnes'];
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
+				<a href="https://openstreetmap.org/node/5907267415" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
 				<a href="https://openstreetmap.org/node/5907267416" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5907267417" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5907426273" target="_new">an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -271,13 +1038,565 @@ way(25771889)['name:etymology:wikipedia'='John Elliott Cairnes'];
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
+				<a href="https://openstreetmap.org/node/5912412130" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5912924625" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5913104777" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5913217544" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5913217545" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5913238139" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5913846922" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5913958159" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5913958160" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5913958173" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5914840425" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5914915025" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5915009427" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5915009428" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5940205596" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5941026986" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5955438402" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5958250885" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5958320285" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5983188012" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5983188013" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5984444747" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/5984444748" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6209321786" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6417266970" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6417266971" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6467013602" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6467013603" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6576947549" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6576979317" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6577003906" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6577003909" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6578874880" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6585825553" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6983021557" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/6983021558" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7039670195" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7176221249" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7180933274" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7181697277" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7181789719" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7182082511" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7188764898" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7192113723" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7194113587" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7194113636" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7196140637" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7206988533" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7209359884" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7248047279" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7249825945" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7592596683" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7592949088" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7628966981" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7731304925" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7924233488" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/7924233489" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/8010093564" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/8038423751" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/8043863229" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/8059759856" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/8251006267" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/8314899473" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/8319972686" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/8409570968" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/8724926690" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/8870454073" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9085964816" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9169268814" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9315686985" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9315686986" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9327512744" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9327749249" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9380676489" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9380676490" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9381123252" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9491224790" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9491224803" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9491224808" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9491224813" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9491234138" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9491234194" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9491254015" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
 				<a href="https://openstreetmap.org/node/9491264717" target="_new">an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
+				<a href="https://openstreetmap.org/node/9493833944" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9494855137" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9500028427" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9501699022" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
 				<a href="https://openstreetmap.org/node/9502239870" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9627614016" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9654635937" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9669518124" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9669529831" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9671128482" target="_new">an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -295,13 +1614,97 @@ way(25771889)['name:etymology:wikipedia'='John Elliott Cairnes'];
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
+				<a href="https://openstreetmap.org/node/9675323874" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9675323875" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9688422316" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9777931598" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9831232206" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9905075182" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9950592113" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9979889602" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/node/9986711677" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/2370668" target="_new">Aghagad 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/2775984" target="_new">Cranmore 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/5550882" target="_new">Crossmolina - Moy 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/5575477" target="_new">Glenree - Carrowleagh 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
 				<a href="https://openstreetmap.org/relation/5575520" target="_new">Rahans - Ardnaree 38 kV - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
-				<a href="https://openstreetmap.org/relation/5581100" target="_new">Tonroe - Charlestown 38kV - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/5581099" target="_new">Swinford - Charlestown 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/5581100" target="_new">Tonroe - Charlestown 38 kV - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -325,19 +1728,67 @@ way(25771889)['name:etymology:wikipedia'='John Elliott Cairnes'];
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
-				<a href="https://openstreetmap.org/relation/9346751" target="_new">Ballina - Castlebar 38kV - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/8712798" target="_new">Cloon - Tuam North 38 kV - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
-				<a href="https://openstreetmap.org/relation/9346752" target="_new">Castlebar - Lecarrow 38kV - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9065462" target="_new">Athlone - Creagh 38 kV - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
-				<a href="https://openstreetmap.org/relation/9346755" target="_new">Castlebar - Knockaphuna - Aghagower 38kV - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9065464" target="_new">Ballygar - Glennamaddy 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/9346712" target="_new">Bangor - Belmullet 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/9346713" target="_new">Bellacorick - Bangor 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/9346714" target="_new">Foxford - Ballina - Ardnaree 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/9346751" target="_new">Ballina - Castlebar 38k V - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/9346752" target="_new">Castlebar - Lecarrow 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/9346753" target="_new">Westport - Newport 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/9346754" target="_new">Castlebar - Knockaphunta - Westport 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/9346755" target="_new">Castlebar - Knockaphuna - Aghagower 38 kV - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -355,13 +1806,103 @@ way(25771889)['name:etymology:wikipedia'='John Elliott Cairnes'];
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
+				<a href="https://openstreetmap.org/relation/9346785" target="_new">Newport - Achill 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/9346798" target="_new">Moy - Rahans 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/relation/9350516" target="_new">Swinford - Foxford 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
 				<a href="https://openstreetmap.org/relation/9350528" target="_new">Castlebar - Annalecka 38 kV - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
-				<a href="https://openstreetmap.org/way/160712082" target="_new">Mohill 38kV Substation - an affected OSM element that may be improved</a>
+				<a href="https://openstreetmap.org/relation/9350547" target="_new">Cloon - Claregalway 38 kV - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/1012215760" target="_new">Carrigallen 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/1052183157" target="_new">Cloonkeelaun 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/1112181268" target="_new">Drumquin 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/150411793" target="_new">Ballytivnan 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/153320588" target="_new">Roosky 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/160712082" target="_new">Mohill 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/177277100" target="_new">Ballymote 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/179547915" target="_new">Tobercurry 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/182028629" target="_new">Gorteen 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/186761446" target="_new">Collooney 38kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/194226138" target="_new">Athenry 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/194524423" target="_new">Clifden 38 kV Substation - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -373,7 +1914,133 @@ way(25771889)['name:etymology:wikipedia'='John Elliott Cairnes'];
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
+				<a href="https://openstreetmap.org/way/201499100" target="_new">Roscommon 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/203764190" target="_new">Oakfield 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/207597278" target="_new">_____ __ kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/223191720" target="_new">Derrynadivva 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/223301305" target="_new">Castlerea 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/224639884" target="_new">Charlestown 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/227400178" target="_new">Ballygar 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/231938123" target="_new">Manorhamilton 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/243032764" target="_new">Enniscrone 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
 				<a href="https://openstreetmap.org/way/243037261" target="_new">Ardnaree 38kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/243167651" target="_new">Swinford 38 kV Station - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/243167657" target="_new">Kiltimagh 38kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/243167658" target="_new">Foxford 38kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/244491691" target="_new">Boyle 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/254329639" target="_new">Ballyhaunis 38kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/278018421" target="_new">Cong 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/278280360" target="_new">Crossmolina 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/278792455" target="_new">Lisheeny 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/279822461" target="_new">Creagh 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/374795352" target="_new">Carrowleagh 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/374797509" target="_new">Rahans 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/377637548" target="_new">Newport 38 kV Substation - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 				<br>
@@ -385,7 +2052,67 @@ way(25771889)['name:etymology:wikipedia'='John Elliott Cairnes'];
 				<br>
 				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
 				<br>
+				<a href="https://openstreetmap.org/way/441378857" target="_new">Largan Hill 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/443610373" target="_new">Sonnagh Old 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/445528539" target="_new">Knockaphunta 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
 				<a href="https://openstreetmap.org/way/446110065" target="_new">Loughrea 38kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/452746713" target="_new">Westport 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/480699371" target="_new">Ballinasloe 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/523099243" target="_new">Glennamaddy 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/541748134" target="_new">Finisklin 38kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/557065532" target="_new">an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/624965794" target="_new">Achill 38 kV Substation - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				operator:wikidata and operator:wikipedia tags link to a different objects (Q115224013 vs Q3050566 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/849342513" target="_new">Kilcolgan 38 kV Substation - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
 			<br>
@@ -393,104 +2120,328 @@ way(25771889)['name:etymology:wikipedia'='John Elliott Cairnes'];
 			<br>
 			<blockquote>[out:xml][timeout:3600];
 (
+node(10746389653)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(10753222120)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(10753222121)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(11396995786)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(11753763671)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(1256175147)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(12767796366)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(12780132452)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(13255638479)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(13265122199)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(13319719174)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(2131172209)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(2131172211)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(281351340)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(3373761580)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(3375248132)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(3779505070)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(3781747153)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(3889562640)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(3889562965)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(3889563022)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(3889574297)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(3905774935)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(3958637629)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4416021872)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4416021886)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4429311320)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4429408658)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4429408670)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4429408671)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4429423284)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4432011407)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4432083931)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4457687458)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4466169043)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4466169050)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4471735467)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4588400250)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4588415534)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4588729084)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4674213800)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4735737528)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4736781523)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4736781524)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4937174944)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4937225699)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4938704780)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4948318358)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4948373640)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4948373659)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4948373683)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4948373704)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4948374436)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4948374440)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4948402086)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4948645525)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4951828449)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4951828458)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4951828463)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4951828470)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4971611067)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4984107421)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(4995716206)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5000883643)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5000903125)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5015994233)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5017111284)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5017111286)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5017111288)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5017111303)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5017166254)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5017295214)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5017295228)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5018399108)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5023199733)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5023323698)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5023323699)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5025970109)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5025972331)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5026051059)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5032987271)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5032987272)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5032987273)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5032987274)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5045070520)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5045070521)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5074677216)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5082874435)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(5082874452)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(5082874453)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5082874454)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5082874455)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5082874456)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5082874458)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5082874459)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5082874460)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5082874473)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5082874474)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5090556564)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5090556565)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5090556566)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5100049768)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5170267998)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5238319284)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5240356953)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5314863331)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5314876055)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(5874313421)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5874321503)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5874321504)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5875721669)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5876278503)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5877057513)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5877057514)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5877172859)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5877172860)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5879869843)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5879885241)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5879885274)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5879885311)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5879944544)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5879944545)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5879944546)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5881710793)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5902329209)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5902345817)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5902345818)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5902345819)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5902424116)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5907228273)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(5907229314)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(5907229315)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(5907267407)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(5907267411)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5907267415)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(5907267416)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5907267417)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5907426273)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(5912412085)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(5912412095)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(5912412129)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5912412130)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5912924625)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5913104777)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5913217544)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5913217545)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5913238139)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5913846922)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5913958159)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5913958160)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5913958173)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5914840425)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5914915025)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5915009427)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5915009428)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5940205596)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5941026986)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5955438402)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5958250885)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5958320285)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5983188012)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5983188013)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5984444747)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(5984444748)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6209321786)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6417266970)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6417266971)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6467013602)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6467013603)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6576947549)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6576979317)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6577003906)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6577003909)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6578874880)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6585825553)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6983021557)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(6983021558)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7039670195)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7176221249)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7180933274)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7181697277)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7181789719)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7182082511)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7188764898)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7192113723)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7194113587)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7194113636)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7196140637)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7206988533)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7209359884)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7248047279)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7249825945)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7592596683)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7592949088)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7628966981)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7731304925)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7924233488)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(7924233489)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(8010093564)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(8038423751)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(8043863229)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(8059759856)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(8251006267)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(8314899473)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(8319972686)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(8409570968)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(8724926690)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(8870454073)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9085964816)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9169268814)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9315686985)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9315686986)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9327512744)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9327749249)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9380676489)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9380676490)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9381123252)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9491224790)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9491224803)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9491224808)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9491224813)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9491234138)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9491234194)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9491254015)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(9491264717)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9493833944)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9494855137)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9500028427)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9501699022)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(9502239870)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9627614016)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9654635937)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9669518124)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9669529831)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9671128482)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(9671213407)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 node(9671213408)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9675323874)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9675323875)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9688422316)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9777931598)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9831232206)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9905075182)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9950592113)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9979889602)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+node(9986711677)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(2370668)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(2775984)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(5550882)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(5575477)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 relation(5575520)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(5581099)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 relation(5581100)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 relation(5581101)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 relation(8504440)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 relation(8712739)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(8712798)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9065462)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9065464)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346712)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346713)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346714)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 relation(9346751)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 relation(9346752)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346753)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346754)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 relation(9346755)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 relation(9346768)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 relation(9346772)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346785)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9346798)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9350516)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 relation(9350528)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+relation(9350547)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(1012215760)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(1052183157)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(1112181268)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(150411793)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(153320588)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 way(160712082)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(177277100)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(179547915)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(182028629)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(186761446)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(194226138)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(194524423)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 way(194702040)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(201499100)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(203764190)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(207597278)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(223191720)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(223301305)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(224639884)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(227400178)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(231938123)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(243032764)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 way(243037261)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(243167651)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(243167657)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(243167658)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(244491691)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(254329639)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(278018421)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(278280360)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(278792455)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(279822461)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(374795352)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(374797509)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(377637548)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 way(429853634)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(441378857)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(443610373)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(445528539)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 way(446110065)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(452746713)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(480699371)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(523099243)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(541748134)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(557065532)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(624965794)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
+way(849342513)['operator:wikidata'='Q115224013']['operator:wikipedia'='en:ESB Group'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for operator prefixed tags']</blockquote>
-			<br>
-			<hr>
-			<br>
-			<a href="#wikipedia tag unexpected language"><h2 id="wikipedia tag unexpected language">wikipedia tag unexpected language</h2></a>
-				<br>
-				wikipedia page in unexpected language - en was expected:
-				<br>
-				<a href="https://openstreetmap.org/node/52241845" target="_new">Cill Ghallagáin - an affected OSM element that may be improved</a>
-				<br>
-				ga:Cill Ghallagáin -> en:Cill Ghallagáin
-				<br>
-				Cill Ghallag&#225;in
-				<br>
-				<hr>
-				<br>
-				wikipedia page in unexpected language - en was expected:
-				<br>
-				<a href="https://openstreetmap.org/relation/7633237" target="_new">an Corrán - an affected OSM element that may be improved</a>
-				<br>
-				ga:An Corrán -> en:Corraun Peninsula
-				<br>
-				Corraun Peninsula
-				<br>
-				<hr>
-				<br>
-				wikipedia page in unexpected language - en was expected:
-				<br>
-				<a href="https://openstreetmap.org/relation/7681896" target="_new">Ireland - an affected OSM element that may be improved</a>
-				<br>
-				ga:Éire -> en:Ireland
-				<br>
-				Ireland
-				<br>
-				<hr>
-				<br>
-				wikipedia page in unexpected language - en was expected:
-				<br>
-				<a href="https://openstreetmap.org/relation/9127000" target="_new">an Muirthead - an affected OSM element that may be improved</a>
-				<br>
-				ga:An Muirthead -> en:Mullet Peninsula
-				<br>
-				Mullet Peninsula
-				<br>
-				<hr>
-				<br>
-				wikipedia page in unexpected language - en was expected:
-				<br>
-				<a href="https://openstreetmap.org/way/191789187" target="_new">Knock Shrine - an affected OSM element that may be improved</a>
-				<br>
-				fr:Sanctuaire Notre-Dame de Knock -> en:Knock Shrine
-				<br>
-				Knock Shrine
-				<br>
-				<hr>
-			<br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			<br>
-			<blockquote>[out:xml][timeout:3600];
-(
-node(52241845)['wikidata'='Q3775912']['wikipedia'='ga:Cill Ghallag&#225;in'];
-relation(7633237)['wikidata'='Q5194963']['wikipedia'='ga:An Corr&#225;n'];
-relation(7681896)['wikidata'='Q22890']['wikipedia'='ga:&#201;ire'];
-relation(9127000)['wikidata'='Q693128']['wikipedia'='ga:An Muirthead'];
-way(191789187)['wikidata'='Q2364438']['wikipedia'='fr:Sanctuaire Notre-Dame de Knock'];
-); (._;>;); out meta qt;//['wikipedia tag unexpected language']</blockquote>
 			<br>
 			<hr>
 <h1>Other useful resources</h1><p>JOSM <a href="https://josm.openstreetmap.de/wiki/Help/Plugin/Wikipedia">Wikipedia plugin</a></p><br>
