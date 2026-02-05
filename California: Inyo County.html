@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2025-08-29. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2026-02-04. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2025-08-29. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a vehicle model or class">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a vehicle model or class</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#malformed wikipedia tag">malformed wikipedia tag</a></li><li><a href="#malformed secondary wikipedia tag - for operator prefixed tags">malformed secondary wikipedia tag - for operator prefixed tags</a></li><li><a href="#wikipedia tag links bot wikipedia">wikipedia tag links bot wikipedia</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a vehicle model or class">should use a secondary wikipedia tag - linking from wikipedia and wikidata tag to a vehicle model or class</a></li><li><a href="#link to a disambiguation page">link to a disambiguation page</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#malformed secondary wikipedia tag - for operator prefixed tags">malformed secondary wikipedia tag - for operator prefixed tags</a></li><li><a href="#wikipedia tag links bot wikipedia">wikipedia tag links bot wikipedia</a></li></ul>			<br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			<br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br>Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br>Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -79,6 +79,23 @@ node(10017036886)['wikidata'='Q698105'];
 			<br>
 			<hr>
 			<br>
+			<a href="#link to a disambiguation page"><h2 id="link to a disambiguation page">link to a disambiguation page</h2></a>
+				<br>
+				link leads to a disambig page - not a proper wikipedia link (according to Wikidata - if target is not a disambig check Wikidata entry whether it is correct)<br><br>Alabama Hills, California is 35 km away<br>Aspendell, California is 121 km away<br>Badwater, California is 110 km away<br>Ballarat, California is 73 km away<br>Bend City, California is 63 km away<br>Beveridge, California is 50 km away<br>Big Pine, California is 104 km away<br>Big Pine Paiute Tribe of the Owens Valley is 103 km away<br>Bishop, California is 128 km away<br>Bishop Paiute Tribe is 129 km away<br>
+				<br>
+				<a href="https://openstreetmap.org/node/150934992" target="_new">Grant - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+node(150934992)['wikidata'='Q5596058'];
+); (._;>;); out meta qt;//['link to a disambiguation page']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia wikidata mismatch"><h2 id="wikipedia wikidata mismatch">wikipedia wikidata mismatch</h2></a>
 				<br>
 				wikidata and wikipedia tags link to a different objects (Q590039 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has wikipedia tag that links redirect (&#x27;Methuselah (tree)&#x27; to &#x27;Methuselah (disambiguation)&#x27;).
@@ -93,7 +110,7 @@ node(10017036886)['wikidata'='Q698105'];
 				<br>
 				<hr>
 				<br>
-				wikidata and wikipedia tags link to a different objects (Q122568203 vs Q5024119 wikidata id assigned to linked Wikipedia article) Note that this OSM object has wikipedia tag that links redirect (&#x27;Charleston_View,_California&#x27; to &#x27;Charleston View, California&#x27;).
+				wikidata and wikipedia tags link to a different objects (Q122568203 vs Q5024119 wikidata id assigned to linked Wikipedia article)
 				<br>
 				<a href="https://openstreetmap.org/relation/17378410" target="_new">Charleston View - an affected OSM element that may be improved</a>
 				<br>
@@ -111,26 +128,9 @@ node(10017036886)['wikidata'='Q698105'];
 (
 node(5566419121)['wikidata'='Q590039']['wikipedia'='en:Methuselah (tree)'];
 relation(13766670)['wikidata'='Q118779862']['wikipedia'='en:Alabama Hills'];
-relation(17378410)['wikidata'='Q122568203']['wikipedia'='en:Charleston_View,_California'];
+relation(17378410)['wikidata'='Q122568203']['wikipedia'='en:Charleston View, California'];
 way(96614687)['wikidata'='Q100269287']['wikipedia'='en:Badwater Basin'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
-			<br>
-			<hr>
-			<br>
-			<a href="#malformed wikipedia tag"><h2 id="malformed wikipedia tag">malformed wikipedia tag</h2></a>
-				<br>
-				malformed value in wikipedia tag (https://en.wikipedia.org/wiki/Mount_Williamson) expected forma will be like en:Idaho - with language code, colon and article name
-				<br>
-				<a href="https://openstreetmap.org/node/358803124" target="_new">Mount Williamson - an affected OSM element that may be improved</a>
-				<br>
-				<hr>
-			<br>
-			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
-			<br>
-			<blockquote>[out:xml][timeout:3600];
-(
-node(358803124)['wikipedia'='https://en.wikipedia.org/wiki/Mount_Williamson'];
-); (._;>;); out meta qt;//['malformed wikipedia tag']</blockquote>
 			<br>
 			<hr>
 			<br>
