@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2026-01-19. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2026-02-05. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,7 @@ This page was generated using data obtained on 2026-01-19. Please, <a href="http
 			Remember to check whether edits make sense! All reports are on this page because these tasks require human judgment to verify whether the proposed edit makes sense. Some proposed edits will be wrong, in such case they should be not done and problem reported
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a travel">should use a secondary wikipedia tag - linking from wikipedia tag to a travel</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#malformed secondary wikipedia tag - for subject prefixed tags">malformed secondary wikipedia tag - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for subject prefixed tags">wikipedia wikidata mismatch - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li><li><a href="#wikipedia tag links bot wikipedia">wikipedia tag links bot wikipedia</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag links to 404">wikipedia tag links to 404</a></li><li><a href="#should use a secondary wikipedia tag - linking from wikipedia tag to a travel">should use a secondary wikipedia tag - linking from wikipedia tag to a travel</a></li><li><a href="#wikipedia wikidata mismatch">wikipedia wikidata mismatch</a></li><li><a href="#malformed wikidata tag">malformed wikidata tag</a></li><li><a href="#blacklisted connection with known replacement">blacklisted connection with known replacement</a></li><li><a href="#malformed secondary wikipedia tag - for subject prefixed tags">malformed secondary wikipedia tag - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for operator prefixed tags">wikipedia wikidata mismatch - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for subject prefixed tags">wikipedia wikidata mismatch - for subject prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - for network prefixed tags">wikipedia wikidata mismatch - for network prefixed tags</a></li><li><a href="#wikipedia tag links bot wikipedia">wikipedia tag links bot wikipedia</a></li></ul>			<br>
 			<a href="#wikipedia tag links to 404"><h2 id="wikipedia tag links to 404">wikipedia tag links to 404</h2></a>
 			<br>
 			Wikipedia article linked from OSM object using wikipedia tag is missing.<br>Often article was moved without leaving redirect and wikipedia tag should be edited to point to the new one.<br>Article may be deleted and no longer existing, or link was never valid. In such cases wikipedia tag should be deleted.
@@ -200,6 +200,12 @@ relation(189497)['wikipedia'='de:Vierbergelauf'];
 				<a href="https://openstreetmap.org/way/453450728" target="_new">St. Anna - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
+				<br>
+				wikidata and wikipedia tags link to a different objects (Q38176609 vs Q1301184 wikidata id assigned to linked Wikipedia article)
+				<br>
+				<a href="https://openstreetmap.org/way/578243911" target="_new">St. Johann - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
 			<br>
 			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
 			<br>
@@ -225,7 +231,25 @@ way(227096908)['wikidata'='Q64765039']['wikipedia'='de:Schloss Gro&#223;kirchhei
 way(236886678)['wikidata'='Q64512851']['wikipedia'='de:Hemmaberg'];
 way(432839917)['wikidata'='Q133444598']['wikipedia'='de:Rupertiberg'];
 way(453450728)['wikidata'='Q2317100']['wikipedia'='de:St. Anna (Gemeinde Maria W&#246;rth)'];
+way(578243911)['wikidata'='Q38176609']['wikipedia'='de:Filialkirche St. Stefan (Stra&#223;burg)'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch']</blockquote>
+			<br>
+			<hr>
+			<br>
+			<a href="#malformed wikidata tag"><h2 id="malformed wikidata tag">malformed wikidata tag</h2></a>
+				<br>
+				malformed value in wikidata tag (Sveta Gora) value is expected to be like Q63736736  with Q at start and then numbers
+				<br>
+				<a href="https://openstreetmap.org/way/61650325" target="_new">Gertraudskogel - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+way(61650325)['wikidata'='Sveta Gora'];
+); (._;>;); out meta qt;//['malformed wikidata tag']</blockquote>
 			<br>
 			<hr>
 			<br>
@@ -329,6 +353,108 @@ node(8463719135)['subject:wikidata'='Q56508798']['subject:wikipedia'='de:Schloss
 				<br>
 				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
 				<br>
+				<a href="https://openstreetmap.org/relation/10551459" target="_new">Flixbus N1972: Hamburg, ZOB => Sarajevo, centralna autobusna stanica - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/10554997" target="_new">Flixbus N1972: Sarajevo, centralna autobusna stanica => Hamburg, ZOB - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/10559472" target="_new">Flixbus N1962: Tuzla, autobusna stanica => Hamburg, ZOB - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/10559473" target="_new">Flixbus N1962: Hamburg, ZOB => Tuzla, autobusna stanica - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/10745322" target="_new">Flixbus K997(part D, A, SL, HR): Imotski, Busbahnhof => Meersburg, Fährhafen - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/10745323" target="_new">Flixbus K997(part D, A, SL, HR): Meersburg, Fährhafen => Imotski, Busbahnhof - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/8911232" target="_new">Flixbus N900: München ZOB => Zagreb, Auobusni kolodvor - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9554239" target="_new">Flixbus N943: Pula, autobusna stanica => München ZOB - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9554243" target="_new">Flixbus N943: München ZOB => Pula, autobusna stanica - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9555930" target="_new">Flixbus 944: München ZOB => Crikvenica, Autobusni kolodvor - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9655762" target="_new">Flixbus 943: Pula, Autobusni kolodvor => München ZOB - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9655763" target="_new">Flixbus 943: München ZOB => Pula, Autobusni kolodvor - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9660495" target="_new">Flixbus N944: München ZOB => Crikvenica, Autobusni kolodvor - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9692178" target="_new">Flixbus 948: Split, Autobusni kolodvor => München ZOB - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9692179" target="_new">Flixbus 948: München ZOB => Split, Autobusni kolodvor - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9692281" target="_new">Flixbus N947: Split, Autobusni kolodvor => München ZOB - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
+				<a href="https://openstreetmap.org/relation/9692282" target="_new">Flixbus N947: München ZOB => Split, Autobusni kolodvor - an affected OSM element that may be improved</a>
+				<br>
+				<hr>
+				<br>
+				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
+				<br>
 				<a href="https://openstreetmap.org/relation/9745977" target="_new">Flixbus 996: Klagenfurt, ZOB => Baška, autobusni kolodvor - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
@@ -353,12 +479,6 @@ node(8463719135)['subject:wikidata'='Q56508798']['subject:wikipedia'='de:Schloss
 				<br>
 				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
 				<br>
-				<a href="https://openstreetmap.org/relation/9921003" target="_new">Flixbus N404: Savona, Piazza Aldo Moro => Wien Erdberg, Busterminal VIB - an affected OSM element that may be improved</a>
-				<br>
-				<hr>
-				<br>
-				network:wikidata and network:wikipedia tags link to a different objects (Q15712258 vs (missing) wikidata id assigned to linked Wikipedia article) Note that this OSM object has network:wikipedia tag that links redirect (&#x27;Flixbus&#x27; to &#x27;FlixBus&#x27;).
-				<br>
 				<a href="https://openstreetmap.org/relation/9921004" target="_new">Flixbus N404: Wien Erdberg, Busterminal VIB => Savona, Piazza Aldo Moro - an affected OSM element that may be improved</a>
 				<br>
 				<hr>
@@ -367,11 +487,27 @@ node(8463719135)['subject:wikidata'='Q56508798']['subject:wikipedia'='de:Schloss
 			<br>
 			<blockquote>[out:xml][timeout:3600];
 (
+relation(10551459)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10554997)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10559472)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10559473)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10745322)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(10745323)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(8911232)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9554239)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9554243)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9555930)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9655762)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9655763)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9660495)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9692178)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9692179)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9692281)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
+relation(9692282)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9745977)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9749379)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9906881)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9906882)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
-relation(9921003)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 relation(9921004)['network:wikidata'='Q15712258']['network:wikipedia'='en:Flixbus'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - for network prefixed tags']</blockquote>
 			<br>

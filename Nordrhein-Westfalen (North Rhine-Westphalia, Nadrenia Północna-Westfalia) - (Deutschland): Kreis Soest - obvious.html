@@ -5,7 +5,7 @@
 	</head>
 <body>
 	<div class="inner">Feedback? Ideas? Complaints? Suggestions? Request for report about other area? <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a>!<br>
-This page was generated using data obtained on 2026-01-19. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
+This page was generated using data obtained on 2026-02-05. Please, <a href="https://www.openstreetmap.org/message/new/Mateusz%20Konieczny">send me a message</a> if you want it updated!<br>
 <br>
 <br>
 			<br>
@@ -14,7 +14,28 @@ This page was generated using data obtained on 2026-01-19. Please, <a href="http
 			Proposed edits at this page are so obvious that automatic edit makes sense.
 			<br>
 			<hr>
-<ul><li><a href="#wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags</a></li></ul>			<br>
+<ul><li><a href="#wikipedia tag in unexpected language, good one in expected language found">wikipedia tag in unexpected language, good one in expected language found</a></li><li><a href="#wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect">wikipedia wikidata mismatch - follow wikipedia redirect</a></li><li><a href="#wikipedia tag in an outdated form for removal">wikipedia tag in an outdated form for removal</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for operator prefixed tags</a></li><li><a href="#wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags">wikipedia wikidata mismatch - follow wikipedia redirect - for species prefixed tags</a></li></ul>			<br>
+			<a href="#wikipedia tag in unexpected language, good one in expected language found"><h2 id="wikipedia tag in unexpected language, good one in expected language found">wikipedia tag in unexpected language, good one in expected language found</h2></a>
+				<br>
+				wikipedia page in unexpected language - de was expected:
+				<br>
+				<a href="https://openstreetmap.org/relation/2523866" target="_new">2103 Dortmund - Soest - an affected OSM element that may be improved</a>
+				<br>
+				en:Dortmund–Soest railway -> de:Bahnstrecke Dortmund–Soest
+				<br>
+				Bahnstrecke Dortmund&#8211;Soest
+				<br>
+				<hr>
+			<br>
+			<a href="https://overpass-turbo.eu/">overpass query</a> usable in JOSM that will load all objects where this specific error is present:
+			<br>
+			<blockquote>[out:xml][timeout:3600];
+(
+relation(2523866)['wikidata'='Q802187']['wikipedia'='en:Dortmund&#8211;Soest railway'];
+); (._;>;); out meta qt;//['wikipedia tag in unexpected language, good one in expected language found']</blockquote>
+			<br>
+			<hr>
+			<br>
 			<a href="#wikipedia tag from wikipedia tag in an outdated form"><h2 id="wikipedia tag from wikipedia tag in an outdated form">wikipedia tag from wikipedia tag in an outdated form</h2></a>
 				<br>
 				wikipedia tag in outdated form ([&#x27;wikipedia:de&#x27;]), wikipedia tag may be added
@@ -110,16 +131,6 @@ relation(2971442)['wikidata'='Q1978678']['wikipedia'!~'.*']['wikipedia:de'='Nett
 			<br>
 			wikidata and wikipedia tags link to a different objects, because wikipedia tag points to a redirect that should be followed
 				<br>
-				Q1603083 vs (missing) article redirects from de:Ems-B&#246;rde-Bahn to de:Hellweg-Netz
-				<br>
-				<a href="https://openstreetmap.org/relation/289079" target="_new">RB89: Warburg => Münster - an affected OSM element that may be improved</a>
-				<br>
-				de:Ems-Börde-Bahn -> de:Hellweg-Netz
-				<br>
-				Hellweg-Netz
-				<br>
-				<hr>
-				<br>
 				Q1496472 vs (missing) article redirects from de:Nicolaikirche (Lippstadt) to de:St. Nicolai (Lippstadt)
 				<br>
 				<a href="https://openstreetmap.org/way/245655989" target="_new">Katholische Kirche St. Nicolai - an affected OSM element that may be improved</a>
@@ -144,7 +155,6 @@ relation(2971442)['wikidata'='Q1978678']['wikipedia'!~'.*']['wikipedia:de'='Nett
 			<br>
 			<blockquote>[out:xml][timeout:3600];
 (
-relation(289079)['wikidata'='Q1603083']['wikipedia'='de:Ems-B&#246;rde-Bahn'];
 way(245655989)['wikidata'='Q1496472']['wikipedia'='de:Nicolaikirche (Lippstadt)'];
 way(840562129)['wikidata'='Q1589904']['wikipedia'='de:Haus Assen (Wasserschloss)'];
 ); (._;>;); out meta qt;//['wikipedia wikidata mismatch - follow wikipedia redirect']</blockquote>
